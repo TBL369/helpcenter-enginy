@@ -1,7 +1,7 @@
 import * as dotenv from 'dotenv';
 import * as fs from 'fs';
 import * as path from 'path';
-import { ChangelogConfig, PipelineStats } from './types';
+import { ChangelogConfig, LLMConfig, LLMProvider, PipelineStats } from './types';
 import { loadState, saveState, getSinceDate } from './state';
 import { fetchMergedPRs } from './fetch-prs';
 import { preFilter } from './pre-filter';
@@ -9,7 +9,7 @@ import { classifyPRs } from './classifier';
 import { mapToArticles } from './mapper';
 import { generateBrief } from './brief-generator';
 import { updateArticle } from './article-updater';
-import { LLMClient } from './llm';
+import { createLLMClient } from './llm';
 
 // Cargar variables de entorno
 dotenv.config();
@@ -18,34 +18,87 @@ dotenv.config();
 
 const ARTICLES_DIR = process.env.ARTICLES_PATH || 'articles';
 
+/** Proveedores válidos para LLM_PROVIDER */
+const VALID_PROVIDERS = ['openai', 'anthropic', 'ollama'] as const;
+
 function getConfig(): ChangelogConfig {
   const saasRepo = process.env.SAAS_REPO;
-  const openaiApiKey = process.env.OPENAI_API_KEY;
-
-  const missing: string[] = [];
-  if (!saasRepo) missing.push('SAAS_REPO');
-  if (!openaiApiKey) missing.push('OPENAI_API_KEY');
-
-  if (missing.length > 0) {
-    console.error(`[changelog] Faltan variables de entorno: ${missing.join(', ')}`);
+  if (!saasRepo) {
+    console.error('[changelog] Falta variable de entorno: SAAS_REPO');
     console.error('Copia .env.example a .env y completa los valores.');
     process.exit(1);
   }
 
+  const llm = getLLMConfig();
   const repoRoot = process.cwd();
   const dryRun = process.argv.includes('--dry-run');
 
   return {
+    // Validado arriba — seguro hacer non-null assertion
     saasRepo: saasRepo!,
     articlesPath: path.resolve(repoRoot, ARTICLES_DIR),
-    openaiApiKey: openaiApiKey!,
-    openaiModel: process.env.OPENAI_MODEL || 'gpt-4o-mini',
-    openaiBaseUrl: process.env.OPENAI_BASE_URL,
+    llm,
     dryRun,
     statePath: path.resolve(repoRoot, '.last-sync-state'),
     articleMapPath: path.resolve(repoRoot, 'config', 'change-to-article-map.yaml'),
     userFacingPathsConfigPath: path.resolve(repoRoot, 'config', 'user-facing-paths.yaml'),
   };
+}
+
+/**
+ * Lee la configuración del proveedor LLM desde variables de entorno.
+ * Cada proveedor usa su propio prefijo: OPENAI_, ANTHROPIC_, OLLAMA_.
+ */
+function getLLMConfig(): LLMConfig {
+  const rawProvider = (process.env.LLM_PROVIDER ?? 'openai').toLowerCase();
+
+  if (!VALID_PROVIDERS.includes(rawProvider as LLMProvider)) {
+    console.error(`[changelog] LLM_PROVIDER inválido: "${rawProvider}". Opciones: ${VALID_PROVIDERS.join(', ')}`);
+    process.exit(1);
+  }
+
+  const provider = rawProvider as LLMProvider;
+
+  switch (provider) {
+    case 'anthropic': {
+      const apiKey = process.env.ANTHROPIC_API_KEY;
+      if (!apiKey) {
+        console.error('[changelog] Falta ANTHROPIC_API_KEY (requerida para LLM_PROVIDER=anthropic)');
+        process.exit(1);
+      }
+      return {
+        provider,
+        // Validado arriba — seguro hacer non-null assertion
+        apiKey: apiKey!,
+        model: process.env.ANTHROPIC_MODEL ?? 'claude-sonnet-4-20250514',
+      };
+    }
+
+    case 'ollama': {
+      return {
+        provider,
+        apiKey: 'ollama', // Ollama no requiere API key
+        model: process.env.OLLAMA_MODEL ?? 'llama3',
+        baseUrl: process.env.OLLAMA_BASE_URL ?? 'http://localhost:11434/v1',
+      };
+    }
+
+    case 'openai':
+    default: {
+      const apiKey = process.env.OPENAI_API_KEY;
+      if (!apiKey) {
+        console.error('[changelog] Falta OPENAI_API_KEY (requerida para LLM_PROVIDER=openai)');
+        process.exit(1);
+      }
+      return {
+        provider,
+        // Validado arriba — seguro hacer non-null assertion
+        apiKey: apiKey!,
+        model: process.env.OPENAI_MODEL ?? 'gpt-4o-mini',
+        baseUrl: process.env.OPENAI_BASE_URL,
+      };
+    }
+  }
 }
 
 // ─── Utilidades ──────────────────────────────────────────────
@@ -158,11 +211,7 @@ async function main(): Promise<void> {
 
   // 4. Etapa 2: Clasificación LLM
   console.log('\n[changelog] ── Etapa 2: Clasificación LLM ──');
-  const llm = new LLMClient({
-    apiKey: config.openaiApiKey,
-    model: config.openaiModel,
-    baseUrl: config.openaiBaseUrl,
-  });
+  const llm = createLLMClient(config.llm);
 
   const classifications = await classifyPRs(passed, llm);
   const userFacing = classifications.filter(c => c.isUserFacing);
