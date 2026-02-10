@@ -7,12 +7,12 @@
   <key>Label</key>
   <string>com.helpcenter.sync</string>
 
-  <!-- Comando a ejecutar -->
+  <!-- Comando a ejecutar: pipeline nocturno (changelog + sync) -->
   <key>ProgramArguments</key>
   <array>
     <string>/usr/local/bin/npx</string>
     <string>ts-node</string>
-    <string>src/index.ts</string>
+    <string>src/nightly.ts</string>
   </array>
 
   <!-- Directorio de trabajo (raíz del repo) -->
@@ -30,9 +30,9 @@
 
   <!-- Logs de salida y error -->
   <key>StandardOutPath</key>
-  <string>/Users/timbrandt/Desktop/articles/logs/sync.log</string>
+  <string>/Users/timbrandt/Desktop/articles/logs/nightly.log</string>
   <key>StandardErrorPath</key>
-  <string>/Users/timbrandt/Desktop/articles/logs/sync-error.log</string>
+  <string>/Users/timbrandt/Desktop/articles/logs/nightly-error.log</string>
 
   <!-- Variables de entorno necesarias (PATH para que encuentre node, git, etc.) -->
   <key>EnvironmentVariables</key>

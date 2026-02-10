@@ -81,24 +81,9 @@ npm start
 
 El sistema usa commits de git como mecanismo de versionado. Cada sync exitoso genera un commit con formato `docs: Display Name vN`. En el siguiente run, compara el estado actual del fichero contra ese commit para decidir si necesita re-sincronizar.
 
-### Cron job (macOS)
+### Ejecución manual
 
-El sync se ejecuta automáticamente cada día a las 22:00h via launchd:
-
-```bash
-cd infra/
-bash setup-cron.sh
-```
-
-Comandos útiles:
-
-```bash
-# Ver logs
-tail -f logs/sync.log
-
-# Desactivar
-launchctl unload ~/Library/LaunchAgents/com.helpcenter.sync.plist
-```
+El sync se puede ejecutar de forma independiente con `npm run sync`. Sin embargo, en el flujo nocturno se ejecuta automáticamente tras el changelog pipeline (ver sección Pipeline nocturno).
 
 ---
 
@@ -237,6 +222,43 @@ Cada proveedor tiene su propia implementación nativa (SDK de OpenAI, SDK de Ant
 
 ---
 
+## Pipeline nocturno
+
+Un cron job unificado ejecuta ambos procesos en secuencia cada día a las 22:00h:
+
+```
+Changelog pipeline  →  Notion sync
+(actualiza .md)        (publica a Notion)
+```
+
+Si el changelog falla, el sync se ejecuta igualmente para publicar lo que ya haya (artículos modificados manualmente, etc.).
+
+### Uso
+
+```bash
+# Ejecutar el pipeline completo manualmente
+npm run nightly
+```
+
+### Cron job (macOS)
+
+```bash
+cd infra/
+bash setup-cron.sh
+```
+
+Comandos útiles:
+
+```bash
+# Ver logs
+tail -f logs/nightly.log
+
+# Desactivar
+launchctl unload ~/Library/LaunchAgents/com.helpcenter.sync.plist
+```
+
+---
+
 ## Estructura del proyecto
 
 ```
@@ -245,14 +267,15 @@ config/
   change-to-article-map.yaml   Mapeo área → artículos
   user-facing-paths.yaml       Heurística de rutas user-facing
 infra/
-  com.helpcenter.sync.plist    Cron job macOS (launchd)
+  com.helpcenter.sync.plist    Cron job macOS (launchd) — ejecuta nightly.ts
   setup-cron.sh                Script de instalación del cron
 prompts/
   article-merge.md             Prompt para merge de contenido OLD + NEW
   images-to-article.md         Prompt para crear artículos desde screenshots
   prompt-optimizer.md          Prompt optimizer (metodología 4-D)
 src/
-  index.ts                     Entry point del Notion sync
+  nightly.ts                   Pipeline nocturno (changelog + sync en secuencia)
+  index.ts                     Notion sync (ejecutable standalone o desde nightly)
   notion.ts                    Cliente Notion + conversor Markdown → bloques
   version.ts                   Versionado basado en git
   changelog/
@@ -274,8 +297,9 @@ src/
 
 | Script | Comando | Descripción |
 |---|---|---|
-| `sync` | `npm run sync` | Sincroniza artículos a Notion |
-| `changelog` | `npm run changelog` | Ejecuta el pipeline de changelog |
+| `nightly` | `npm run nightly` | Pipeline nocturno completo (changelog + sync) |
+| `sync` | `npm run sync` | Sincroniza artículos a Notion (standalone) |
+| `changelog` | `npm run changelog` | Ejecuta el pipeline de changelog (standalone) |
 | `changelog:dry` | `npm run changelog:dry` | Pipeline en modo preview (sin escritura) |
 | `build` | `npm run build` | Compila TypeScript a `dist/` |
 | `start` | `npm start` | Ejecuta la versión compilada |
