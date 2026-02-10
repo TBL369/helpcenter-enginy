@@ -1,0 +1,50 @@
+---
+alwaysApply: true
+globs: src/**/*.ts
+---
+# TypeScript Quality — helpcenter
+
+## Configuración estricta
+
+- El proyecto usa `strict: true` en TypeScript (target ES2020, module commonjs).
+- Estas reglas aplican a todos los archivos en `src/`.
+
+## Tipos
+
+- **PROHIBIDO** usar `any` para silenciar errores de tipos.
+- Excepción tolerada: `as any` en los métodos de creación de bloques de Notion (`notion.ts`) donde el SDK de `@notionhq/client` tiene tipos internos incompatibles con `RichTextItem`. Si se actualiza el SDK y los tipos mejoran, eliminar los casts.
+- Si un tipo es realmente desconocido, usar `unknown` y hacer narrowing explícito.
+- Preferir `interface` para contratos públicos exportados (`NotionConfig`, `CreatePageResult`, `VersionInfo`, etc.).
+- Usar `type` para unions, intersecciones y tipos utilitarios internos.
+- Exportar las interfaces/types que otros módulos de `src/` necesiten consumir.
+
+## Funciones
+
+- Anotar tipos de retorno en funciones públicas y exportadas.
+- Funciones internas/helpers y métodos privados de clase pueden usar inferencia.
+- Preferir funciones puras cuando sea posible — especialmente en `version.ts`.
+- Las funciones que ejecutan comandos git (`execSync`) deben manejar siempre el caso de error.
+
+## Constantes
+
+- Para constantes de configuración, preferir `as const` assertions.
+- Valores hardcodeados como `BATCH_SIZE`, `ARTICLES_DIR` deben estar en constantes con nombre descriptivo al inicio del archivo.
+
+## Imports
+
+- Usar imports relativos dentro de `src/` (ej: `import { NotionClient } from './notion'`).
+- Imports de Node.js (`fs`, `path`, `child_process`) con `import * as mod from 'mod'` o `import { specific } from 'mod'`.
+- Imports de dependencias externas (`@notionhq/client`, `dotenv`) al inicio del archivo, antes de los imports locales.
+
+## Null safety
+
+- Preferir `undefined` sobre `null` para valores opcionales.
+- Usar optional chaining (`?.`) y nullish coalescing (`??`) en lugar de checks manuales.
+- Evitar non-null assertions (`!`) — si es necesario (ej: después de validar variables de entorno en `getConfig`), añadir un comentario explicando por qué es seguro.
+
+## Error handling
+
+- En `notion.ts`: capturar errores de la API de Notion, loguear contexto útil (título de página, operación) y re-lanzar.
+- En `version.ts`: los fallos de git deben retornar valores seguros por defecto (versión 0, `needsSync: true`) — nunca romper el flujo completo.
+- En `index.ts`: acumular errores por archivo en `SyncStats` y reportarlos al final. Usar `process.exit(1)` solo al terminar.
+- NUNCA silenciar errores con `catch {}` vacío. Siempre loguear o propagar.

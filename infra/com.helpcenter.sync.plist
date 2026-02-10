@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <!-- Identificador único del job -->
+  <key>Label</key>
+  <string>com.helpcenter.sync</string>
+
+  <!-- Comando a ejecutar -->
+  <key>ProgramArguments</key>
+  <array>
+    <string>/usr/local/bin/npx</string>
+    <string>ts-node</string>
+    <string>src/index.ts</string>
+  </array>
+
+  <!-- Directorio de trabajo (raíz del repo) -->
+  <key>WorkingDirectory</key>
+  <string>/Users/timbrandt/Desktop/articles</string>
+
+  <!-- Ejecutar todos los días a las 22:00 -->
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Hour</key>
+    <integer>22</integer>
+    <key>Minute</key>
+    <integer>0</integer>
+  </dict>
+
+  <!-- Logs de salida y error -->
+  <key>StandardOutPath</key>
+  <string>/Users/timbrandt/Desktop/articles/logs/sync.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/timbrandt/Desktop/articles/logs/sync-error.log</string>
+
+  <!-- Variables de entorno necesarias (PATH para que encuentre node, git, etc.) -->
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key>
+    <string>/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+  </dict>
+</dict>
+</plist>

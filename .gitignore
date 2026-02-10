@@ -1,4 +1,4 @@
-# OS files
+# OS
 .DS_Store
 Thumbs.db
 
@@ -6,3 +6,19 @@ Thumbs.db
 *.swp
 *.swo
 *~
+
+# Dependencies
+node_modules/
+
+# Build
+dist/
+
+# Env
+.env
+
+# Logs
+logs/
+*.log
+
+# Legacy reference PDFs (archived locally)
+legacy-pdfs/
