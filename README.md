@@ -24,15 +24,34 @@ cp .env.example .env
 
 ## Variables de entorno
 
-| Variable | Requerida por | Descripción |
+### Notion Sync
+
+| Variable | Requerida | Descripción |
 |---|---|---|
-| `NOTION_TOKEN` | Sync | Token de integración de Notion (`secret_xxx`) |
-| `NOTION_PARENT_PAGE_ID` | Sync | ID de la página padre en Notion |
-| `ARTICLES_PATH` | Ambos | Directorio de artículos (default: `articles`) |
-| `SAAS_REPO` | Changelog | Repo del SaaS en formato `owner/name` |
-| `OPENAI_API_KEY` | Changelog | API key de OpenAI o proveedor compatible |
-| `OPENAI_MODEL` | Changelog | Modelo LLM (default: `gpt-4o-mini`) |
-| `OPENAI_BASE_URL` | Changelog | Base URL alternativa para el API LLM (opcional) |
+| `NOTION_TOKEN` | Si | Token de integración de Notion (`secret_xxx`) |
+| `NOTION_PARENT_PAGE_ID` | Si | ID de la página padre en Notion |
+| `ARTICLES_PATH` | No | Directorio de artículos (default: `articles`) |
+
+### Changelog Pipeline
+
+| Variable | Requerida | Descripción |
+|---|---|---|
+| `SAAS_REPO` | Si | Repo del SaaS en formato `owner/name` |
+| `LLM_PROVIDER` | No | Proveedor LLM: `openai`, `anthropic`, `ollama` (default: `openai`) |
+
+### Variables por proveedor LLM
+
+Solo se leen las variables del proveedor seleccionado en `LLM_PROVIDER`.
+
+| Variable | Proveedor | Descripción |
+|---|---|---|
+| `OPENAI_API_KEY` | openai | API key de OpenAI |
+| `OPENAI_MODEL` | openai | Modelo (default: `gpt-4o-mini`) |
+| `OPENAI_BASE_URL` | openai | Base URL alternativa (opcional) |
+| `ANTHROPIC_API_KEY` | anthropic | API key de Anthropic |
+| `ANTHROPIC_MODEL` | anthropic | Modelo (default: `claude-sonnet-4-20250514`) |
+| `OLLAMA_MODEL` | ollama | Modelo (default: `llama3`) |
+| `OLLAMA_BASE_URL` | ollama | Base URL (default: `http://localhost:11434/v1`) |
 
 ---
 
@@ -186,21 +205,35 @@ El pipeline persiste su estado en `.last-sync-state` (JSON, ignorado por git). C
 
 Si el pipeline corre dos veces seguidas, no duplica trabajo.
 
-### Proveedores LLM alternativos
+### Proveedores LLM
 
-El cliente LLM es compatible con cualquier API que siga el formato OpenAI. Para usar otro proveedor:
+El pipeline soporta tres proveedores de forma nativa. Se selecciona con `LLM_PROVIDER`:
+
+**OpenAI** (default):
 
 ```bash
-# Anthropic (via proxy compatible)
-OPENAI_BASE_URL=https://api.anthropic.com/v1
-OPENAI_API_KEY=sk-ant-xxx
-OPENAI_MODEL=claude-sonnet-4-20250514
-
-# Ollama local
-OPENAI_BASE_URL=http://localhost:11434/v1
-OPENAI_API_KEY=ollama
-OPENAI_MODEL=llama3
+LLM_PROVIDER=openai
+OPENAI_API_KEY=sk-xxx
+OPENAI_MODEL=gpt-4o-mini          # o gpt-4o para máxima calidad
 ```
+
+**Anthropic**:
+
+```bash
+LLM_PROVIDER=anthropic
+ANTHROPIC_API_KEY=sk-ant-xxx
+ANTHROPIC_MODEL=claude-sonnet-4-20250514   # o claude-opus-4-20250514
+```
+
+**Ollama** (local, sin API key):
+
+```bash
+LLM_PROVIDER=ollama
+OLLAMA_MODEL=llama3
+OLLAMA_BASE_URL=http://localhost:11434/v1  # default
+```
+
+Cada proveedor tiene su propia implementación nativa (SDK de OpenAI, SDK de Anthropic, API compatible OpenAI para Ollama). El resto del pipeline es agnóstico al proveedor.
 
 ---
 
@@ -228,7 +261,7 @@ src/
     state.ts                   Persistencia del estado
     fetch-prs.ts               Fetch de PRs via gh CLI
     pre-filter.ts              Etapa 1: filtro determinista
-    llm.ts                     Cliente LLM (OpenAI-compatible)
+    llm.ts                     Cliente LLM multi-proveedor (OpenAI, Anthropic, Ollama)
     classifier.ts              Etapa 2: clasificación LLM
     mapper.ts                  Etapa 3a: mapeo área → artículo
     brief-generator.ts         Etapa 3b: generación de change briefs

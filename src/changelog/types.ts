@@ -73,18 +73,25 @@ export interface SyncState {
   processedPrs: number[];  // PRs procesadas en el último run
 }
 
+/** Proveedor LLM soportado */
+export type LLMProvider = 'openai' | 'anthropic' | 'ollama';
+
+/** Configuración específica del proveedor LLM */
+export interface LLMConfig {
+  provider: LLMProvider;
+  apiKey: string;
+  model: string;
+  baseUrl?: string;
+}
+
 /** Configuración del pipeline de changelog */
 export interface ChangelogConfig {
   /** Repo del SaaS en formato owner/name (ej: "acme/enginy") */
   saasRepo: string;
   /** Ruta absoluta al directorio de artículos */
   articlesPath: string;
-  /** API key de OpenAI (o proveedor compatible) */
-  openaiApiKey: string;
-  /** Modelo a usar para clasificación y briefs */
-  openaiModel: string;
-  /** Base URL del API LLM (opcional, para proveedores alternativos) */
-  openaiBaseUrl?: string;
+  /** Configuración del proveedor LLM */
+  llm: LLMConfig;
   /** Modo dry-run: solo reporta, no escribe cambios */
   dryRun: boolean;
   /** Ruta al fichero de estado */
