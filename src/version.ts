@@ -49,7 +49,7 @@ function toLegacyName(kebabName: string): string {
  * @param repoRoot - Ruta raíz del repositorio
  * @returns Número de versión más alto encontrado, o 0 si no hay commits previos
  */
-export function getLastVersion(kebabName: string, repoRoot: string): { version: number; commitHash: string | null } {
+export function getLastVersion(kebabName: string, repoRoot: string): { version: number; commitHash: string | undefined } {
   const displayName = toDisplayName(kebabName);
   const legacyName = toLegacyName(kebabName);
 
@@ -60,7 +60,7 @@ export function getLastVersion(kebabName: string, repoRoot: string): { version: 
   }
 
   let maxVersion = 0;
-  let latestHash: string | null = null;
+  let latestHash: string | undefined;
 
   for (const name of searchNames) {
     try {
@@ -86,8 +86,8 @@ export function getLastVersion(kebabName: string, repoRoot: string): { version: 
           }
         }
       }
-    } catch {
-      // Si git falla, continuar con el siguiente nombre
+    } catch (error) {
+      console.warn(`[version] git log falló para "${name}":`, error instanceof Error ? error.message : error);
     }
   }
 
@@ -109,7 +109,8 @@ export function hasChangedSince(filePath: string, commitHash: string, repoRoot: 
     ).trim();
 
     return result.length > 0;
-  } catch {
+  } catch (error) {
+    console.warn(`[version] git diff falló para "${filePath}":`, error instanceof Error ? error.message : error);
     // Si falla, asumir que sí cambió (para no perder syncs)
     return true;
   }
@@ -152,8 +153,13 @@ export function commitVersion(kebabName: string, version: number, filePath: stri
   const displayName = toDisplayName(kebabName);
   const message = `docs: ${displayName} v${version}`;
 
-  execSync(`git add "${filePath}"`, { cwd: repoRoot, encoding: 'utf-8' });
-  execSync(`git commit -m "${message}"`, { cwd: repoRoot, encoding: 'utf-8' });
+  try {
+    execSync(`git add "${filePath}"`, { cwd: repoRoot, encoding: 'utf-8' });
+    execSync(`git commit -m "${message}"`, { cwd: repoRoot, encoding: 'utf-8' });
+  } catch (error) {
+    console.error(`[version] Error al commitear versión para "${displayName}":`, error instanceof Error ? error.message : error);
+    throw error;
+  }
 }
 
 /**

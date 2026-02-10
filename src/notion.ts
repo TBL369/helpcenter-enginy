@@ -1,6 +1,9 @@
 import { Client } from '@notionhq/client';
 import { BlockObjectRequest } from '@notionhq/client/build/src/api-endpoints';
 
+/** Notion limita a 100 bloques por llamada a la API */
+const BATCH_SIZE = 100;
+
 export interface NotionConfig {
   token: string;
   parentPageId: string;
@@ -53,8 +56,6 @@ export class NotionClient {
       // Convertir el contenido a bloques de Notion
       const blocks = this.convertContentToBlocks(markdownContent);
 
-      // Notion tiene un límite de 100 bloques por llamada a la API
-      const BATCH_SIZE = 100;
       const firstBatch = blocks.slice(0, BATCH_SIZE);
       const remainingBatches: BlockObjectRequest[][] = [];
 
