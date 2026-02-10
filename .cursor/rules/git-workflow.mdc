@@ -1,0 +1,133 @@
+---
+description: Convenciones de Git, branching, commits y PRs para mejoras de este helpcenterer
+alwaysApply: true
+---
+
+# Git Workflow — Helpcenter
+
+## Inicio de sesión
+
+Al comenzar cualquier tarea que implique cambios de código:
+
+1. Verificar que `main` está actualizado: `git checkout main && git pull`
+2. Detectar el próximo número de PR de GitHub:
+   ```bash
+   LAST_PR=$(gh pr list --state all --limit 1 --json number --jq '.[0].number // 0')
+   LAST_ISSUE=$(gh issue list --state all --limit 1 --json number --jq '.[0].number // 0')
+   # Próximo N = max(LAST_PR, LAST_ISSUE) + 1
+   ```
+3. Si al crear la PR el número asignado por GitHub no coincide, ajustar el commit con amend antes del merge.
+
+---
+
+## Ramas
+
+El prefijo de la rama coincide con el tipo del commit de la PR:
+
+- `feature/pr-{N}-{slug}` → para `feat`
+- `fix/pr-{N}-{slug}` → para `fix`
+- `refactor/pr-{N}-{slug}` → para `refactor`
+- `perf/pr-{N}-{slug}` → para `perf`
+
+Reglas:
+- Siempre desde `main` actualizado
+- `slug` en kebab-case, corto y descriptivo
+- Ejemplos: `feature/pr-42-capacity-slots`, `fix/pr-43-auth-crash`
+
+---
+
+## Commits de PR (el commit final que se mergea a main)
+
+**Título:**
+```
+type: PR #N - Descripción concisa
+```
+
+Tipos permitidos: `feat`, `fix`, `refactor`, `perf`
+
+**Body** (obligatorio, después de línea en blanco):
+- Bullet points con lo implementado/cambiado
+- Archivos o módulos principales afectados
+- Decisiones de diseño relevantes
+- Conciso pero sin omitir nada relevante
+- En español
+
+**Ejemplo:**
+```
+feat: PR #42 - Capacity overhaul con slots dinámicos
+
+- Rediseñar CapacityService para usar slots de 30min
+- Nuevo endpoint PATCH /v1/capacity/:userId/slots
+- Migrar working_hours a formato slot-based en Prisma
+- Actualizar CapacityView con editor visual de slots
+- Ajustar scheduler-engine para consumir nuevo formato
+```
+
+## Commits intermedios (durante desarrollo en rama)
+
+- Deben seguir formato conventional commits (validado automáticamente por commitlint + lefthook)
+- Usar `chore: descripción breve` como tipo comodín para checkpoints rápidos
+- Otros tipos válidos: `feat`, `fix`, `refactor`, `chore`, `test`, `style`
+- Scope opcional: `chore(web): wip sidebar layout`
+- Body no necesario
+- Solo el commit final importa para el historial de main
+
+---
+
+## Commits directos a main (sin PR)
+
+Para cambios menores que no ameritan PR.
+
+**Formato:** `type(scope): descripción en minúsculas`
+
+Tipos: `chore`, `docs`, `ci`, `build`, `style`
+
+Scopes comunes: `api`, `web`, `worker`, `mobile`, `deps`, `prisma`, `engine`
+
+Sin scope cuando el cambio es transversal:
+```
+chore: add responsive-design skill to .agents
+docs: add AGENTS.md for AI skill routing
+```
+
+Con scope cuando es específico:
+```
+chore(deps): update prisma to 5.x
+ci: add staging deploy workflow
+```
+
+Body opcional, solo si el cambio necesita contexto adicional.
+
+---
+
+## Edge cases
+
+- **Breaking changes**: `feat!: PR #N - Desc` + `BREAKING CHANGE: ...` en body
+- **Reverts**: `revert: revertir PR #N (razón breve)`
+- **Tipo dominante**: si un PR es 60% feat + 40% refactor → usar `feat`
+- **Migraciones DB**: incluir en el PR que las motiva, mencionar en body
+- **Solo renombrar/mover**: `refactor: PR #N - Desc`
+- **Fix durante review**: commit intermedio con formato conventional (`chore:`, `fix:`, etc.), no nuevo PR
+- **Dependencias**: `chore(deps): desc` directo a main si trivial; PR si es upgrade mayor
+
+---
+
+## Flujo completo
+
+```
+1. git checkout main && git pull
+2. Detectar próximo N con gh CLI
+3. git checkout -b {type}/pr-{N}-{slug}
+4. Desarrollar (commits con formato conventional: `chore: desc`, `fix: desc`, etc.)
+5. Commit final: type: PR #N - Desc + body detallado
+6. Auditoría focalizada de docs (ver abajo)
+7. git push -u origin {type}/pr-{N}-{slug}
+8. Crear PR en GitHub (verificar que N coincide)
+9. Merge de la PR a main (gh pr merge --merge)
+10. git checkout main && git pull (dejar main actualizado para la siguiente tarea)
+11. Eliminar la rama local y remota: git branch -d {rama} && git push origin --delete {rama}
+```
+
+### Paso 6 — Auditoría focalizada de docs
+
+Antes de push, verificar si los cambios del PR afectan documentación existente. Consultar la tabla de mapeo código→doc en `.agents/skills/docs-audit/references/focused-audit.md` (sección "Identificar scope"). Si hay docs afectados, aplicar el proceso de auditoría focalizada (3 pasos) y incluir las actualizaciones de docs en el mismo PR.
