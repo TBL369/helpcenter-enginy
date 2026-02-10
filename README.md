@@ -62,8 +62,12 @@ Sincroniza los artículos Markdown del directorio `articles/` a páginas en Noti
 ### Uso
 
 ```bash
-# Ejecutar sync manualmente
+# Sync de todos los artículos
 npm run sync
+
+# Sync selectivo por nombre de archivo (acepta con o sin .md)
+npm run sync -- inbox settings
+npm run sync -- ai-finder.md
 
 # Compilar y ejecutar desde dist/
 npm run build
@@ -72,18 +76,39 @@ npm start
 
 ### Cómo funciona
 
-1. Escanea `articles/` buscando ficheros `.md`.
+1. Escanea `articles/` buscando ficheros `.md` (o filtra por los nombres pasados como argumentos CLI).
 2. Para cada artículo, consulta el historial de git para detectar si ha cambiado desde el último sync.
-3. Si hay cambios, convierte el Markdown a bloques de Notion y crea una nueva página versionada.
-4. Registra la versión con un commit: `docs: NombreArtículo vN`.
+3. Si hay cambios, registra la fecha de sync en la página padre de Notion (`Sync - DD/MM/YYYY`).
+4. Convierte el Markdown a bloques de Notion y crea una nueva página versionada.
+5. Registra la versión con un commit: `docs: NombreArtículo vN` (solo si el `.md` tiene cambios reales).
+6. Agrega un divisor visual en la página padre para separar bloques de sync cronológicamente.
+
+### Formato Markdown soportado
+
+El conversor de Markdown a Notion soporta:
+
+| Elemento | Markdown | Notion |
+|---|---|---|
+| Headings H1–H3 | `# H1`, `## H2`, `### H3` | heading_1, heading_2, heading_3 |
+| Heading H4 | `#### H4` | Párrafo en negrita (Notion no soporta H4) |
+| Tablas | `\| col \| col \|` | Bloque table con header |
+| Listas anidadas | Indentación con 2 espacios | bulleted_list_item con children |
+| Listas numeradas | `1. Item` | numbered_list_item |
+| Checkboxes | `- [ ] Item` / `- [x] Item` | to_do |
+| Código | `` ``` lang `` | Bloque code |
+| Citas | `> texto` | quote / callout |
+| Formato inline | `**bold**`, `*italic*`, `` `code` ``, `[link](url)` | rich_text con annotations |
+| Divisores | `---` | divider |
+
+Los anchor links (`#section`) se convierten en texto plano (Notion no soporta navegación por anchors).
 
 ### Versionado
 
-El sistema usa commits de git como mecanismo de versionado. Cada sync exitoso genera un commit con formato `docs: Display Name vN`. En el siguiente run, compara el estado actual del fichero contra ese commit para decidir si necesita re-sincronizar.
+El sistema usa commits de git como mecanismo de versionado. Cada sync exitoso genera un commit con formato `docs: Display Name vN` (solo si el fichero `.md` tiene cambios reales respecto al último sync). En el siguiente run, compara el estado actual del fichero contra ese commit para decidir si necesita re-sincronizar. Si el artículo no cambió, se sincroniza a Notion pero no se incrementa la versión.
 
 ### Ejecución manual
 
-El sync se puede ejecutar de forma independiente con `npm run sync`. Sin embargo, en el flujo nocturno se ejecuta automáticamente tras el changelog pipeline (ver sección Pipeline nocturno).
+El sync se puede ejecutar de forma independiente con `npm run sync` (todos los artículos) o `npm run sync -- nombre1 nombre2` (selectivo). En el flujo nocturno se ejecuta automáticamente tras el changelog pipeline (ver sección Pipeline nocturno).
 
 ---
 
@@ -298,7 +323,7 @@ src/
 | Script | Comando | Descripción |
 |---|---|---|
 | `nightly` | `npm run nightly` | Pipeline nocturno completo (changelog + sync) |
-| `sync` | `npm run sync` | Sincroniza artículos a Notion (standalone) |
+| `sync` | `npm run sync [-- archivo1 archivo2]` | Sincroniza artículos a Notion (todos o selectivo) |
 | `changelog` | `npm run changelog` | Ejecuta el pipeline de changelog (standalone) |
 | `changelog:dry` | `npm run changelog:dry` | Pipeline en modo preview (sin escritura) |
 | `build` | `npm run build` | Compila TypeScript a `dist/` |

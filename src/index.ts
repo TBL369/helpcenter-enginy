@@ -2,7 +2,7 @@ import * as dotenv from 'dotenv';
 import * as fs from 'fs';
 import * as path from 'path';
 import { NotionClient } from './notion';
-import { getNextVersion, commitVersion, toDisplayName } from './version';
+import { VersionInfo, getNextVersion, commitVersion, toDisplayName } from './version';
 
 // Cargar variables de entorno desde .env en la raíz del repo
 dotenv.config();
@@ -91,7 +91,16 @@ interface SyncStats {
   errors: Array<{ file: string; error: string }>;
 }
 
-async function main(): Promise<void> {
+/** Info de un artículo pendiente de sync (resultado del preflight) */
+interface SyncCandidate {
+  fileName: string;
+  kebabName: string;
+  displayName: string;
+  versionInfo: VersionInfo;
+  gitRelativePath: string;
+}
+
+async function main(fileFilter?: string[]): Promise<void> {
   const timestamp = new Date().toLocaleString('es-ES', { timeZone: 'Europe/Madrid' });
   console.log(`\n[helpcenter] Iniciando sincronización — ${timestamp}`);
   console.log('─'.repeat(60));
@@ -103,8 +112,15 @@ async function main(): Promise<void> {
     parentPageId: config.notionParentPageId,
   });
 
-  // 2. Listar archivos .md
-  const files = getArticleFiles(config.articlesPath);
+  // 2. Listar archivos .md (con filtro opcional)
+  let files = getArticleFiles(config.articlesPath);
+
+  if (fileFilter && fileFilter.length > 0) {
+    const normalizedFilter = fileFilter.map(f => f.replace(/\.md$/, ''));
+    files = files.filter(f => normalizedFilter.includes(articleNameFromFile(f)));
+    console.log(`[helpcenter] Filtro activo: ${normalizedFilter.join(', ')}`);
+  }
+
   console.log(`[helpcenter] Encontrados ${files.length} archivos .md en ${ARTICLES_DIR}/`);
 
   if (files.length === 0) {
@@ -112,20 +128,17 @@ async function main(): Promise<void> {
     return;
   }
 
-  // 3. Procesar cada archivo
+  // 3. Preflight: detectar qué archivos necesitan sync
   const stats: SyncStats = { total: files.length, synced: 0, skipped: 0, failed: 0, errors: [] };
-
-  // Ruta relativa del directorio de artículos para los comandos git
   const gitArticlesPrefix = ARTICLES_DIR;
+  const toSync: SyncCandidate[] = [];
 
   for (const fileName of files) {
     const kebabName = articleNameFromFile(fileName);
     const displayName = toDisplayName(kebabName);
-    // Path relativo al repo root para git (ej: "articles/ai-finder.md")
     const gitRelativePath = path.join(gitArticlesPrefix, fileName);
 
     try {
-      // Detectar versión (usa kebabName para buscar en git history)
       const versionInfo = getNextVersion(kebabName, gitRelativePath, config.repoRoot);
 
       if (!versionInfo.needsSync) {
@@ -134,11 +147,36 @@ async function main(): Promise<void> {
         continue;
       }
 
-      const versionLabel = `${displayName} v${versionInfo.version}`;
-      process.stdout.write(`  [sync] ${versionLabel}...`);
+      toSync.push({ fileName, kebabName, displayName, versionInfo, gitRelativePath });
+    } catch (error) {
+      const msg = error instanceof Error ? error.message : String(error);
+      stats.failed++;
+      stats.errors.push({ file: fileName, error: msg });
+    }
+  }
 
-      // Leer contenido
-      const content = readArticle(config.articlesPath, fileName);
+  // 4. Sync header en la página padre (solo si hay algo que sincronizar)
+  if (toSync.length > 0) {
+    const syncDate = new Date().toLocaleDateString('es-ES', {
+      day: '2-digit', month: '2-digit', year: 'numeric',
+    });
+    try {
+      await notionClient.appendBlocksToPage(
+        config.notionParentPageId,
+        notionClient.buildSyncHeaderBlocks(`Sync - ${syncDate}`),
+      );
+    } catch (error) {
+      console.warn('[helpcenter] No se pudo agregar header de sync:', error instanceof Error ? error.message : error);
+    }
+  }
+
+  // 5. Sync loop: crear páginas en Notion
+  for (const item of toSync) {
+    const versionLabel = `${item.displayName} v${item.versionInfo.version}`;
+    process.stdout.write(`  [sync] ${versionLabel}...`);
+
+    try {
+      const content = readArticle(config.articlesPath, item.fileName);
 
       if (!content.trim()) {
         console.log(' vacío, omitiendo.');
@@ -146,12 +184,10 @@ async function main(): Promise<void> {
         continue;
       }
 
-      // Crear página en Notion
       const page = await notionClient.createPage(versionLabel, content);
       console.log(` ok → ${page.url}`);
 
-      // Commit de versionado (usa kebabName, internamente convierte a displayName)
-      commitVersion(kebabName, versionInfo.version, gitRelativePath, config.repoRoot);
+      commitVersion(item.kebabName, item.versionInfo.version, item.gitRelativePath, config.repoRoot);
 
       stats.synced++;
 
@@ -161,11 +197,23 @@ async function main(): Promise<void> {
       console.log(' error');
       const msg = error instanceof Error ? error.message : String(error);
       stats.failed++;
-      stats.errors.push({ file: fileName, error: msg });
+      stats.errors.push({ file: item.fileName, error: msg });
     }
   }
 
-  // 4. Resumen
+  // 6. Sync footer en la página padre (solo si se sincronizó al menos 1)
+  if (stats.synced > 0) {
+    try {
+      await notionClient.appendBlocksToPage(
+        config.notionParentPageId,
+        notionClient.buildSyncFooterBlocks(),
+      );
+    } catch (error) {
+      console.warn('[helpcenter] No se pudo agregar footer de sync:', error instanceof Error ? error.message : error);
+    }
+  }
+
+  // 7. Resumen
   console.log('\n' + '─'.repeat(60));
   console.log('[helpcenter] Resumen:');
   console.log(`  Total:       ${stats.total}`);
@@ -182,7 +230,6 @@ async function main(): Promise<void> {
 
   console.log('─'.repeat(60) + '\n');
 
-  // Lanzar error si hubo fallos (para que el llamador pueda capturarlo)
   if (stats.failed > 0) {
     throw new Error(`${stats.failed} artículo(s) fallaron durante el sync`);
   }
@@ -193,7 +240,8 @@ export { main as runNotionSync };
 
 // Auto-ejecución solo cuando se ejecuta directamente (npm run sync)
 if (require.main === module) {
-  main().catch(error => {
+  const fileFilter = process.argv.slice(2).filter(arg => !arg.startsWith('--'));
+  main(fileFilter.length > 0 ? fileFilter : undefined).catch(error => {
     console.error('[helpcenter] Error fatal:', error);
     process.exit(1);
   });

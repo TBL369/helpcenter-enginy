@@ -144,6 +144,8 @@ export function getNextVersion(kebabName: string, filePath: string, repoRoot: st
 
 /**
  * Crea un commit con el formato de versionado: "docs: DisplayName vN"
+ * Solo commitea si el archivo tiene cambios reales staged. Si no hay diffs
+ * (ej: re-sync sin cambios en el .md), skipea el commit silenciosamente.
  * @param kebabName - Nombre del artículo en kebab-case
  * @param version - Número de versión
  * @param filePath - Ruta relativa del archivo
@@ -155,6 +157,17 @@ export function commitVersion(kebabName: string, version: number, filePath: stri
 
   try {
     execSync(`git add "${filePath}"`, { cwd: repoRoot, encoding: 'utf-8' });
+
+    // Verificar si hay cambios staged; git diff --cached --quiet sale con code 1 si hay diffs
+    try {
+      execSync('git diff --cached --quiet', { cwd: repoRoot, encoding: 'utf-8' });
+      // Si no lanza error, no hay cambios — skipear commit
+      console.log(`[version] ${displayName} v${version} — sin cambios en archivo, commit omitido`);
+      return;
+    } catch {
+      // exit code 1 = hay diffs staged — proceder con commit
+    }
+
     execSync(`git commit -m "${message}"`, { cwd: repoRoot, encoding: 'utf-8' });
   } catch (error) {
     console.error(`[version] Error al commitear versión para "${displayName}":`, error instanceof Error ? error.message : error);

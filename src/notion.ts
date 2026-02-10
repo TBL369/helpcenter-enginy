@@ -106,6 +106,33 @@ export class NotionClient {
   }
 
   /**
+   * Agrega bloques al final de una página existente en Notion.
+   * Se usa para construir el log visual de sync en la página padre.
+   */
+  async appendBlocksToPage(pageId: string, blocks: BlockObjectRequest[]): Promise<void> {
+    try {
+      await this.client.blocks.children.append({
+        block_id: pageId,
+        children: blocks,
+      });
+    } catch (error) {
+      console.error('❌ Error al agregar bloques a la página:', error);
+      throw error;
+    }
+  }
+
+  /**
+   * Crea bloques utilitarios para el log de sync (accesibles desde index.ts)
+   */
+  buildSyncHeaderBlocks(dateLabel: string): BlockObjectRequest[] {
+    return [this.createParagraphBlock(`*${dateLabel}*`)];
+  }
+
+  buildSyncFooterBlocks(): BlockObjectRequest[] {
+    return [this.createDividerBlock(), this.createParagraphBlock(' ')];
+  }
+
+  /**
    * Parsea texto con formato markdown inline y lo convierte a rich_text de Notion
    * Soporta: **negrita**, *cursiva*, ~~tachado~~, `código`, __subrayado__, [enlaces](url)
    * También soporta combinaciones como ***negrita cursiva***
@@ -200,11 +227,13 @@ export class NotionClient {
       }
 
       // Agregar el token formateado
+      // Notion requiere URLs absolutas con protocolo; descartar anchors (#) y rutas relativas
+      const validUrl = token.link && /^https?:\/\//.test(token.link) ? token.link : undefined;
       const item: RichTextItem = {
         type: 'text',
         text: { 
           content: this.truncateText(token.content),
-          link: token.link ? { url: token.link } : null,
+          link: validUrl ? { url: validUrl } : null,
         },
       };
 
@@ -312,6 +341,15 @@ export class NotionClient {
         continue;
       }
 
+      // Encabezado H4 — Notion no soporta H4; renderizar como párrafo en negrita
+      if (trimmedLine.startsWith('#### ')) {
+        flushParagraph();
+        const h4Text = trimmedLine.substring(5);
+        blocks.push(this.createParagraphBlock(`**${h4Text}**`));
+        i++;
+        continue;
+      }
+
       // Encabezado H3
       if (trimmedLine.startsWith('### ')) {
         flushParagraph();
@@ -320,30 +358,12 @@ export class NotionClient {
         continue;
       }
 
-      // Lista con viñetas (- o *)
-      if (/^[-*]\s/.test(trimmedLine)) {
+      // Listas (bulleted, numbered, checkbox) — con soporte para anidamiento
+      if (/^[-*]\s/.test(trimmedLine) || /^\d+\.\s/.test(trimmedLine)) {
         flushParagraph();
-        blocks.push(this.createBulletedListBlock(trimmedLine.substring(2)));
-        i++;
-        continue;
-      }
-
-      // Lista numerada (1. 2. etc.)
-      if (/^\d+\.\s/.test(trimmedLine)) {
-        flushParagraph();
-        const listContent = trimmedLine.replace(/^\d+\.\s/, '');
-        blocks.push(this.createNumberedListBlock(listContent));
-        i++;
-        continue;
-      }
-
-      // Checkbox / Todo (- [ ] o - [x])
-      if (/^[-*]\s\[([ xX])\]\s/.test(trimmedLine)) {
-        flushParagraph();
-        const checked = /^[-*]\s\[[xX]\]/.test(trimmedLine);
-        const todoContent = trimmedLine.replace(/^[-*]\s\[[ xX]\]\s/, '');
-        blocks.push(this.createTodoBlock(todoContent, checked));
-        i++;
+        const { blocks: listBlocks, endIndex } = this.parseNestedListItems(lines, i);
+        blocks.push(...listBlocks);
+        i = endIndex;
         continue;
       }
 
@@ -361,6 +381,25 @@ export class NotionClient {
         const calloutContent = trimmedLine.substring(2);
         blocks.push(this.createCalloutBlock(calloutContent));
         i++;
+        continue;
+      }
+
+      // Tabla markdown (líneas que empiezan con |)
+      if (trimmedLine.startsWith('|')) {
+        flushParagraph();
+        const tableLines: string[] = [trimmedLine];
+        i++;
+        while (i < lines.length && lines[i].trim().startsWith('|')) {
+          tableLines.push(lines[i].trim());
+          i++;
+        }
+        // Parsear filas, descartando separador (|---|---|)
+        const rows = tableLines
+          .filter(line => !/^\|[\s\-:|]+\|$/.test(line))
+          .map(line => line.split('|').slice(1, -1));
+        if (rows.length > 0) {
+          blocks.push(this.createTableBlock(rows));
+        }
         continue;
       }
 
@@ -558,5 +597,110 @@ export class NotionClient {
       type: 'divider',
       divider: {},
     };
+  }
+
+  // ============================================
+  // HELPERS PARA LISTAS ANIDADAS
+  // ============================================
+
+  /** Cuenta los espacios iniciales de una línea para determinar nivel de indentación */
+  private getIndentLevel(line: string): number {
+    const match = line.match(/^(\s*)/);
+    return match ? match[1].length : 0;
+  }
+
+  /**
+   * Parsea un bloque de items de lista consecutivos con soporte para anidamiento.
+   * Consume todas las líneas de lista a partir de startIndex y devuelve los bloques
+   * de nivel superior junto con el índice donde se detuvo.
+   */
+  private parseNestedListItems(lines: string[], startIndex: number): { blocks: BlockObjectRequest[]; endIndex: number } {
+    const baseIndent = this.getIndentLevel(lines[startIndex]);
+    return this.parseListAtLevel(lines, startIndex, baseIndent);
+  }
+
+  /**
+   * Parsea items de lista en un nivel de indentación específico.
+   * Los items con mayor indentación se convierten en children del item anterior.
+   */
+  private parseListAtLevel(lines: string[], startIndex: number, levelIndent: number): { blocks: BlockObjectRequest[]; endIndex: number } {
+    const blocks: BlockObjectRequest[] = [];
+    let i = startIndex;
+
+    while (i < lines.length) {
+      const line = lines[i];
+      const trimmed = line.trim();
+      const indent = this.getIndentLevel(line);
+
+      // Línea vacía o menor indentación: salir de este nivel
+      if (trimmed === '' || indent < levelIndent) break;
+
+      // Mayor indentación: debería haber sido consumido como children (safety break)
+      if (indent > levelIndent) break;
+
+      // Detectar tipo de item de lista
+      const isCheckbox = /^[-*]\s\[([ xX])\]\s/.test(trimmed);
+      const isBullet = /^[-*]\s/.test(trimmed);
+      const isNumbered = /^\d+\.\s/.test(trimmed);
+
+      if (!isCheckbox && !isBullet && !isNumbered) break;
+
+      // Crear el bloque según el tipo
+      let block: BlockObjectRequest;
+      if (isCheckbox) {
+        const checked = /^[-*]\s\[[xX]\]/.test(trimmed);
+        const content = trimmed.replace(/^[-*]\s\[[ xX]\]\s/, '');
+        block = this.createTodoBlock(content, checked);
+      } else if (isBullet) {
+        block = this.createBulletedListBlock(trimmed.substring(2));
+      } else {
+        const content = trimmed.replace(/^\d+\.\s/, '');
+        block = this.createNumberedListBlock(content);
+      }
+
+      i++;
+
+      // Lookahead: si la siguiente línea tiene mayor indentación y es un item de lista, parsear children
+      if (i < lines.length) {
+        const nextIndent = this.getIndentLevel(lines[i]);
+        const nextTrimmed = lines[i].trim();
+        const nextIsList = /^[-*]\s/.test(nextTrimmed) || /^\d+\.\s/.test(nextTrimmed);
+
+        if (nextIndent > levelIndent && nextIsList) {
+          const { blocks: children, endIndex } = this.parseListAtLevel(lines, i, nextIndent);
+          if (children.length > 0) {
+            // Inyectar children en el bloque — usar as any por incompatibilidad del SDK
+            const blockType = isCheckbox ? 'to_do' : isBullet ? 'bulleted_list_item' : 'numbered_list_item';
+            (block as any)[blockType].children = children;
+          }
+          i = endIndex;
+        }
+      }
+
+      blocks.push(block);
+    }
+
+    return { blocks, endIndex: i };
+  }
+
+  private createTableBlock(rows: string[][]): BlockObjectRequest {
+    const tableWidth = rows[0]?.length ?? 1;
+    const tableRows = rows.map(row => ({
+      type: 'table_row' as const,
+      table_row: {
+        cells: row.map(cell => this.parseInlineMarkdown(cell.trim()) as any[]),
+      },
+    }));
+
+    return {
+      object: 'block',
+      type: 'table',
+      table: {
+        table_width: tableWidth,
+        has_column_header: true,
+        has_row_header: false,
+        children: tableRows,
+      },
+    } as any;
   }
 }
