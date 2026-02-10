@@ -30,9 +30,9 @@ function getConfig(): Config {
   if (!notionParentPageId) missing.push('NOTION_PARENT_PAGE_ID');
 
   if (missing.length > 0) {
-    console.error(`[helpcenter] Faltan variables de entorno: ${missing.join(', ')}`);
-    console.error('Copia .env.example a .env y completa los valores.');
-    process.exit(1);
+    throw new Error(
+      `Faltan variables de entorno: ${missing.join(', ')}. Copia .env.example a .env y completa los valores.`
+    );
   }
 
   const repoRoot = process.cwd();
@@ -182,13 +182,19 @@ async function main(): Promise<void> {
 
   console.log('─'.repeat(60) + '\n');
 
-  // Exit code no-cero si hubo errores
+  // Lanzar error si hubo fallos (para que el llamador pueda capturarlo)
   if (stats.failed > 0) {
-    process.exit(1);
+    throw new Error(`${stats.failed} artículo(s) fallaron durante el sync`);
   }
 }
 
-main().catch(error => {
-  console.error('[helpcenter] Error fatal:', error);
-  process.exit(1);
-});
+// Exportar para uso programático (desde nightly.ts)
+export { main as runNotionSync };
+
+// Auto-ejecución solo cuando se ejecuta directamente (npm run sync)
+if (require.main === module) {
+  main().catch(error => {
+    console.error('[helpcenter] Error fatal:', error);
+    process.exit(1);
+  });
+}

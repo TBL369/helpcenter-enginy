@@ -24,9 +24,7 @@ const VALID_PROVIDERS = ['openai', 'anthropic', 'ollama'] as const;
 function getConfig(): ChangelogConfig {
   const saasRepo = process.env.SAAS_REPO;
   if (!saasRepo) {
-    console.error('[changelog] Falta variable de entorno: SAAS_REPO');
-    console.error('Copia .env.example a .env y completa los valores.');
-    process.exit(1);
+    throw new Error('Falta variable de entorno: SAAS_REPO. Copia .env.example a .env y completa los valores.');
   }
 
   const llm = getLLMConfig();
@@ -53,8 +51,7 @@ function getLLMConfig(): LLMConfig {
   const rawProvider = (process.env.LLM_PROVIDER ?? 'openai').toLowerCase();
 
   if (!VALID_PROVIDERS.includes(rawProvider as LLMProvider)) {
-    console.error(`[changelog] LLM_PROVIDER inválido: "${rawProvider}". Opciones: ${VALID_PROVIDERS.join(', ')}`);
-    process.exit(1);
+    throw new Error(`LLM_PROVIDER inválido: "${rawProvider}". Opciones: ${VALID_PROVIDERS.join(', ')}`);
   }
 
   const provider = rawProvider as LLMProvider;
@@ -63,8 +60,7 @@ function getLLMConfig(): LLMConfig {
     case 'anthropic': {
       const apiKey = process.env.ANTHROPIC_API_KEY;
       if (!apiKey) {
-        console.error('[changelog] Falta ANTHROPIC_API_KEY (requerida para LLM_PROVIDER=anthropic)');
-        process.exit(1);
+        throw new Error('Falta ANTHROPIC_API_KEY (requerida para LLM_PROVIDER=anthropic)');
       }
       return {
         provider,
@@ -87,8 +83,7 @@ function getLLMConfig(): LLMConfig {
     default: {
       const apiKey = process.env.OPENAI_API_KEY;
       if (!apiKey) {
-        console.error('[changelog] Falta OPENAI_API_KEY (requerida para LLM_PROVIDER=openai)');
-        process.exit(1);
+        throw new Error('Falta OPENAI_API_KEY (requerida para LLM_PROVIDER=openai)');
       }
       return {
         provider,
@@ -283,9 +278,12 @@ async function main(): Promise<void> {
   printStats(stats);
 
   if (stats.articlesFailed > 0) {
-    process.exit(1);
+    throw new Error(`${stats.articlesFailed} artículo(s) fallaron durante el changelog`);
   }
 }
+
+// Exportar para uso programático (desde nightly.ts)
+export { main as runChangelog };
 
 // ─── Helpers ─────────────────────────────────────────────────
 
@@ -310,7 +308,10 @@ function sleep(ms: number): Promise<void> {
 
 // ─── Ejecución ───────────────────────────────────────────────
 
-main().catch(error => {
-  console.error('[changelog] Error fatal:', error);
-  process.exit(1);
-});
+// Auto-ejecución solo cuando se ejecuta directamente (npm run changelog)
+if (require.main === module) {
+  main().catch(error => {
+    console.error('[changelog] Error fatal:', error);
+    process.exit(1);
+  });
+}

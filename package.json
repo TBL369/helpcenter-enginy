@@ -4,6 +4,7 @@
   "description": "Sincroniza artículos .md del helpcenter a páginas versionadas en Notion",
   "main": "dist/index.js",
   "scripts": {
+    "nightly": "ts-node src/nightly.ts",
     "sync": "ts-node src/index.ts",
     "changelog": "ts-node src/changelog/index.ts",
     "changelog:dry": "ts-node src/changelog/index.ts --dry-run",
