@@ -68,6 +68,7 @@ Write the article with sections like the following, using only what you can veri
 - Prefer short paragraphs and bullet lists for readability
 - Markdown lists must NOT exceed **2 levels of nesting** (parent → child → grandchild maximum). Notion's API rejects deeper nesting. If deeper hierarchy is needed, flatten using inline text, tables, or separate paragraphs.
 - When listing UI labels/options, preserve exact casing, punctuation, and wording
+- If the screenshots show AI variable references (template fields), write them with single curly braces and no `#` prefix: `{field_name}`. Example: `{company_name}`, `{job_title}`.
 - Do not add troubleshooting, edge cases, or admin/permission claims unless explicitly supported by the screenshots
 
 Now proceed following the rules above.
