@@ -4,7 +4,7 @@ The Settings section is the control panel for your Enginy account. It allows you
 
 ---
 
-## Table of Contents
+# Table of Contents
 
 - [General Settings](#general-settings)
   - [Configure Company Identity](#configure-company-identity)
@@ -29,13 +29,13 @@ The Settings section is the control panel for your Enginy account. It allows you
 
 ---
 
-## General Settings
+# General Settings
 
 The **General** tab gathers the base settings for your workspace: company identity, beta access, language preferences, contact automations, and LinkedIn integration. Each option can be activated or deactivated using a toggle switch, or configured through buttons and dropdown menus.
 
 Navigate to **Settings** > **General** to access the options described below.
 
-### Configure Company Identity
+## Configure Company Identity
 
 Define how your organization appears within the platform.
 
@@ -44,7 +44,7 @@ Define how your organization appears within the platform.
 | **Company logo** | Upload or change your company logo. This is used in the interface and may appear on shared or exported elements depending on the module. |
 | **Display name** | The public name of your company on the platform. Click the **Edit name** button to modify it. |
 
-### Join the Beta Program
+## Join the Beta Program
 
 | Setting | Description |
 |---------|-------------|
@@ -52,13 +52,13 @@ Define how your organization appears within the platform.
 
 > **Note:** Beta features may be unstable or change without prior notice. Use them with caution in production environments.
 
-### Set Your Preferred Language
+## Set Your Preferred Language
 
 | Setting | Description |
 |---------|-------------|
 | **Preferred language of communication** | Use the dropdown menu to select your preferred language for platform communications. |
 
-### Manage Contact Hygiene and Automation
+## Manage Contact Hygiene and Automation
 
 These settings help keep your contact database clean automatically by applying rules to manage data quality.
 
@@ -72,7 +72,7 @@ These settings help keep your contact database clean automatically by applying r
 
 > **Warning:** Before activating automatic deletion options, ensure your team understands the impact. These changes affect data volume and quality permanently and cannot be undone.
 
-### Configure LinkedIn Integration
+## Configure LinkedIn Integration
 
 Controls the behavior of the LinkedIn integration with your conversations and contacts.
 
@@ -83,13 +83,13 @@ Controls the behavior of the LinkedIn integration with your conversations and co
 
 ---
 
-## Security Settings
+# Security Settings
 
 The **Security** tab focuses on access control to reduce intrusion risks and protect your account. It includes password management and two-factor authentication options.
 
 Navigate to **Settings** > **Security** to access the options described below.
 
-### Change Your Password
+## Change Your Password
 
 Manage your account password from this section.
 
@@ -98,7 +98,7 @@ Manage your account password from this section.
 | **Password requirement** | Your password must be at least **12 characters** long. |
 | **Change password** | Click this button to replace your current password with a new one. You will be guided through the password change process. |
 
-### Enable Two-Factor Authentication (2FA)
+## Enable Two-Factor Authentication (2FA)
 
 Two-factor authentication adds an extra layer of security to your account by requiring a second verification step beyond your password.
 
@@ -110,26 +110,26 @@ Two-factor authentication adds an extra layer of security to your account by req
 
 ---
 
-## Team Management
+# Team Management
 
 The **Team** tab is your central panel for managing workspace users. From here you can view license usage, search for members, invite new accounts, assign roles, and perform administrative actions.
 
 Navigate to **Settings** > **Team** to access the options described below.
 
-### Understand Team Capacity
+## Understand Team Capacity
 
 At the top of the user list, you will see a capacity counter (e.g., **Team 58/100**). This indicates the number of active users versus your plan's license limit.
 
 > **Note:** If you approach your license limit, you must either free up user slots by removing inactive members or upgrade your plan to add more users.
 
-### Search and Navigate the User List
+## Search and Navigate the User List
 
 | Feature | Description |
 |---------|-------------|
 | **Search users** | Filter the user list by name or email. Supports keyboard shortcut (Cmd + F / Ctrl + F) for quick access. |
 | **Pagination** | The list is paginated. Use the dropdown at the bottom to choose how many records to display (e.g., "Show 25"). Navigate between pages using the arrows and page indicators (e.g., "1-25 of 58"). |
 
-### Invite a New User
+## Invite a New User
 
 1. Navigate to **Settings** > **Team**.
 2. Click the **Invite User** button.
@@ -140,7 +140,7 @@ At the top of the user list, you will see a capacity counter (e.g., **Team 58/10
 > - You do not have sufficient permissions to add users.
 > - The workspace configuration only allows invitations in certain states.
 
-### Manage Users and Actions
+## Manage Users and Actions
 
 The user table displays the following information for each member:
 
@@ -151,14 +151,14 @@ The user table displays the following information for each member:
 | **Impersonate** | Button to log in as that user. This simulates their experience and is ideal for support and debugging purposes. |
 | **Actions** | Quick action icons for user administration. |
 
-#### User Roles
+### User Roles
 
 | Role | Description |
 |------|-------------|
 | **User** | Standard access with permissions defined by the administrator. |
 | **Admin** | Extended access with the ability to manage other users, access administrative functions, and configure workspace settings including billing. |
 
-#### Actions Column
+### Actions Column
 
 The Actions column provides quick access buttons for each user:
 
@@ -168,12 +168,12 @@ The Actions column provides quick access buttons for each user:
 | Key icon | **Change password** | Allows you to change the user's password. |
 | Red trash icon | **Delete** | Removes the user from the workspace. |
 
-### Perform Bulk Actions
+## Perform Bulk Actions
 
 1. Select multiple users by checking the checkboxes on the left side of the user list. Use the checkbox in the header to select all visible users.
 2. Once multiple users are selected, edit their permissions in bulk.
 
-### Manage User Permissions
+## Manage User Permissions
 
 Clicking the **Edit permissions** button (shield icon) in the Actions column opens a granular permissions editor. The editor displays as **"Select user permissions for [Username]"** and contains three tabs: **Lists**, **Campaigns**, and **General Settings**.
 
@@ -185,7 +185,7 @@ Clicking the **Edit permissions** button (shield icon) in the Actions column ope
 
 > **Important:** Permission changes are applied immediately after clicking **Save Changes**. There is no automatic undo, so review your selections carefully before saving.
 
-#### Lists Permissions
+### Lists Permissions
 
 Controls access to data, records, and activity within the platform.
 
@@ -199,7 +199,7 @@ Controls access to data, records, and activity within the platform.
 | **Export Access** | User can export contacts or companies / User cannot export |
 | **Activity Access** | User can access all activity / User can only access activity they created |
 
-#### Campaigns Permissions
+### Campaigns Permissions
 
 Controls outreach capabilities including campaign management and identity access. These settings affect sending, viewing, and managing campaigns.
 
@@ -208,7 +208,7 @@ Controls outreach capabilities including campaign management and identity access
 | **Campaign Creation** | User can create and edit campaigns / User cannot create or modify campaigns |
 | **Identities Access** | User has access to all identities / User has access to specific identities only |
 
-#### General Settings Permissions
+### General Settings Permissions
 
 Controls access to account configuration and credit management.
 
@@ -219,27 +219,27 @@ Controls access to account configuration and credit management.
 
 ---
 
-## FAQs
+# FAQs
 
-### What happens if I enable automatic contact deletion?
+## What happens if I enable automatic contact deletion?
 
 When you enable **Automatically delete Contacts without associated company**, the system removes contacts that have no company associated with them. Contacts imported via CSV are exempt from this rule and will not be deleted. This action is permanent, so ensure your team understands the implications before enabling it.
 
-### Can I undo changes made to user permissions?
+## Can I undo changes made to user permissions?
 
 Permission changes take effect immediately after clicking **Save Changes**. There is no automatic undo function. To revert, you must manually edit the user again and select the previous options.
 
-### How does the Impersonate feature work?
+## How does the Impersonate feature work?
 
 The Impersonate feature allows administrators to log in as another user and see the platform exactly as that user would. This is useful for troubleshooting issues, providing support, or verifying that permissions are configured correctly. The impersonated session simulates the user's complete experience.
 
-### What should I do if I reach my team license limit?
+## What should I do if I reach my team license limit?
 
 If you approach your license limit (shown in the Team capacity counter), you have two options:
 
 - **Free up slots**: Remove inactive users or users who no longer need access.
 - **Upgrade your plan**: Contact your account manager or upgrade through the billing section to increase your license capacity.
 
-### How do I enable two-factor authentication for my team?
+## How do I enable two-factor authentication for my team?
 
 Each user must enable 2FA individually from **Settings** > **Security** by clicking the **Enable 2FA** button and following the configuration wizard. As an administrator, you can recommend or require 2FA as a security policy for your team, but the setup must be completed by each user on their own account.

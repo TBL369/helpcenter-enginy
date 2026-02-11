@@ -4,7 +4,7 @@ Track your credit consumption, manage your subscription plan, and monitor conver
 
 ---
 
-## Table of Contents
+# Table of Contents
 
 - [Accessing the Credits Section](#accessing-the-credits-section)
 - [Core Concepts](#core-concepts)
@@ -28,7 +28,7 @@ Track your credit consumption, manage your subscription plan, and monitor conver
 
 ---
 
-## Accessing the Credits Section
+# Accessing the Credits Section
 
 To open the Credits section, click the **View Usage** button on the left-side panel.
 
@@ -43,7 +43,7 @@ The section is divided into four tabs:
 
 ---
 
-## Core Concepts
+# Core Concepts
 
 Credits are the unit of consumption in Enginy. Every action you perform on contacts — such as scraping data, enriching contact details, running AI variables, or executing workflows — costs a specific number of credits. Your subscription plan determines how many credits you receive each month, and you can purchase add-on credits if you need more.
 
@@ -51,7 +51,7 @@ Conversations represent the outbound messages (emails and LinkedIn messages) you
 
 ---
 
-## Quick Summary
+# Quick Summary
 
 At the top of the menu you will see a quick summary displaying:
 
@@ -60,11 +60,11 @@ At the top of the menu you will see a quick summary displaying:
 
 ---
 
-## Plan Overview
+# Plan Overview
 
 Use the **Plan** tab to review your current subscription details and make changes.
 
-### Plan Details
+## Plan Details
 
 The Plan tab displays a full breakdown of your current subscription status:
 
@@ -78,7 +78,7 @@ The Plan tab displays a full breakdown of your current subscription status:
 | **Top-up Date** | The date when your plan renews |
 | **Balance** | The total credits available (Plan Credits + Add-on Credits) |
 
-### Manage Your Subscription
+## Manage Your Subscription
 
 You have two options to modify your subscription directly from the Plan tab:
 
@@ -91,11 +91,11 @@ You have two options to modify your subscription directly from the Plan tab:
 
 ---
 
-## Credit Usage History
+# Credit Usage History
 
 The **Credits** tab lets you track exactly how your credits are being consumed. You can analyze usage by time, user, and specific action type.
 
-### Actions That Consume Credits
+## Actions That Consume Credits
 
 The system tracks credit usage for the following activities:
 
@@ -106,7 +106,7 @@ The system tracks credit usage for the following activities:
 | **AI Variables** | Executing AI to generate personalized data |
 | **Workflows** | Running automated workflow sequences |
 
-### Filters and Time Ranges
+## Filters and Time Ranges
 
 You can filter credit usage data by the following time ranges:
 
@@ -119,7 +119,7 @@ You can filter credit usage data by the following time ranges:
 - Last Month
 - Last 28 Days
 
-### Usage Charts
+## Usage Charts
 
 The Credit Usage History view includes two detailed charts for analysis:
 
@@ -133,11 +133,11 @@ Tracks how credits are consumed by different team members. Use this chart to mon
 
 ---
 
-## Monthly Conversations
+# Monthly Conversations
 
 The **Conversations** tab provides visibility into conversation activity within your account. The number of conversations each identity can generate is naturally determined by its sending capacity (emails and LinkedIn messages), but there is no additional hard limit imposed on conversations. This section allows you to monitor volume and trends over time.
 
-### Conversation Breakdowns
+## Conversation Breakdowns
 
 You can analyze conversations through three different breakdowns:
 
@@ -149,11 +149,11 @@ You can analyze conversations through three different breakdowns:
 
 ---
 
-## Plan and Credits
+# Plan and Credits
 
 The **Plan & Credits** tab provides tools to help you estimate your credit needs, compare available pricing plans, and calculate the expected return on investment from using Enginy. This tab contains three sub-sections: **Calculate your credits**, **Pricing plans**, and **Estimated ROI**.
 
-### Credit Calculator
+## Credit Calculator
 
 The credit calculator helps you estimate how many credits you will need per month based on your expected usage.
 
@@ -187,7 +187,7 @@ Based on your selections, the calculator displays a summary panel showing:
 
 > **Note:** The credit calculator is an estimation tool. Your actual consumption may vary depending on the specific actions performed on each contact.
 
-### Pricing Plans
+## Pricing Plans
 
 The Pricing plans sub-section allows you to compare all available Enginy plans side by side. You can toggle between **Without Phones** and **With Phones** to see how plans differ depending on whether phone enrichment capabilities are included.
 
@@ -208,7 +208,7 @@ Each plan builds on the previous tier and adds specific features:
 
 > **Important:** A one-time implementation fee of 2,000 EUR applies to all plans.
 
-### Fully Managed Service
+## Fully Managed Service
 
 In addition to the self-service plans, Enginy offers a **Fully Managed Service** starting from **5,000 EUR/month**. With this option, Enginy books qualified meetings on your behalf, handling the entire outreach process and adding them directly to your calendar.
 
@@ -222,7 +222,7 @@ The Fully Managed Service includes:
 - Continuous A/B testing and optimization
 - Inbox management and reply follow-ups
 
-### Estimated ROI Calculator
+## Estimated ROI Calculator
 
 The Estimated ROI calculator helps you estimate how much additional revenue and time savings you can expect by using Enginy. It is divided into three panels.
 
@@ -259,7 +259,7 @@ The ROI Summary panel combines both calculations and displays the **estimated ye
 
 ---
 
-## Renewal Policy
+# Renewal Policy
 
 Understanding how credit resets work is important for planning your usage:
 
@@ -273,24 +273,24 @@ Understanding how credit resets work is important for planning your usage:
 
 ---
 
-## FAQs
+# FAQs
 
-### How can I purchase additional credits?
+## How can I purchase additional credits?
 
 You have two options. First, click the **Buy More** button in the Plan tab to connect with an agent via the platform chat. Second, contact your Account Manager directly. Both methods will connect you with your Account Manager, who will evaluate your needs and offer a customized solution.
 
-### What happens to my unused credits at the end of the month?
+## What happens to my unused credits at the end of the month?
 
 As a general rule, unused credits do not roll over to the following month. Your credit balance resets on the 1st of each month. However, there may be occasional and specific exceptions depending on your agreement.
 
-### Is there a hard limit on conversations per identity?
+## Is there a hard limit on conversations per identity?
 
 There is no hard limit on conversations. The number of conversations each identity can generate is naturally tied to its sending capacity (emails and LinkedIn messages). The Conversations tab is provided so you can monitor volume and trends across your team.
 
-### Can I see which team member is consuming the most credits?
+## Can I see which team member is consuming the most credits?
 
 Yes. In the Credits tab, the "Credits usage by user" chart tracks how credits are consumed by different team members. This allows you to monitor individual consumption patterns across your organization.
 
-### How can I estimate how many credits I need each month?
+## How can I estimate how many credits I need each month?
 
 Go to the **Plan & Credits** tab and open the **Calculate your credits** sub-section. Set the number of contacts you plan to process per month, select the actions you will use, and the calculator will show you the total monthly credits needed along with the average credits per contact.

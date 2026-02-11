@@ -4,7 +4,7 @@ The Tasks section in Enginy gives you a centralized view of every action item li
 
 ---
 
-## Table of Contents
+# Table of Contents
 
 - [Core Concepts](#core-concepts)
 - [Page Layout](#page-layout)
@@ -27,7 +27,7 @@ The Tasks section in Enginy gives you a centralized view of every action item li
 
 ---
 
-## Core Concepts
+# Core Concepts
 
 | Term | Definition |
 |---|---|
@@ -40,25 +40,25 @@ The Tasks section in Enginy gives you a centralized view of every action item li
 
 ---
 
-## Page Layout
+# Page Layout
 
 To open Tasks, navigate to [NAV_PATH] in Enginy. The page title **Tasks** appears at the top, followed by two tabs: **Pending** and **Completed**.
 
-### Pending Tab
+## Pending Tab
 
 The **Pending** tab displays all tasks that have not yet been completed. Every row in this view shows a **Pending** status badge in orange.
 
-### Completed Tab
+## Completed Tab
 
 The **Completed** tab displays all tasks that have been finished. Every row in this view shows a **Completed** status badge in green. This tab includes an additional **Completed** column (not present in the Pending tab) that shows when each task was completed.
 
 ---
 
-## Task List
+# Task List
 
 Tasks are displayed in a table format. The visible columns differ slightly depending on which tab is active.
 
-### Columns Reference
+## Columns Reference
 
 | Column | Description | Pending Tab | Completed Tab |
 |---|---|---|---|
@@ -70,7 +70,7 @@ Tasks are displayed in a table format. The visible columns differ slightly depen
 | **Completed** | When the task was completed, displayed in relative time format (e.g., "4 hours ago", "1 week ago"). | No | Yes |
 | **Status** | The current status of the task, shown as a colored badge: **Pending** (orange) or **Completed** (green). | Yes | Yes |
 
-### Task Naming Convention
+## Task Naming Convention
 
 Each task label in the **Task** column follows a consistent format:
 
@@ -86,7 +86,7 @@ Where:
 
 > **Note:** The separator between the type and the title may appear as **·** (middle dot) or **-** (dash). Both are equivalent.
 
-### Row-Level Actions
+## Row-Level Actions
 
 Each row in the task list provides the following interactive elements:
 
@@ -95,11 +95,11 @@ Each row in the task list provides the following interactive elements:
 
 ---
 
-## Filter and Sort Tasks
+# Filter and Sort Tasks
 
 A toolbar above the task list provides three controls: **Campaign**, **Owner**, and **Sort**. These controls are available on both the Pending and Completed tabs.
 
-### Filter by Campaign
+## Filter by Campaign
 
 1. Click the **Campaign** button in the toolbar.
 2. Use the **Search…** text field at the top of the dropdown to narrow the list by typing a campaign name.
@@ -107,7 +107,7 @@ A toolbar above the task list provides three controls: **Campaign**, **Owner**, 
 
 The task list updates to show only tasks associated with the selected campaign.
 
-### Filter by Owner
+## Filter by Owner
 
 1. Click the **Owner** button in the toolbar.
 2. Use the **Search…** text field at the top of the dropdown to narrow the list by name or email.
@@ -115,7 +115,7 @@ The task list updates to show only tasks associated with the selected campaign.
 
 The task list updates to show only tasks assigned to the selected owner.
 
-### Sort Tasks
+## Sort Tasks
 
 Click the **Sort** button in the toolbar and select one of the following options:
 
@@ -130,18 +130,18 @@ Click the **Sort** button in the toolbar and select one of the following options
 
 ---
 
-## Task Details Panel
+# Task Details Panel
 
 The task details panel is a side drawer that appears on the right side of the page, providing a full breakdown of a single task.
 
-### Open the Task Details Panel
+## Open the Task Details Panel
 
 1. Click any row in the task list.
 2. The details panel slides open on the right side of the page.
 
 To close the panel, click the **X** button in the top-right corner.
 
-### Fields Reference
+## Fields Reference
 
 The following fields are displayed in the task details panel. Some fields appear only under certain conditions.
 
@@ -159,14 +159,14 @@ The following fields are displayed in the task details panel. Some fields appear
 | **Description** | A free-text description field for additional context about the task. | Always |
 | **Notes** | A text input area for adding notes to the task. | Always |
 
-### Add a Note
+## Add a Note
 
 1. Open the task details panel by clicking a task row.
 2. Scroll to the **Notes** field at the bottom of the panel.
 3. Click the field (it displays the placeholder text **Add a note…** when empty).
 4. Type your note.
 
-### Complete a Task
+## Complete a Task
 
 1. Click the task row in the **Pending** tab to open the task details panel.
 2. Click the green **Complete** button at the bottom-right corner of the panel.
@@ -179,7 +179,7 @@ Once completed, the task automatically moves from the **Pending** tab to the **C
 
 ---
 
-## FAQs
+# FAQs
 
 **How do I complete a task?**
 Click the task row to open the task details panel, then click the green **Complete** button at the bottom-right of the panel. The task will move from the Pending tab to the Completed tab.

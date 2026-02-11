@@ -4,7 +4,7 @@ The Activity section in Enginy provides a centralized, chronological record of e
 
 ---
 
-## Table of Contents
+# Table of Contents
 
 - [How Activity Works](#how-activity-works)
 - [Open the Activity Page](#open-the-activity-page)
@@ -35,7 +35,7 @@ The Activity section in Enginy provides a centralized, chronological record of e
 
 ---
 
-## How Activity Works
+# How Activity Works
 
 Every row in Activity represents a task or process executed in your Enginy workspace. The view is divided into two main tabs — **Prospecting** and **Engagement** — so you can quickly isolate the type of activity you need to review.
 
@@ -54,7 +54,7 @@ Activity is the single source of truth for understanding what has happened in yo
 
 ---
 
-## Open the Activity Page
+# Open the Activity Page
 
 1. Log in to Enginy.
 2. Go to the **Activity** section from the main navigation.
@@ -63,22 +63,22 @@ You will see a chronological list of actions with the most recent entries at the
 
 ---
 
-## Understand the Prospecting and Engagement Tabs
+# Understand the Prospecting and Engagement Tabs
 
 Activity is organized into two tabs. Each tab displays a different category of platform activity.
 
-### Prospecting Tab
+## Prospecting Tab
 
 The **Prospecting** tab displays all activity related to finding and managing contacts and companies. The following action categories are recorded.
 
-#### Scrapings
+### Scrapings
 
 Scrapings represent the automatic extraction of data from external databases to build lists.
 
 - Each scraping is equivalent to the extraction of the fields corresponding to one row (one contact or one company).
 - The scraping limit is daily and depends on your subscription plan (your pool).
 
-#### Searches
+### Searches
 
 Searches refer to the search queries performed on the platform.
 
@@ -86,13 +86,13 @@ Searches refer to the search queries performed on the platform.
 - Each time you advance to a new page in the preview, the results displayed are added to the searches counter.
 - This type of activity is also subject to a daily limit, depending on your plan.
 
-#### Enrichments
+### Enrichments
 
 Enrichments consist of obtaining additional information on specific fields — such as professional email, phone number, or any other data sourced externally.
 
 - This process allows you to enrich the profiles of contacts or companies with more complete and up-to-date data.
 
-#### Imports and Exports
+### Imports and Exports
 
 This category records the import and export actions of contacts and/or companies from or to your CRM, or from or to CSV files. It allows you to maintain full traceability of the synchronization of information between Enginy and your CRM.
 
@@ -107,7 +107,7 @@ The specific action types you may see include:
 
 ---
 
-### Engagement Tab
+## Engagement Tab
 
 The **Engagement** tab displays all activity related to campaigns. You can use the search bar to look up activity by the name of the lead or the identity used in the campaign.
 
@@ -123,11 +123,11 @@ The following action types are recorded in this tab:
 
 ---
 
-## Filter Activity Records
+# Filter Activity Records
 
 At the top of the Activity view you can narrow down the list using filters. This is essential when you have a large volume of history.
 
-### Filter by Action Type
+## Filter by Action Type
 
 1. Open the **All actions** dropdown.
 2. Select the type of process you want to view.
@@ -143,7 +143,7 @@ This is the fastest way to answer questions like "Did yesterday's contact import
 
 > **Tip:** In the **Engagement** tab, the action filter lets you isolate specific campaign step types (e.g., only emails, only LinkedIn invitations).
 
-### Filter by User or Identity
+## Filter by User or Identity
 
 Use the **All users** filter (Prospecting tab) or the identity filter (Engagement tab) to:
 
@@ -154,7 +154,7 @@ Use the **All users** filter (Prospecting tab) or the identity filter (Engagemen
 
 This is useful for audits and team monitoring.
 
-### Filter by Status
+## Filter by Status
 
 Each action has a status. You can filter by status to focus on:
 
@@ -164,7 +164,7 @@ Each action has a status. You can filter by status to focus on:
 
 See [Task Statuses Reference](#task-statuses-reference) for full definitions.
 
-### Filter by Date Range
+## Filter by Date Range
 
 Use the **Date** filter to focus on a specific time window. For example:
 
@@ -172,13 +172,13 @@ Use the **Date** filter to focus on a specific time window. For example:
 - **Last week** or **Last month** — for periodic reviews.
 - **A custom range** — to analyze a specific period (e.g., for a campaign).
 
-### Combine Multiple Filters
+## Combine Multiple Filters
 
 You can combine multiple filters at once to get a very precise view. For example: "All CSV imports done by Maria in the last 7 days."
 
 ---
 
-## Task Statuses Reference
+# Task Statuses Reference
 
 Every action in Activity has one of the following statuses:
 
@@ -194,7 +194,7 @@ Every action in Activity has one of the following statuses:
 
 ---
 
-## Monitor Rolling 24-Hour Scrapings
+# Monitor Rolling 24-Hour Scrapings
 
 At the top-right of the Activity page you will see the **Rolling 24 Hour Scrapings** indicator. This panel shows:
 
@@ -217,11 +217,11 @@ If you frequently reach your daily limit, consider:
 
 ---
 
-## Review a CSV Import Report
+# Review a CSV Import Report
 
 The CSV Import Report lets you inspect the detailed result of importing companies or contacts from a CSV file.
 
-### Access the CSV Import Report
+## Access the CSV Import Report
 
 1. Open the **Prospecting** tab in Activity.
 2. Open the **All actions** dropdown and select **Import companies from CSV** or **Import contacts from CSV**.
@@ -229,7 +229,7 @@ The CSV Import Report lets you inspect the detailed result of importing companie
 4. Locate the import you want to inspect.
 5. Click the **sheet icon** to open the CSV Import Report, or click the **dropdown arrow** to expand and see the list of imported companies or contacts directly in Activity.
 
-### CSV Import Report Fields
+## CSV Import Report Fields
 
 | Data Point | Description |
 |---|---|
@@ -244,11 +244,11 @@ This helps you decide whether you can trust the import as-is or need to fix the 
 
 ---
 
-## Review a CRM Export Report
+# Review a CRM Export Report
 
 The CRM Export Report lets you inspect the detailed result of exporting companies or contacts to your CRM.
 
-### Access the CRM Export Report
+## Access the CRM Export Report
 
 1. Open the **Prospecting** tab in Activity.
 2. Open the **All actions** dropdown and select **Export companies to CRM** or **Export contacts to CRM**.
@@ -256,7 +256,7 @@ The CRM Export Report lets you inspect the detailed result of exporting companie
 4. Locate the export you want to inspect.
 5. Click the **sheet icon** to open the CRM Export Report, or click the **dropdown arrow** to view detailed information for companies or contacts.
 
-### CRM Export Report Categories
+## CRM Export Report Categories
 
 The report groups results into the following categories:
 
@@ -269,7 +269,7 @@ The report groups results into the following categories:
 | **Companies that have the same CRM ID** | Potential ID conflicts where multiple companies share the same CRM identifier. |
 | **Found companies with create conflicts** | Companies that could not be created due to issues such as duplicated or invalid data. |
 
-### Navigate CRM Export Report Details
+## Navigate CRM Export Report Details
 
 You can hover over the icons next to each category to access additional options:
 
@@ -280,38 +280,38 @@ You can hover over the icons next to each category to access additional options:
 
 ---
 
-## Practical Use Cases
+# Practical Use Cases
 
 Below are common ways teams use Activity effectively.
 
-### Monitor Teamwork
+## Monitor Teamwork
 
 - See which imports, exports, and scrapings are being run by each user.
 - Review the work of new team members during onboarding.
 
-### Track Automated or Long-Running Processes
+## Track Automated or Long-Running Processes
 
 - Check whether scraping jobs or large imports are still **Processing**, **Queued**, or **Completed**.
 - Avoid launching conflicting processes while another large job is running.
 
-### Detect and Fix Errors
+## Detect and Fix Errors
 
 1. Filter by **Failed** status to quickly find problematic tasks.
 2. Open the corresponding report (CSV Import or CRM Export) to see why they failed and how many records were affected.
 3. Correct the issue (e.g., fix the CSV file or adjust the CRM field mapping).
 4. Re-run the task.
 
-### Audit and Compliance
+## Audit and Compliance
 
 - Answer questions like "Who exported this data?" or "When was this list imported?"
 - Keep a reliable trail of data operations for internal or external audits.
 
-### Resource Optimization
+## Resource Optimization
 
 - Use the **Rolling 24 Hour Scrapings** indicator to keep scraping under control and avoid hitting limits unexpectedly.
 - Schedule heavy jobs for less busy periods.
 
-### Campaign Monitoring (Engagement Tab)
+## Campaign Monitoring (Engagement Tab)
 
 - Track which campaign steps have been executed for each lead.
 - Verify that LinkedIn invitations, messages, and emails were sent as expected.
@@ -319,7 +319,7 @@ Below are common ways teams use Activity effectively.
 
 ---
 
-## FAQs
+# FAQs
 
 **Q1: What is the difference between the Prospecting tab and the Engagement tab?**
 The **Prospecting** tab shows all activity related to finding and managing contacts and companies — including scrapings, searches, enrichments, and imports/exports. The **Engagement** tab shows all activity related to outbound campaigns, such as emails sent, LinkedIn invitations, LinkedIn messages, and social interactions like liking a post.

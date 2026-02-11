@@ -4,14 +4,14 @@ The Inbox is a centralized communication hub where you can manage all conversati
 
 ---
 
-## Prerequisites / Before You Start
+# Prerequisites / Before You Start
 
 - Your Admin must grant you the appropriate identity access permissions. Without access to the relevant identities, you will not see all conversations.
 - Configuration path: **Settings** > **Edit User Permissions** > **Campaign Tab** > **Identities Access**.
 
 ---
 
-## Table of Contents
+# Table of Contents
 
 - [Permissions and Access](#permissions-and-access)
 - [Interface Overview](#interface-overview)
@@ -45,7 +45,7 @@ The Inbox is a centralized communication hub where you can manage all conversati
 
 ---
 
-## Permissions and Access
+# Permissions and Access
 
 Access to conversations in the Inbox is determined by user permissions, which are managed by Admins.
 
@@ -58,7 +58,7 @@ Access to conversations in the Inbox is determined by user permissions, which ar
 
 ---
 
-## Interface Overview
+# Interface Overview
 
 The Inbox interface is divided into four main columns to streamline your workflow:
 
@@ -71,11 +71,11 @@ The Inbox interface is divided into four main columns to streamline your workflo
 
 ---
 
-## Column 1: Folders and Tags (Sidebar)
+# Column 1: Folders and Tags (Sidebar)
 
 The sidebar is your primary navigation tool, organizing your workload into Folders and Tags.
 
-### Folders
+## Folders
 
 Folders help you focus on what matters most by categorizing conversations based on their state.
 
@@ -89,13 +89,13 @@ Folders help you focus on what matters most by categorizing conversations based 
 
 > **Note:** LinkedIn connection requests sent with a note (InMail) only appear in the Sent folder after the recipient accepts the request. This is a LinkedIn platform limitation.
 
-### Tags
+## Tags
 
 Tags allow you to categorize and filter conversations based on context. A conversation can have multiple tags simultaneously. Clicking a tag in the sidebar filters your view to show only conversations with that tag. Each tag displays a count badge indicating how many conversations use it.
 
 Tags can be applied manually or automatically by AI.
 
-#### AI Tags (Auto-Tagged)
+### AI Tags (Auto-Tagged)
 
 The system automatically applies tags based on the lead's intent and conversation context. AI-generated tags display a sparkle icon and appear as "auto-tagged" events in the activity timeline.
 
@@ -111,7 +111,7 @@ The system automatically applies tags based on the lead's intent and conversatio
 
 > **Tip:** Hover over an AI tag to see a tooltip explaining why it was applied (e.g., "Explicitly declines due to current timing and indicates future openness").
 
-#### Custom AI Tags
+### Custom AI Tags
 
 You can create your own AI tags directly from the Inbox. Each custom AI tag allows you to define:
 
@@ -120,11 +120,11 @@ You can create your own AI tags directly from the Inbox. Each custom AI tag allo
 
 > **Important:** AI tags must have a valid prompt configured before they can be activated.
 
-#### Manual Tags
+### Manual Tags
 
 Users can create custom tags with unique names and colors. Manual tags appear as "Tagged as" events in the activity timeline, showing the user who applied the tag and the timestamp. This differentiates them from AI tags, which appear as "auto-tagged."
 
-#### Tag Compatibility and Dynamic Updates
+### Tag Compatibility and Dynamic Updates
 
 - A conversation can have multiple tags simultaneously (e.g., "Interested" and "Bad Timing").
 - Tags are automatically updated as the conversation evolves — old tags may be removed and new ones added.
@@ -132,11 +132,11 @@ Users can create custom tags with unique names and colors. Manual tags appear as
 
 ---
 
-## Column 2: Conversations (Message List)
+# Column 2: Conversations (Message List)
 
 This column displays all conversations matching your selected folder or filter.
 
-### Conversation Card Details
+## Conversation Card Details
 
 Each conversation preview includes the following elements:
 
@@ -149,7 +149,7 @@ Each conversation preview includes the following elements:
 | Message Preview | First 90 characters of the last message with timestamp. |
 | ICP Score Badge | Indicates lead fit: Green (High), Yellow (Medium), Red (Low/Disqualified). |
 
-### Search and Filters
+## Search and Filters
 
 Use the search bar or apply filters to find specific conversations. You can apply multiple filters simultaneously.
 
@@ -172,7 +172,7 @@ Use the search bar or apply filters to find specific conversations. You can appl
 3. Applied filters appear as chips above the conversation list.
 4. Click the **X** on any chip to remove that filter.
 
-### Bulk Actions
+## Bulk Actions
 
 Select multiple conversations using checkboxes (or "Select All") to reveal the action toolbar.
 
@@ -188,13 +188,13 @@ Select multiple conversations using checkboxes (or "Select All") to reveal the a
 
 ---
 
-## Column 3: Chat View (Conversation Timeline)
+# Column 3: Chat View (Conversation Timeline)
 
 This view shows the full chronological history of all interactions with a lead, including messages, tasks, and campaign activities from your entire team.
 
 > **Note:** Access to this complete history depends on user permissions. A user must have the appropriate access rights to view the full timeline of team interactions.
 
-### Timeline Elements
+## Timeline Elements
 
 | Element | Description |
 |---|---|
@@ -208,11 +208,11 @@ This view shows the full chronological history of all interactions with a lead, 
 | New Messages Divider | Blue line separating unread messages from previously viewed ones. |
 | Translation | Option to translate incoming messages to your preferred language. |
 
-### Sending Messages
+## Sending Messages
 
 The composition box is located at the bottom of the chat view and adapts based on the conversation channel.
 
-#### Replying and Channel Selection
+### Replying and Channel Selection
 
 When the conversation history includes messages from multiple senders, you can choose:
 
@@ -221,7 +221,7 @@ When the conversation history includes messages from multiple senders, you can c
 
 This ensures continuity and allows responses to follow the same communication channel as the existing conversation.
 
-#### Email Features
+### Email Features
 
 | Feature | Details |
 |---|---|
@@ -234,7 +234,7 @@ This ensures continuity and allows responses to follow the same communication ch
 
 > **Important:** To prevent spam or bounce issues, all file attachments are sent as links rather than direct attachments. This improves deliverability and ensures your messages reach the recipient's inbox.
 
-#### LinkedIn Features
+### LinkedIn Features
 
 | Feature | Details |
 |---|---|
@@ -245,7 +245,7 @@ This ensures continuity and allows responses to follow the same communication ch
 | Emoji Reactions | React to LinkedIn messages with emojis directly from the Inbox. |
 | Open in LinkedIn | Option to view the full thread in a new browser tab on the LinkedIn platform. |
 
-### AI Drafts and Suggestions
+## AI Drafts and Suggestions
 
 When AI detects a positive or engaging message from a lead, it automatically generates a draft reply. If an AI draft is available, you will see:
 
@@ -255,7 +255,7 @@ When AI detects a positive or engaging message from a lead, it automatically gen
 
 > **Tip:** You can always discard the AI draft entirely and write your own response from scratch.
 
-### Scheduling Messages
+## Scheduling Messages
 
 You can schedule messages for future delivery:
 
@@ -273,13 +273,13 @@ You can schedule messages for future delivery:
 
 ---
 
-## Column 4: Contact Details (Side Panel)
+# Column 4: Contact Details (Side Panel)
 
 Displays complete lead and company information with actionable shortcuts.
 
 > **Note:** By default, this panel is hidden. Open it by clicking the lead's name at the top of the messages or by using the button in the top-right corner of the chat view.
 
-### Header Actions
+## Header Actions
 
 The header displays the contact summary (Name, Position, Company) and provides quick action buttons:
 
@@ -299,7 +299,7 @@ The header displays the contact summary (Name, Position, Company) and provides q
 
 > **Note:** Actions like Add to Blocklist, Create Task, and Add Tags are recorded in the activity timeline, showing the user who performed the action and the timestamp.
 
-### Contact Information
+## Contact Information
 
 | Field | Description |
 |---|---|
@@ -316,7 +316,7 @@ The header displays the contact summary (Name, Position, Company) and provides q
 - **Resync** button to manually refresh data.
 - **Enable Sync** button if not yet connected (opens CRM export modal).
 
-### Company Information
+## Company Information
 
 | Field | Description |
 |---|---|
@@ -329,7 +329,7 @@ The header displays the contact summary (Name, Position, Company) and provides q
 | Phone | Company phone number. |
 | HQ Location | Headquarters location. |
 
-### Activity Timeline
+## Activity Timeline
 
 Chronological log of all interactions from the last 19 months:
 
@@ -340,7 +340,7 @@ Chronological log of all interactions from the last 19 months:
 - Invitations accepted
 - Link clicks
 
-### Campaign Status
+## Campaign Status
 
 Displays all campaigns where the lead is enrolled:
 
@@ -350,30 +350,30 @@ Displays all campaigns where the lead is enrolled:
 | Current Status | In Progress, Paused, Finished, or Replied. |
 | Pause Control | Hover over "In Progress" status to pause specific campaign messages for this lead, allowing temporary control over campaign activity. |
 
-### Work History
+## Work History
 
 Lists previous roles and companies, including tenure duration. This information is helpful for understanding the contact's career trajectory and personalizing your outreach.
 
 ---
 
-## FAQs
+# FAQs
 
-### Why can I not see all conversations in my Inbox?
+## Why can I not see all conversations in my Inbox?
 
 Your visibility is determined by your identity access permissions. If you only have access to specific identities, you will only see conversations related to those identities. Contact your Admin to request access to additional identities via **Settings** > **Edit User Permissions** > **Campaign Tab** > **Identities Access**.
 
-### Why do my LinkedIn connection requests not appear in the Sent folder?
+## Why do my LinkedIn connection requests not appear in the Sent folder?
 
 LinkedIn connection requests sent with a note (InMail) only appear in the Sent folder after the recipient accepts the request. This is a LinkedIn platform limitation.
 
-### How do I know if a tag was applied by AI or manually?
+## How do I know if a tag was applied by AI or manually?
 
 AI-applied tags display a sparkle icon and appear as "auto-tagged" events in the activity timeline. Manual tags appear as "Tagged as" events, showing the user who applied the tag and the timestamp.
 
-### Can I edit or delete an AI-generated draft before sending?
+## Can I edit or delete an AI-generated draft before sending?
 
 Yes. When an AI draft appears in your composition box, click "Tap to Edit" to load it into the editor, make any changes you want, and then send the modified message. You can also discard the draft entirely and write your own response.
 
-### Why are my file attachments sent as links instead of direct attachments?
+## Why are my file attachments sent as links instead of direct attachments?
 
 To prevent spam filters and bounce issues, all file attachments in emails are automatically converted to links. This improves deliverability and ensures your messages reach the recipient's inbox.

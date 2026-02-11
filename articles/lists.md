@@ -4,7 +4,7 @@ The Lists section is where you manage your prospect databases in Enginy. It is d
 
 ---
 
-## Prerequisites / Before You Start
+# Prerequisites / Before You Start
 
 Before working with Lists, make sure the following are in place depending on the features you plan to use:
 
@@ -15,7 +15,7 @@ Before working with Lists, make sure the following are in place depending on the
 
 ---
 
-## Table of Contents
+# Table of Contents
 
 - [The Lists Dashboard](#the-lists-dashboard)
   - [Dashboard Columns](#dashboard-columns)
@@ -78,11 +78,11 @@ Before working with Lists, make sure the following are in place depending on the
 
 ---
 
-## The Lists Dashboard
+# The Lists Dashboard
 
 When you open the **Lists** section, you see your lists organized in rows within a table. You can also group lists into folders for easier management. The dashboard has two top-level tabs: **Contacts** and **Companies**.
 
-### Dashboard Columns
+## Dashboard Columns
 
 Each row in the table represents a list and displays the following information:
 
@@ -99,7 +99,7 @@ Each row in the table represents a list and displays the following information:
 
 > **Note:** In the Contacts tab, there are often more contacts than companies because multiple contacts can belong to the same company. In the Companies tab, there may be more companies than contacts if some companies do not yet have associated contacts.
 
-### Search and Filters
+## Search and Filters
 
 Above the table, you have the following tools to locate specific lists:
 
@@ -108,7 +108,7 @@ Above the table, you have the following tools to locate specific lists:
 - **Tags** -- Filter by specific tags.
 - **Folders** -- Filter by folder location.
 
-### List Actions (Three-Dot Menu)
+## List Actions (Three-Dot Menu)
 
 At the far right of every row there is a **three-dot button**. Clicking it opens a menu with the following options:
 
@@ -116,7 +116,7 @@ At the far right of every row there is a **three-dot button**. Clicking it opens
 - **Settings** -- Access additional list configuration.
 - **Delete** -- Permanently remove the list.
 
-### Bulk Actions on Lists
+## Bulk Actions on Lists
 
 When you select one or more lists using the checkbox at the left of each row, a bottom bar appears with the following actions:
 
@@ -130,7 +130,7 @@ When you select one or more lists using the checkbox at the left of each row, a 
 
 ---
 
-## Working Inside a List (Detail View)
+# Working Inside a List (Detail View)
 
 Clicking on a list row opens the **Detail View**. This view displays a table with many columns sourced from different origins: LinkedIn data, AI variables, CRM fields, formula fields, custom fields, and data-enrichment providers (e.g., professional emails, phones).
 
@@ -140,7 +140,7 @@ At the top right of the detail view you will find:
 - A **Settings** (gear) icon to access **List Settings**.
 - Clicking the list name at the top reveals a dropdown to quickly switch to any other list or to the **All Contacts** / **All Companies** aggregate view.
 
-### Understanding Table Column Colors
+## Understanding Table Column Colors
 
 The table columns are color-coded by source:
 
@@ -152,7 +152,7 @@ The table columns are color-coded by source:
 | **Yellow** | AI Variables | AI-generated classifications, personalized prompts |
 | **Purple** | Custom Created | Custom columns tailored to your needs |
 
-### Managing Columns and Views
+## Managing Columns and Views
 
 Above the table you have several tools to customize your view:
 
@@ -166,7 +166,7 @@ Above the table you have several tools to customize your view:
   - Click **Reset to original view layout** to revert all changes.
   - Use the search bar inside the panel to find a specific column by name.
 
-### Adding Columns
+## Adding Columns
 
 Hover your cursor between any two column headers. A divider with a **+** button appears. Clicking it opens a menu with:
 
@@ -179,7 +179,7 @@ Below these shortcuts you can browse or search through all existing fields. Tabs
 
 > **Note:** The fields shown are context-sensitive. When viewing a Contacts list you see contact-specific fields (e.g., Professional Phone, Other Emails). When viewing a Companies list you see company-specific fields (e.g., Company Phone, Company Email).
 
-### Moving, Hiding, and Restoring Columns
+## Moving, Hiding, and Restoring Columns
 
 **To move a column:**
 
@@ -200,7 +200,7 @@ Below these shortcuts you can browse or search through all existing fields. Tabs
 2. Type the name of the hidden column in the search bar.
 3. Select it, and it will reappear in the table.
 
-### All Contacts and All Companies
+## All Contacts and All Companies
 
 In addition to individual lists, there are two aggregate views:
 
@@ -209,14 +209,14 @@ In addition to individual lists, there are two aggregate views:
 
 You can access these from the list-name dropdown at the top of the detail view.
 
-### Switching Between Contacts and Companies Tabs
+## Switching Between Contacts and Companies Tabs
 
 Inside a list, the **Contacts** and **Companies** tabs at the top right let you switch entity types. The behavior is as follows:
 
 - If you select specific contacts and use the **More > Switch to Companies View** action, the platform navigates to the **All Companies** view filtered to show only the companies associated with those selected contacts.
 - Navigating back to the **Contacts** tab after such a switch takes you to **All Contacts** (filtered by the previously selected records), not back to the original individual list.
 
-### Actions on Selected Rows
+## Actions on Selected Rows
 
 When you select contacts or companies using their row checkboxes, a bottom bar appears with these actions:
 
@@ -238,7 +238,7 @@ When you select contacts or companies using their row checkboxes, a bottom bar a
 - **Merge duplicates** -- Consolidate duplicate records into one.
 - **Switch to Companies View** (Contacts only) -- Navigate to the All Companies view filtered to the companies associated with your selected contacts.
 
-### Top-Right Menu (Three-Dot Button)
+## Top-Right Menu (Three-Dot Button)
 
 At the top right of the detail view, next to the **Enrich** and **Add Contacts/Companies** buttons, there is a three-dot button with these options:
 
@@ -249,15 +249,15 @@ At the top right of the detail view, next to the **Enrich** and **Add Contacts/C
 
 ---
 
-## Enrichment Tools
+# Enrichment Tools
 
 Clicking the **Enrich** button above the list table opens a modal with tools specific to the entity type you are viewing.
 
-### Enrichment for Contacts
+## Enrichment for Contacts
 
 The enrichment modal for contacts is divided into five categories:
 
-#### 1. Data Enrichment
+### 1. Data Enrichment
 
 | Tool | Description |
 |---|---|
@@ -275,7 +275,7 @@ The enrichment modal for contacts is divided into five categories:
 | Professional Email | Primary email address |
 | Other Emails | Additional email addresses |
 
-#### 2. Data Cleanup
+### 2. Data Cleanup
 
 | Tool | Description |
 |---|---|
@@ -284,7 +284,7 @@ The enrichment modal for contacts is divided into five categories:
 | **Extract Domain** | Extracts the website domain from the professional email address (the part after the @ symbol). |
 | **Combine Name and Last Name** | Generates a **Full Name** column by merging the First Name and Last Name fields. |
 
-#### 3. Enrich with AI
+### 3. Enrich with AI
 
 Displays all available contact-type AI variables. Select one or more variables and run them on the selected contacts. You can also click **Create New AI Variable** from this panel.
 
@@ -299,19 +299,19 @@ Displays all available contact-type AI variables. Select one or more variables a
 
 > **Tip:** For credit optimization, filter beforehand to enrich only records where the variable is currently empty.
 
-#### 4. CRM Sync
+### 4. CRM Sync
 
 - **Sync with your CRM** -- Pulls data from your connected CRM into Enginy based on the field mapping you configured in your integration settings.
 
-#### 5. Enrich with Formula
+### 5. Enrich with Formula
 
 Displays all existing formulas. Select one or more to run, or click **Create New Formula** to define a new one.
 
-### Enrichment for Companies
+## Enrichment for Companies
 
 The enrichment modal for companies has four categories (Data Cleanup is not available for companies):
 
-#### 1. Data Enrichment
+### 1. Data Enrichment
 
 | Tool | Description |
 |---|---|
@@ -341,20 +341,20 @@ The enrichment modal for companies has four categories (Data Cleanup is not avai
 2. **Contacts in family** -- Click to view the full list of associated contacts.
 3. **Dropdown arrow** -- Search and manually associate new contacts with the company.
 
-#### 2. Enrich with AI
+### 2. Enrich with AI
 
 Displays all company-type AI variables. Select variables to run or click **Create new AI variable**.
 
-#### 3. CRM Sync
+### 3. CRM Sync
 
 - **Sync with your CRM** -- Syncs mapped company fields from your CRM integration settings.
 - **Create new CRM field** -- Add a new CRM-mapped field.
 
-#### 4. Enrich with Formula
+### 4. Enrich with Formula
 
 Displays all available formulas. Select formulas to run or click **Create new formula**.
 
-### Enriching with Email or Phone
+## Enriching with Email or Phone
 
 To enrich contacts with email or phone data:
 
@@ -364,7 +364,7 @@ To enrich contacts with email or phone data:
    - **Enrich phone and email address** -- Searches for both phone and email.
    - **Enrich email address** -- Searches for email only.
 
-### Finding Data from LinkedIn
+## Finding Data from LinkedIn
 
 If you imported companies or contacts from a non-LinkedIn source (e.g., CSV, CRM), you can locate them on LinkedIn to scrape additional information.
 
@@ -392,7 +392,7 @@ If the wrong company is matched, click the magnifying glass icon next to the com
 
 > **Tip:** After importing companies from any source (CSV, CRM, etc.), always run **Find Data from LinkedIn by URL** or **by Name** to populate LinkedIn fields.
 
-### Contact and Company Score
+## Contact and Company Score
 
 Enginy automatically scores contacts and companies based on how closely they match your Ideal Customer Profile (ICP) defined in the **AI Playbook**. Two columns are available in the data table:
 
@@ -401,7 +401,7 @@ Enginy automatically scores contacts and companies based on how closely they mat
 
 Each score classifies the record as **High**, **Medium**, **Low**, or **Disqualified**. Hover over any score to see the specific reasons behind the rating.
 
-#### Company Score Criteria
+### Company Score Criteria
 
 | Score | Criteria |
 |---|---|
@@ -410,7 +410,7 @@ Each score classifies the record as **High**, **Medium**, **Low**, or **Disquali
 | **Low** | Company size is lower than target; industry does not closely match; company is outside target countries but may still be relevant. |
 | **Disqualified** | Matches disqualifying traits (e.g., B2C if B2C is disqualified); industry is clearly irrelevant; insufficient data to score confidently. |
 
-#### Contact Score Criteria
+### Contact Score Criteria
 
 | Score | Criteria |
 |---|---|
@@ -427,17 +427,17 @@ Each score classifies the record as **High**, **Medium**, **Low**, or **Disquali
 
 ---
 
-## Importing Companies (Create List)
+# Importing Companies (Create List)
 
 Click **Add Companies** (from within a list) or **Create new** (from the Lists dashboard) to open the **Create List** modal. The following import options are available for companies.
 
-### AI Finder (Companies)
+## AI Finder (Companies)
 
 Provides a text box where you describe your ideal customer (e.g., "companies in Barcelona that have two million revenue"). The AI processes your description and generates a list of matching companies.
 
 - **Presets** are available as pre-defined prompt folders to help you get started quickly.
 
-### Find Companies on LinkedIn
+## Find Companies on LinkedIn
 
 Opens a **Search for Companies** modal with the following structure:
 
@@ -501,13 +501,13 @@ After applying filters, a preview of matching companies appears. You can:
 
 > **Tip:** Include the filters you used in the list name (e.g., "B2B SaaS / 50+ employees / Spain"), as the filters are not visible after creation. Alternatively, click **Generate with AI** to auto-generate a list name.
 
-### Import from LinkedIn Jobs
+## Import from LinkedIn Jobs
 
 1. Toggle **Choose an identity** and select an identity with Sales Navigator.
 2. Paste the **LinkedIn Job Search URL** (format: `linkedin.com/jobs/search/...`).
 3. Click **Import** and choose a new or existing list.
 
-### Import Companies from HubSpot (Search)
+## Import Companies from HubSpot (Search)
 
 Opens a filter-based search modal:
 
@@ -531,13 +531,13 @@ Opens a filter-based search modal:
 
 > **Tip:** Need more fields? Customize the CRM import mapping in your integration settings.
 
-### Import Companies from HubSpot List
+## Import Companies from HubSpot List
 
 1. Select a list from the **Their CRM list** dropdown.
 2. Optionally enable **Match with existing companies** to sync with companies already in Enginy using your CRM field mapping.
 3. Click **Import X companies**.
 
-### Import Companies from Salesforce
+## Import Companies from Salesforce
 
 1. Go to **Companies > Add new companies > Find companies in Salesforce**.
 2. Apply filters and click **Fetch Preview**.
@@ -557,7 +557,7 @@ Opens a filter-based search modal:
 | Year Founded | founded_year |
 | Industry | industry |
 
-### Import Companies from Dynamics
+## Import Companies from Dynamics
 
 1. Go to **Companies > Create new company list** and give it a name.
 2. Select **Import** and choose either **Import from Dynamics list** or **Find companies in Dynamics** (by using filters).
@@ -575,7 +575,7 @@ Opens a filter-based search modal:
 | Description | description |
 | Industry | industry |
 
-### Import Companies from Google Maps
+## Import Companies from Google Maps
 
 1. Enter the **Category** search term (e.g., "Restaurant").
 2. Select the **Area** -- Choose **Radius** or **Select area in the map**.
@@ -586,7 +586,7 @@ Opens a filter-based search modal:
 5. Select a new or existing list under **Select list**.
 6. Review the map preview showing the companies found, then click **Import companies** to proceed.
 
-### Import by Technology Stack (TheirStack)
+## Import by Technology Stack (TheirStack)
 
 Opens a **Find companies by technology stack from TheirStack** modal.
 
@@ -609,7 +609,7 @@ Opens a **Find companies by technology stack from TheirStack** modal.
 
 After applying filters, a preview appears. Set the number of companies to import and click **Import**. A dialog lets you choose a new or existing list.
 
-### Import Companies by Job Posts (TheirStack)
+## Import Companies by Job Posts (TheirStack)
 
 Opens a **Find companies from job postings on TheirStack** modal.
 
@@ -646,7 +646,7 @@ Opens a **Find companies from job postings on TheirStack** modal.
 
 After applying filters, a preview appears. Configure the import count, optionally enable **Import Hiring Managers**, and click **Import** to add to a new or existing list.
 
-### Import Companies from CSV
+## Import Companies from CSV
 
 1. Upload or browse for your CSV file.
 2. Map your CSV columns to Enginy columns:
@@ -659,7 +659,7 @@ After applying filters, a preview appears. Configure the import count, optionall
 
 3. Click **Add to List** and select a new or existing list.
 
-### Create a New Company Manually
+## Create a New Company Manually
 
 Two options:
 
@@ -686,15 +686,15 @@ After filling in the fields, choose a new or existing list to save the company.
 
 ---
 
-## Importing Contacts (Create List)
+# Importing Contacts (Create List)
 
 Click **Add Contacts** (from within a list) or **Create new** (from the Lists dashboard) to open the **Create List** modal for contacts.
 
-### AI Finder (Contacts)
+## AI Finder (Contacts)
 
 Works the same as the AI Finder for companies. Provide a text description of your ideal contact and the AI generates a matching list.
 
-### Find Contacts on LinkedIn
+## Find Contacts on LinkedIn
 
 Opens a **Search for Contacts** modal.
 
@@ -760,9 +760,9 @@ Opens a **Search for Contacts** modal.
 
 > **Tip:** Save your filter configuration by clicking the bookmark icon at the top of the filters panel.
 
-### Social Imports
+## Social Imports
 
-#### Import from LinkedIn Post
+### Import from LinkedIn Post
 
 1. Paste the LinkedIn post URL (format: `linkedin.com/posts/...`).
 2. Click **Import**. This imports users who engaged with the post (likes, reactions, comments).
@@ -771,37 +771,37 @@ Opens a **Search for Contacts** modal.
 
 > **Note:** The post does not need to be yours -- it can be anyone's post.
 
-#### Import from LinkedIn Event
+### Import from LinkedIn Event
 
 1. Paste the LinkedIn event URL.
 2. Click **Import**. This imports event attendees.
 3. **AI Suggested Events** are also available.
 
-#### Import from LinkedIn Poll
+### Import from LinkedIn Poll
 
 1. Paste the LinkedIn poll URL.
 2. Click **Import**.
 
-### Network Imports
+## Network Imports
 
-#### Import from LinkedIn Connections
+### Import from LinkedIn Connections
 
 Select an identity from your Enginy account and import all of their LinkedIn connections.
 
-#### Import from LinkedIn Followers
+### Import from LinkedIn Followers
 
 Select an identity and import all of their LinkedIn followers.
 
 > **Note:** Connections and followers are distinct. A person can follow your profile without being a connection.
 
-### Import Contacts from HubSpot
+## Import Contacts from HubSpot
 
 Two options:
 
 - **Import Contacts from HubSpot (Search)** -- Same filter-based approach as for companies: use HubSpot Property, Operator, and Value to define filters. Preview results and import.
 - **Import Contacts from HubSpot List** -- Select a contact list from the CRM dropdown and import.
 
-### Import Contacts from CSV
+## Import Contacts from CSV
 
 1. Upload or browse for your CSV file.
 2. Map CSV columns to Enginy fields.
@@ -810,7 +810,7 @@ Two options:
 
 3. Click **Add to List** and select a new or existing list.
 
-### Create a New Contact Manually
+## Create a New Contact Manually
 
 Two options:
 
@@ -837,7 +837,7 @@ Two options:
 
 ---
 
-## AI Recommended Lists
+# AI Recommended Lists
 
 Enginy's AI generates targeted lead-list recommendations based on your company information, ICPs, products, and AI Playbook data. There are four types of recommendations, refreshed weekly:
 
@@ -865,11 +865,11 @@ These intent signals can be used as AI variables in your conversations -- for ex
 
 ---
 
-## Workflows (Beta)
+# Workflows (Beta)
 
 The **Workflows** option is available at the bottom of the Create List modal for both Companies and Contacts.
 
-### Company Workflows
+## Company Workflows
 
 **Import and Track Companies by Technology** -- Set up automated tracking of companies using specific technologies (ERPs, cloud providers, programming languages, etc.).
 
@@ -880,7 +880,7 @@ Setup process:
 3. Configure **Workflow Steps** -- Define a sequence of actions (e.g., Search Companies from TheirStack > Add to List > Enrich with AI > Find Company from Name on LinkedIn). You can add as many steps as needed.
 4. Set **Settings** -- Configure the running frequency: Once, Weekly, Monthly, Quarterly, or Yearly. Assign a list name for the output.
 
-### Contact Workflows
+## Contact Workflows
 
 Two workflow options:
 
@@ -907,9 +907,9 @@ Create a recurring import where contacts from a LinkedIn Sales Navigator URL are
 
 ---
 
-## Additional Actions and How-Tos
+# Additional Actions and How-Tos
 
-### Export to CRM, CSV, or Excel
+## Export to CRM, CSV, or Excel
 
 **Exporting companies to CRM:**
 
@@ -924,7 +924,7 @@ Create a recurring import where contacts from a LinkedIn Sales Navigator URL are
 
 You can find export reports in the **Activity** section of Enginy.
 
-### Switching Contacts Between Lists
+## Switching Contacts Between Lists
 
 To move contacts from one list to another:
 
@@ -938,7 +938,7 @@ To move contacts from one list to another:
    - **To remove contacts from the original list:** Uncheck the box next to that list.
    - **To keep contacts in both lists:** Leave both boxes checked.
 
-### Move Values from One Column to Another
+## Move Values from One Column to Another
 
 1. Open the list containing the data.
 2. Click on the name of the source column header.
@@ -947,7 +947,7 @@ To move contacts from one list to another:
    - **From Field** -- The source column (where the values currently are).
    - **To Field** -- The destination column (where you want to move them).
 
-### Simplify Company Name
+## Simplify Company Name
 
 If your company list contains legal names with suffixes (Ltd, SA, SL, Inc., etc.) and you need clean trade names for LinkedIn searches and enrichment:
 
@@ -957,7 +957,7 @@ If your company list contains legal names with suffixes (Ltd, SA, SL, Inc., etc.
 4. Run the AI variable on your companies.
 5. Use **Move Values** to transfer data from the "Simplified Company Name" column to the "Company Name" column.
 
-### Add a Custom Field
+## Add a Custom Field
 
 1. Open the list where you want to add the custom field.
 2. Position your cursor between two existing columns and click the **+** button.
@@ -974,7 +974,7 @@ If your company list contains legal names with suffixes (Ltd, SA, SL, Inc., etc.
 3. The column will be highlighted.
 4. Type the value in the last cell -- it will automatically fill all selected cells.
 
-### Create a Formula Field
+## Create a Formula Field
 
 1. Open the table where you want the formula field.
 2. Click the **+** button between columns.
@@ -986,7 +986,7 @@ If your company list contains legal names with suffixes (Ltd, SA, SL, Inc., etc.
 6. Click **Select leads/companies** to define which records will be affected.
 7. Click **Create**.
 
-### Sync a CRM Property
+## Sync a CRM Property
 
 To sync a specific property from your CRM to Enginy:
 
@@ -996,7 +996,7 @@ To sync a specific property from your CRM to Enginy:
 4. **Re-launch CRM Sync** -- Run the CRM sync for the specific list. Enginy will pull in the data for the specified property.
 5. **Review** -- For records that exist in your CRM, the synced information will now be visible.
 
-### Check if a Contact or Company Exists in CRM
+## Check if a Contact or Company Exists in CRM
 
 The columns **Contact exists in CRM** and **Company exists in CRM** indicate whether a record already exists in your integrated CRM. The matching criteria are configured in your integration settings.
 
@@ -1015,7 +1015,7 @@ The columns **Contact exists in CRM** and **Company exists in CRM** indicate whe
 
 > **Note:** To use these indicators, your CRM must be integrated. To sync additional fields beyond the defaults, add a new CRM field (see [Sync a CRM Property](#sync-a-crm-property)).
 
-### Check CSV Import Report
+## Check CSV Import Report
 
 Use the CSV Import Report to verify what was imported, who performed the import, when it happened, and whether there were any issues.
 
@@ -1034,7 +1034,7 @@ Use the CSV Import Report to verify what was imported, who performed the import,
    - Which rows failed or generated warnings.
    - A description of the issue (e.g., invalid data, missing required fields, duplicate records).
 
-### How Many Contacts Should I Select per Company
+## How Many Contacts Should I Select per Company
 
 When enriching company lists with contacts, the ideal number depends on your use case:
 
@@ -1044,7 +1044,7 @@ When enriching company lists with contacts, the ideal number depends on your use
 
 Align the number of contacts with your campaign goals and outreach strategy.
 
-### I Cannot Find an Industry on LinkedIn
+## I Cannot Find an Industry on LinkedIn
 
 Industries in the LinkedIn and Sales Navigator filters correspond to a closed list of options. Company pages on LinkedIn must select from this predefined set, so your desired industry might not appear exactly as expected.
 
@@ -1057,7 +1057,7 @@ Industries in the LinkedIn and Sales Navigator filters correspond to a closed li
 
 ---
 
-## LinkedIn Fields Reference
+# LinkedIn Fields Reference
 
 When importing contacts from LinkedIn, the following fields can be populated:
 
@@ -1120,7 +1120,7 @@ When importing contacts from LinkedIn, the following fields can be populated:
 
 ---
 
-## CRM Field Mapping Reference
+# CRM Field Mapping Reference
 
 When importing companies from a CRM, the following fields are mapped by default:
 
@@ -1140,7 +1140,7 @@ When importing companies from a CRM, the following fields are mapped by default:
 
 ---
 
-## FAQs
+# FAQs
 
 **Q: Why are there more contacts than companies in my list?**
 

@@ -4,7 +4,7 @@ The Analytics page helps you understand your outreach performance across LinkedI
 
 ---
 
-## Table of Contents
+# Table of Contents
 
 - [Understand the Page Structure](#understand-the-page-structure)
 - [Explore the Performance Tab](#explore-the-performance-tab)
@@ -24,7 +24,7 @@ The Analytics page helps you understand your outreach performance across LinkedI
 
 ---
 
-## Understand the Page Structure
+# Understand the Page Structure
 
 The Analytics Dashboard is divided into two main views:
 
@@ -35,11 +35,11 @@ The Analytics Dashboard is divided into two main views:
 
 ---
 
-## Explore the Performance Tab
+# Explore the Performance Tab
 
 The Performance Tab focuses on conversion rates, percentages, and comparative performance across your campaigns.
 
-### The Outbound Funnel
+## The Outbound Funnel
 
 The main chart displays your outbound process as a funnel visualization. You can switch between three views using the channel selector:
 
@@ -59,7 +59,7 @@ Each bar in the funnel represents a stage of your outbound process:
 
 > **Note:** Positive Replies include both AI-generated positive tags and manual tags you have created that reflect genuine interest or success (e.g., "Interested", "Meeting booked"). These help you quickly measure real buying intent and engagement quality.
 
-### Tagged Conversations
+## Tagged Conversations
 
 On the right side of the Performance Tab, you will see a list of tags with bars indicating the volume of conversations for each category.
 
@@ -75,7 +75,7 @@ On the right side of the Performance Tab, you will see a list of tags with bars 
 - **Dynamic updates:** Switching channels updates the chart dynamically.
 - **Interactive navigation:** Clicking on any tag opens the Inbox, automatically filtered to show conversations with that specific tag. This makes it easy to review, follow up, or analyze the specific replies behind each category.
 
-### Manage Tags in Analytics
+## Manage Tags in Analytics
 
 Understanding how tag removal affects your Analytics data is important for maintaining accurate metrics:
 
@@ -86,11 +86,11 @@ Understanding how tag removal affects your Analytics data is important for maint
 
 > **Important:** To remove a deactivated tag from Analytics, you must either manually remove the tags from the corresponding conversations or fully delete the tag from the AI Conversations Tags page.
 
-### Performance Tables
+## Performance Tables
 
 Below the funnel, you can toggle between two detailed performance tables to compare results.
 
-#### Campaigns Performance Table
+### Campaigns Performance Table
 
 Shows how each campaign performs overall and by channel.
 
@@ -108,7 +108,7 @@ Shows how each campaign performs overall and by channel.
 - Reply rate reflects all accumulated conversations.
 - Example: 100% means 1 reply from 1 person; 76.1% means 54 replies from the total audience.
 
-#### Identities Performance Table
+### Identities Performance Table
 
 Analyzes the effectiveness of each sender or identity.
 
@@ -120,11 +120,11 @@ Analyzes the effectiveness of each sender or identity.
 
 ---
 
-## Explore the Summary Tab
+# Explore the Summary Tab
 
 The Summary Tab is a time-based view that helps you understand how your activity evolves over time with daily breakdowns.
 
-### Replies Chart
+## Replies Chart
 
 A line chart showing replies over time, with separate lines for each channel.
 
@@ -139,18 +139,18 @@ A line chart showing replies over time, with separate lines for each channel.
 - If someone replies on Monday and again on Wednesday, they are counted on both days.
 - Bounced emails (delivery failures) are NOT counted as replies.
 
-### Total Metrics
+## Total Metrics
 
 Four charts represent the overall campaign funnel over time.
 
-#### Added to Campaign
+### Added to Campaign
 
 | Aspect | Description |
 |--------|-------------|
 | **What it means** | How many new people entered your campaigns each day. |
 | **Counting** | Each person is counted once on the day their campaign started. |
 
-#### Total Started
+### Total Started
 
 | Aspect | Description |
 |--------|-------------|
@@ -159,14 +159,14 @@ Four charts represent the overall campaign funnel over time.
 
 > **Important:** This can include people added in previous periods if their first action happened during your selected dates.
 
-#### Total Contacted
+### Total Contacted
 
 | Aspect | Description |
 |--------|-------------|
 | **What it means** | How many people received their first message from you. |
 | **Counting** | Each person is counted once on the day you sent them their first message (LinkedIn or Email). |
 
-#### Companies Contacted
+### Companies Contacted
 
 | Aspect | Description |
 |--------|-------------|
@@ -175,7 +175,7 @@ Four charts represent the overall campaign funnel over time.
 
 > **Note:** This metric is derived from the Total Contacted people metric, aggregated by company.
 
-### LinkedIn Metrics
+## LinkedIn Metrics
 
 Tracks all LinkedIn outreach activity performed through your Enginy campaigns:
 
@@ -189,7 +189,7 @@ Tracks all LinkedIn outreach activity performed through your Enginy campaigns:
 
 > **Note:** LinkedIn shows contacts when you view their profile, unless you are browsing in private mode. Profile visits and post likes are effective ways to warm up contacts before reaching out.
 
-### Email Metrics
+## Email Metrics
 
 Tracks your email outreach activity:
 
@@ -204,7 +204,7 @@ Tracks your email outreach activity:
 
 ---
 
-## Filter Your Analytics Data
+# Filter Your Analytics Data
 
 You can customize the Analytics data you view using the following filters:
 
@@ -218,7 +218,7 @@ You can customize the Analytics data you view using the following filters:
 
 ---
 
-## Use Date Ranges and Comparisons
+# Use Date Ranges and Comparisons
 
 The dates you choose in the filter determine what data you see across all Analytics views.
 
@@ -236,7 +236,7 @@ The dates you choose in the filter determine what data you see across all Analyt
 
 ---
 
-## Export Analytics Data
+# Export Analytics Data
 
 All Analytics data can be exported using the **Export** button. The following export formats are available:
 
@@ -250,25 +250,25 @@ All Analytics data can be exported using the **Export** button. The following ex
 
 ---
 
-## FAQs
+# FAQs
 
-### Why do I see different totals in some sections?
+## Why do I see different totals in some sections?
 
 Some metrics count **people** (e.g., "Contacted", "Replied") while others count **actions** (e.g., "Messages Sent", "Emails Sent"). Additionally, one conversation can have multiple tags (e.g., "Interested" + "Meeting Booked"), so tag totals may exceed total conversations.
 
-### What is the difference between "Started" and "Contacted"?
+## What is the difference between "Started" and "Contacted"?
 
 - **Started:** The campaign performed any first action for that contact (such as visiting their profile). This may include contacts added in previous periods whose first action was triggered within the selected timeframe.
 - **Contacted:** A message was actually sent to the person (LinkedIn or Email).
 
-### What are Positive Reply Tags?
+## What are Positive Reply Tags?
 
 These are tags that represent positive outcomes -- either AI-detected or user-created -- such as "Interested", "Meeting booked", or "Positive reply". They help you measure genuine buying intent and successful engagement quality.
 
-### How does the Company Country filter work?
+## How does the Company Country filter work?
 
 It uses the Company Country field from your company data. This allows you to segment and compare performance across regions with similar languages or market characteristics.
 
-### Can I export my Analytics data?
+## Can I export my Analytics data?
 
 Yes. Use the **Export** button to select from multiple export formats, including daily metrics, replies, tags, summary metrics, and campaign/identity performance tables.

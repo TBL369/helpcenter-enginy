@@ -4,7 +4,7 @@ The Dashboard is the main screen of the Enginy platform. It provides an executiv
 
 ---
 
-## Table of Contents
+# Table of Contents
 
 - [Summary Cards](#summary-cards)
   - [Credits Balance](#credits-balance)
@@ -23,7 +23,7 @@ The Dashboard is the main screen of the Enginy platform. It provides an executiv
 
 ---
 
-## Summary Cards
+# Summary Cards
 
 The top section of the Dashboard displays key metrics at a glance. Most cards support time-range filtering (for example, "Last 30 days") so you can adjust the period to suit your analysis.
 
@@ -33,7 +33,7 @@ The top section of the Dashboard displays key metrics at a glance. Most cards su
 | **Total Imported** | Total number of Contacts and Companies imported into the platform. Supports time-range filtering. |
 | **Campaigns (Summary)** | Number of conversations initiated with contacts and the reply rate. Supports time-range filtering. |
 
-### Credits Balance
+## Credits Balance
 
 Displays your current credit consumption against your plan's total allocation. Click the **View plan** shortcut to:
 
@@ -41,7 +41,7 @@ Displays your current credit consumption against your plan's total allocation. C
 - Review your current plan details.
 - Upgrade or change your subscription.
 
-### Total Imported
+## Total Imported
 
 This metric aggregates all contacts and companies brought into the platform regardless of the import source:
 
@@ -51,7 +51,7 @@ This metric aggregates all contacts and companies brought into the platform rega
 
 > **Note:** The Total Imported count includes contacts that have been deleted from the platform. This gives you full visibility into your historical import volume.
 
-### Campaigns Summary
+## Campaigns Summary
 
 Provides a quick overview of your outreach performance:
 
@@ -62,11 +62,11 @@ Provides a quick overview of your outreach performance:
 
 ---
 
-## Performance Charts
+# Performance Charts
 
 The central area of the Dashboard contains visual representations of your key performance metrics.
 
-### Contacts Funnel
+## Contacts Funnel
 
 Visualizes your contact pipeline across three stages:
 
@@ -84,7 +84,7 @@ The funnel chart allows you to:
 
 > **Tip:** Use the time-range selector on the funnel to compare different periods and spot trends in your prospecting pipeline.
 
-### Campaigns Chart
+## Campaigns Chart
 
 A graphical comparison of outreach volume versus responses:
 
@@ -101,7 +101,7 @@ You can adjust the time grouping using the selector:
 
 ---
 
-## Enrichment Success Rate
+# Enrichment Success Rate
 
 Displays the success rate (percentage) of all enrichments performed on the platform. This metric can be filtered by time range, letting you track enrichment quality over different periods.
 
@@ -109,11 +109,11 @@ Displays the success rate (percentage) of all enrichments performed on the platf
 
 ---
 
-## Quick-Access Lists
+# Quick-Access Lists
 
 The bottom section of the Dashboard provides shortcuts to your most recent work.
 
-### Recent Contacts Lists
+## Recent Contacts Lists
 
 Displays your most recently created contact lists with the following details:
 
@@ -126,7 +126,7 @@ Available actions:
 - **Create** — Opens the wizard to create a new contact list.
 - **View all** — Navigates to the complete lists section.
 
-### Recent Campaigns
+## Recent Campaigns
 
 Shows your most recent campaigns with the following details:
 
@@ -144,7 +144,7 @@ Available actions:
 
 ---
 
-## Create Button
+# Create Button
 
 Located in the top-right corner of the Dashboard, the **Create** button provides quick access to start new work without leaving the Dashboard.
 
@@ -153,13 +153,13 @@ Located in the top-right corner of the Dashboard, the **Create** button provides
 | **List** | Create a new contact or company list |
 | **Campaign** | Create a new outreach campaign |
 
-### Create a New List from the Dashboard
+## Create a New List from the Dashboard
 
 1. Click the **Create** button in the top-right corner of the Dashboard.
 2. Select **List**.
 3. Follow the wizard steps to configure your new contact or company list.
 
-### Create a New Campaign from the Dashboard
+## Create a New Campaign from the Dashboard
 
 1. Click the **Create** button in the top-right corner of the Dashboard.
 2. Select **Campaign**.
@@ -167,7 +167,7 @@ Located in the top-right corner of the Dashboard, the **Create** button provides
 
 ---
 
-## Troubleshooting
+# Troubleshooting
 
 | Symptom | Cause | Resolution |
 |---------|-------|------------|
@@ -177,24 +177,24 @@ Located in the top-right corner of the Dashboard, the **Create** button provides
 
 ---
 
-## FAQs
+# FAQs
 
-### Does the Total Imported count include deleted contacts?
+## Does the Total Imported count include deleted contacts?
 
 Yes. The Total Imported metric reflects the historical total of all contacts and companies ever imported into the platform, including those that have been subsequently deleted.
 
-### Can I customize the time range for all Dashboard metrics?
+## Can I customize the time range for all Dashboard metrics?
 
 Most Dashboard cards and charts support time-range filtering. Look for the time selector (for example, "Last 30 days") on each component to adjust the displayed period.
 
-### What is the difference between Contacted and Replied in the Campaigns chart?
+## What is the difference between Contacted and Replied in the Campaigns chart?
 
 **Contacted** represents the total number of contacts who received outreach through your campaigns (via LinkedIn or email). **Replied** shows how many of those contacts responded. The ratio between these two values determines your reply rate.
 
-### How often is the Dashboard data updated?
+## How often is the Dashboard data updated?
 
 Dashboard metrics are updated in real time as activities occur within the platform. However, some aggregated metrics may take a few minutes to reflect the most recent changes.
 
-### Where can I see more detailed campaign analytics?
+## Where can I see more detailed campaign analytics?
 
 The Dashboard provides a summary view. For detailed campaign analytics, click **View all** in the Recent Campaigns section or navigate to the Campaigns module from the main navigation menu.

@@ -4,7 +4,7 @@ Set up and manage the sender profiles that power your outreach campaigns. An ide
 
 ---
 
-## Table of Contents
+# Table of Contents
 
 - [Understand Identities](#understand-identities)
   - [What Is an Identity?](#what-is-an-identity)
@@ -38,9 +38,9 @@ Set up and manage the sender profiles that power your outreach campaigns. An ide
 
 ---
 
-## Understand Identities
+# Understand Identities
 
-### What Is an Identity?
+## What Is an Identity?
 
 An identity in Enginy is a sender profile composed of a LinkedIn account, one or more email addresses, or both. Identities serve two primary purposes:
 
@@ -49,7 +49,7 @@ An identity in Enginy is a sender profile composed of a LinkedIn account, one or
 
 While connecting LinkedIn and email is not strictly required to create an identity, you need at least one channel connected to use the identity in campaigns. An identity with only LinkedIn connected can run campaigns that contain LinkedIn-only actions; likewise, an identity with only email connected can run email-only campaigns.
 
-### Users vs. Identities
+## Users vs. Identities
 
 In Enginy, a **User** and an **Identity** are not the same thing.
 
@@ -66,16 +66,16 @@ If multiple people on your team need to work in Enginy with their own access, ea
 
 ---
 
-## The Identities Dashboard
+# The Identities Dashboard
 
 The main Identities screen provides an overview of all your active identities and their performance.
 
-### Search and Filters
+## Search and Filters
 
 - **Search Bar** — Quickly find any established identity by name.
 - **Date Filter** — Modify the timeframe for the displayed statistics. By default, the dashboard shows the current day's data.
 
-### Performance Statistics
+## Performance Statistics
 
 The dashboard displays four key metrics based on the selected time period:
 
@@ -88,7 +88,7 @@ The dashboard displays four key metrics based on the selected time period:
 
 ---
 
-## Add a New Identity
+# Add a New Identity
 
 To add a new identity:
 
@@ -96,7 +96,7 @@ To add a new identity:
 2. Click the **Add new identity** button at the top right of the screen.
 3. Select one of the three tabs described below to choose a creation method.
 
-### Option A: Credentials (LinkedIn Login)
+## Option A: Credentials (LinkedIn Login)
 
 Connect directly to a LinkedIn profile by entering your login credentials.
 
@@ -108,7 +108,7 @@ Connect directly to a LinkedIn profile by entering your login credentials.
 
 > **Important:** If your LinkedIn profile uses Two-Step Authentication (2FA/MFA), you will need to provide the access code during the linking process. Additionally, if you use social logins (Google, Microsoft, Apple) or an Access Key to sign in to LinkedIn, you will not be able to connect successfully. You must set a direct password in your LinkedIn settings first.
 
-### Option B: Manually
+## Option B: Manually
 
 Create an identity by manually filling in the profile data. This method does not require LinkedIn credentials.
 
@@ -122,7 +122,7 @@ Create an identity by manually filling in the profile data. This method does not
 - LinkedIn URL
 - Schedule Meeting URL
 
-### Option C: Share (Generate Link)
+## Option C: Share (Generate Link)
 
 This option allows people who do not have an Enginy account (for example, team members, contractors, or partners) to connect their identity to your organization without needing platform access.
 
@@ -134,11 +134,11 @@ This option allows people who do not have an Enginy account (for example, team m
 
 ---
 
-## Configure an Identity
+# Configure an Identity
 
 Once an identity is created, click the **Configuration** button on the identity card to access its full settings. The configuration panel is organized into the following sections: **Contact Details**, **LinkedIn**, **Email**, and **Share Identity Link**.
 
-### Contact Details
+## Contact Details
 
 If you connected a LinkedIn account when creating the identity, this section is automatically populated with the LinkedIn profile data. If you created the identity manually, it reflects the information you entered. All fields can be edited at any time.
 
@@ -153,15 +153,15 @@ If you connected a LinkedIn account when creating the identity, this section is 
 - Schedule Meeting URL
 - Phone Number
 
-### Working Hours
+## Working Hours
 
 From the Contact Details section you can configure **Working Hours** for the identity. This setting defines the time zone, days, and hours during which the identity is active. Campaigns associated with this identity will only execute actions during the specified working hours.
 
-### LinkedIn Settings
+## LinkedIn Settings
 
 The LinkedIn configuration section contains two tabs: **Rate Limits** and **Withdrawals**.
 
-#### Rate Limits
+### Rate Limits
 
 Define the daily activity limits for the identity on LinkedIn:
 
@@ -173,7 +173,7 @@ Define the daily activity limits for the identity on LinkedIn:
 
 > **Warning:** Increasing daily connection requests or message limits beyond the recommended defaults can trigger LinkedIn automation detection, which may result in temporary account restrictions. If you do increase them, do so temporarily and monitor closely.
 
-#### Withdrawals
+### Withdrawals
 
 Manage pending LinkedIn connection requests that have not been accepted:
 
@@ -183,11 +183,11 @@ Manage pending LinkedIn connection requests that have not been accepted:
 
 > **Important:** After withdrawing a connection request, you cannot send a new request to the same person for 3 weeks.
 
-### Email Settings
+## Email Settings
 
 The Email configuration section contains three tabs: **Manage**, **Email Rate**, and **Signature**.
 
-#### Manage Email Addresses
+### Manage Email Addresses
 
 Connect one or multiple email addresses to the identity. Supported providers include Google, Microsoft, and IMAP.
 
@@ -196,7 +196,7 @@ Connect one or multiple email addresses to the identity. Supported providers inc
 
 > **Warning:** If you disconnect an email address that has active leads mid-sequence, those leads will fail. The only way to fix this is to reconnect the same address that initiated the conversation.
 
-#### Warm-Up
+### Warm-Up
 
 The Warm-Up feature trains an email address through an external provider to reduce spam detection and increase deliverability.
 
@@ -212,7 +212,7 @@ The Warm-Up feature trains an email address through an external provider to redu
 
 > **Tip:** Following these requirements ensures the warm-up process completes successfully and your sender reputation improves as expected.
 
-#### Email Rate
+### Email Rate
 
 Configure the sending limits per email address to avoid spam filters:
 
@@ -221,21 +221,21 @@ Configure the sending limits per email address to avoid spam filters:
 | **Emails per day** | 30 per inbox |
 | **Emails per hour** | 5 per inbox |
 
-#### Signature
+### Signature
 
 Create or edit the email signature that the identity will use when sending emails. You can use the built-in text editor, or switch to **Advanced HTML Mode** to paste HTML code directly.
 
-### Share Identity Link
+## Share Identity Link
 
 Inside the configuration menu, the **Share identity link** button generates and copies a link that allows the owner of the identity to update their connection status (LinkedIn or email) without needing direct access to the Enginy platform. This is useful for refreshing credentials or reconnecting accounts. The link is valid for 24 hours.
 
 ---
 
-## Connect a Microsoft 365 / Azure Email Account
+# Connect a Microsoft 365 / Azure Email Account
 
 This section explains how to connect a Microsoft 365 (Outlook) email account to Enginy. The integration uses the industry-standard **OAuth 2.0** authentication protocol to ensure secure access without storing your password.
 
-### For Users: "Approval Required" Screen
+## For Users: "Approval Required" Screen
 
 If you attempt to connect your email and see a screen stating "Approval required," follow these steps:
 
@@ -243,7 +243,7 @@ If you attempt to connect your email and see a screen stating "Approval required
 2. Click the **Request approval** button.
 3. This sends a notification to your IT administrator so they can review and approve the request.
 
-### For IT Administrators: Grant Permissions
+## For IT Administrators: Grant Permissions
 
 To allow users to connect their Microsoft 365 email accounts, an Azure Administrator must adjust the tenant configuration in the **Microsoft Entra Admin Center** (formerly Azure AD). Choose one of the following solutions.
 
@@ -265,7 +265,7 @@ If you prefer to allow users to authorize applications themselves:
 
 > **Note:** Enginy AI is a verified publisher.
 
-### Troubleshoot a Failing Connection
+## Troubleshoot a Failing Connection
 
 If the integration fails despite granting consent, check for **Conditional Access Policies** that may be blocking third-party applications:
 
@@ -280,7 +280,7 @@ If the integration fails despite granting consent, check for **Conditional Acces
 | Connection fails after admin consent was granted | Conditional Access Policies blocking third-party applications | Review and exclude Enginy from restrictive Conditional Access Policies |
 | Permissions granted but connection still does not work | Permission propagation delay in Azure | Use the Admin Browser workaround described below, or wait and retry after a few minutes |
 
-### Alternative: Connect via Admin Browser
+## Alternative: Connect via Admin Browser
 
 > **Note:** This is a workaround for situations where permission propagation is delayed.
 
@@ -291,7 +291,7 @@ If the standard procedures above do not resolve the issue, the Azure Administrat
 3. Navigate to the email integration settings and attempt to connect the email account.
 4. Because the browser session already holds valid Azure Admin credentials, this action often bypasses user-level restrictions and forces the initial connection.
 
-### Required Permissions (Scopes)
+## Required Permissions (Scopes)
 
 For your security review, the Enginy integration requests the following Microsoft Graph permissions:
 
@@ -314,24 +314,24 @@ For your security review, the Enginy integration requests the following Microsof
 
 ---
 
-## FAQs
+# FAQs
 
-### What is the difference between a User and an Identity?
+## What is the difference between a User and an Identity?
 
 A User is a person with login access to the Enginy platform (email and password). An Identity is a LinkedIn profile and/or email address used to send prospecting messages through campaigns. A single User can manage multiple Identities, and each Identity can have multiple email addresses connected to it.
 
-### Can someone without an Enginy account connect their identity?
+## Can someone without an Enginy account connect their identity?
 
 Yes. Use the **Share (Generate Link)** option when adding a new identity. This generates a temporary, one-time-use link (valid for 24 hours) that you can share with anyone. They can open the link in their browser and connect their LinkedIn account or fill in their details manually, without needing access to the Enginy platform.
 
-### What happens if I disconnect an email address that has active leads?
+## What happens if I disconnect an email address that has active leads?
 
 If a lead started a sequence with a specific email address and you disconnect that address, the lead will produce an error. The system will not automatically reassign the lead to another connected address. You must reconnect the original email address to resolve the issue.
 
-### How does the Warm-Up feature work, and what should I do while it runs?
+## How does the Warm-Up feature work, and what should I do while it runs?
 
 The Warm-Up trains your email address through an external provider to increase deliverability and reduce spam detection. It costs 50 EUR and takes approximately 3 weeks. During this period, you must pause all campaigns using that identity and avoid sending any emails from the address outside of Enginy.
 
-### Why can I not connect my LinkedIn account using the Credentials option?
+## Why can I not connect my LinkedIn account using the Credentials option?
 
 If you use social logins (Google, Microsoft, Apple) or an Access Key to sign in to LinkedIn, the Credentials method will not work. You must first set a direct password in your LinkedIn account settings. Additionally, if your account has Two-Step Authentication (2FA/MFA) enabled, make sure you have access to the authentication device during the linking process.

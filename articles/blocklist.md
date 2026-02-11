@@ -4,14 +4,14 @@ The Blocklist lets you block specific contacts and companies so they are exclude
 
 ---
 
-## Prerequisites / Before You Start
+# Prerequisites / Before You Start
 
 - You must have access to the **Blocklist** section within your Enginy workspace.
 - The Blocklist is workspace-wide. Any entry you add will apply to all users in the workspace.
 
 ---
 
-## Table of Contents
+# Table of Contents
 
 - [Core Concepts](#core-concepts)
 - [How It Works](#how-it-works)
@@ -35,7 +35,7 @@ The Blocklist lets you block specific contacts and companies so they are exclude
 
 ---
 
-## Core Concepts
+# Core Concepts
 
 The Blocklist is a single, unified exclusion list inside Enginy. It is segmented into two views: one for **Contacts** and one for **Companies**. Its purpose is to prevent specific people or organizations from appearing in your outreach workflows.
 
@@ -48,7 +48,7 @@ Key terms:
 
 ---
 
-## How It Works
+# How It Works
 
 When a contact or company is added to the Blocklist:
 
@@ -62,9 +62,9 @@ This is especially useful for excluding competitors, existing customers you do n
 
 ---
 
-## Navigate the Blocklist
+# Navigate the Blocklist
 
-### Tabs
+## Tabs
 
 The Blocklist section contains two tabs at the top of the page:
 
@@ -75,7 +75,7 @@ The Blocklist section contains two tabs at the top of the page:
 
 Both tabs share the same filtering and column structure, with one difference in the first column (see [Column Fields](#column-fields) below).
 
-### Filters
+## Filters
 
 The following filters are available in both the Contacts and Companies tabs:
 
@@ -86,7 +86,7 @@ The following filters are available in both the Contacts and Companies tabs:
 | **Reason** | Filter by the reason the entry was blocked. | All, Not interested, Competitor, Customer, Not target, Other, Churn |
 | **User** | Filter by the team member who added the entry. | Any workspace user |
 
-### Column Fields
+## Column Fields
 
 The columns displayed in the Blocklist table differ slightly between the two tabs:
 
@@ -102,9 +102,9 @@ The columns displayed in the Blocklist table differ slightly between the two tab
 
 ---
 
-## Add Contacts or Companies to the Blocklist
+# Add Contacts or Companies to the Blocklist
 
-### Add a Single Contact
+## Add a Single Contact
 
 1. Navigate to the **Blocklist** section and select the **Contacts** tab.
 2. Click the **Add Email / LinkedIn URL** button at the top right.
@@ -112,7 +112,7 @@ The columns displayed in the Blocklist table differ slightly between the two tab
 4. Select a reason for blocking (e.g., Competitor, Not interested, Churn).
 5. Save your changes.
 
-### Add a Single Company
+## Add a Single Company
 
 1. Navigate to the **Blocklist** section and select the **Companies** tab.
 2. Click the **Add Domain / LinkedIn URL** button at the top right.
@@ -120,7 +120,7 @@ The columns displayed in the Blocklist table differ slightly between the two tab
 4. Select a reason for blocking.
 5. Save your changes.
 
-### Bulk-Add Contacts or Companies
+## Bulk-Add Contacts or Companies
 
 You can block multiple contacts or companies at once directly from any list:
 
@@ -133,9 +133,9 @@ You can block multiple contacts or companies at once directly from any list:
 
 ---
 
-## Manage Blocklisted Entries
+# Manage Blocklisted Entries
 
-### Edit an Entry
+## Edit an Entry
 
 To update a blocklisted entry (for example, to correct the email address, domain, or LinkedIn URL):
 
@@ -143,7 +143,7 @@ To update a blocklisted entry (for example, to correct the email address, domain
 2. Click the **Edit** button in the **Actions** column.
 3. Make your changes and save.
 
-### Unblock an Entry
+## Unblock an Entry
 
 To remove a contact or company from the Blocklist:
 
@@ -154,7 +154,7 @@ To remove a contact or company from the Blocklist:
 
 ---
 
-## Use the Blocklist Indicator in Lists
+# Use the Blocklist Indicator in Lists
 
 When viewing any list of Contacts or Companies, a **blocklist indicator** is displayed in the bottom bar. It appears as a number next to a small icon (a rectangle with an "x" in its center). This number shows how many entries in that particular list are currently on the Blocklist.
 
@@ -163,9 +163,9 @@ When viewing any list of Contacts or Companies, a **blocklist indicator** is dis
 
 ---
 
-## Reference
+# Reference
 
-### Source Values
+## Source Values
 
 | Source Value | Meaning |
 |---|---|
@@ -175,7 +175,7 @@ When viewing any list of Contacts or Companies, a **blocklist indicator** is dis
 | **Campaign** | The entry was blocked from within a campaign. |
 | **List** | The entry was blocked from within a specific contacts or companies list (e.g., using the bulk-add workflow or the blocklist indicator pop-up). |
 
-### Reason Values
+## Reason Values
 
 | Reason | Description |
 |---|---|
@@ -188,7 +188,7 @@ When viewing any list of Contacts or Companies, a **blocklist indicator** is dis
 
 ---
 
-## Important Considerations
+# Important Considerations
 
 - If the Blocklist is empty (no contacts or companies have been blocked), a message will be displayed indicating that the list is empty.
 - The Blocklist is workspace-wide. Entries blocked by one user apply across the entire workspace.
@@ -198,7 +198,7 @@ When viewing any list of Contacts or Companies, a **blocklist indicator** is dis
 
 ---
 
-## FAQs
+# FAQs
 
 **Q: What happens to a contact or company after I add it to the Blocklist?**
 A: The entry is immediately excluded from all lists, campaigns, and CRM exports. It will not appear in search results within those contexts until it is unblocked.

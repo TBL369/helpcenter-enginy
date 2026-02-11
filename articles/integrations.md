@@ -4,7 +4,7 @@ Connect your existing tech stack to Enginy so you can synchronize data, enrich c
 
 ---
 
-## Table of Contents
+# Table of Contents
 
 - [Overview](#overview)
   - [All Tab](#all-tab)
@@ -27,19 +27,19 @@ Connect your existing tech stack to Enginy so you can synchronize data, enrich c
 
 ---
 
-## Overview
+# Overview
 
 The Integrations page is organized into three tabs that give you a clear view of every available connection and its current status.
 
-### All Tab
+## All Tab
 
 The **All** tab displays every integration Enginy supports, grouped by category (CRM, Data Enrichment, AI Enrichment, Import Sources, and Communication). Use this tab to browse, enable, or configure any integration.
 
-### Enabled Tab
+## Enabled Tab
 
 The **Enabled** tab shows only the integrations you have currently turned on. This is a quick way to audit your active connections at a glance.
 
-### Disabled Tab
+## Disabled Tab
 
 The **Disabled** tab shows all integrations that are not yet enabled. It is a useful starting point when you want to expand your connected tool set.
 
@@ -47,9 +47,9 @@ The **Disabled** tab shows all integrations that are not yet enabled. It is a us
 
 ---
 
-## Available Integrations
+# Available Integrations
 
-### CRM
+## CRM
 
 Connect a CRM to synchronize and export contacts and companies between Enginy and your CRM of choice.
 
@@ -64,7 +64,7 @@ Connect a CRM to synchronize and export contacts and companies between Enginy an
 
 > **Note:** Only one CRM can be active at a time. See [Configure Your CRM](#configure-your-crm) for the full setup guide.
 
-### Data Enrichment
+## Data Enrichment
 
 Plug in your data-enrichment tools to optimize outreach, verify data, and qualify leads.
 
@@ -80,7 +80,7 @@ Plug in your data-enrichment tools to optimize outreach, verify data, and qualif
 | ZoomInfo | Business intelligence tool that offers comprehensive databases to find and qualify leads. |
 | Proxycurl | Provides APIs for detailed contact and company profile enrichment. |
 
-### AI Enrichment
+## AI Enrichment
 
 | Tool | What It Does |
 |---|---|
@@ -88,13 +88,13 @@ Plug in your data-enrichment tools to optimize outreach, verify data, and qualif
 
 > **Tip:** If you do not have a personal OpenAI account, Enginy provides its own credits for AI variable outputs automatically. No additional setup is required.
 
-### Import Sources
+## Import Sources
 
 | Tool | What It Does |
 |---|---|
 | TheirStack | Aggregates and imports company data from multiple platforms. You can connect your own TheirStack account. If you do not have one, Enginy's subscription is used and credits are deducted from your plan when importing companies. |
 
-### Communication
+## Communication
 
 | Tool | What It Does |
 |---|---|
@@ -102,7 +102,7 @@ Plug in your data-enrichment tools to optimize outreach, verify data, and qualif
 
 ---
 
-## Configure Your CRM
+# Configure Your CRM
 
 To set up your CRM integration:
 
@@ -115,11 +115,11 @@ A floating setup window opens with four sequential steps.
 
 ---
 
-### Step 1: Input / Sync Mapping
+## Step 1: Input / Sync Mapping
 
 This step defines how Enginy matches contacts and companies with your CRM records to prevent duplicates and ensure data integrity. A "sync" means Enginy compares its records against CRM records using the identifiers you configure here.
 
-#### Contact Identifier
+### Contact Identifier
 
 Choose how Enginy determines whether a contact already exists in your CRM.
 
@@ -129,7 +129,7 @@ Choose how Enginy determines whether a contact already exists in your CRM.
 | **LinkedIn profile URL OR First name + Last name + Company name** | A contact matches if the LinkedIn profile URL is the same **or** all three name/company fields match. |
 | **Custom Mapping** | Opens a pop-up where you define custom conditions using AND/OR logic (for example, match by *First Name* AND *Last Name*, OR by *Professional Email*). |
 
-#### Company Identifier
+### Company Identifier
 
 Choose how Enginy determines whether a company already exists in your CRM.
 
@@ -141,11 +141,11 @@ Choose how Enginy determines whether a company already exists in your CRM.
 
 ---
 
-### Step 2: Export Mapping
+## Step 2: Export Mapping
 
 This step configures which Enginy fields map to which CRM fields when exporting data. The setup is split into two tabs — **Contacts** and **Companies** — and the mapping configuration works the same way in both.
 
-#### Field Types
+### Field Types
 
 | Field Type | Description |
 |---|---|
@@ -156,7 +156,7 @@ This step configures which Enginy fields map to which CRM fields when exporting 
 
 > **Warning:** Do not map a Company field in the **Contacts** tab, or a Contact field in the **Companies** tab. Doing so may cause export errors.
 
-#### Association Type
+### Association Type
 
 The **Association Type** setting controls the relationship between a contact and a company inside the CRM.
 
@@ -168,7 +168,7 @@ The **Association Type** setting controls the relationship between a contact and
 
 > **Warning:** The "Associate as Primary and remove previous associations" option is **not recommended** unless you are certain you want to erase all prior associations for the record. Using it can result in data loss if historical relationships exist.
 
-#### Exporting Associated Companies
+### Exporting Associated Companies
 
 When exporting a contact, you can automatically generate the association between the contact and its company. To do this:
 
@@ -179,7 +179,7 @@ When activated, the company record linked to the contact is exported (or updated
 
 ---
 
-### Step 3: Campaign Mapping (Optional)
+## Step 3: Campaign Mapping (Optional)
 
 This step lets you sync campaign-specific properties to your CRM. These are not standard list fields; they are properties tied to campaign activity.
 
@@ -196,17 +196,17 @@ This step lets you sync campaign-specific properties to your CRM. These are not 
 
 ---
 
-### Step 4: User Mapping
+## Step 4: User Mapping
 
 This final step defines the associations between Enginy users/identities and CRM users so that exports and activity logs are attributed to the correct people.
 
-#### Identities Mapping
+### Identities Mapping
 
 An **Identity** in Enginy is the profile that runs a campaign (for example, a LinkedIn profile or an email sender). Identities Mapping links each Enginy identity to a CRM user.
 
 When a campaign — which is always linked to an identity — performs a sync or export, the CRM activity log shows the associated CRM user as the one who executed the action.
 
-#### Users Mapping
+### Users Mapping
 
 **Users Mapping** links an Enginy user account to a CRM user. This sets the default owner for any record exported by that user.
 
@@ -214,13 +214,13 @@ If CRM users have different permission levels, this association respects those l
 
 ---
 
-### Save Your Configuration
+## Save Your Configuration
 
 After completing all four steps, click **Update** to save your CRM configuration.
 
 ---
 
-## Troubleshooting
+# Troubleshooting
 
 | Symptom / Error | Cause | Resolution |
 |---|---|---|
@@ -231,7 +231,7 @@ After completing all four steps, click **Update** to save your CRM configuration
 
 ---
 
-## FAQs
+# FAQs
 
 **Q1: Can I connect more than one CRM at the same time?**
 No. Enginy supports only one active CRM integration at a time. If you want to switch to a different CRM, disable the current one first, then enable and configure the new one.

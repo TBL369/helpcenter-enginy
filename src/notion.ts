@@ -345,11 +345,10 @@ export class NotionClient {
         continue;
       }
 
-      // Encabezado H4 — Notion no soporta H4; renderizar como párrafo en negrita
+      // Encabezado H4 — Notion no soporta H4; renderizar como párrafo en negrita conservando el prefijo ####
       if (trimmedLine.startsWith('#### ')) {
         flushParagraph();
-        const h4Text = trimmedLine.substring(5);
-        blocks.push(this.createParagraphBlock(`**${h4Text}**`));
+        blocks.push(this.createParagraphBlock(`**${trimmedLine}**`));
         i++;
         continue;
       }

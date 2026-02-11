@@ -2,13 +2,13 @@
 
 AI Finder lets you discover contacts and companies from LinkedIn using natural language queries instead of manually configuring complex filters in LinkedIn Sales Navigator. Describe your ideal prospects in everyday language, and AI Finder automatically builds an optimized search — returning matching results ready to import into Enginy.
 
-## Before You Start
+# Before You Start
 
 - Make sure your **AI Playbook** and **Personal Information** are properly configured in Enginy. These settings help the system understand your target audience, industry, and sales focus, allowing both AI Finder and AI Recommendations to deliver more relevant results.
 
 ---
 
-## Table of Contents
+# Table of Contents
 
 - [How It Works](#how-it-works)
 - [Available Filters](#available-filters)
@@ -22,7 +22,7 @@ AI Finder lets you discover contacts and companies from LinkedIn using natural l
 
 ---
 
-## How It Works
+# How It Works
 
 Instead of selecting dozens of individual filters like job title, industry, or location, you describe what you are looking for in plain language and AI Finder automatically interprets your intent, generates the right filters, and returns matching results.
 
@@ -32,7 +32,7 @@ Instead of selecting dozens of individual filters like job title, industry, or l
 
 The AI will automatically build an optimized LinkedIn search with the correct job titles, industries, company sizes, and locations — returning matching contacts or companies ready to import.
 
-### Search Step by Step
+## Search Step by Step
 
 1. **Describe your target** — Type a natural language query into the AI Finder search field (e.g., "Marketing directors at fintech startups in London").
 2. **Review generated filters** — The system analyzes your query and builds an optimized LinkedIn Sales Navigator search. Review the filters it has selected.
@@ -43,11 +43,11 @@ The AI will automatically build an optimized LinkedIn search with the correct jo
 
 ---
 
-## Available Filters
+# Available Filters
 
 AI Finder supports the following LinkedIn Sales Navigator filters. When you enter a natural language query, the AI automatically selects and configures the relevant filters from this set.
 
-### Contact Search Filters
+## Contact Search Filters
 
 Use these filters when searching for people (leads):
 
@@ -71,7 +71,7 @@ Use these filters when searching for people (leads):
 
 > **Tip:** Contacts who recently changed jobs typically show higher engagement rates. Consider combining the **Recently Changed Jobs** filter with your outreach campaigns for better response rates.
 
-### Company Search Filters
+## Company Search Filters
 
 Use these filters when searching for organizations (accounts):
 
@@ -87,7 +87,7 @@ Use these filters when searching for organizations (accounts):
 
 ---
 
-## Key Benefits
+# Key Benefits
 
 - **Saves time:** Search setup takes seconds instead of minutes. No need to manually configure multiple filters.
 - **Smarter searches:** AI Finder finds more relevant results by automatically generating variations and combinations of filters you might not have considered.
@@ -96,17 +96,17 @@ Use these filters when searching for organizations (accounts):
 
 ---
 
-## AI Recommendations
+# AI Recommendations
 
 Alongside the AI Finder search field, Enginy offers AI Recommendations — dynamically generated suggestions that proactively surface relevant contacts and companies tailored to your Identity, existing clients, and activity on the platform.
 
-### How AI Recommendations Work
+## How AI Recommendations Work
 
 Instead of building searches from scratch, AI Recommendations present ready-to-use queries that match your business focus. Each recommendation appears as a selectable pill directly below the AI Finder search input. Clicking one instantly generates a customized list of leads or companies aligned with your sales strategy.
 
 > **Important:** For the most accurate and personalized recommendations, make sure your **AI Playbook** and **Personal Information** are properly configured. These settings help the system understand your target audience, industry, and sales focus, allowing AI Recommendations to deliver more relevant suggestions.
 
-### Recommendation Types
+## Recommendation Types
 
 AI Recommendations are categorized based on different prospecting strategies:
 
@@ -130,40 +130,40 @@ This means your suggestions stay relevant and continue to surface new opportunit
 
 ---
 
-## FAQs
+# FAQs
 
-### Can I use AI Finder with sources other than LinkedIn?
+## Can I use AI Finder with sources other than LinkedIn?
 
 Not yet. AI Finder currently works exclusively with LinkedIn imports. Support for additional sources is planned for future releases.
 
-### Can I edit the filters that AI Finder generates?
+## Can I edit the filters that AI Finder generates?
 
 Yes. After AI Finder generates filters from your query, you can review, modify, add, or remove any filter before importing contacts or companies.
 
-### What types of searches does AI Finder support?
+## What types of searches does AI Finder support?
 
 AI Finder supports both:
 
 - **Contact searches** (people) — e.g., "Marketing managers in SaaS companies"
 - **Company searches** (organizations) — e.g., "Fintech startups in London"
 
-### What happens if my query is too broad or unclear?
+## What happens if my query is too broad or unclear?
 
 The AI will still generate results, but they will be broader and less targeted. For more precise matches, include specific details such as job titles or functions, industries, locations, and company size ranges.
 
-### What are AI Recommendations based on?
+## What are AI Recommendations based on?
 
 AI Recommendations are powered by your Identity and AI Playbook configuration. The system uses these inputs to generate tailored lead and company suggestions that align with your business goals.
 
-### Can I modify a recommended search after selecting it?
+## Can I modify a recommended search after selecting it?
 
 Yes. Once you select a recommendation, you can adjust any filters, exclude specific results, or export the list to campaigns or workflows.
 
-### How is AI Finder different from AI Recommendations?
+## How is AI Finder different from AI Recommendations?
 
 - **AI Finder** lets you search using natural language queries that you write yourself.
 - **AI Recommendations** proactively suggests pre-built queries based on your account configuration, activity, and Ideal Customer Profile.
 
-### Are AI Recommendations the same for all users?
+## Are AI Recommendations the same for all users?
 
 No. Each user receives personalized recommendations based on their Identity, AI Playbook configuration, location, and target market.

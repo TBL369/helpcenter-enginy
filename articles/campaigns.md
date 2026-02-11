@@ -2,7 +2,7 @@
 
 Campaigns in Enginy let you build automated, multichannel outreach sequences targeting your contacts via LinkedIn and Email. This guide covers everything from creating your first campaign to advanced analytics, deliverability best practices, and troubleshooting.
 
-## Prerequisites / Before You Start
+# Prerequisites / Before You Start
 
 Before creating a campaign, make sure the following are in place:
 
@@ -14,7 +14,7 @@ Before creating a campaign, make sure the following are in place:
 
 ---
 
-## Table of Contents
+# Table of Contents
 
 - [What Is a Campaign](#what-is-a-campaign)
 - [Campaign Dashboard](#campaign-dashboard)
@@ -75,7 +75,7 @@ Before creating a campaign, make sure the following are in place:
 
 ---
 
-## What Is a Campaign
+# What Is a Campaign
 
 A campaign in Enginy is a programmable outreach sequence that you launch toward the contacts you want to engage. The goal of every campaign is to generate a response from a lead.
 
@@ -87,15 +87,15 @@ Each campaign can have its own approach, sequence logic, tonality, and target se
 
 ---
 
-## Campaign Dashboard
+# Campaign Dashboard
 
 The Campaign Dashboard is the main hub where you can view, filter, and manage all of your campaigns.
 
-### Monthly Conversations
+## Monthly Conversations
 
 At the top right of the Campaigns section you can see the **Monthly Conversations** indicator. This shows the number of new conversations that can be opened each month. It counts new conversations opened -- not the total number of messages sent.
 
-### Filtering and Searching Campaigns
+## Filtering and Searching Campaigns
 
 You can filter campaigns using the following options:
 
@@ -111,7 +111,7 @@ You can filter campaigns using the following options:
 
 By default only the search bar and the identity filter are visible. You can add additional filters using the **+ Add filter** button. Once applied, filters can be saved using the save icon to the right of the filters bar.
 
-### Campaign Card Details
+## Campaign Card Details
 
 Each campaign appears as a summary card displaying:
 
@@ -127,7 +127,7 @@ Each campaign appears as a summary card displaying:
 
 > **Note:** Campaign tags are specific to campaigns. Do not confuse them with AI Tags (used for conversations) or List Tags (used for contact lists).
 
-### Quick Actions Menu
+## Quick Actions Menu
 
 Clicking the three-dot menu at the top-right corner of a campaign card reveals the following options:
 
@@ -142,7 +142,7 @@ You can also create a new campaign from the **+ New Campaign** button at the top
 
 ---
 
-## Creating a Campaign
+# Creating a Campaign
 
 To create a new campaign:
 
@@ -151,7 +151,7 @@ To create a new campaign:
 
 The campaign creation wizard has four steps.
 
-### Step 1 -- Details
+## Step 1 -- Details
 
 Define the basic configuration for your campaign:
 
@@ -164,13 +164,13 @@ Define the basic configuration for your campaign:
 | **CRM Sync Settings** | No | Enable if your CRM is integrated and you want to record conversations. Options: **No** (never export), **Yes** (always export), **Only when a contact replies** (export all messages once a reply is received). |
 | **Advanced Tracking Settings** | No | Optionally enable: **Add tracking pixel to emails** (track opens) and/or **Track email links** (track clicks on links). |
 
-### Step 2 -- Sequence
+## Step 2 -- Sequence
 
 In this step you design the logic of actions and conditions from **Start** to **End**.
 
 Press **+** to add an action or a condition at any point. The sequence advances from one step to the next as long as the lead does **not** respond to a message. If a lead responds, the sequence stops for that lead.
 
-#### Available Actions
+### Available Actions
 
 | Action | Description |
 |---|---|
@@ -192,7 +192,7 @@ For the actions that include a message body (LinkedIn Message, LinkedIn InMail, 
 
 > **Important:** AI-generated messages are available at no additional credit cost.
 
-#### Available Conditions
+### Available Conditions
 
 Conditions branch the sequence into two paths (**Yes** or **No**) depending on whether the condition is met:
 
@@ -205,11 +205,11 @@ Conditions branch the sequence into two paths (**Yes** or **No**) depending on w
 | **Accepted LinkedIn connection** | Has the lead accepted the connection request within X days? |
 | **Is already a connection** | Is the lead already a 1st-degree LinkedIn connection? |
 
-#### Timing Between Actions
+### Timing Between Actions
 
 By default each action executes immediately after the previous one. To add a delay, click the **Action immediately** label at the top of the action box and configure the wait time in seconds, minutes, hours, or days.
 
-#### AI Conversation Continuation
+### AI Conversation Continuation
 
 If a lead replies to a message in the sequence, the automated sequence stops for that lead. You can then handle the follow-up conversation in three ways:
 
@@ -221,7 +221,7 @@ You can view and modify the prompt the AI uses by clicking **Prompt** in the seq
 
 > **Important:** In all three modes the automated campaign sequence for that contact is halted once they reply. Only the conversation follow-up continues (manual or AI).
 
-### Step 3 -- Target
+## Step 3 -- Target
 
 Add the contacts you want to reach. There are two options:
 
@@ -230,7 +230,7 @@ Add the contacts you want to reach. There are two options:
 
 > **Note:** You can also add contacts to a campaign later directly from the **Contacts** page.
 
-### Step 4 -- Review and Launch
+## Step 4 -- Review and Launch
 
 The final step shows a summary of everything you configured (details, sequence, and contacts).
 
@@ -238,7 +238,7 @@ The final step shows a summary of everything you configured (details, sequence, 
 2. If everything looks correct, click **Launch Campaign**.
 3. Your active campaign will appear under **Campaigns > Active**.
 
-### Saving and Resuming a Draft Campaign
+## Saving and Resuming a Draft Campaign
 
 You can close the campaign creation wizard at any time without losing work -- the campaign is saved automatically as a draft. Find it later under **Campaigns > Draft**, where you can:
 
@@ -249,11 +249,11 @@ You can close the campaign creation wizard at any time without losing work -- th
 
 ---
 
-## Conditional Campaigns
+# Conditional Campaigns
 
 Conditional Campaigns let you create flexible, rules-based sequences that adapt to each contact's unique data and behavior. Instead of building separate flows for different scenarios (email only, LinkedIn only, mobile only), you can create one campaign that adjusts itself based on what each contact has available and how they interact with your outreach.
 
-### Key Features
+## Key Features
 
 - **Multichannel sequences** -- Combine LinkedIn, Email, and Tasks in a single sequence. No need to jump between channels.
 - **AI-powered messages at no extra cost** -- Send personalized, high-performing messages using AI variables. These messages dynamically adapt to each contact and can be previewed and edited before sending.
@@ -262,7 +262,7 @@ Conditional Campaigns let you create flexible, rules-based sequences that adapt 
 - **Smart targeting with conditions** -- Filter based on available data (email, mobile, LinkedIn profile), past contact history, job title, seniority, industry, time in role, CRM presence, and more.
 - **AI replies** -- Once a contact replies, let AI automatically continue the conversation or review AI-suggested replies before sending.
 
-### Building Dynamic Sequences
+## Building Dynamic Sequences
 
 Here is an example of a conditional campaign sequence:
 
@@ -283,11 +283,11 @@ This logic can be built entirely in the visual sequence editor with conditions a
 
 ---
 
-## Campaign Templates
+# Campaign Templates
 
 Enginy provides pre-built campaign templates organized by complexity. Choose the right strategy based on your prospecting goals, effort level, and personalization needs.
 
-### Beginner Sequences
+## Beginner Sequences
 
 Simple, single-channel strategies recommended for campaigns based on a specific event or intent signal (e.g., new hire, new funding round).
 
@@ -298,7 +298,7 @@ Simple, single-channel strategies recommended for campaigns based on a specific 
 | 3 | **LinkedIn Low Touch + Task** | Performs simple LinkedIn interactions (profile visit, post like), sends connection requests, and immediately creates a follow-up task. | Prospects you ultimately need to call to qualify. Use LinkedIn interactions as an icebreaker. |
 | 4 | **LinkedIn Social Warming** | Engages contacts by viewing their profile, liking posts, and following them before sending a connection request. | Building a network of relevant ICPs without necessarily reaching out yet. Ideal during holiday seasons. |
 
-### Medium Sequences
+## Medium Sequences
 
 More personalization and multichannel strategies.
 
@@ -310,7 +310,7 @@ More personalization and multichannel strategies.
 | 8 | **LinkedIn + Email** | Quick LinkedIn interactions (visits, likes, messages) followed promptly by email communication. | Users who want to move fast between touchpoints. |
 | 9 | **LinkedIn Low Touch + Intro Message + Task** | Visits profiles, likes posts, sends personalized connection requests or messages, then creates a call task. | Top-priority prospects where you want some engagement before calling. |
 
-### Advanced Sequences
+## Advanced Sequences
 
 Multi-step, high-impact sequences for experienced users aiming for maximum engagement.
 
@@ -321,11 +321,11 @@ Multi-step, high-impact sequences for experienced users aiming for maximum engag
 
 ---
 
-## Inside a Campaign
+# Inside a Campaign
 
 Click on any campaign card to open its detailed view.
 
-### General Information
+## General Information
 
 At the top of the campaign view you will find:
 
@@ -345,7 +345,7 @@ Additional shortcuts available from this view:
 - **Edit Campaign** -- Opens the campaign editor (button at the top right).
 - **Three-dot menu** -- Duplicate or delete the campaign.
 
-### Overview Tab
+## Overview Tab
 
 The Overview tab is your campaign's performance dashboard, bringing together key metrics across all channels.
 
@@ -394,7 +394,7 @@ The Overview tab is your campaign's performance dashboard, bringing together key
 
 Below the channel metrics you can see a preview of the entire sequence with a count of leads that have passed through each step. Click **View activity** on any step to jump to the Activity tab filtered to that step.
 
-### Audience Tab
+## Audience Tab
 
 The Audience tab shows all contacts included in the campaign along with their current status. This is the ideal view to understand campaign reach and diagnose issues.
 
@@ -463,7 +463,7 @@ Select one or more leads using the checkboxes on the left to reveal a popup with
 | **Resume** | Resumes the campaign for paused leads. |
 | **Remove from campaign** | Removes the lead from the campaign. Once removed, a contact cannot be added back to the same campaign. |
 
-### Activity Tab
+## Activity Tab
 
 The Activity tab lists all actions performed in the campaign (excluding conditions).
 
@@ -489,11 +489,11 @@ The Activity tab tracks LinkedIn actions (message, connect, visit, like), email 
 
 ---
 
-## Campaign Analytics Page
+# Campaign Analytics Page
 
 The Campaign Analytics page provides a global overview of all campaign activities across all users and channels. This is separate from the per-campaign analytics in the Overview tab described above.
 
-### Available Metrics
+## Available Metrics
 
 **Replies:**
 
@@ -524,7 +524,7 @@ The Campaign Analytics page provides a global overview of all campaign activitie
 - Emails bounced
 - Email replies
 
-### Filtering Analytics
+## Filtering Analytics
 
 You can filter the Analytics page by:
 
@@ -540,7 +540,7 @@ These filters allow you to analyze performance in targeted ways, understand what
 
 ---
 
-## Campaign Statuses and Substatuses Reference
+# Campaign Statuses and Substatuses Reference
 
 The Audience tab uses statuses and substatuses to explain precisely why a contact may not be progressing. Below is the complete reference.
 
@@ -585,9 +585,9 @@ The Audience tab uses statuses and substatuses to explain precisely why a contac
 
 ---
 
-## Managing Campaigns
+# Managing Campaigns
 
-### Editing an Active Campaign
+## Editing an Active Campaign
 
 You can modify the parameters of an active campaign. However, changes will only apply to **future interactions** and will not affect actions already performed.
 
@@ -597,7 +597,7 @@ You can modify the parameters of an active campaign. However, changes will only 
 
 > **Warning:** Once a campaign is active (no longer in draft), any steps you add become permanent -- you cannot remove them later. If you need a different sequence, stop or archive the campaign and create a new one. Steps in an active campaign cannot be deleted.
 
-### Pausing a Campaign
+## Pausing a Campaign
 
 You can pause a campaign at any time. This is useful when you need to make adjustments or temporarily stop interactions.
 
@@ -605,26 +605,26 @@ You can pause a campaign at any time. This is useful when you need to make adjus
 2. Click the three-dot menu next to the campaign.
 3. Select **Pause**.
 
-### Duplicating a Campaign
+## Duplicating a Campaign
 
 You can duplicate any campaign (active, paused, or draft) from the three-dot menu. This creates a copy in Draft status that you can modify before launching.
 
-### Archiving and Deleting
+## Archiving and Deleting
 
 - **Mark as archived** -- Deactivates the campaign. It remains visible under the Archived filter.
 - **Delete** -- Permanently removes the campaign.
 
 Both options are available from the three-dot menu on the campaign card.
 
-### Exporting Campaign Data
+## Exporting Campaign Data
 
 At the top right of the Campaigns section there is a button to download metrics and total campaign statistics in **CSV format**. You can also download a CSV report from within the individual Campaign page.
 
 ---
 
-## LinkedIn Campaign Best Practices
+# LinkedIn Campaign Best Practices
 
-### Connection Request Limits
+## Connection Request Limits
 
 LinkedIn imposes limits on daily connection requests to protect against spam. Enginy adheres to these limits to keep your account safe.
 
@@ -638,7 +638,7 @@ Enginy sets a default cap of **20 connection requests per day** per LinkedIn ide
 
 > **Tip:** Focus on quality over quantity. Sending fewer, more personalized invites will yield better results and keep your account in good standing.
 
-### Optimal Sequence Length
+## Optimal Sequence Length
 
 A highly effective LinkedIn sequence typically includes **2--3 touches**:
 
@@ -650,7 +650,7 @@ A highly effective LinkedIn sequence typically includes **2--3 touches**:
 
 Keep messages polite, concise, and spaced out over several days.
 
-### Message Chunking Technique
+## Message Chunking Technique
 
 When reaching out on LinkedIn, consider breaking a single long message into smaller chunks sent over a short span of time (for example, 30 seconds apart). This mimics the natural pace of someone typing in real time.
 
@@ -673,7 +673,7 @@ When reaching out on LinkedIn, consider breaking a single long message into smal
 
 > **Tip:** Message chunks can be created easily using AI variables. Reach out to the Enginy team if you need assistance setting this up.
 
-### Setting Timeframes for LinkedIn Invitations
+## Setting Timeframes for LinkedIn Invitations
 
 When you add a LinkedIn connection request step to your sequence, you can specify a timeout (for example, 14 or 15 days). If the contact does not accept within that period, Enginy marks the invitation as "not accepted" and ends the sequence for that contact.
 
@@ -685,7 +685,7 @@ When you add a LinkedIn connection request step to your sequence, you can specif
 
 > **Note:** The contact can still accept the invitation after the timeout, but the automated sequence will not continue. You could follow up manually if they accept late.
 
-### Handling Unaccepted Invitations
+## Handling Unaccepted Invitations
 
 If a prospect has not accepted your connection request after the configured timeframe:
 
@@ -693,7 +693,7 @@ If a prospect has not accepted your connection request after the configured time
 - **Reach out through other channels** -- If you have their email, send a brief, polite message mentioning your LinkedIn request.
 - **Do nothing** -- Let it be and focus on other contacts. If Enginy's auto-withdrawal is enabled, the system will pull back the pending request automatically.
 
-### Withdrawing Connection Requests
+## Withdrawing Connection Requests
 
 You can withdraw pending connection requests in bulk from Enginy:
 
@@ -705,7 +705,7 @@ You can withdraw pending connection requests in bulk from Enginy:
 
 Regularly withdrawing stale invites is a good practice to stay within LinkedIn's invitation limits.
 
-### Handling Not-Interested Contacts
+## Handling Not-Interested Contacts
 
 If a lead replies but indicates they are not interested:
 
@@ -716,7 +716,7 @@ If a lead replies but indicates they are not interested:
 
 A "no" today is not a dead end. Handling it graciously ensures the contact might engage in the future or refer you to others.
 
-### Common LinkedIn Mistakes to Avoid
+## Common LinkedIn Mistakes to Avoid
 
 | Mistake | Why it hurts |
 |---|---|
@@ -727,9 +727,9 @@ A "no" today is not a dead end. Handling it graciously ensures the contact might
 
 ---
 
-## Email Campaign Best Practices
+# Email Campaign Best Practices
 
-### Recommended Sending Limits
+## Recommended Sending Limits
 
 | Limit Type | Recommendation | Rationale |
 |---|---|---|
@@ -741,19 +741,19 @@ Enginy automatically paces your campaign and enforces the configured sending lim
 
 > **Tip:** To reach higher total volumes, connect multiple sender addresses or domains rather than increasing the send rate of a single inbox.
 
-### Consequences of Exceeding Limits
+## Consequences of Exceeding Limits
 
 - **Account suspension or rate limiting** -- Your email provider may temporarily block outgoing messages.
 - **Damage to domain reputation** -- Unusual sending spikes get flagged by spam filters, causing more future emails to land in spam.
 - **Increased spam reports and bounces** -- High-volume sends to cold contacts yield more bounces and complaints, further hurting deliverability.
 
-### Adjusting Sending Limits
+## Adjusting Sending Limits
 
 Enginy allows you to adjust daily and hourly send caps under your email identity settings. You might lower the volume temporarily if you notice deliverability issues, or raise it slightly after a successful warm-up period.
 
 > **Warning:** Stick to the recommended values unless you have a specific reason to change them. Only experienced senders with properly warmed domains should consider higher limits, and even then with caution. It is usually better to add another sending identity than to raise the limit on a single account.
 
-### Using Multiple Email Addresses
+## Using Multiple Email Addresses
 
 Connecting multiple email addresses to Enginy is a best practice for scaling outreach safely:
 
@@ -764,7 +764,7 @@ Connecting multiple email addresses to Enginy is a best practice for scaling out
 
 You can configure Enginy to rotate between connected email accounts when sending campaign emails, or assign different campaigns to different addresses.
 
-### Email Deliverability Best Practices
+## Email Deliverability Best Practices
 
 1. **Set up SPF, DKIM, and DMARC** -- Make sure your domain's DNS is correctly configured. Use free online tools to verify your DNS health and email deliverability score.
 2. **Warm up your domain** -- Send a small volume of emails for 2--3 weeks before launching campaigns (see [Email Warm-up](#email-warm-up)).
@@ -784,13 +784,13 @@ You can configure Enginy to rotate between connected email accounts when sending
 
 ---
 
-## Email Warm-up
+# Email Warm-up
 
-### What Is Email Warm-up
+## What Is Email Warm-up
 
 Email warm-up is the process of gradually building the sending reputation of a new email account or domain before sending large campaign volumes. Over a period of weeks, you send a small number of emails each day, then slowly increase. The emails go to real recipients (or warm-up networks) who open and reply, signaling positive engagement. This builds trust with email providers (Gmail, Outlook, etc.) so they treat your domain as a legitimate sender.
 
-### How to Activate Email Warm-up in Enginy
+## How to Activate Email Warm-up in Enginy
 
 Email warm-up in Enginy has a fixed cost of **50 EUR/month** and must be activated by your assigned Account Manager. You can warm up one email address at a time.
 
@@ -802,7 +802,7 @@ Email warm-up in Enginy has a fixed cost of **50 EUR/month** and must be activat
 > - Do **not** send email campaigns from the address while it is warming up.
 > - You will receive automated warming emails during this period. Do **not** mark them as spam -- this would defeat the purpose. Simply open and archive them.
 
-### Recommended Warm-up Schedule
+## Recommended Warm-up Schedule
 
 A typical warm-up schedule for a brand-new domain:
 
@@ -816,7 +816,7 @@ After approximately 3 weeks, if you maintained good engagement (few bounces, few
 
 > **Important:** Even after the warm-up period, continue monitoring email performance. If you plan to further increase volume, do it in small steps. For scaling to very high volumes, add more domains or addresses and warm them up too, rather than pushing one domain to its limit.
 
-### What Happens if You Skip Warm-up
+## What Happens if You Skip Warm-up
 
 - **Emails flagged as suspicious** -- Email providers notice sudden high-volume sending from a new source. Emails are likely routed to spam.
 - **Sending limits or blocks** -- Providers may block or suspend your account for what looks like spam activity.
@@ -824,7 +824,7 @@ After approximately 3 weeks, if you maintained good engagement (few bounces, few
 
 ---
 
-## Working Hours Configuration
+# Working Hours Configuration
 
 Working hours settings define the time window during which your campaign can send messages. Outside of working hours, campaigns are automatically paused. For example, if your working hours are set to 9:00 AM -- 5:00 PM, Enginy will not send any campaign messages before 9:00 AM or after 5:00 PM.
 
@@ -843,7 +843,7 @@ Working hours settings define the time window during which your campaign can sen
 
 ---
 
-## FAQs
+# FAQs
 
 **1. What happens if a contact responds to a message in my campaign?**
 

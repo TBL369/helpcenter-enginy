@@ -4,7 +4,7 @@ The AI Playbook is the central brain of your Enginy account. It is where you con
 
 ---
 
-## Table of Contents
+# Table of Contents
 
 - [Overview](#overview)
 - [Getting Started](#getting-started)
@@ -62,7 +62,7 @@ The AI Playbook is the central brain of your Enginy account. It is where you con
 
 ---
 
-## Overview
+# Overview
 
 The AI Playbook is located in the left-hand menu of the Enginy dashboard. It contains five tabs, each serving a distinct purpose:
 
@@ -76,7 +76,7 @@ The AI Playbook is located in the left-hand menu of the Enginy dashboard. It con
 
 ---
 
-## Getting Started
+# Getting Started
 
 To begin teaching the AI about your business, navigate to **Enginy > AI Playbook** from the left-hand menu. You will work primarily in the first two tabs — **Company Information** and **Personal Information** — to give the AI the context it needs.
 
@@ -101,11 +101,11 @@ Once these two tabs are complete, you have taught the AI what you sell, who you 
 
 ---
 
-## Company Information
+# Company Information
 
 This tab provides the AI with all the relevant context about your company. It is used by both AI Variables and AI Campaigns to generate personalized, accurate output. It also sets default filters (saved profiles based on ICPs) for your searches.
 
-### General Details
+## General Details
 
 Fill in the following core fields:
 
@@ -121,11 +121,11 @@ Fill in the following core fields:
 | **Founding Year** | Year the company was founded |
 | **Company Overview** | A brief overview of the mission, vision, and unique selling points |
 
-### Fill with AI (Company)
+## Fill with AI (Company)
 
 Click the **Fill with AI** button to activate a workflow that searches your company's Website and LinkedIn for all the information needed to populate the fields above. The system fills in whatever it finds automatically. You can then review and adjust any details.
 
-### Products and Services
+## Products and Services
 
 Below the general details, fill in the strategic modules that train the AI. The **Products & Services** section includes:
 
@@ -138,7 +138,7 @@ Below the general details, fill in the strategic modules that train the AI. The 
 
 > **Tip:** Click **+ Add another** to insert additional products or services.
 
-### Ideal Customer Profile (ICP)
+## Ideal Customer Profile (ICP)
 
 Define your ICP so the AI can tailor outreach to the right audience:
 
@@ -154,18 +154,18 @@ Define your ICP so the AI can tailor outreach to the right audience:
 | **Additional Information** | Any other qualifying details |
 | **Disqualifying Factors** | Criteria that disqualify a prospect |
 
-### Disqualifying Factors
+## Disqualifying Factors
 
 Under the ICP section, you can specify the factors that make a prospect a poor fit. This helps the AI avoid engaging leads that do not match your target.
 
-### Competitors
+## Competitors
 
 | Field | Description |
 |---|---|
 | **Competitor Name** | Name of the competing company |
 | **Product Differentiator** | How your product differs from theirs |
 
-### Testimonials
+## Testimonials
 
 | Field | Description |
 |---|---|
@@ -174,7 +174,7 @@ Under the ICP section, you can specify the factors that make a prospect a poor f
 | **Job Position** | Their job title |
 | **Main Benefit** | The key benefit they highlight |
 
-### Company FAQs
+## Company FAQs
 
 | Field | Description |
 |---|---|
@@ -183,17 +183,17 @@ Under the ICP section, you can specify the factors that make a prospect a poor f
 
 These FAQs give the AI ready-made answers it can reference during conversations and message generation.
 
-### Save Changes
+## Save Changes
 
 To save or update any changes you have made, click the **Update** button at the bottom right of the page.
 
 ---
 
-## Personal Information
+# Personal Information
 
 This tab holds information related to the **Identities** connected to your account. It gives the AI context about *who* is sending each message, enabling more authentic personalization.
 
-### Identity Fields
+## Identity Fields
 
 First, select an identity from the dropdown menu. Then fill in the following fields:
 
@@ -215,15 +215,15 @@ First, select an identity from the dropdown menu. Then fill in the following fie
 | **Educations** | Educational background |
 | **Interests** | Personal or professional interests |
 
-### Fill with AI (Personal)
+## Fill with AI (Personal)
 
 Click the **Fill with AI** button to automatically populate these fields using data from the selected identity and their LinkedIn profile. Review and edit as necessary. Repeat this step for each identity you want to use.
 
 ---
 
-## AI Variables
+# AI Variables
 
-### Understand AI Variables
+## Understand AI Variables
 
 An AI Variable is a reusable prompt-and-settings bundle that tells Enginy how to research and return a specific piece of information for a Contact or Company. Think of it as a **smart column**: instead of manually researching, the AI reads the attributes you provide (name, domain, job title, LinkedIn, etc.), optionally searches external sources, and returns the answer in the format you specify.
 
@@ -234,7 +234,7 @@ AI Variables are used to generate additional information columns in your lists. 
 - **Contact:** "Best outreach icebreaker (1 sentence) for #{{first_name}} based on their recent activity."
 - **Company:** "1-line summary of company growth signals (funding, hiring, product launch)."
 
-### Create an AI Variable
+## Create an AI Variable
 
 1. Navigate to **AI Playbook > AI Variables**.
 2. Click **Create AI Variable** (top right).
@@ -243,7 +243,7 @@ AI Variables are used to generate additional information columns in your lists. 
 
 > **Tip:** You may also start from a predefined template instead of creating from scratch.
 
-### Output Types
+## Output Types
 
 Select the **Output** (response type) to define how the AI returns results:
 
@@ -258,11 +258,11 @@ Select the **Output** (response type) to define how the AI returns results:
 
 **Example:** An AI Variable with the instruction "Tell me if the company is either a B2B, B2C, or B2C with B2B products" and the output type set to **One of** will only return one of those three values. This ensures consistency, makes results easier to filter and analyze, and prevents unexpected or vague answers.
 
-### Provide Explanation Option
+## Provide Explanation Option
 
 You can activate the **Provide explanation** option when creating or editing a variable. When enabled, the AI returns both the selected result **and** a short reasoning behind it, giving your team more context about why the AI chose that answer.
 
-### Write an Effective Prompt
+## Write an Effective Prompt
 
 The **Prompt** field is the main instruction. This is where you tell the AI exactly what to return and the format. Use the following recommended structure:
 
@@ -284,11 +284,11 @@ The **Prompt** field is the main instruction. This is where you tell the AI exac
 
 > **Tip:** Be explicit in your prompt about what to search for when using Deep Research. The more specific you are, the more accurate the results will be.
 
-#### Enhance Button
+### Enhance Button
 
 Below the prompt editor you will find the **Enhance** button. Clicking it lets the AI automatically polish and refine your prompt — improving its structure, wording, and references to Enginy attributes. This is especially useful when you have written a first draft and want to make sure it follows best practices before saving. You can review the enhanced version and accept or adjust it as needed.
 
-### Add Attributes (Placeholders)
+## Add Attributes (Placeholders)
 
 Use the **Add attributes** option to select which row fields the variable can use as context. Inside your prompt, reference these fields with the `#{{field_name}}` syntax. When writing in the prompt editor, you can also type `{` to see and select available fields.
 
@@ -306,13 +306,13 @@ Common placeholders include:
 
 Use these inside prompts to make the AI answer relevant to each row.
 
-### Deep Research
+## Deep Research
 
 When creating or editing an AI Variable, you can enable the **Deep Research** toggle to let the AI Agent browse the web and find any information you need. This is a single, comprehensive search option that covers web pages, news, company websites, and other public sources in one unified search.
 
 When Deep Research is enabled, the AI goes beyond the data already available in your lists — it actively searches the internet, visits relevant web pages, and extracts the information your prompt requires.
 
-#### How Deep Research Works
+### How Deep Research Works
 
 1. The AI reads your prompt and understands what information you are looking for.
 2. It performs web searches using relevant keywords based on the lead/company data.
@@ -322,7 +322,7 @@ When Deep Research is enabled, the AI goes beyond the data already available in 
 
 The technology behind Deep Research uses Firecrawl, a specialized web-scraping tool designed to extract content from websites and convert it into a format the AI can understand.
 
-#### Deep Research Capabilities
+### Deep Research Capabilities
 
 | Capability | Description |
 |---|---|
@@ -333,7 +333,7 @@ The technology behind Deep Research uses Firecrawl, a specialized web-scraping t
 | Filter by recency | Focus on recent news or content from specific time periods |
 | Handle dynamic content | Access pages that require JavaScript to render |
 
-#### Limitations Compared to ChatGPT Web Search
+### Limitations Compared to ChatGPT Web Search
 
 | Aspect | Deep Research | ChatGPT Web Search |
 |---|---|---|
@@ -344,14 +344,14 @@ The technology behind Deep Research uses Firecrawl, a specialized web-scraping t
 
 Deep Research is optimized for **batch data enrichment** — answering the same question across many leads/companies consistently.
 
-#### Best Use Cases for Deep Research
+### Best Use Cases for Deep Research
 
 - Finding company information not available in your existing data (website, size, industry, technologies used)
 - Researching specific facts about a lead's company (recent news, funding rounds, product launches)
 - Extracting data from known websites (company website, Wikipedia, Google)
 - Enriching with publicly available information that requires visiting multiple pages
 
-#### When Deep Research May Struggle
+### When Deep Research May Struggle
 
 - Information is behind login walls (private LinkedIn data, gated content)
 - Data changes by the minute (stock prices, live scores, breaking news)
@@ -359,7 +359,7 @@ Deep Research is optimized for **batch data enrichment** — answering the same 
 - Sources actively block web scrapers (some financial or news sites)
 - You need to compare hundreds of sources for a single answer
 
-#### Deep Research Cost Considerations
+### Deep Research Cost Considerations
 
 Deep Research uses more credits than regular AI Variables because:
 
@@ -369,7 +369,7 @@ Deep Research uses more credits than regular AI Variables because:
 
 > **Tip:** Use Deep Research only for fields where the information is not available elsewhere. Test with a small batch first to estimate total costs. Use more specific prompts to reduce the number of search iterations needed.
 
-#### Deep Research Troubleshooting
+### Deep Research Troubleshooting
 
 | Issue | Likely Cause | Solution |
 |---|---|---|
@@ -378,11 +378,11 @@ Deep Research uses more credits than regular AI Variables because:
 | Inconsistent results | Sources may have conflicting information | Add more context to the prompt to narrow down sources |
 | Blocked on certain sites | Anti-bot measures | Some sites cannot be accessed; try alternative sources |
 
-### Select an AI Model
+## Select an AI Model
 
 When creating or editing an AI Variable, you can choose the AI model to use (e.g., Grok 4, o3, Gemini 2.5 Pro). Each model has different strengths — see [Available AI Models](#available-ai-models) for a full comparison.
 
-### Cost Considerations
+## Cost Considerations
 
 Each AI model has an associated cost. Beyond the model, cost can also increase based on:
 
@@ -390,11 +390,11 @@ Each AI model has an associated cost. Beyond the model, cost can also increase b
 - **Nested AI Variables** — if your prompt references other AI Variables, the cost of those implicit variables is added to the total cost.
 - **Deep Research** — enabling the Deep Research toggle adds to the cost per execution due to web searches and page scraping.
 
-### Test an AI Variable
+## Test an AI Variable
 
 Before saving, click the **Test Prompt** button to run the variable on a sample Contact or Company record. Review the output to ensure it meets your expectations. If the results are not satisfactory, go back and adjust the prompt, output type, or search settings.
 
-### Run AI Variables on Your Lists
+## Run AI Variables on Your Lists
 
 Once created, AI Variables appear as columns in your Contact or Company lists. There are several ways to run them:
 
@@ -404,7 +404,7 @@ Once created, AI Variables appear as columns in your Contact or Company lists. T
 4. **Bulk runs:** Click the column header, then select **Run column > Visible rows** or **All rows**.
 5. **Individual run:** Click the play icon in a specific cell to run the variable for an individual lead or company.
 
-### Manage AI Variables
+## Manage AI Variables
 
 All AI Variables are managed from the **AI Playbook > AI Variables** tab. The left panel displays all variables organized in folders, with two tabs: **Contacts** and **Companies**.
 
@@ -420,7 +420,7 @@ All AI Variables are managed from the **AI Playbook > AI Variables** tab. The le
 
 > **Warning:** The variable name cannot be changed once created, as renaming would cause problems in campaigns that reference it. If you need a different name, duplicate the variable, give the copy the desired name, and delete the original.
 
-### Use Case: Personalize or Randomize a Message Template
+## Use Case: Personalize or Randomize a Message Template
 
 You can use AI Variables to write variations of a message template you already have. This is useful when you want parts of your message to change from contact to contact — either personalized based on data or randomized for variety.
 
@@ -453,7 +453,7 @@ You can use AI Variables to write variations of a message template you already h
 
 > **Tip:** Enginy includes a predefined AI Variable called **Randomize Template** that uses this exact structure. Check it out for a ready-to-use example.
 
-### Troubleshoot AI Variables
+## Troubleshoot AI Variables
 
 **"No Data Found" results:**
 
@@ -468,13 +468,13 @@ When AI Variables return "No data found" or produce no results, this is often be
 
 ---
 
-## AI Campaigns
+# AI Campaigns
 
-### Understand AI Campaigns
+## Understand AI Campaigns
 
 AI Campaigns manage the prompts used by the **AI Agent (chatbot)**. When you enable the option in a campaign's settings for the AI to continue the conversation once a lead replies, the AI uses these campaign prompts to craft automatic responses.
 
-### Create an AI Campaign
+## Create an AI Campaign
 
 1. Navigate to **AI Playbook > AI Campaigns**.
 2. Click **+ New campaign prompt** at the bottom of the left panel.
@@ -495,7 +495,7 @@ Enginy includes pre-built AI Campaign templates such as:
 
 You can adjust these templates or create your own from scratch.
 
-### Automate Conversations with AI
+## Automate Conversations with AI
 
 Once your AI Campaign is configured and enabled in a campaign's settings, Enginy AI takes over the conversation flow:
 
@@ -509,13 +509,13 @@ All incoming and outgoing messages from AI-powered campaigns are stored in the *
 
 ---
 
-## AI Conversation Tags
+# AI Conversation Tags
 
-### Understand AI Conversation Tags
+## Understand AI Conversation Tags
 
 AI Conversation Tags let you label conversation replies to organize and act on your sales conversations. The system includes **Auto tagging**, which analyzes the last message sent by a lead to automatically assign the appropriate tag. Tags are dynamic — they are updated as the conversation evolves.
 
-### Default AI Tags
+## Default AI Tags
 
 Enginy includes essential default tags that automatically detect the most common conversation outcomes:
 
@@ -531,7 +531,7 @@ Enginy includes essential default tags that automatically detect the most common
 
 > **Important:** Default tags cannot be deleted or edited, which ensures consistency across your team. However, you can duplicate them and activate or deactivate them depending on your workflow.
 
-### Tag Categories
+## Tag Categories
 
 All tags are grouped into three categories:
 
@@ -543,7 +543,7 @@ All tags are grouped into three categories:
 
 On the **Analytics Page**, you can track a single metric per category. For example, all Positive tags can be aggregated into one main metric for easier reporting. You can also view individual tag counts for more granular insights.
 
-### Create a Custom Tag
+## Create a Custom Tag
 
 1. Click **Create Tag** (top right of the AI Conversation Tags tab).
 2. Configure the following fields:
@@ -557,7 +557,7 @@ On the **Analytics Page**, you can track a single metric per category. For examp
 
 > **Important:** Custom AI tags **must** have a prompt (Instructions) associated before they can be activated for Auto tagging. Without an instruction, the tag can only be used manually.
 
-### Auto Tagging
+## Auto Tagging
 
 Auto tagging is controlled by a toggle switch located below the Instructions text box (and also on the tag card in the main view).
 
@@ -566,7 +566,7 @@ Auto tagging is controlled by a toggle switch located below the Instructions tex
 
 Auto tagging is dynamic. Each time a new message is sent in a conversation, the AI re-evaluates which tags apply.
 
-### Tag Compatibility
+## Tag Compatibility
 
 The AI uses a compatibility matrix that controls how tags interact:
 
@@ -575,7 +575,7 @@ The AI uses a compatibility matrix that controls how tags interact:
 
 This ensures your analytics remain accurate while reflecting the full status of each conversation.
 
-### Manage Tags
+## Manage Tags
 
 In the center of the AI Conversation Tags module, all available tags are displayed as cards. Each card has:
 
@@ -592,7 +592,7 @@ The module provides two views:
 
 A search bar is also available to filter tags by name.
 
-### Where AI Tags Appear
+## Where AI Tags Appear
 
 - **Inbox:** AI tags appear directly in your replies, so you instantly know the context. For example, if a lead replies with "Let's connect again next quarter," the AI tags it as **Bad Timing**. You can always remove a tag manually if it does not fit.
 - **Analytics Page:** Tag metrics are tracked by category (Positive, Neutral, Negative), helping you quickly understand patterns in replies across campaigns.
@@ -601,7 +601,7 @@ A search bar is also available to filter tags by name.
 
 ---
 
-## ICP Quick Filter
+# ICP Quick Filter
 
 The **ICP Quick Filter** is a feature that uses your predefined Ideal Customer Profile from the AI Playbook to automatically apply filters when searching for leads.
 
@@ -632,7 +632,7 @@ You can still adjust any filters manually. Use the ICP filters as a starting poi
 
 ---
 
-## Available AI Models
+# Available AI Models
 
 Enginy offers a curated selection of AI models from leading providers. Each model has different strengths, and choosing the right one can make a significant difference in output quality and cost. Models marked as **Recommended** in the platform are the best starting point for most use cases.
 
@@ -661,11 +661,11 @@ Enginy offers a curated selection of AI models from leading providers. Each mode
 
 ---
 
-## Prompt Best Practices
+# Prompt Best Practices
 
 Generative AI models are extremely powerful, but they only produce good results when they receive good instructions. The quality of the output depends directly on the quality of the prompt.
 
-### What Makes a Good Prompt
+## What Makes a Good Prompt
 
 A good prompt is much more than a question. It is a structured instruction that:
 
@@ -678,7 +678,7 @@ A good prompt is much more than a question. It is a structured instruction that:
 
 Think of the prompt as a briefing for a professional: the better the briefing, the better the work you will get.
 
-### Key Principles
+## Key Principles
 
 **1. Objective first, always**
 
@@ -749,7 +749,7 @@ The first prompt will rarely be perfect. Work in cycles:
 
 The AI does not get offended if you ask it to redo, correct, or restructure.
 
-### Recommended Prompt Template
+## Recommended Prompt Template
 
 Use this base template and adapt it for each use case:
 
@@ -764,7 +764,7 @@ Use this base template and adapt it for each use case:
 | **Constraints** | "Take into account: [length limits, things to avoid, language, etc.]." |
 | **Examples** (optional) | "Example of what I am looking for: [text]." |
 
-### Prompt Examples: Weak vs. Improved
+## Prompt Examples: Weak vs. Improved
 
 **Writing:**
 
@@ -781,7 +781,7 @@ Use this base template and adapt it for each use case:
 - Weak: "Give me training ideas for agents."
 - Improved: "Act as a customer service training specialist. Create a 4-module training program for contact center agents who handle phone and chat interactions. Objective: improve skills in active listening, objection handling, and closing conversations. Context: agents have medium experience (1 year) and serve B2C customers. Format: for each module include the title, learning objectives, estimated duration, and practical activities."
 
-### Common Prompt Mistakes
+## Common Prompt Mistakes
 
 | Mistake | Why It Hurts |
 |---|---|
@@ -793,7 +793,7 @@ Use this base template and adapt it for each use case:
 | Not reviewing critical outputs | Never use AI responses without human validation in areas with legal, medical, financial, or regulatory impact. |
 | Sharing sensitive data unnecessarily | Avoid including personally identifiable information (full names, IDs, phone numbers) when not essential to the task. |
 
-### Prompt Best Practices Checklist
+## Prompt Best Practices Checklist
 
 Before sending your prompt, verify:
 
@@ -812,7 +812,7 @@ If most answers are "yes," your prompt is in the best-practice zone.
 
 ---
 
-## FAQs
+# FAQs
 
 **1. Can I edit or delete the default AI Conversation Tags?**
 
