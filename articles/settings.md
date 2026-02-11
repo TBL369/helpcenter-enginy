@@ -221,25 +221,25 @@ Controls access to account configuration and credit management.
 
 # FAQs
 
-## What happens if I enable automatic contact deletion?
+## Q1: What happens if I enable automatic contact deletion?
 
 When you enable **Automatically delete Contacts without associated company**, the system removes contacts that have no company associated with them. Contacts imported via CSV are exempt from this rule and will not be deleted. This action is permanent, so ensure your team understands the implications before enabling it.
 
-## Can I undo changes made to user permissions?
+## Q2: Can I undo changes made to user permissions?
 
 Permission changes take effect immediately after clicking **Save Changes**. There is no automatic undo function. To revert, you must manually edit the user again and select the previous options.
 
-## How does the Impersonate feature work?
+## Q3: How does the Impersonate feature work?
 
 The Impersonate feature allows administrators to log in as another user and see the platform exactly as that user would. This is useful for troubleshooting issues, providing support, or verifying that permissions are configured correctly. The impersonated session simulates the user's complete experience.
 
-## What should I do if I reach my team license limit?
+## Q4: What should I do if I reach my team license limit?
 
 If you approach your license limit (shown in the Team capacity counter), you have two options:
 
 - **Free up slots**: Remove inactive users or users who no longer need access.
 - **Upgrade your plan**: Contact your account manager or upgrade through the billing section to increase your license capacity.
 
-## How do I enable two-factor authentication for my team?
+## Q5: How do I enable two-factor authentication for my team?
 
 Each user must enable 2FA individually from **Settings** > **Security** by clicking the **Enable 2FA** button and following the configuration wizard. As an administrator, you can recommend or require 2FA as a security policy for your team, but the setup must be completed by each user on their own account.

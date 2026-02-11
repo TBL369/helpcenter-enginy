@@ -200,17 +200,22 @@ When viewing any list of Contacts or Companies, a **blocklist indicator** is dis
 
 # FAQs
 
-**Q: What happens to a contact or company after I add it to the Blocklist?**
-A: The entry is immediately excluded from all lists, campaigns, and CRM exports. It will not appear in search results within those contexts until it is unblocked.
+## Q1: What happens to a contact or company after I add it to the Blocklist?
 
-**Q: Can I add a contact or company back to a list while it is still on the Blocklist?**
-A: No. You must first unblock the entry by removing it from the Blocklist. After that, it will automatically become available in your lists again.
+The entry is immediately excluded from all lists, campaigns, and CRM exports. It will not appear in search results within those contexts until it is unblocked.
 
-**Q: Is there a limit to how many entries I can add to the Blocklist?**
-A: There is no documented limit. You can block as many contacts and companies as needed, individually or in bulk.
+## Q2: Can I add a contact or company back to a list while it is still on the Blocklist?
 
-**Q: Who can see and manage the Blocklist?**
-A: The Blocklist is shared across the workspace. Any user who added an entry is recorded in the **User** column, and all team members with access to the Blocklist section can view, edit, or unblock entries.
+No. You must first unblock the entry by removing it from the Blocklist. After that, it will automatically become available in your lists again.
 
-**Q: What is the difference between the Source values "Blocklist" and "List"?**
-A: **Blocklist** as a source means the entry was added directly from the Blocklist section itself (via the "Add" button). **List** means the entry was blocked from within a specific contacts or companies list (e.g., using the bulk-add workflow or the blocklist indicator pop-up).
+## Q3: Is there a limit to how many entries I can add to the Blocklist?
+
+There is no documented limit. You can block as many contacts and companies as needed, individually or in bulk.
+
+## Q4: Who can see and manage the Blocklist?
+
+The Blocklist is shared across the workspace. Any user who added an entry is recorded in the **User** column, and all team members with access to the Blocklist section can view, edit, or unblock entries.
+
+## Q5: What is the difference between the Source values "Blocklist" and "List"?
+
+**Blocklist** as a source means the entry was added directly from the Blocklist section itself (via the "Add" button). **List** means the entry was blocked from within a specific contacts or companies list (e.g., using the bulk-add workflow or the blocklist indicator pop-up).

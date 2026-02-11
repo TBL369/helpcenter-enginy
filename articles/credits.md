@@ -275,22 +275,22 @@ Understanding how credit resets work is important for planning your usage:
 
 # FAQs
 
-## How can I purchase additional credits?
+## Q1: How can I purchase additional credits?
 
 You have two options. First, click the **Buy More** button in the Plan tab to connect with an agent via the platform chat. Second, contact your Account Manager directly. Both methods will connect you with your Account Manager, who will evaluate your needs and offer a customized solution.
 
-## What happens to my unused credits at the end of the month?
+## Q2: What happens to my unused credits at the end of the month?
 
 As a general rule, unused credits do not roll over to the following month. Your credit balance resets on the 1st of each month. However, there may be occasional and specific exceptions depending on your agreement.
 
-## Is there a hard limit on conversations per identity?
+## Q3: Is there a hard limit on conversations per identity?
 
 There is no hard limit on conversations. The number of conversations each identity can generate is naturally tied to its sending capacity (emails and LinkedIn messages). The Conversations tab is provided so you can monitor volume and trends across your team.
 
-## Can I see which team member is consuming the most credits?
+## Q4: Can I see which team member is consuming the most credits?
 
 Yes. In the Credits tab, the "Credits usage by user" chart tracks how credits are consumed by different team members. This allows you to monitor individual consumption patterns across your organization.
 
-## How can I estimate how many credits I need each month?
+## Q5: How can I estimate how many credits I need each month?
 
 Go to the **Plan & Credits** tab and open the **Calculate your credits** sub-section. Set the number of contacts you plan to process per month, select the actions you will use, and the calculator will show you the total monthly credits needed along with the average credits per contact.

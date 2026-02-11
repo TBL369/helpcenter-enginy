@@ -132,38 +132,38 @@ This means your suggestions stay relevant and continue to surface new opportunit
 
 # FAQs
 
-## Can I use AI Finder with sources other than LinkedIn?
+## Q1: Can I use AI Finder with sources other than LinkedIn?
 
 Not yet. AI Finder currently works exclusively with LinkedIn imports. Support for additional sources is planned for future releases.
 
-## Can I edit the filters that AI Finder generates?
+## Q2: Can I edit the filters that AI Finder generates?
 
 Yes. After AI Finder generates filters from your query, you can review, modify, add, or remove any filter before importing contacts or companies.
 
-## What types of searches does AI Finder support?
+## Q3: What types of searches does AI Finder support?
 
 AI Finder supports both:
 
 - **Contact searches** (people) — e.g., "Marketing managers in SaaS companies"
 - **Company searches** (organizations) — e.g., "Fintech startups in London"
 
-## What happens if my query is too broad or unclear?
+## Q4: What happens if my query is too broad or unclear?
 
 The AI will still generate results, but they will be broader and less targeted. For more precise matches, include specific details such as job titles or functions, industries, locations, and company size ranges.
 
-## What are AI Recommendations based on?
+## Q5: What are AI Recommendations based on?
 
 AI Recommendations are powered by your Identity and AI Playbook configuration. The system uses these inputs to generate tailored lead and company suggestions that align with your business goals.
 
-## Can I modify a recommended search after selecting it?
+## Q6: Can I modify a recommended search after selecting it?
 
 Yes. Once you select a recommendation, you can adjust any filters, exclude specific results, or export the list to campaigns or workflows.
 
-## How is AI Finder different from AI Recommendations?
+## Q7: How is AI Finder different from AI Recommendations?
 
 - **AI Finder** lets you search using natural language queries that you write yourself.
 - **AI Recommendations** proactively suggests pre-built queries based on your account configuration, activity, and Ideal Customer Profile.
 
-## Are AI Recommendations the same for all users?
+## Q8: Are AI Recommendations the same for all users?
 
 No. Each user receives personalized recommendations based on their Identity, AI Playbook configuration, location, and target market.

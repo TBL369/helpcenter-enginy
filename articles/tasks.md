@@ -181,17 +181,22 @@ Once completed, the task automatically moves from the **Pending** tab to the **C
 
 # FAQs
 
-**How do I complete a task?**
+## Q1: How do I complete a task?
+
 Click the task row to open the task details panel, then click the green **Complete** button at the bottom-right of the panel. The task will move from the Pending tab to the Completed tab.
 
-**What is the difference between the Pending and Completed tabs?**
+## Q2: What is the difference between the Pending and Completed tabs?
+
 The **Pending** tab shows all tasks that still need to be done. The **Completed** tab shows all finished tasks and includes an additional **Completed** column indicating when each task was marked as done.
 
-**Can I filter tasks by campaign or owner?**
+## Q3: Can I filter tasks by campaign or owner?
+
 Yes. Use the **Campaign** and **Owner** filter buttons in the toolbar above the task list. Both filters include a search field so you can quickly find a specific campaign or team member.
 
-**What do the task type prefixes (TODO, CALL, EMAIL) mean?**
+## Q4: What do the task type prefixes (TODO, CALL, EMAIL) mean?
+
 Each task is labeled with a type that indicates the action required: **TODO** for general action items, **CALL** for phone calls, and **EMAIL** for email-related tasks.
 
-**How are timestamps displayed?**
+## Q5: How are timestamps displayed?
+
 All timestamps in the Tasks section use a relative format, such as "4 hours ago", "about 4 hours ago", "1 week ago", or "in 9 days" (for due dates in the future).

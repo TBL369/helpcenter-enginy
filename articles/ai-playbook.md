@@ -814,22 +814,22 @@ If most answers are "yes," your prompt is in the best-practice zone.
 
 # FAQs
 
-**1. Can I edit or delete the default AI Conversation Tags?**
+## Q1: Can I edit or delete the default AI Conversation Tags?
 
 No. Default tags cannot be edited or deleted to ensure consistency across teams. However, you can duplicate them and deactivate any you do not need.
 
-**2. Why are my AI Variables returning "No data found"?**
+## Q2: Why are my AI Variables returning "No data found"?
 
 This is often caused by exhausted API credits, not a platform bug. Check your usage dashboard or notifications to see if you have hit any limits. Once credits are replenished (by purchasing more or when your billing cycle resets), the AI Variables will resume populating normally. If you have remaining credits and still see empty data, contact support.
 
-**3. What does the Deep Research toggle do in an AI Variable?**
+## Q3: What does the Deep Research toggle do in an AI Variable?
 
 When enabled, Deep Research lets the AI Agent browse the web to find information relevant to your prompt. It searches public websites, reads page content, follows links, and extracts structured data. It uses more credits than a standard AI Variable, so enable it only when the information you need is not already available in your list data.
 
-**4. Can I rename an AI Variable after creating it?**
+## Q4: Can I rename an AI Variable after creating it?
 
 No. An AI Variable's name cannot be changed once created, as renaming would cause issues in campaigns that reference it. If you need a different name, duplicate the variable, give the copy the desired name, and delete the original.
 
-**5. How does the AI decide which Conversation Tag to apply?**
+## Q5: How does the AI decide which Conversation Tag to apply?
 
 When Auto tagging is enabled, the AI analyzes the last message in a conversation against the Instructions defined for each active tag. If the message matches the criteria of a tag, the AI applies it automatically. Tags are re-evaluated dynamically as new messages arrive, so they are added or removed as the conversation context changes.

@@ -1142,22 +1142,22 @@ When importing companies from a CRM, the following fields are mapped by default:
 
 # FAQs
 
-**Q: Why are there more contacts than companies in my list?**
+## Q1: Why are there more contacts than companies in my list?
 
-A: Because multiple contacts can be associated with the same company. For example, a single company may have several people from different departments in your list.
+Because multiple contacts can be associated with the same company. For example, a single company may have several people from different departments in your list.
 
-**Q: I imported companies from a CSV but LinkedIn data is missing. What should I do?**
+## Q2: I imported companies from a CSV but LinkedIn data is missing. What should I do?
 
-A: After importing from CSV, you must run enrichment to pull LinkedIn data. Select the companies, then go to **Enrich > Find data from LinkedIn by URL** (if you have the LinkedIn URL) or **Enrich > Find data from LinkedIn by Name** (if you only have the company name). If the name search does not find a match, the system will attempt a domain-based search.
+After importing from CSV, you must run enrichment to pull LinkedIn data. Select the companies, then go to **Enrich > Find data from LinkedIn by URL** (if you have the LinkedIn URL) or **Enrich > Find data from LinkedIn by Name** (if you only have the company name). If the name search does not find a match, the system will attempt a domain-based search.
 
-**Q: What is the difference between "Fast" and "Deep" enrichment modes?**
+## Q3: What is the difference between "Fast" and "Deep" enrichment modes?
 
-A: **Fast** mode uses only the quickest data sub-providers, returning results faster but potentially missing some records. **Deep** mode queries all available suppliers, which takes longer but has a higher probability of finding email addresses or phone numbers.
+**Fast** mode uses only the quickest data sub-providers, returning results faster but potentially missing some records. **Deep** mode queries all available suppliers, which takes longer but has a higher probability of finding email addresses or phone numbers.
 
-**Q: Why does a contact or company show "NOT ENRICHED" instead of a score?**
+## Q4: Why does a contact or company show "NOT ENRICHED" instead of a score?
 
-A: The scoring system requires specific fields to calculate a score. For companies: name, industry, description, employee range, number of employees, country, and city. For contacts: job title, company, and location. If any of these fields are missing, the record shows "NOT ENRICHED." Run **Enrich Data from LinkedIn** to fill in the missing data. If LinkedIn also lacks this information, the status will remain as NOT ENRICHED.
+The scoring system requires specific fields to calculate a score. For companies: name, industry, description, employee range, number of employees, country, and city. For contacts: job title, company, and location. If any of these fields are missing, the record shows "NOT ENRICHED." Run **Enrich Data from LinkedIn** to fill in the missing data. If LinkedIn also lacks this information, the status will remain as NOT ENRICHED.
 
-**Q: Can I keep contacts in multiple lists at the same time?**
+## Q5: Can I keep contacts in multiple lists at the same time?
 
-A: Yes. When you use the **Change List** action, you can check multiple lists to keep the contacts in all of them simultaneously. Uncheck a list only if you want to remove the contacts from it.
+Yes. When you use the **Change List** action, you can check multiple lists to keep the contacts in all of them simultaneously. Uncheck a list only if you want to remove the contacts from it.

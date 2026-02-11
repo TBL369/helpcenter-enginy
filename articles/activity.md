@@ -321,17 +321,22 @@ Below are common ways teams use Activity effectively.
 
 # FAQs
 
-**Q1: What is the difference between the Prospecting tab and the Engagement tab?**
+## Q1: What is the difference between the Prospecting tab and the Engagement tab?
+
 The **Prospecting** tab shows all activity related to finding and managing contacts and companies — including scrapings, searches, enrichments, and imports/exports. The **Engagement** tab shows all activity related to outbound campaigns, such as emails sent, LinkedIn invitations, LinkedIn messages, and social interactions like liking a post.
 
-**Q2: Does importing contacts via CSV count toward my daily scraping limit?**
+## Q2: Does importing contacts via CSV count toward my daily scraping limit?
+
 No. The daily scraping limit applies only to the automatic extraction of data from external databases. Importing from CSV or from your CRM has no daily cap.
 
-**Q3: A task shows as "Queued" and is not starting. What should I do?**
+## Q3: A task shows as "Queued" and is not starting. What should I do?
+
 A Queued status means the task is waiting for available capacity. This can happen when other processes are already running, or when you have reached a temporary usage limit (e.g., scrapings per day, LinkedIn connection requests per hour, or emails per hour based on your identity configuration). Wait for current tasks to complete, or check whether you have hit a daily limit.
 
-**Q4: How can I find out why a CSV import or CRM export failed?**
+## Q4: How can I find out why a CSV import or CRM export failed?
+
 Filter Activity by the relevant action type (e.g., Import contacts from CSV), locate the failed entry, and click the sheet icon to open the corresponding report. The CSV Import Report or CRM Export Report will show you which records failed and the reason for each failure, such as invalid data, missing required fields, or CRM conflicts.
 
-**Q5: Can I cancel a task that is currently processing or queued?**
+## Q5: Can I cancel a task that is currently processing or queued?
+
 Yes. Tasks in a **Processing** or **Queued** state can be cancelled. Once cancelled, no further processing will occur for that task and its status will change to **Cancelled**.

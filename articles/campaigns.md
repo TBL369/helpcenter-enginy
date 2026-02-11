@@ -845,22 +845,22 @@ Working hours settings define the time window during which your campaign can sen
 
 # FAQs
 
-**1. What happens if a contact responds to a message in my campaign?**
+## Q1: What happens if a contact responds to a message in my campaign?
 
 The automated sequence for that contact stops immediately. They will not receive any further scheduled steps. You can then handle the conversation manually, use AI Copilot mode (review and send AI-suggested replies), or use AI Automatic mode (AI replies without approval). In all cases, the campaign sequence halts and only the conversation follow-up continues.
 
-**2. Does the analytics data include actions I perform directly on LinkedIn outside of Enginy?**
+## Q2: Does the analytics data include actions I perform directly on LinkedIn outside of Enginy?
 
 No. Campaign analytics only track actions performed through Enginy campaigns. Manual LinkedIn activity (connection requests, messages, post likes done outside the platform) is not reflected in reports. If you manage contacts manually outside Enginy, consider tagging or excluding them from campaigns to avoid overlap in reporting.
 
-**3. Why do my reply rates appear lower than expected?**
+## Q3: Why do my reply rates appear lower than expected?
 
 Automated replies such as "Out of Office" are excluded from the reply rate calculation. This gives you a more accurate measure of meaningful responses. Conversations tagged as Out of Office are still visible in the tag breakdown but do not inflate your reply metrics.
 
-**4. Can I add contacts to a campaign after it has been launched?**
+## Q4: Can I add contacts to a campaign after it has been launched?
 
 Yes. You can add contacts at any time from the campaign's Target section or directly from the Contacts page. New contacts will start at the beginning of the sequence.
 
-**5. How often is analytics data updated?**
+## Q5: How often is analytics data updated?
 
 Data is updated in near real-time. You may experience brief delays (a few seconds to minutes) depending on processing time and campaign activity volume.

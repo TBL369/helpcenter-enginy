@@ -233,17 +233,22 @@ After completing all four steps, click **Update** to save your CRM configuration
 
 # FAQs
 
-**Q1: Can I connect more than one CRM at the same time?**
+## Q1: Can I connect more than one CRM at the same time?
+
 No. Enginy supports only one active CRM integration at a time. If you want to switch to a different CRM, disable the current one first, then enable and configure the new one.
 
-**Q2: What happens if I do not configure Export Mapping — will my data still sync?**
+## Q2: What happens if I do not configure Export Mapping — will my data still sync?
+
 Step 1 (Input / Sync Mapping) controls how records are matched, but without Step 2 (Export Mapping) Enginy will not know which fields to push to your CRM. You must configure at least the essential field mappings before exporting.
 
-**Q3: I do not have my own OpenAI or TheirStack account. Can I still use those features?**
+## Q3: I do not have my own OpenAI or TheirStack account. Can I still use those features?
+
 Yes. For **OpenAI**, Enginy provides its own credits for AI variable outputs if you do not connect a personal subscription. For **TheirStack**, Enginy's subscription is used by default and credits are deducted from your plan when importing companies.
 
-**Q4: What does the "Overwrite" checkbox do in Export Mapping?**
+## Q4: What does the "Overwrite" checkbox do in Export Mapping?
+
 When checked, the value in Enginy replaces whatever value currently exists in the corresponding CRM field during export. When unchecked, the existing CRM value is preserved and only empty fields are populated.
 
-**Q5: Why should I avoid the "Associate as Primary and remove previous associations" option?**
+## Q5: Why should I avoid the "Associate as Primary and remove previous associations" option?
+
 This option deletes all existing associations for the record before setting the new one as primary. If you have historical relationships or multiple valid associations in your CRM, using this option can result in data loss. Use it only when you are certain the new association should be the sole relationship.

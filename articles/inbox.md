@@ -358,22 +358,22 @@ Lists previous roles and companies, including tenure duration. This information 
 
 # FAQs
 
-## Why can I not see all conversations in my Inbox?
+## Q1: Why can I not see all conversations in my Inbox?
 
 Your visibility is determined by your identity access permissions. If you only have access to specific identities, you will only see conversations related to those identities. Contact your Admin to request access to additional identities via **Settings** > **Edit User Permissions** > **Campaign Tab** > **Identities Access**.
 
-## Why do my LinkedIn connection requests not appear in the Sent folder?
+## Q2: Why do my LinkedIn connection requests not appear in the Sent folder?
 
 LinkedIn connection requests sent with a note (InMail) only appear in the Sent folder after the recipient accepts the request. This is a LinkedIn platform limitation.
 
-## How do I know if a tag was applied by AI or manually?
+## Q3: How do I know if a tag was applied by AI or manually?
 
 AI-applied tags display a sparkle icon and appear as "auto-tagged" events in the activity timeline. Manual tags appear as "Tagged as" events, showing the user who applied the tag and the timestamp.
 
-## Can I edit or delete an AI-generated draft before sending?
+## Q4: Can I edit or delete an AI-generated draft before sending?
 
 Yes. When an AI draft appears in your composition box, click "Tap to Edit" to load it into the editor, make any changes you want, and then send the modified message. You can also discard the draft entirely and write your own response.
 
-## Why are my file attachments sent as links instead of direct attachments?
+## Q5: Why are my file attachments sent as links instead of direct attachments?
 
 To prevent spam filters and bounce issues, all file attachments in emails are automatically converted to links. This improves deliverability and ensures your messages reach the recipient's inbox.

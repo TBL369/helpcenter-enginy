@@ -316,22 +316,22 @@ For your security review, the Enginy integration requests the following Microsof
 
 # FAQs
 
-## What is the difference between a User and an Identity?
+## Q1: What is the difference between a User and an Identity?
 
 A User is a person with login access to the Enginy platform (email and password). An Identity is a LinkedIn profile and/or email address used to send prospecting messages through campaigns. A single User can manage multiple Identities, and each Identity can have multiple email addresses connected to it.
 
-## Can someone without an Enginy account connect their identity?
+## Q2: Can someone without an Enginy account connect their identity?
 
 Yes. Use the **Share (Generate Link)** option when adding a new identity. This generates a temporary, one-time-use link (valid for 24 hours) that you can share with anyone. They can open the link in their browser and connect their LinkedIn account or fill in their details manually, without needing access to the Enginy platform.
 
-## What happens if I disconnect an email address that has active leads?
+## Q3: What happens if I disconnect an email address that has active leads?
 
 If a lead started a sequence with a specific email address and you disconnect that address, the lead will produce an error. The system will not automatically reassign the lead to another connected address. You must reconnect the original email address to resolve the issue.
 
-## How does the Warm-Up feature work, and what should I do while it runs?
+## Q4: How does the Warm-Up feature work, and what should I do while it runs?
 
 The Warm-Up trains your email address through an external provider to increase deliverability and reduce spam detection. It costs 50 EUR and takes approximately 3 weeks. During this period, you must pause all campaigns using that identity and avoid sending any emails from the address outside of Enginy.
 
-## Why can I not connect my LinkedIn account using the Credentials option?
+## Q5: Why can I not connect my LinkedIn account using the Credentials option?
 
 If you use social logins (Google, Microsoft, Apple) or an Access Key to sign in to LinkedIn, the Credentials method will not work. You must first set a direct password in your LinkedIn account settings. Additionally, if your account has Two-Step Authentication (2FA/MFA) enabled, make sure you have access to the authentication device during the linking process.

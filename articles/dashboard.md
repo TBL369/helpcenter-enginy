@@ -179,22 +179,22 @@ Located in the top-right corner of the Dashboard, the **Create** button provides
 
 # FAQs
 
-## Does the Total Imported count include deleted contacts?
+## Q1: Does the Total Imported count include deleted contacts?
 
 Yes. The Total Imported metric reflects the historical total of all contacts and companies ever imported into the platform, including those that have been subsequently deleted.
 
-## Can I customize the time range for all Dashboard metrics?
+## Q2: Can I customize the time range for all Dashboard metrics?
 
 Most Dashboard cards and charts support time-range filtering. Look for the time selector (for example, "Last 30 days") on each component to adjust the displayed period.
 
-## What is the difference between Contacted and Replied in the Campaigns chart?
+## Q3: What is the difference between Contacted and Replied in the Campaigns chart?
 
 **Contacted** represents the total number of contacts who received outreach through your campaigns (via LinkedIn or email). **Replied** shows how many of those contacts responded. The ratio between these two values determines your reply rate.
 
-## How often is the Dashboard data updated?
+## Q4: How often is the Dashboard data updated?
 
 Dashboard metrics are updated in real time as activities occur within the platform. However, some aggregated metrics may take a few minutes to reflect the most recent changes.
 
-## Where can I see more detailed campaign analytics?
+## Q5: Where can I see more detailed campaign analytics?
 
 The Dashboard provides a summary view. For detailed campaign analytics, click **View all** in the Recent Campaigns section or navigate to the Campaigns module from the main navigation menu.

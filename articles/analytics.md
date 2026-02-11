@@ -252,23 +252,23 @@ All Analytics data can be exported using the **Export** button. The following ex
 
 # FAQs
 
-## Why do I see different totals in some sections?
+## Q1: Why do I see different totals in some sections?
 
 Some metrics count **people** (e.g., "Contacted", "Replied") while others count **actions** (e.g., "Messages Sent", "Emails Sent"). Additionally, one conversation can have multiple tags (e.g., "Interested" + "Meeting Booked"), so tag totals may exceed total conversations.
 
-## What is the difference between "Started" and "Contacted"?
+## Q2: What is the difference between "Started" and "Contacted"?
 
 - **Started:** The campaign performed any first action for that contact (such as visiting their profile). This may include contacts added in previous periods whose first action was triggered within the selected timeframe.
 - **Contacted:** A message was actually sent to the person (LinkedIn or Email).
 
-## What are Positive Reply Tags?
+## Q3: What are Positive Reply Tags?
 
 These are tags that represent positive outcomes -- either AI-detected or user-created -- such as "Interested", "Meeting booked", or "Positive reply". They help you measure genuine buying intent and successful engagement quality.
 
-## How does the Company Country filter work?
+## Q4: How does the Company Country filter work?
 
 It uses the Company Country field from your company data. This allows you to segment and compare performance across regions with similar languages or market characteristics.
 
-## Can I export my Analytics data?
+## Q5: Can I export my Analytics data?
 
 Yes. Use the **Export** button to select from multiple export formats, including daily metrics, replies, tags, summary metrics, and campaign/identity performance tables.
