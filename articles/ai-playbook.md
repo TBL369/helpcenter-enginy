@@ -231,7 +231,7 @@ AI Variables are used to generate additional information columns in your lists. 
 
 **Example use cases:**
 
-- **Contact:** "Best outreach icebreaker (1 sentence) for #{{first_name}} based on their recent activity."
+- **Contact:** "Best outreach icebreaker (1 sentence) for {first_name} based on their recent activity."
 - **Company:** "1-line summary of company growth signals (funding, hiring, product launch)."
 
 ## Create an AI Variable
@@ -275,10 +275,10 @@ The **Prompt** field is the main instruction. This is where you tell the AI exac
 
 **Examples of effective prompts:**
 
-- "Classify #{{company_name}} into one of the following categories: Enterprise, Mid-market, or SMB. Return only one of these."
-- "Based on #{{company_name}}'s website and #{{industry}}, summarize their core value proposition in one sentence."
-- "From #{{domain}} and #{{industry}}, list up to 3 potential business challenges the company may face. Return as a bullet list."
-- "Review #{{company_name}}'s website. Identify if they primarily sell products, services, or both. Return exactly one of these options."
+- "Classify {company_name} into one of the following categories: Enterprise, Mid-market, or SMB. Return only one of these."
+- "Based on {company_name}'s website and {industry}, summarize their core value proposition in one sentence."
+- "From {domain} and {industry}, list up to 3 potential business challenges the company may face. Return as a bullet list."
+- "Review {company_name}'s website. Identify if they primarily sell products, services, or both. Return exactly one of these options."
 
 **Avoid vague prompts like:** "Tell me everything about this company." (Too broad, no structure.)
 
@@ -290,19 +290,19 @@ Below the prompt editor you will find the **Enhance** button. Clicking it lets t
 
 ## Add Attributes (Placeholders)
 
-Use the **Add attributes** option to select which row fields the variable can use as context. Inside your prompt, reference these fields with the `#{{field_name}}` syntax. When writing in the prompt editor, you can also type `{` to see and select available fields.
+Use the **Add attributes** option to select which row fields the variable can use as context. Inside your prompt, reference these fields with the `{field_name}` syntax. When writing in the prompt editor, you can also type `{` to see and select available fields.
 
 Common placeholders include:
 
 **Contact attributes:**
 
-- `#{{firstname}}`, `#{{lastname}}`, `#{{job_title}}`, `#{{email}}`, `#{{phone}}`
-- `#{{linkedinurl}}`, `#{{recentactivity}}`, `#{{lead_source}}`
+- `{firstname}`, `{lastname}`, `{job_title}`, `{email}`, `{phone}`
+- `{linkedinurl}`, `{recentactivity}`, `{lead_source}`
 
 **Company attributes:**
 
-- `#{{companyname}}`, `#{{domain}}`, `#{{website}}`, `#{{companysize}}`
-- `#{{industry}}`, `#{{hq_location}}`
+- `{companyname}`, `{domain}`, `{website}`, `{companysize}`
+- `{industry}`, `{hq_location}`
 
 Use these inside prompts to make the AI answer relevant to each row.
 
@@ -449,7 +449,7 @@ You can use AI Variables to write variations of a message template you already h
 | **Template** | The message with `[TAG]` placeholders (from Step 2) |
 | **Rules** | Personalization and randomization rules (from Step 3) |
 | **Additional rules** | Tone, style, formatting constraints |
-| **Input** | The data attributes to use (e.g., `Job title: #{{job_title}}`) |
+| **Input** | The data attributes to use (e.g., `Job title: {job_title}`) |
 
 > **Tip:** Enginy includes a predefined AI Variable called **Randomize Template** that uses this exact structure. Check it out for a ready-to-use example.
 
