@@ -268,14 +268,16 @@ Here is an example of a conditional campaign sequence:
 
 1. **Check:** Is the lead already a LinkedIn connection?
    - **Yes:** Send a LinkedIn message.
-   - **No:** Send a connection request.
-     - **Check:** Was the connection accepted within 15 days?
-       - **Yes:** Send a LinkedIn message.
-       - **No:** Does the lead have an email?
-         - **Yes:** Send an email.
-         - **No:** Does the lead have a phone number?
-           - **Yes:** Create a task to call.
-           - **No:** End the sequence.
+   - **No:** Send a connection request. Then proceed to step 2.
+2. **Check:** Was the connection accepted within 15 days?
+   - **Yes:** Send a LinkedIn message.
+   - **No:** Proceed to step 3.
+3. **Check:** Does the lead have an email?
+   - **Yes:** Send an email.
+   - **No:** Proceed to step 4.
+4. **Check:** Does the lead have a phone number?
+   - **Yes:** Create a task to call.
+   - **No:** End the sequence.
 
 This logic can be built entirely in the visual sequence editor with conditions and branching paths.
 

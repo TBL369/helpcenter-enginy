@@ -66,6 +66,7 @@ Write the article with sections like the following, using only what you can veri
 ## Writing Style Requirements
 - Use clear headings and subheadings
 - Prefer short paragraphs and bullet lists for readability
+- Markdown lists must NOT exceed **2 levels of nesting** (parent → child → grandchild maximum). Notion's API rejects deeper nesting. If deeper hierarchy is needed, flatten using inline text, tables, or separate paragraphs.
 - When listing UI labels/options, preserve exact casing, punctuation, and wording
 - Do not add troubleshooting, edge cases, or admin/permission claims unless explicitly supported by the screenshots
 

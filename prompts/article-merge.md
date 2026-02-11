@@ -71,6 +71,14 @@ If any concept is unclear or required information is missing, ask questions BEFO
   - sequential steps are not needed (otherwise use numbered)
   - independent items not meant for comparison
 
+### List nesting depth
+- Markdown lists must NOT exceed **2 levels of nesting** (parent → child → grandchild maximum).
+- Notion's API rejects blocks nested deeper than 2 levels.
+- If a concept requires deeper hierarchy, restructure using one of these alternatives:
+  - Flatten the lower levels into the second-level bullet with inline text (e.g., "**Yes:** Send a message. **No:** Send an email.").
+  - Break deeply nested logic into separate numbered procedures or a table.
+  - Use a descriptive paragraph instead of sub-sub-bullets.
+
 ### UI terminology and consistency
 - Match UI labels exactly as provided in sources.
 - First mention of a navigation path can be bolded (e.g., **Settings** > **Billing**) if it improves scanability.
