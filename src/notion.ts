@@ -129,7 +129,7 @@ export class NotionClient {
   }
 
   buildSyncFooterBlocks(): BlockObjectRequest[] {
-    return [this.createDividerBlock(), this.createParagraphBlock(' ')];
+    return [this.createParagraphBlock(' '), this.createDividerBlock()];
   }
 
   /**
@@ -293,9 +293,13 @@ export class NotionClient {
       const line = lines[i];
       const trimmedLine = line.trim();
 
-      // Línea vacía: guardar párrafo actual
+      // Línea vacía: guardar párrafo actual + spacer visual
       if (trimmedLine === '') {
         flushParagraph();
+        // Preservar la línea en blanco como separador visual (solo si hay contenido previo)
+        if (blocks.length > 0) {
+          blocks.push(this.createParagraphBlock(' '));
+        }
         i++;
         continue;
       }
