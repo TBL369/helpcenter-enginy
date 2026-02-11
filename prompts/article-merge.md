@@ -84,6 +84,7 @@ If any concept is unclear or required information is missing, ask questions BEFO
 - First mention of a navigation path can be bolded (e.g., **Settings** > **Billing**) if it improves scanability.
 - Keep consistent formats for dates, currencies, and units as given (do not invent).
 - AI variable references must use the format `{field_name}` (single curly braces, no `#` prefix). Example: `{company_name}`, `{job_title}`, `{industry}`.
+- When showing prompt examples that use AI variables, never embed variables inline in the sentence (e.g., "Analyze {company_name} and its {revenue}"). Instead, define variables in a separate context block and reference them naturally in the task (e.g., "Context: Company name: {company_name}, Revenue: {revenue}. Task: Analyze the company and its revenue.").
 
 ### Internal links (TOC)
 - TOC links must point to headings using standard Markdown anchors:

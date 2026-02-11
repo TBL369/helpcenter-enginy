@@ -231,7 +231,7 @@ AI Variables are used to generate additional information columns in your lists. 
 
 **Example use cases:**
 
-- **Contact:** "Best outreach icebreaker (1 sentence) for {first_name} based on their recent activity."
+- **Contact:** "Context: First name: {first_name}. Task: Write the best outreach icebreaker (1 sentence) for this contact based on their recent activity."
 - **Company:** "1-line summary of company growth signals (funding, hiring, product launch)."
 
 ## Create an AI Variable
@@ -275,10 +275,10 @@ The **Prompt** field is the main instruction. This is where you tell the AI exac
 
 **Examples of effective prompts:**
 
-- "Classify {company_name} into one of the following categories: Enterprise, Mid-market, or SMB. Return only one of these."
-- "Based on {company_name}'s website and {industry}, summarize their core value proposition in one sentence."
-- "From {domain} and {industry}, list up to 3 potential business challenges the company may face. Return as a bullet list."
-- "Review {company_name}'s website. Identify if they primarily sell products, services, or both. Return exactly one of these options."
+- "Context: Company name: {company_name}. Task: Classify the company into one of the following categories: Enterprise, Mid-market, or SMB. Return only one of these."
+- "Context: Company name: {company_name}, Industry: {industry}. Task: Based on the company's website and industry, summarize their core value proposition in one sentence."
+- "Context: Domain: {domain}, Industry: {industry}. Task: List up to 3 potential business challenges the company may face. Return as a bullet list."
+- "Context: Company name: {company_name}. Task: Review the company's website. Identify if they primarily sell products, services, or both. Return exactly one of these options."
 
 **Avoid vague prompts like:** "Tell me everything about this company." (Too broad, no structure.)
 
@@ -305,6 +305,20 @@ Common placeholders include:
 - `{industry}`, `{hq_location}`
 
 Use these inside prompts to make the AI answer relevant to each row.
+
+> **Important:** Do not embed variables directly inside your prompt sentences. When the AI processes the prompt, each `{variable}` is replaced by its literal value — which can break grammar, context, or meaning. Instead, define variables in a separate **context block** and write your instructions using natural language references.
+>
+> **Bad practice:**
+> "Analyze {company_name} and summarize its {revenue} trend."
+> The AI reads: "Analyze 'Enginy' and summarize its '2.5M to 5M' trend." — broken grammar and ambiguous context.
+>
+> **Good practice:**
+> Context:
+> - Company name: {company_name}
+> - Revenue: {revenue}
+>
+> Task: "Analyze the company name and summarize its revenue trend."
+> The AI reads: "Analyze the company name (Enginy) and summarize its revenue (2.5M to 5M) trend." — clean, unambiguous, and grammatically correct.
 
 ## Deep Research
 
@@ -792,6 +806,7 @@ Use this base template and adapt it for each use case:
 | Asking for impossible things | "Guarantee this will reduce churn by 30%." The AI can suggest, not guarantee. |
 | Not reviewing critical outputs | Never use AI responses without human validation in areas with legal, medical, financial, or regulatory impact. |
 | Sharing sensitive data unnecessarily | Avoid including personally identifiable information (full names, IDs, phone numbers) when not essential to the task. |
+| Embedding variables inline in sentences | Writing "Analyze {company_name} and its {revenue}" results in broken grammar when values are substituted. Define variables in a context block and reference them naturally in the task. |
 
 ## Prompt Best Practices Checklist
 
@@ -805,6 +820,7 @@ Before sending your prompt, verify:
 - [ ] Have I indicated the tone, language, and level of detail?
 - [ ] Have I added relevant constraints and quality criteria?
 - [ ] Could I improve the prompt with one or two examples?
+- [ ] Are variables defined in a separate context block instead of embedded inline in sentences?
 - [ ] Is there anything sensitive (personal data, confidential information) I should remove or anonymize?
 - [ ] Am I prepared to iterate and adjust the prompt after seeing the first result?
 
