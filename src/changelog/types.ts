@@ -100,6 +100,8 @@ export interface ChangelogConfig {
   articleMapPath: string;
   /** Ruta al fichero de rutas user-facing */
   userFacingPathsConfigPath: string;
+  /** Ruta al prompt de change-brief (system prompt para article-updater) */
+  changeBriefPromptPath: string;
 }
 
 /** Configuración de rutas user-facing cargada del YAML */

@@ -40,6 +40,7 @@ function getConfig(): ChangelogConfig {
     statePath: path.resolve(repoRoot, '.last-sync-state'),
     articleMapPath: path.resolve(repoRoot, 'config', 'change-to-article-map.yaml'),
     userFacingPathsConfigPath: path.resolve(repoRoot, 'config', 'user-facing-paths.yaml'),
+    changeBriefPromptPath: path.resolve(repoRoot, 'prompts', 'change-brief.md'),
   };
 }
 
@@ -250,7 +251,8 @@ async function main(): Promise<void> {
         [brief],
         config.articlesPath,
         llm,
-        config.dryRun
+        config.dryRun,
+        config.changeBriefPromptPath
       );
 
       if (result.updated) {

@@ -3,53 +3,43 @@ import * as path from 'path';
 import { LLMClient } from './llm';
 import { ChangeBrief, ArticleUpdateResult } from './types';
 
-// ─── Orquestador de reescritura de artículos ─────────────────
+// ─── Carga del system prompt desde prompts/change-brief.md ───
 
-/**
- * Prompt de sistema basado en prompts/article-merge.md.
- * Adaptado para recibir un change brief en vez de un artículo NEW completo.
- */
-const SYSTEM_PROMPT = `You are a senior SaaS Help Center Information Architect and Technical Writer.
-
-## Goal
+const FALLBACK_SYSTEM_PROMPT = `You are a senior SaaS Help Center Information Architect and Technical Writer.
 Update an existing Help Center article by incorporating the changes described in a "change brief".
-The change brief is NOT a full article — it is a structured description of what changed in the product.
+Preserve the article's structure, tone, and completeness. Changes from the brief override conflicting content.
+Output ONLY the complete updated article in Markdown. No preamble, no explanations.`;
 
-## Constraints
-- Do NOT summarize or omit existing information. Preserve all unique details from the original article.
-- Integrate the changes naturally into the existing article structure.
-- If a change modifies an existing section, update that section in place.
-- If a change adds new functionality, add it in the most logical location within the article.
-- If a change removes functionality, remove the relevant sections but keep related context if still useful.
-- Keep technical accuracy. Explain in clear, user-friendly English for non-technical users.
-- Professional tone. No emojis.
-- Output must be Markdown and entirely in English.
-- Images will be added later: do not reference missing images.
-- Maintain the existing Table of Contents structure, updating it to reflect any new/changed/removed sections.
-- Preserve all existing callouts (> **Note:**, > **Tip:**, etc.) unless they contradict the changes.
+function loadSystemPrompt(promptPath: string): string {
+  try {
+    const content = fs.readFileSync(promptPath, 'utf-8').trim();
+    if (!content) {
+      console.warn('[updater] Prompt file is empty, using fallback');
+      return FALLBACK_SYSTEM_PROMPT;
+    }
+    return content;
+  } catch (error) {
+    console.warn(
+      '[updater] Could not load prompt file, using fallback:',
+      error instanceof Error ? error.message : error
+    );
+    return FALLBACK_SYSTEM_PROMPT;
+  }
+}
 
-## Source-of-truth rule
-Changes from the brief OVERRIDE existing content where they conflict.
-However, do NOT discard existing details that remain relevant and don't contradict the changes.
-
-## Required Output
-Output ONLY the complete updated article in Markdown. No preamble, no explanations, no code fences around the article.
-
-## Quality Checklist (must pass)
-- Every unique fact from the original article appears (unless contradicted by a change).
-- All changes from the brief are integrated.
-- Steps are complete and runnable by a non-technical user.
-- TOC anchors match headings.
-- Callouts are used where important notes/warnings/tips exist.`;
+// ─── Actualización de artículos ──────────────────────────────
 
 /**
  * Actualiza un artículo aplicando uno o varios change briefs.
+ * Lee el system prompt desde prompts/change-brief.md para usar
+ * las reglas de formato completas.
  *
  * @param articleFile - Nombre del fichero .md (ej: "campaigns.md")
  * @param briefs - Change briefs a aplicar
  * @param articlesPath - Ruta absoluta al directorio articles/
  * @param llm - Cliente LLM
  * @param dryRun - Si true, no escribe el fichero
+ * @param promptPath - Ruta al prompt de change-brief.md
  * @returns Resultado de la actualización
  */
 export async function updateArticle(
@@ -57,12 +47,12 @@ export async function updateArticle(
   briefs: ChangeBrief[],
   articlesPath: string,
   llm: LLMClient,
-  dryRun: boolean
+  dryRun: boolean,
+  promptPath?: string
 ): Promise<ArticleUpdateResult> {
   const filePath = path.join(articlesPath, articleFile);
 
   try {
-    // Leer contenido actual
     if (!fs.existsSync(filePath)) {
       return {
         articleFile,
@@ -83,7 +73,6 @@ export async function updateArticle(
       };
     }
 
-    // Consolidar todos los briefs en un solo bloque de cambios
     const consolidatedBrief = briefs
       .map(b => b.changes)
       .join('\n\n---\n\n');
@@ -94,22 +83,31 @@ export async function updateArticle(
 
     console.log(`[updater] Reescribiendo ${articleFile} con ${briefs.length} brief(s)...`);
 
-    const userPrompt = `## Current article content
+    const systemPrompt = promptPath
+      ? loadSystemPrompt(promptPath)
+      : FALLBACK_SYSTEM_PROMPT;
 
+    const userPrompt = `<CURRENT_ARTICLE>
 ${currentContent}
+</CURRENT_ARTICLE>
 
-## Change brief (changes to integrate)
-
+<CHANGE_BRIEFS>
 ${consolidatedBrief}
+</CHANGE_BRIEFS>
 
-## PR references
+<PR_REFERENCES>
+${prReferences}
+</PR_REFERENCES>
 
-${prReferences}`;
+<NOTES>
+- Screenshots/images are added later; do not mention missing images.
+- If there are plan/role/regional differences, include them only if explicitly present in the change briefs.
+</NOTES>`;
 
     const updatedContent = await llm.call({
-      systemPrompt: SYSTEM_PROMPT,
+      systemPrompt,
       userPrompt,
-      temperature: 0.2, // Bajo para mantener fidelidad al original
+      temperature: 0.2,
       maxTokens: 8000,
     });
 
@@ -122,7 +120,6 @@ ${prReferences}`;
       };
     }
 
-    // Validación básica: el artículo actualizado debe tener al menos un heading
     if (!updatedContent.includes('# ')) {
       return {
         articleFile,
@@ -136,12 +133,11 @@ ${prReferences}`;
       console.log(`  [dry-run] ${articleFile}: se actualizaría (${briefs.length} briefs)`);
       return {
         articleFile,
-        updated: false, // No se escribió realmente
+        updated: false,
         briefsApplied: briefs.length,
       };
     }
 
-    // Escribir el artículo actualizado
     fs.writeFileSync(filePath, updatedContent, 'utf-8');
     console.log(`  [ok] ${articleFile} actualizado`);
 
