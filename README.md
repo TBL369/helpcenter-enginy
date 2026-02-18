@@ -1,9 +1,10 @@
-# Helpcenter
+# Helpcenter Pipeline
 
-Herramienta de gestión de artículos del help center de Enginy. Dos funciones principales:
+Herramienta de gestión de artículos del help center de Enginy. Tres funciones principales:
 
-1. **Notion Sync** — Sincroniza artículos `.md` a páginas versionadas en Notion.
-2. **Changelog Pipeline** — Detecta cambios en el repo del SaaS, clasifica su impacto y actualiza los artículos automáticamente.
+1. **CLI de Intercom** — Importa/exporta artículos entre Intercom, Notion y Markdown de forma interactiva.
+2. **Notion Sync** — Sincroniza artículos `.md` a páginas versionadas en Notion.
+3. **Changelog Pipeline** — Detecta cambios en el repo del SaaS, clasifica su impacto y actualiza los artículos automáticamente.
 
 ---
 
@@ -12,17 +13,26 @@ Herramienta de gestión de artículos del help center de Enginy. Dos funciones p
 - Node.js >= 18
 - [GitHub CLI (`gh`)](https://cli.github.com/) autenticado (para el changelog pipeline)
 - Una integración de Notion con acceso a la página padre (para el sync)
+- Token de acceso de Intercom con permisos para artículos (para el CLI)
 
 ## Instalación
 
 ```bash
-git clone <repo-url> && cd articles
+git clone <repo-url> && cd helpcenter-pipeline
 npm install
 cp .env.example .env
 # Editar .env con los valores reales
 ```
 
 ## Variables de entorno
+
+### Intercom (CLI)
+
+| Variable | Requerida | Descripción |
+|---|---|---|
+| `INTERCOM_ACCESS_TOKEN` | Si | Token de acceso de Intercom (Bearer token) |
+| `INTERCOM_FOLDER_ID` | No | ID de carpeta de Intercom (se pide interactivamente) |
+| `INTERCOM_API_BASE` | No | URL base de la API (default: `https://api.intercom.io`) |
 
 ### Notion Sync
 
@@ -55,6 +65,32 @@ Solo se leen las variables del proveedor seleccionado en `LLM_PROVIDER`.
 
 ---
 
+## CLI de Intercom
+
+Herramienta interactiva para trabajar con artículos de Intercom. Permite listar, exportar a Notion, exportar a Markdown y subir artículos desde Markdown.
+
+### Uso
+
+```bash
+# Modo desarrollo
+npm run dev
+
+# Modo producción
+npm run build
+npm start
+```
+
+### Funciones del menú
+
+1. **Listar artículos** — Muestra todos los artículos disponibles en Intercom (públicos e internos).
+2. **Exportar a Notion** — Exporta artículos seleccionados como páginas en Notion dentro de una página contenedora.
+3. **Exportar a Markdown** — Descarga artículos de Intercom como ficheros `.md` en `articles/`, incluyendo imágenes.
+4. **Subir a Intercom** — Crea artículos en Intercom a partir de ficheros `.md` existentes en `articles/`.
+
+Soporta búsqueda por título, IDs numéricos o URLs de Intercom.
+
+---
+
 ## Notion Sync
 
 Sincroniza los artículos Markdown del directorio `articles/` a páginas en Notion, con versionado basado en git.
@@ -68,10 +104,6 @@ npm run sync
 # Sync selectivo por nombre de archivo (acepta con o sin .md)
 npm run sync -- inbox settings
 npm run sync -- ai-finder.md
-
-# Compilar y ejecutar desde dist/
-npm run build
-npm start
 ```
 
 ### Cómo funciona
@@ -105,10 +137,6 @@ Los anchor links (`#section`) se convierten en texto plano (Notion no soporta na
 ### Versionado
 
 El sistema usa commits de git como mecanismo de versionado. Cada sync exitoso genera un commit con formato `docs: Display Name vN` (solo si el fichero `.md` tiene cambios reales respecto al último sync). En el siguiente run, compara el estado actual del fichero contra ese commit para decidir si necesita re-sincronizar. Si el artículo no cambió, se sincroniza a Notion pero no se incrementa la versión.
-
-### Ejecución manual
-
-El sync se puede ejecutar de forma independiente con `npm run sync` (todos los artículos) o `npm run sync -- nombre1 nombre2` (selectivo). En el flujo nocturno se ejecuta automáticamente tras el changelog pipeline (ver sección Pipeline nocturno).
 
 ---
 
@@ -299,21 +327,27 @@ prompts/
   images-to-article.md         Prompt para crear artículos desde screenshots
   prompt-optimizer.md          Prompt optimizer (metodología 4-D)
 src/
-  nightly.ts                   Pipeline nocturno (changelog + sync en secuencia)
-  index.ts                     Notion sync (ejecutable standalone o desde nightly)
-  notion.ts                    Cliente Notion + conversor Markdown → bloques
-  version.ts                   Versionado basado en git
-  changelog/
-    index.ts                   Orquestador del pipeline
-    types.ts                   Interfaces compartidas
-    state.ts                   Persistencia del estado
-    fetch-prs.ts               Fetch de PRs via gh CLI
-    pre-filter.ts              Etapa 1: filtro determinista
-    llm.ts                     Cliente LLM multi-proveedor (OpenAI, Anthropic, Ollama)
-    classifier.ts              Etapa 2: clasificación LLM
-    mapper.ts                  Etapa 3a: mapeo área → artículo
-    brief-generator.ts         Etapa 3b: generación de change briefs
-    article-updater.ts         Reescritura de artículos
+  cli/
+    index.ts                   CLI interactivo de Intercom (menú principal)
+    intercom.ts                Cliente API de Intercom
+    markdown.ts                Exportador HTML → Markdown con descarga de imágenes
+    notion.ts                  Cliente Notion (HTML → bloques)
+  pipeline/
+    nightly.ts                 Pipeline nocturno (changelog + sync en secuencia)
+    index.ts                   Notion sync (ejecutable standalone o desde nightly)
+    notion.ts                  Cliente Notion + conversor Markdown → bloques
+    version.ts                 Versionado basado en git
+    changelog/
+      index.ts                 Orquestador del pipeline
+      types.ts                 Interfaces compartidas
+      state.ts                 Persistencia del estado
+      fetch-prs.ts             Fetch de PRs via gh CLI
+      pre-filter.ts            Etapa 1: filtro determinista
+      llm.ts                   Cliente LLM multi-proveedor (OpenAI, Anthropic, Ollama)
+      classifier.ts            Etapa 2: clasificación LLM
+      mapper.ts                Etapa 3a: mapeo área → artículo
+      brief-generator.ts       Etapa 3b: generación de change briefs
+      article-updater.ts       Reescritura de artículos
 ```
 
 ---
@@ -322,9 +356,10 @@ src/
 
 | Script | Comando | Descripción |
 |---|---|---|
+| `dev` | `npm run dev` | CLI interactivo de Intercom (modo desarrollo) |
+| `start` | `npm start` | CLI interactivo de Intercom (compilado) |
+| `build` | `npm run build` | Compila TypeScript a `dist/` |
 | `nightly` | `npm run nightly` | Pipeline nocturno completo (changelog + sync) |
 | `sync` | `npm run sync [-- archivo1 archivo2]` | Sincroniza artículos a Notion (todos o selectivo) |
 | `changelog` | `npm run changelog` | Ejecuta el pipeline de changelog (standalone) |
 | `changelog:dry` | `npm run changelog:dry` | Pipeline en modo preview (sin escritura) |
-| `build` | `npm run build` | Compila TypeScript a `dist/` |
-| `start` | `npm start` | Ejecuta la versión compilada |

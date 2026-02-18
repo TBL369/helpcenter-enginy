@@ -1,32 +1,43 @@
 {
-  "name": "helpcenter",
+  "name": "helpcenter-pipeline",
   "version": "1.0.0",
-  "description": "Sincroniza artículos .md del helpcenter a páginas versionadas en Notion",
-  "main": "dist/index.js",
+  "description": "Pipeline de documentación: CLI de Intercom, sincronización a Notion, y changelog automatizado con LLM",
+  "main": "dist/cli/index.js",
   "scripts": {
-    "nightly": "ts-node src/nightly.ts",
-    "sync": "ts-node src/index.ts",
-    "changelog": "ts-node src/changelog/index.ts",
-    "changelog:dry": "ts-node src/changelog/index.ts --dry-run",
+    "dev": "ts-node src/cli/index.ts",
+    "start": "node dist/cli/index.js",
     "build": "tsc",
-    "start": "node dist/index.js"
+    "nightly": "ts-node src/pipeline/nightly.ts",
+    "sync": "ts-node src/pipeline/index.ts",
+    "changelog": "ts-node src/pipeline/changelog/index.ts",
+    "changelog:dry": "ts-node src/pipeline/changelog/index.ts --dry-run"
   },
   "keywords": [
+    "intercom",
     "notion",
     "markdown",
-    "sync"
+    "sync",
+    "changelog",
+    "helpcenter"
   ],
   "author": "",
   "license": "MIT",
   "dependencies": {
     "@anthropic-ai/sdk": "^0.74.0",
     "@notionhq/client": "^2.2.14",
+    "axios": "^1.6.7",
     "dotenv": "^16.4.1",
+    "marked": "^17.0.3",
+    "node-html-parser": "^7.0.2",
     "openai": "^6.21.0",
+    "turndown": "^7.2.2",
+    "turndown-plugin-gfm": "^1.0.2",
     "yaml": "^2.8.2"
   },
   "devDependencies": {
+    "@types/marked": "^5.0.2",
     "@types/node": "^20.11.16",
+    "@types/turndown": "^5.0.6",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
   }

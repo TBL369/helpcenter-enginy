@@ -1,0 +1,916 @@
+import * as dotenv from 'dotenv';
+import * as fs from 'fs';
+import * as path from 'path';
+import * as readline from 'readline';
+import { IntercomClient, ArticleListItem } from './intercom';
+import { NotionClient } from './notion';
+import { MarkdownExporter } from './markdown';
+import { marked } from 'marked';
+
+// Cargar variables de entorno desde .env
+dotenv.config();
+
+interface Config {
+  intercom: {
+    accessToken: string;
+    baseUrl?: string;
+  };
+  notion?: {
+    token: string;
+    parentPageId: string;
+  };
+}
+
+type MenuOption = '1' | '2' | '3' | '4' | '5';
+
+interface ExportStats {
+  totalArticles: number;
+  successfulExports: number;
+  failedExports: number;
+  errors: Array<{ id: string; error: string }>;
+}
+
+/**
+ * Valida y obtiene la configuración desde variables de entorno
+ */
+function getConfig(): Config {
+  const intercomToken = process.env.INTERCOM_ACCESS_TOKEN;
+  const notionToken = process.env.NOTION_TOKEN;
+  const notionParentPageId = process.env.NOTION_PARENT_PAGE_ID;
+
+  if (!intercomToken) {
+    console.error('❌ Error: Falta INTERCOM_ACCESS_TOKEN en .env');
+    process.exit(1);
+  }
+
+  const config: Config = {
+    intercom: {
+      accessToken: intercomToken,
+      baseUrl: process.env.INTERCOM_API_BASE,
+    },
+  };
+
+  if (notionToken && notionParentPageId) {
+    config.notion = { token: notionToken, parentPageId: notionParentPageId };
+  }
+
+  return config;
+}
+
+/**
+ * Crea una interfaz readline para preguntas interactivas
+ */
+function createReadlineInterface(): readline.Interface {
+  return readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+  });
+}
+
+/**
+ * Pregunta al usuario y retorna la respuesta
+ */
+function askQuestion(rl: readline.Interface, question: string): Promise<string> {
+  return new Promise((resolve) => {
+    rl.question(question, (answer) => {
+      resolve(answer.trim());
+    });
+  });
+}
+
+/**
+ * Resultado del parseo de input: puede ser un ID o una búsqueda por título
+ */
+interface ParsedInput {
+  type: 'id' | 'title';
+  value: string;
+}
+
+/**
+ * Extrae el ID de un artículo de una URL de Intercom o retorna el ID si ya es numérico
+ */
+function extractArticleId(input: string): string | null {
+  const trimmed = input.trim();
+  
+  // Si es solo un número, retornarlo directamente
+  if (/^\d+$/.test(trimmed)) {
+    return trimmed;
+  }
+  
+  // Intentar extraer de URL de Intercom
+  // Formato: https://app.intercom.com/a/apps/xxx/knowledge-hub/...?activeContentId=123
+  const activeContentMatch = trimmed.match(/activeContentId=(\d+)/);
+  if (activeContentMatch) {
+    return activeContentMatch[1];
+  }
+  
+  // Formato: .../article/123 o .../articles/123
+  const articleMatch = trimmed.match(/\/articles?\/(\d+)/);
+  if (articleMatch) {
+    return articleMatch[1];
+  }
+  
+  // Formato: .../internal_articles/123
+  const internalMatch = trimmed.match(/\/internal_articles\/(\d+)/);
+  if (internalMatch) {
+    return internalMatch[1];
+  }
+
+  // Intentar encontrar cualquier número en la URL como último recurso
+  const anyNumberMatch = trimmed.match(/\/(\d{5,})/);
+  if (anyNumberMatch) {
+    return anyNumberMatch[1];
+  }
+  
+  return null;
+}
+
+/**
+ * Determina si el input es un ID/URL o un título de búsqueda
+ */
+function parseInput(input: string): ParsedInput {
+  const trimmed = input.trim();
+  
+  // Si es un número puro, es un ID
+  if (/^\d+$/.test(trimmed)) {
+    return { type: 'id', value: trimmed };
+  }
+  
+  // Si parece una URL (contiene http o dominio de intercom)
+  if (trimmed.includes('http') || trimmed.includes('intercom.com')) {
+    const id = extractArticleId(trimmed);
+    if (id) {
+      return { type: 'id', value: id };
+    }
+  }
+  
+  // Si contiene parámetros de URL típicos
+  if (trimmed.includes('activeContentId=')) {
+    const id = extractArticleId(trimmed);
+    if (id) {
+      return { type: 'id', value: id };
+    }
+  }
+  
+  // De lo contrario, es una búsqueda por título
+  return { type: 'title', value: trimmed };
+}
+
+/**
+ * Muestra resultados de búsqueda y permite al usuario seleccionar
+ */
+async function selectFromSearchResults(
+  articles: ArticleListItem[],
+  searchTerm: string,
+  rl: readline.Interface
+): Promise<string[]> {
+  if (articles.length === 0) {
+    console.log(`\n   ⚠️  No se encontraron artículos con "${searchTerm}"\n`);
+    return [];
+  }
+
+  console.log(`\n   🔍 Resultados para "${searchTerm}":\n`);
+  console.log('   ─────────────────────────────────────────────────────────────────────────');
+  console.log('   #  │ ID          │ Fuente      │ Título');
+  console.log('   ─────────────────────────────────────────────────────────────────────────');
+
+  articles.forEach((article, index) => {
+    const num = String(index + 1).padStart(2);
+    const id = String(article.id).padEnd(10);
+    const source = (article.source === 'help_center' ? 'Help Center' : 'Interno').padEnd(11);
+    const title = article.title.length > 45 ? article.title.substring(0, 42) + '...' : article.title;
+    console.log(`   ${num} │ ${id} │ ${source} │ ${title}`);
+  });
+
+  console.log('   ─────────────────────────────────────────────────────────────────────────\n');
+
+  if (articles.length === 1) {
+    const confirm = await askQuestion(rl, `   ¿Exportar "${articles[0].title}"? (s/n): `);
+    if (confirm.toLowerCase() === 's' || confirm.toLowerCase() === 'si' || confirm.toLowerCase() === 'sí') {
+      return [String(articles[0].id)];
+    }
+    return [];
+  }
+
+  console.log('   Opciones:');
+  console.log('   - Ingresa números separados por coma (ej: 1,3,5)');
+  console.log('   - Ingresa "todos" para seleccionar todos');
+  console.log('   - Ingresa "cancelar" para volver\n');
+
+  const selection = await askQuestion(rl, '   Tu selección: ');
+  
+  if (selection.toLowerCase() === 'cancelar' || selection === '') {
+    return [];
+  }
+  
+  if (selection.toLowerCase() === 'todos' || selection.toLowerCase() === 'all') {
+    return articles.map(a => String(a.id));
+  }
+
+  // Parsear selección numérica
+  const selectedIds: string[] = [];
+  const parts = selection.split(/[,\s]+/);
+  
+  for (const part of parts) {
+    const num = parseInt(part.trim());
+    if (!isNaN(num) && num >= 1 && num <= articles.length) {
+      selectedIds.push(String(articles[num - 1].id));
+    }
+  }
+
+  return [...new Set(selectedIds)];
+}
+
+/**
+ * Parsea la entrada del usuario y extrae los IDs de artículos
+ * Ahora también soporta búsqueda por título
+ */
+async function parseArticleInputsWithSearch(
+  input: string,
+  intercomClient: IntercomClient,
+  rl: readline.Interface
+): Promise<string[]> {
+  const allIds: string[] = [];
+  
+  // Separar por comas o saltos de línea (pero no espacios, para permitir títulos con espacios)
+  const parts = input.split(/[,\n]+/).map(p => p.trim()).filter(p => p);
+  
+  for (const part of parts) {
+    const parsed = parseInput(part);
+    
+    if (parsed.type === 'id') {
+      allIds.push(parsed.value);
+    } else {
+      // Es una búsqueda por título
+      console.log(`\n   🔎 Buscando artículos con "${parsed.value}"...`);
+      
+      try {
+        const results = await intercomClient.searchArticlesByTitle(parsed.value, 10);
+        const selectedIds = await selectFromSearchResults(results, parsed.value, rl);
+        allIds.push(...selectedIds);
+      } catch (error) {
+        console.error(`   ❌ Error buscando "${parsed.value}":`, error instanceof Error ? error.message : error);
+      }
+    }
+  }
+  
+  return [...new Set(allIds)]; // Eliminar duplicados
+}
+
+/**
+ * Parsea la entrada del usuario y extrae los IDs de artículos (versión simple, solo IDs)
+ */
+function parseArticleInputs(input: string): string[] {
+  // Separar por comas, saltos de línea o espacios
+  const parts = input.split(/[,\n\s]+/).filter(p => p.trim());
+  
+  const ids: string[] = [];
+  for (const part of parts) {
+    const id = extractArticleId(part);
+    if (id) {
+      ids.push(id);
+    }
+  }
+  
+  return [...new Set(ids)]; // Eliminar duplicados
+}
+
+/**
+ * Espera un tiempo determinado (para rate limiting)
+ */
+function delay(ms: number): Promise<void> {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+/**
+ * Formatea una fecha Unix a formato legible
+ */
+function formatDate(timestamp?: number): string {
+  if (!timestamp) return 'N/A';
+  return new Date(timestamp * 1000).toLocaleDateString('es-ES', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  });
+}
+
+/**
+ * Muestra la lista de artículos en formato tabla
+ */
+function displayArticlesList(articles: ArticleListItem[]): void {
+  if (articles.length === 0) {
+    console.log('\n   ⚠️  No se encontraron artículos disponibles.\n');
+    return;
+  }
+
+  console.log('\n══════════════════════════════════════════════════════════════════════════════');
+  console.log('   ARTÍCULOS DISPONIBLES');
+  console.log('══════════════════════════════════════════════════════════════════════════════\n');
+
+  // Agrupar por fuente
+  const publicArticles = articles.filter(a => a.source === 'help_center');
+  const internalArticles = articles.filter(a => a.source === 'internal');
+
+  if (publicArticles.length > 0) {
+    console.log(`   📚 HELP CENTER (${publicArticles.length} artículos)`);
+    console.log('   ─────────────────────────────────────────────────────────────────────────');
+    console.log('   ID          │ Estado     │ Actualizado  │ Título');
+    console.log('   ─────────────────────────────────────────────────────────────────────────');
+    
+    for (const article of publicArticles) {
+      const id = String(article.id).padEnd(10);
+      const state = (article.state || 'N/A').padEnd(10);
+      const date = formatDate(article.updated_at).padEnd(12);
+      const title = article.title.length > 40 ? article.title.substring(0, 37) + '...' : article.title;
+      console.log(`   ${id} │ ${state} │ ${date} │ ${title}`);
+    }
+    console.log('');
+  }
+
+  if (internalArticles.length > 0) {
+    console.log(`   📝 ARTÍCULOS INTERNOS (${internalArticles.length} artículos)`);
+    console.log('   ─────────────────────────────────────────────────────────────────────────');
+    console.log('   ID          │ Estado     │ Actualizado  │ Título');
+    console.log('   ─────────────────────────────────────────────────────────────────────────');
+    
+    for (const article of internalArticles) {
+      const id = String(article.id).padEnd(10);
+      const state = (article.state || 'N/A').padEnd(10);
+      const date = formatDate(article.updated_at).padEnd(12);
+      const title = article.title.length > 40 ? article.title.substring(0, 37) + '...' : article.title;
+      console.log(`   ${id} │ ${state} │ ${date} │ ${title}`);
+    }
+    console.log('');
+  }
+
+  console.log('══════════════════════════════════════════════════════════════════════════════');
+  console.log(`   Total: ${articles.length} artículo(s) encontrado(s)`);
+  console.log('══════════════════════════════════════════════════════════════════════════════\n');
+}
+
+/**
+ * Muestra el menú principal y retorna la opción seleccionada
+ */
+async function showMainMenu(rl: readline.Interface): Promise<MenuOption> {
+  console.log('──────────────────────────────────────────────────────────');
+  console.log('   ¿Qué deseas hacer?\n');
+  console.log('   1. 📋 Listar artículos disponibles en Intercom');
+  console.log('   2. 📤 Exportar artículos a Notion');
+  console.log('   3. 📝 Exportar artículos a Markdown (repo)');
+  console.log('   4. 📤 Subir .md a Intercom (crear artículos)');
+  console.log('   5. 🚪 Salir');
+  console.log('──────────────────────────────────────────────────────────\n');
+
+  const answer = await askQuestion(rl, 'Selecciona una opción (1-5): ');
+  
+  if (['1', '2', '3', '4', '5'].includes(answer)) {
+    return answer as MenuOption;
+  }
+  
+  console.log('\n   ⚠️  Opción inválida. Por favor selecciona 1, 2, 3, 4 o 5.\n');
+  return showMainMenu(rl);
+}
+
+/**
+ * Función para listar artículos
+ */
+async function listArticlesFlow(intercomClient: IntercomClient, rl: readline.Interface): Promise<void> {
+  console.log('\n──────────────────────────────────────────────────────────');
+  console.log('   Obteniendo lista de artículos de Intercom...\n');
+
+  try {
+    // Usar método con caché para que esté disponible en exportación posterior
+    const articles = await intercomClient.getAllArticlesCached(200);
+    displayArticlesList(articles);
+
+    // Preguntar si quiere copiar IDs
+    if (articles.length > 0) {
+      console.log('   💡 Tip: Copia los IDs que necesites para exportarlos después.\n');
+    }
+  } catch (error) {
+    console.error('   ❌ Error al obtener artículos:', error instanceof Error ? error.message : error);
+  }
+
+  await askQuestion(rl, 'Presiona Enter para volver al menú...');
+}
+
+/**
+ * Función para exportar artículos (flujo original)
+ */
+async function exportArticlesFlow(
+  intercomClient: IntercomClient, 
+  notionClient: NotionClient, 
+  rl: readline.Interface
+): Promise<void> {
+  // 1. Pedir nombre de la página contenedora
+  const containerName = await askQuestion(
+    rl,
+    '\n📁 Nombre de la página contenedora en Notion:\n> '
+  );
+
+  if (!containerName) {
+    console.error('❌ El nombre de la página no puede estar vacío.');
+    return;
+  }
+
+  // 2. Pedir URLs, IDs o títulos de artículos
+  console.log('\n📋 Ingresa los artículos a exportar de Intercom.');
+  console.log('   Puedes usar:');
+  console.log('   - IDs numéricos (ej: 12345678)');
+  console.log('   - URLs de Intercom');
+  console.log('   - Títulos de artículos (se buscará por coincidencia)');
+  console.log('   (Separados por coma o salto de línea)');
+  console.log('   Escribe "fin" o línea vacía para terminar.\n');
+
+  let articleInput = '';
+  let line = '';
+  
+  while (true) {
+    line = await askQuestion(rl, '> ');
+    if (line.toLowerCase() === 'fin' || line === '') {
+      if (articleInput.trim()) break;
+      console.log('   ⚠️  Debes ingresar al menos un artículo.');
+      continue;
+    }
+    articleInput += '\n' + line;
+  }
+
+  // Parsear los IDs (ahora con soporte para búsqueda por título)
+  const articleIds = await parseArticleInputsWithSearch(articleInput, intercomClient, rl);
+
+  if (articleIds.length === 0) {
+    console.error('❌ No se encontraron artículos para exportar.');
+    return;
+  }
+
+  console.log(`\n✅ Se encontraron ${articleIds.length} artículo(s) para exportar.`);
+  console.log(`   IDs: ${articleIds.join(', ')}\n`);
+
+  // Estadísticas
+  const stats: ExportStats = {
+    totalArticles: articleIds.length,
+    successfulExports: 0,
+    failedExports: 0,
+    errors: [],
+  };
+
+  // 3. Crear la página contenedora en Notion
+  console.log('──────────────────────────────────────────────────────────');
+  console.log(`📁 Creando página contenedora "${containerName}"...`);
+  
+  let containerPage;
+  try {
+    containerPage = await notionClient.createFolderPage(containerName);
+    console.log(`   ✅ Página creada: ${containerPage.url}\n`);
+  } catch (error) {
+    console.error(`❌ Error al crear la página contenedora:`, error);
+    showNotionErrorHelp(error instanceof Error ? error.message : '');
+    return;
+  }
+
+  // 4. Exportar cada artículo
+  console.log('──────────────────────────────────────────────────────────');
+  console.log('📄 Exportando artículos...\n');
+
+  for (let i = 0; i < articleIds.length; i++) {
+    const articleId = articleIds[i];
+    const progress = `[${i + 1}/${articleIds.length}]`;
+
+    try {
+      process.stdout.write(`   ${progress} Obteniendo artículo ${articleId}...`);
+      
+      // Obtener contenido del artículo
+      const { title, body } = await intercomClient.getArticleContent(parseInt(articleId));
+
+      if (!body || body.trim() === '') {
+        console.log(' ⚠️  Sin contenido, omitiendo.');
+        stats.failedExports++;
+        stats.errors.push({ id: articleId, error: 'Sin contenido' });
+        continue;
+      }
+
+      process.stdout.write(` "${title.substring(0, 30)}${title.length > 30 ? '...' : ''}"...`);
+
+      // Crear página en Notion dentro de la contenedora
+      await notionClient.createPage(title, body, containerPage.id);
+      console.log(' ✅');
+      stats.successfulExports++;
+
+      // Rate limiting
+      if (i < articleIds.length - 1) {
+        await delay(500);
+      }
+    } catch (error) {
+      console.log(' ❌');
+      const errorMessage = error instanceof Error ? error.message : 'Error desconocido';
+      stats.failedExports++;
+      stats.errors.push({ id: articleId, error: errorMessage });
+    }
+  }
+
+  // 5. Resumen final
+  console.log('\n══════════════════════════════════════════════════════════');
+  console.log('   RESUMEN DE EXPORTACIÓN');
+  console.log('══════════════════════════════════════════════════════════\n');
+  
+  console.log(`   📁 Página contenedora: "${containerName}"`);
+  console.log(`   🔗 ${containerPage.url}\n`);
+  console.log(`   📄 Artículos procesados: ${stats.totalArticles}`);
+  console.log(`   ✅ Exportados exitosamente: ${stats.successfulExports}`);
+  console.log(`   ❌ Fallidos: ${stats.failedExports}`);
+
+  if (stats.errors.length > 0) {
+    console.log('\n   Errores detallados:');
+    stats.errors.forEach(({ id, error }) => {
+      console.log(`   - Artículo ${id}: ${error}`);
+    });
+  }
+
+  console.log('\n══════════════════════════════════════════════════════════\n');
+}
+
+/**
+ * Función para exportar artículos a archivos Markdown en el repo
+ */
+async function exportMarkdownFlow(
+  intercomClient: IntercomClient,
+  rl: readline.Interface,
+): Promise<void> {
+  const defaultPath = process.cwd();
+  const repoPath = await askQuestion(
+    rl,
+    `\n📂 Ruta al repo helpcenter-pipeline:\n   (Enter para usar: ${defaultPath})\n> `,
+  );
+
+  const finalPath = repoPath || defaultPath;
+  const articlesDir = path.join(finalPath, 'articles');
+
+  if (!fs.existsSync(articlesDir)) {
+    console.error(`\n   ❌ No se encontró la carpeta articles/ en: ${finalPath}`);
+    console.error('   Asegúrate de que la ruta apunta al repo helpcenter-pipeline.\n');
+    return;
+  }
+
+  const exporter = new MarkdownExporter({ repoPath: finalPath });
+
+  console.log('\n📋 Ingresa los artículos a exportar de Intercom.');
+  console.log('   Puedes usar: IDs, URLs, o títulos.');
+  console.log('   Escribe "fin" o línea vacía para terminar.\n');
+
+  let articleInput = '';
+  while (true) {
+    const line = await askQuestion(rl, '> ');
+    if (line.toLowerCase() === 'fin' || line === '') {
+      if (articleInput.trim()) break;
+      console.log('   ⚠️  Debes ingresar al menos un artículo.');
+      continue;
+    }
+    articleInput += '\n' + line;
+  }
+
+  const articleIds = await parseArticleInputsWithSearch(articleInput, intercomClient, rl);
+  if (articleIds.length === 0) {
+    console.error('❌ No se encontraron artículos para exportar.');
+    return;
+  }
+
+  console.log(`\n✅ Se encontraron ${articleIds.length} artículo(s) para exportar.`);
+  console.log(`   IDs: ${articleIds.join(', ')}\n`);
+
+  console.log('──────────────────────────────────────────────────────────');
+  console.log('📝 Exportando artículos a Markdown...\n');
+
+  let successCount = 0;
+  let failCount = 0;
+  const errors: Array<{ id: string; error: string }> = [];
+
+  for (let i = 0; i < articleIds.length; i++) {
+    const articleId = articleIds[i];
+    const progress = `[${i + 1}/${articleIds.length}]`;
+
+    try {
+      process.stdout.write(`   ${progress} Obteniendo artículo ${articleId}...`);
+
+      const { title, body } = await intercomClient.getArticleContent(parseInt(articleId));
+
+      if (!body || body.trim() === '') {
+        console.log(' ⚠️  Sin contenido, omitiendo.');
+        failCount++;
+        errors.push({ id: articleId, error: 'Sin contenido' });
+        continue;
+      }
+
+      process.stdout.write(` "${title.substring(0, 30)}${title.length > 30 ? '...' : ''}"...`);
+
+      const result = await exporter.exportArticle(title, body);
+      const imgInfo = result.imagesDownloaded > 0 ? ` (${result.imagesDownloaded} imgs)` : '';
+      console.log(` ✅${imgInfo} → ${path.basename(result.filePath)}`);
+      successCount++;
+
+      if (i < articleIds.length - 1) {
+        await delay(300);
+      }
+    } catch (error) {
+      console.log(' ❌');
+      const errorMessage = error instanceof Error ? error.message : 'Error desconocido';
+      failCount++;
+      errors.push({ id: articleId, error: errorMessage });
+    }
+  }
+
+  console.log('\n══════════════════════════════════════════════════════════');
+  console.log('   RESUMEN DE EXPORTACIÓN A MARKDOWN');
+  console.log('══════════════════════════════════════════════════════════\n');
+  console.log(`   📂 Destino: ${articlesDir}`);
+  console.log(`   📄 Artículos procesados: ${articleIds.length}`);
+  console.log(`   ✅ Exportados: ${successCount}`);
+  console.log(`   ❌ Fallidos: ${failCount}`);
+
+  if (errors.length > 0) {
+    console.log('\n   Errores:');
+    errors.forEach(({ id, error }) => console.log(`   - Artículo ${id}: ${error}`));
+  }
+
+  console.log('\n══════════════════════════════════════════════════════════\n');
+}
+
+/**
+ * Lee un .md, extrae titulo (primer # heading) y convierte el body a HTML.
+ * Elimina la seccion TOC generada automaticamente antes de convertir.
+ */
+function mdFileToHtml(filePath: string): { title: string; html: string } {
+  const raw = fs.readFileSync(filePath, 'utf-8');
+  const lines = raw.split('\n');
+
+  // Extraer titulo del primer # heading
+  let title = path.basename(filePath, '.md');
+  let bodyStart = 0;
+
+  for (let i = 0; i < lines.length; i++) {
+    const match = lines[i].match(/^#\s+(.+)$/);
+    if (match) {
+      title = match[1].trim();
+      bodyStart = i + 1;
+      break;
+    }
+  }
+
+  // Saltar descripcion y TOC hasta el segundo --- despues del TOC
+  let body = lines.slice(bodyStart).join('\n');
+
+  // Eliminar bloque TOC: desde "# Table of Contents" hasta el siguiente "---"
+  body = body.replace(
+    /^---\s*\n+#\s+Table of Contents\s*\n[\s\S]*?\n---\s*$/m,
+    '',
+  );
+
+  // Limpiar separadores iniciales sobrantes y espacios
+  body = body.replace(/^\s*---\s*\n/, '').trim();
+
+  const html = marked.parse(body) as string;
+  return { title, html };
+}
+
+/**
+ * Funcion para subir archivos .md del repo a Intercom como articulos draft.
+ */
+async function uploadToIntercomFlow(
+  intercomClient: IntercomClient,
+  rl: readline.Interface,
+): Promise<void> {
+  const defaultPath = process.cwd();
+  const repoPath = await askQuestion(
+    rl,
+    `\n📂 Ruta al repo helpcenter-pipeline:\n   (Enter para usar: ${defaultPath})\n> `,
+  );
+
+  const finalPath = repoPath || defaultPath;
+  const articlesDir = path.join(finalPath, 'articles');
+
+  if (!fs.existsSync(articlesDir)) {
+    console.error(`\n   ❌ No se encontró la carpeta articles/ en: ${finalPath}\n`);
+    return;
+  }
+
+  // Listar archivos .md disponibles
+  const mdFiles = fs.readdirSync(articlesDir)
+    .filter(f => f.endsWith('.md'))
+    .sort();
+
+  if (mdFiles.length === 0) {
+    console.error('\n   ❌ No hay archivos .md en la carpeta articles/\n');
+    return;
+  }
+
+  console.log(`\n   📄 Archivos .md disponibles (${mdFiles.length}):\n`);
+  mdFiles.forEach((f, i) => {
+    console.log(`   ${String(i + 1).padStart(3)}. ${f}`);
+  });
+
+  console.log('\n   Opciones:');
+  console.log('   - Números separados por coma (ej: 1,3,5)');
+  console.log('   - "todos" para seleccionar todos');
+  console.log('   - Nombres de archivo (ej: lists.md, credits.md)\n');
+
+  const selection = await askQuestion(rl, '   Tu selección: ');
+
+  let selectedFiles: string[] = [];
+
+  if (selection.toLowerCase() === 'todos' || selection.toLowerCase() === 'all') {
+    selectedFiles = mdFiles;
+  } else if (/^\d/.test(selection)) {
+    const nums = selection.split(/[,\s]+/).map(n => parseInt(n.trim()));
+    for (const num of nums) {
+      if (num >= 1 && num <= mdFiles.length) {
+        selectedFiles.push(mdFiles[num - 1]);
+      }
+    }
+  } else {
+    const names = selection.split(/[,\s]+/).map(n => n.trim().toLowerCase());
+    for (const name of names) {
+      const match = mdFiles.find(f => f.toLowerCase() === name || f.toLowerCase() === name + '.md');
+      if (match) selectedFiles.push(match);
+    }
+  }
+
+  if (selectedFiles.length === 0) {
+    console.error('\n   ❌ No se seleccionaron archivos.\n');
+    return;
+  }
+
+  console.log(`\n   ✅ ${selectedFiles.length} archivo(s) seleccionado(s): ${selectedFiles.join(', ')}`);
+
+  // Obtener author_id
+  console.log('\n   🔍 Obteniendo lista de autores del workspace...');
+  let admins: Array<{ id: string; name: string; email: string }>;
+  try {
+    admins = await intercomClient.getAdmins();
+  } catch {
+    console.error('\n   ❌ No se pudo obtener la lista de autores.\n');
+    return;
+  }
+
+  if (admins.length === 0) {
+    console.error('\n   ❌ No se encontraron autores en el workspace.\n');
+    return;
+  }
+
+  console.log(`\n   👥 Autores disponibles:\n`);
+  admins.forEach((a, i) => {
+    console.log(`   ${i + 1}. ${a.name} (${a.email})`);
+  });
+
+  const authorChoice = await askQuestion(rl, `\n   Selecciona el autor (1-${admins.length}): `);
+  const authorIdx = parseInt(authorChoice) - 1;
+
+  if (isNaN(authorIdx) || authorIdx < 0 || authorIdx >= admins.length) {
+    console.error('\n   ❌ Selección inválida.\n');
+    return;
+  }
+
+  const authorId = admins[authorIdx].id;
+  console.log(`\n   ✅ Autor: ${admins[authorIdx].name}`);
+
+  const stateChoice = await askQuestion(rl, '\n   ¿Estado del artículo? (draft/published, Enter=draft): ');
+  const state = (stateChoice.toLowerCase() === 'published' ? 'published' : 'draft') as 'draft' | 'published';
+
+  console.log('\n──────────────────────────────────────────────────────────');
+  console.log('📤 Subiendo artículos a Intercom...\n');
+
+  let successCount = 0;
+  let failCount = 0;
+  const errors: Array<{ file: string; error: string }> = [];
+
+  for (let i = 0; i < selectedFiles.length; i++) {
+    const file = selectedFiles[i];
+    const filePath = path.join(articlesDir, file);
+    const progress = `[${i + 1}/${selectedFiles.length}]`;
+
+    try {
+      process.stdout.write(`   ${progress} ${file}...`);
+      const { title, html } = mdFileToHtml(filePath);
+
+      const result = await intercomClient.createArticle({
+        title,
+        body: html,
+        authorId,
+        state,
+      });
+
+      console.log(` ✅ ID: ${result.id} (${state})`);
+      successCount++;
+
+      if (i < selectedFiles.length - 1) {
+        await delay(500);
+      }
+    } catch (error) {
+      console.log(' ❌');
+      const msg = error instanceof Error ? error.message : 'Error desconocido';
+      failCount++;
+      errors.push({ file, error: msg });
+    }
+  }
+
+  console.log('\n══════════════════════════════════════════════════════════');
+  console.log('   RESUMEN DE SUBIDA A INTERCOM');
+  console.log('══════════════════════════════════════════════════════════\n');
+  console.log(`   📄 Archivos procesados: ${selectedFiles.length}`);
+  console.log(`   ✅ Creados: ${successCount} (${state})`);
+  console.log(`   ❌ Fallidos: ${failCount}`);
+
+  if (errors.length > 0) {
+    console.log('\n   Errores:');
+    errors.forEach(({ file, error }) => console.log(`   - ${file}: ${error}`));
+  }
+
+  console.log('\n══════════════════════════════════════════════════════════\n');
+}
+
+/**
+ * Función principal
+ */
+async function main(): Promise<void> {
+  console.log('═══════════════════════════════════════════════════════════');
+  console.log('   Intercom Exporter');
+  console.log('   Exporta artículos de Intercom a Notion o Markdown');
+  console.log('═══════════════════════════════════════════════════════════\n');
+
+  const config = getConfig();
+
+  const intercomClient = new IntercomClient({
+    accessToken: config.intercom.accessToken,
+    baseUrl: config.intercom.baseUrl,
+  });
+
+  const notionClient = config.notion
+    ? new NotionClient({ token: config.notion.token, parentPageId: config.notion.parentPageId })
+    : null;
+
+  if (!notionClient) {
+    console.log('   ℹ️  Notion no configurado (faltan NOTION_TOKEN / NOTION_PARENT_PAGE_ID).');
+    console.log('      La exportación a Notion no estará disponible.\n');
+  }
+
+  const rl = createReadlineInterface();
+
+  try {
+    let running = true;
+
+    while (running) {
+      const option = await showMainMenu(rl);
+
+      switch (option) {
+        case '1':
+          await listArticlesFlow(intercomClient, rl);
+          break;
+        case '2':
+          if (!notionClient) {
+            console.log('\n   ❌ Notion no configurado. Agrega NOTION_TOKEN y NOTION_PARENT_PAGE_ID a .env\n');
+          } else {
+            await exportArticlesFlow(intercomClient, notionClient, rl);
+          }
+          break;
+        case '3':
+          await exportMarkdownFlow(intercomClient, rl);
+          break;
+        case '4':
+          await uploadToIntercomFlow(intercomClient, rl);
+          break;
+        case '5':
+          running = false;
+          console.log('\n   👋 ¡Hasta luego!\n');
+          break;
+      }
+    }
+
+  } finally {
+    rl.close();
+  }
+}
+
+/**
+ * Muestra instrucciones de ayuda para errores de Notion
+ */
+function showNotionErrorHelp(errorMessage: string): void {
+  if (errorMessage.includes('object_not_found') || errorMessage.includes('Could not find')) {
+    console.error('\n╔══════════════════════════════════════════════════════════╗');
+    console.error('║  ❌ ERROR: No se puede acceder a la página de Notion      ║');
+    console.error('╠══════════════════════════════════════════════════════════╣');
+    console.error('║  Posibles causas:                                        ║');
+    console.error('║  1. La página no existe                                  ║');
+    console.error('║  2. La página NO está compartida con tu integración      ║');
+    console.error('║                                                          ║');
+    console.error('║  ➜ SOLUCIÓN:                                             ║');
+    console.error('║  1. Abre la página en Notion                             ║');
+    console.error('║  2. Haz clic en "..." (menú superior derecho)            ║');
+    console.error('║  3. Selecciona "Add connections"                         ║');
+    console.error('║  4. Busca y selecciona tu integración                    ║');
+    console.error('╚══════════════════════════════════════════════════════════╝\n');
+  }
+}
+
+// Ejecutar el programa
+main().catch(error => {
+  console.error('Error no manejado:', error);
+  process.exit(1);
+});
