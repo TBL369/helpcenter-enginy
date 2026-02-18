@@ -13,52 +13,64 @@ The Dashboard is the main screen of the Enginy platform. It provides an executiv
 - [Performance Charts](#performance-charts)
   - [Contacts Funnel](#contacts-funnel)
   - [Campaigns Chart](#campaigns-chart)
-- [Enrichment Success Rate](#enrichment-success-rate)
-- [Quick-Access Lists](#quick-access-lists)
+- [Quick-Accesses](#quick-accesses)
   - [Recent Contacts Lists](#recent-contacts-lists)
   - [Recent Campaigns](#recent-campaigns)
+- [API Usage](#api-usage)
 - [Create Button](#create-button)
-- [Troubleshooting](#troubleshooting)
+  - [Create a New List from the Dashboard](#create-a-new-list-from-the-dashboard)
+  - [Create a New Campaign from the Dashboard](#create-a-new-campaign-from-the-dashboard)
 - [FAQs](#faqs)
+    - [Q1: Does the Total Imported count include deleted contacts?](#q1-does-the-total-imported-count-include-deleted-contacts)
+    - [Q2: Can I customize the time range for all Dashboard metrics?](#q2-can-i-customize-the-time-range-for-all-dashboard-metrics)
+    - [Q3: What is the difference between Contacted and Replied in the Campaigns chart?](#q3-what-is-the-difference-between-contacted-and-replied-in-the-campaigns-chart)
+    - [Q4: How often is the Dashboard data updated?](#q4-how-often-is-the-dashboard-data-updated)
+    - [Q5: Where can I see more detailed campaign analytics?](#q5-where-can-i-see-more-detailed-campaign-analytics)
 
 ---
 
 # Summary Cards
 
-The top section of the Dashboard displays key metrics at a glance. Most cards support time-range filtering (for example, "Last 30 days") so you can adjust the period to suit your analysis.
+The top section of the Dashboard displays key metrics at a glance. The cards support time-range filtering (for example, "Last 30 days") so you can adjust the period to suit your analysis.
 
-| Card | What It Shows |
-|------|---------------|
-| **Credits Balance** | Available credits versus total contracted credits. Includes a **View plan** link to the credits section. |
-| **Total Imported** | Total number of Contacts and Companies imported into the platform. Supports time-range filtering. |
-| **Campaigns (Summary)** | Number of conversations initiated with contacts and the reply rate. Supports time-range filtering. |
+<table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Card</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">What It Shows</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Credits Balance</b></p></td><td><p class="intercom-align-justify no-margin">Available credits versus total contracted credits. Includes a <b>View plan</b> link to the credits section.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Total Imported</b></p></td><td><p class="intercom-align-justify no-margin">Total number of Contacts and Companies imported into the platform.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Campaigns (Summary)</b></p></td><td><p class="intercom-align-justify no-margin">Number of conversations initiated with contacts and the reply rate.</p></td></tr></tbody></table>
 
 ## Credits Balance
 
 Displays your current credit consumption against your plan's total allocation. Click the **View plan** shortcut to:
 
-- Purchase additional credits.
-- Review your current plan details.
-- Upgrade or change your subscription.
+-   Review your current plan details.
+    
+-   See the credits usage tracking
+    
+-   Purchase additional credits.
+    
+-   Upgrade or change your subscription.
+    
 
 ## Total Imported
 
 This metric aggregates all contacts and companies brought into the platform regardless of the import source:
 
-- CRM integrations
-- LinkedIn imports
-- CSV file uploads
+-   CRM integrations
+    
+-   LinkedIn imports
+    
+-   CSV file uploads
+    
 
-> **Note:** The Total Imported count includes contacts that have been deleted from the platform. This gives you full visibility into your historical import volume.
+**Note:** The Total Imported count includes contacts that have been deleted from the platform. This gives you full visibility into your historical import volume.
 
 ## Campaigns Summary
 
-Provides a quick overview of your outreach performance:
+Provides a quick overview of your outreach performance via LinkedIn or email:
 
-| Metric | Description |
-|--------|-------------|
-| **Conversations initiated** | Total contacts reached via LinkedIn or email |
-| **Reply rate** | Percentage of contacts who responded to your outreach |
+-   Conversations initiated
+    
+-   Reply rate
+    
+    ![](images/dashboard-1.png)
+    
 
 ---
 
@@ -70,46 +82,39 @@ The central area of the Dashboard contains visual representations of your key pe
 
 Visualizes your contact pipeline across three stages:
 
-| Stage | Description |
-|-------|-------------|
-| **Imported** | Total contacts brought into the platform |
-| **Enriched** | Contacts that have been enriched with additional data |
-| **Exported** | Contacts exported to external systems or CRMs |
+<table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Stage</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Description</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Imported</b></p></td><td><p class="intercom-align-justify no-margin">Total contacts brought into the platform</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Enriched</b></p></td><td><p class="intercom-align-justify no-margin">Contacts that have been enriched with additional data</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Exported</b></p></td><td><p class="intercom-align-justify no-margin">Contacts exported to external systems or CRMs</p></td></tr></tbody></table>
 
 The funnel chart allows you to:
 
-- Filter by time range.
-- Analyze conversion rates between stages.
-- Identify bottlenecks in your prospecting workflow.
+-   Filter by time range.
+    
+-   Analyze conversion rates between stages.
+    
+-   Identify bottlenecks in your prospecting workflow.
+    
 
-> **Tip:** Use the time-range selector on the funnel to compare different periods and spot trends in your prospecting pipeline.
+**Tip:** Use the time-range selector on the funnel to compare different periods and spot trends in your prospecting pipeline.
 
 ## Campaigns Chart
 
 A graphical comparison of outreach volume versus responses:
 
-| Metric | Description |
-|--------|-------------|
-| **Contacted** | Number of contacts reached through campaigns |
-| **Replied** | Number of contacts who responded |
+<table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Metric</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Description</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Contacted</b></p></td><td><p class="intercom-align-justify no-margin">Number of contacts reached through campaigns</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Replied</b></p></td><td><p class="intercom-align-justify no-margin">Number of contacts who responded</p></td></tr></tbody></table>
 
 You can adjust the time grouping using the selector:
 
-- Day
-- Week
-- Month
+-   Day
+    
+-   Week
+    
+-   Month
+    
+
+![](images/dashboard-2.png)
 
 ---
 
-# Enrichment Success Rate
-
-Displays the success rate (percentage) of all enrichments performed on the platform. This metric can be filtered by time range, letting you track enrichment quality over different periods.
-
-> **Important:** This indicator covers all enrichments executed within the platform, giving you a single view of data-enrichment reliability.
-
----
-
-# Quick-Access Lists
+# Quick-Accesses
 
 The bottom section of the Dashboard provides shortcuts to your most recent work.
 
@@ -117,30 +122,37 @@ The bottom section of the Dashboard provides shortcuts to your most recent work.
 
 Displays your most recently created contact lists with the following details:
 
-- List name
-- Creator
-- Total contacts in the list
+<table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Column</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Description</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>List name</b></p></td><td><p class="intercom-align-justify no-margin">Title of the list</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Created by</b></p></td><td><p class="intercom-align-justify no-margin">Creator of the list</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Total</b></p></td><td><p class="intercom-align-justify no-margin">Total contacts in the list</p></td></tr></tbody></table>
 
 Available actions:
 
-- **Create** — Opens the wizard to create a new contact list.
-- **View all** — Navigates to the complete lists section.
+-   **Create** — Opens the wizard to create a new contact list.
+    
+-   **View all** — Navigates to the complete lists section.
+    
 
 ## Recent Campaigns
 
 Shows your most recent campaigns with the following details:
 
-| Column | Description |
-|--------|-------------|
-| **Name** | Campaign identifier |
-| **Identity** | The sender identity associated with the campaign |
-| **Creation date** | When the campaign was created |
-| **Status** | Current campaign state |
+<table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Column</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Description</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Name</b></p></td><td><p class="intercom-align-justify no-margin">Campaign identifier</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Identity</b></p></td><td><p class="intercom-align-justify no-margin">The sender identity associated with the campaign</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Created on</b></p></td><td><p class="intercom-align-justify no-margin">When the campaign was created</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Status</b></p></td><td><p class="intercom-align-justify no-margin">Current campaign state</p></td></tr></tbody></table>
 
 Available actions:
 
-- **Create** — Opens the wizard to create a new campaign.
-- **View all** — Navigates to the complete campaigns section.
+-   **Create** — Opens the wizard to create a new campaign.
+    
+-   **View all** — Navigates to the complete campaigns section.
+    
+
+![](images/dashboard-3.png)
+
+---
+
+# API Usage
+
+There is also a last chart that shows the API usage, the percentage of successful requests (in case of using it).
+
+![](images/dashboard-4.png)
 
 ---
 
@@ -148,53 +160,46 @@ Available actions:
 
 Located in the top-right corner of the Dashboard, the **Create** button provides quick access to start new work without leaving the Dashboard.
 
-| Option | Description |
-|--------|-------------|
-| **List** | Create a new contact or company list |
-| **Campaign** | Create a new outreach campaign |
+<table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Option</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Description</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>List</b></p></td><td><p class="intercom-align-justify no-margin">Create a new contact or company list</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Campaign</b></p></td><td><p class="intercom-align-justify no-margin">Create a new outreach campaign</p></td></tr></tbody></table>
 
 ## Create a New List from the Dashboard
 
-1. Click the **Create** button in the top-right corner of the Dashboard.
-2. Select **List**.
-3. Follow the wizard steps to configure your new contact or company list.
+1.  Click the **Create** button in the top-right corner of the Dashboard.
+    
+2.  Select **List**.
+    
+3.  Follow the wizard steps to configure your new contact or company list.
+    
 
 ## Create a New Campaign from the Dashboard
 
-1. Click the **Create** button in the top-right corner of the Dashboard.
-2. Select **Campaign**.
-3. Follow the wizard steps to configure your new outreach campaign.
-
----
-
-# Troubleshooting
-
-| Symptom | Cause | Resolution |
-|---------|-------|------------|
-| Dashboard metrics appear outdated | Aggregated metrics may take a few minutes to reflect the most recent changes | Wait a few minutes and refresh the page. If the issue persists, check your internet connection or contact support. |
-| Time-range filter does not appear on a card | Not all cards support time-range filtering (for example, Credits Balance does not) | Verify whether the specific card supports filtering by checking the [Summary Cards](#summary-cards) section above. |
-| Credits Balance shows unexpected values | Your plan allocation may have changed, or recent credit purchases have not yet been reflected | Click **View plan** to review your current plan details and recent credit transactions. |
+1.  Click the **Create** button in the top-right corner of the Dashboard.
+    
+2.  Select **Campaign**.
+    
+3.  Follow the wizard steps to configure your new outreach campaign.
+    
 
 ---
 
 # FAQs
 
-## Q1: Does the Total Imported count include deleted contacts?
+### Q1: Does the Total Imported count include deleted contacts?
 
 Yes. The Total Imported metric reflects the historical total of all contacts and companies ever imported into the platform, including those that have been subsequently deleted.
 
-## Q2: Can I customize the time range for all Dashboard metrics?
+### Q2: Can I customize the time range for all Dashboard metrics?
 
 Most Dashboard cards and charts support time-range filtering. Look for the time selector (for example, "Last 30 days") on each component to adjust the displayed period.
 
-## Q3: What is the difference between Contacted and Replied in the Campaigns chart?
+### Q3: What is the difference between Contacted and Replied in the Campaigns chart?
 
 **Contacted** represents the total number of contacts who received outreach through your campaigns (via LinkedIn or email). **Replied** shows how many of those contacts responded. The ratio between these two values determines your reply rate.
 
-## Q4: How often is the Dashboard data updated?
+### Q4: How often is the Dashboard data updated?
 
 Dashboard metrics are updated in real time as activities occur within the platform. However, some aggregated metrics may take a few minutes to reflect the most recent changes.
 
-## Q5: Where can I see more detailed campaign analytics?
+### Q5: Where can I see more detailed campaign analytics?
 
-The Dashboard provides a summary view. For detailed campaign analytics, click **View all** in the Recent Campaigns section or navigate to the Campaigns module from the main navigation menu.
+The Dashboard provides a summary view. For detailed campaign analytics, navigate to the Analytics module from the main navigation menu.
