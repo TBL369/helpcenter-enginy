@@ -89,7 +89,7 @@ If multiple people on your team need to work in Enginy with their own access, ea
 
 The main Identities screen provides an overview of all your active identities and their performance.
 
-![](images/identities-1.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440111/helpcenter/identities-1.png)
 
 ## Search and Filters
 
@@ -121,7 +121,7 @@ To add a new identity:
 
 Connect directly to a LinkedIn profile by entering your login credentials.
 
-![](images/identities-2.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440114/helpcenter/identities-2.png)
 
 ### Required fields
 
@@ -138,7 +138,7 @@ Connect directly to a LinkedIn profile by entering your login credentials.
 
 Create an identity by manually filling in the profile data. This method does not require LinkedIn credentials.
 
-![](images/identities-3.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440116/helpcenter/identities-3.png)
 
 ### Available fields
 
@@ -161,7 +161,7 @@ Create an identity by manually filling in the profile data. This method does not
 
 This option allows people who do not have an Enginy account (for example, team members, contractors, or partners) to connect their identity to your organization without needing platform access.
 
-![](images/identities-4.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440116/helpcenter/identities-4.png)
 
 1.  Click the **Generate Share Link** button.
     
@@ -178,13 +178,13 @@ This option allows people who do not have an Enginy account (for example, team m
 
 Once an identity is created, click the **Configuration** button on the identity card to access its full settings. The configuration panel is organized into the following sections: **Contact Details**, **LinkedIn**, **Email**, **Likings opt-out** and **Share Identity Link**.
 
-![](images/identities-5.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440116/helpcenter/identities-5.png)
 
 ## Contact Details
 
 If you connected a LinkedIn account when creating the identity, this section is automatically populated with the LinkedIn profile data. If you created the identity manually, it reflects the information you entered. All fields can be edited at any time.
 
-![](images/identities-6.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440116/helpcenter/identities-6.png)
 
 ### Editable fields
 
@@ -213,7 +213,7 @@ From the Contact Details section you can configure **Working Hours** for the ide
 
 The LinkedIn configuration section contains two tabs: **Rate Limits** and **Withdrawals**.
 
-![](images/identities-7.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440116/helpcenter/identities-7.png)
 
 **Note:** The Daily scrapings setting is only available if the identity has Sales Navigator enabled.
 
@@ -223,7 +223,7 @@ Define the daily activity limits for the identity on LinkedIn:
 
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Setting</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Default</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Description</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Daily connection requests</b></p></td><td><p class="intercom-align-justify no-margin">20 per day</p></td><td><p class="intercom-align-justify no-margin">The maximum number of connection requests the identity can send per day. Increasing this value carries the risk of LinkedIn detecting automation and temporarily restricting your account.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Daily messages limit</b></p></td><td><p class="intercom-align-justify no-margin">100 per day</p></td><td><p class="intercom-align-justify no-margin">The maximum number of LinkedIn messages the identity can send per day. Significant increases are not recommended.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Daily scrapings</b></p></td><td><p class="intercom-align-justify no-margin">Varies</p></td><td><p class="intercom-align-justify no-margin">Only available for identities with LinkedIn Sales Navigator. This value represents the number of additional scrapings the identity can perform beyond the shared account pool. The total scraping capacity equals the Enginy pool allocation plus the identity's Sales Navigator capacity.</p></td></tr></tbody></table>
 
-![](images/identities-8.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440117/helpcenter/identities-8.png)
 
 **Warning:** Increasing daily connection requests or message limits beyond the recommended defaults can trigger LinkedIn automation detection, which may result in temporary account restrictions. If you do increase them, do so temporarily and monitor closely.
 
@@ -238,9 +238,9 @@ Manage pending LinkedIn connection requests that have not been accepted:
 -   **History** — View the full history of withdrawn connections.
     
 
-![](images/identities-9.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440117/helpcenter/identities-9.png)
 
-![](images/identities-10.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440112/helpcenter/identities-10.png)
 
 **Important:** After withdrawing a connection request, you cannot send a new request to the same person for 3 weeks.
 
@@ -252,15 +252,15 @@ The Email configuration section contains three tabs: **Manage**, **Email Rate**,
 
 Connect one or multiple email addresses to the identity. Supported providers include Google, Microsoft, and IMAP.
 
-![](images/identities-11.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440112/helpcenter/identities-11.png)
 
-![](images/identities-12.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440112/helpcenter/identities-12.png)
 
 #### Connect a Google Email Account
 
 To connect a Google account to Enginy, sign in with the Google account you want to use.
 
-![](images/identities-13.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440112/helpcenter/identities-13.png)
 
 Before you continue, you can review Enginy’s **Privacy Policy** and **Terms of Service** using the links provided.
 
@@ -396,7 +396,7 @@ Make sure you have:
 
 Enginy will validate the connection and, if everything is correct, the inbox will be ready to use.
 
-![](images/identities-14.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440112/helpcenter/identities-14.png)
 
 # Common ports (quick reference)
 
@@ -430,7 +430,7 @@ These are the most common secure options (they can vary by provider):
 
 -   **Load balancing** — When multiple email addresses are connected and the campaign’s **Email Inbox** setting is set to “Shuffle,” Enginy distributes leads across all available inboxes.
     
-    ![](images/identities-15.png)
+    ![](https://res.cloudinary.com/enginy/image/upload/v1771440113/helpcenter/identities-15.png)
     
 -   **Lead continuity** — If a lead starts a sequence with a specific email address and you later disconnect that address, the system will not reassign the lead to another connected address. Instead, the lead will produce an error. To resolve this, you must reconnect the original email address.
     
@@ -443,11 +443,11 @@ The Warm-Up feature trains an email address through an external provider to redu
 
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Detail</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Value</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Cost</b></p></td><td><p class="intercom-align-justify no-margin">Varies on quantity; ask AM</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Estimated duration</b></p></td><td><p class="intercom-align-justify no-margin">2 weeks</p></td></tr></tbody></table>
 
-![](images/identities-16.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440113/helpcenter/identities-16.png)
 
-![](images/identities-17.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440113/helpcenter/identities-17.png)
 
-![](images/identities-18.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440113/helpcenter/identities-18.png)
 
 **Requirements during warm-up:**
 
@@ -464,7 +464,7 @@ Configure the sending limits per email address to avoid spam filters:
 
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Setting</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Recommended Value</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Emails per day</b></p></td><td><p class="intercom-align-justify no-margin">30 per inbox</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Emails per hour</b></p></td><td><p class="intercom-align-justify no-margin">5 per inbox</p></td></tr></tbody></table>
 
-![](images/identities-19.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440113/helpcenter/identities-19.png)
 
 **Notes:**
 
@@ -481,17 +481,17 @@ Configure the sending limits per email address to avoid spam filters:
 
 Create or edit the email signature that the identity will use when sending emails. You can use the built-in text editor, or switch to **Advanced HTML Mode** to paste HTML code directly.
 
-![](images/identities-20.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440114/helpcenter/identities-20.png)
 
-![](images/identities-21.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440114/helpcenter/identities-21.png)
 
 ## Share Identity Link
 
 Inside the configuration menu, the **Share identity link** button generates and copies a link that allows the owner of the identity to update their connection status (LinkedIn or email) without needing direct access to the Enginy platform. This is useful for refreshing credentials or connecting / reconnecting accounts. The link is valid for 24 hours.
 
-![](images/identities-22.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440114/helpcenter/identities-22.png)
 
-![](images/identities-23.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440114/helpcenter/identities-23.png)
 
 ---
 
