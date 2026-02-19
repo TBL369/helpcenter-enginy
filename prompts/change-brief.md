@@ -110,7 +110,7 @@ Optional content sections (use when applicable): "Before You Start" (prerequisit
 
 - ALL tables use **Intercom-compatible HTML**: `<table role="presentation"><tbody>...</tbody></table>`.
 - **Never** use Markdown pipe tables.
-- Header row: `style="background-color: #d7efdc80;"` with bold column names using `<b>` tags.
+- Header row: `style="background-color: #d7efdc;"` with bold column names using `<b>` tags.
 - Cell text: `<p class="no-margin">`. Bold key values with `<b>` tags.
 - Prefer tables for: key→value pairs, comparisons, repetitive structured info (fields, statuses, action types, plans, limits, permissions), and troubleshooting (Symptom | Cause | Resolution).
 - Common column schemas: Field | Description; Action | Description; Setting | Description; Status | Meaning; Symptom | Cause | Resolution; Metric | Description | Counting Rule; Filter | Description | Available Values.
