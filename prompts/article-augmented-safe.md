@@ -118,10 +118,11 @@ Typical help-center flow within the content sections:
 
 ### Callouts
 
-- Callouts are **plain paragraphs** with a bold label. Do NOT use blockquote syntax (`>`).
+- Callouts use **blockquote syntax** (`>`) with a bold label on the first line.
 - Labels (singular or plural): `**Note:**`, `**Notes:**`, `**Important:**`, `**Warning:**`, `**Tip:**`, `**Tips:**`.
-- Each callout is its own paragraph, separated by blank lines above and below.
-- **Bold paragraph labels** can also serve as lightweight sub-headers within a section (e.g., `**Step 1 — Do something:**`, `**How to resolve:**`). These are not Markdown headings — they are bold text at the start of a paragraph introducing a sub-block.
+- Format: `> **Note:** callout text here`. For multi-line callouts, prefix each line with `>`.
+- Each callout is separated by blank lines above and below.
+- **Bold paragraph labels** (outside of callouts) can serve as lightweight sub-headers within a section (e.g., `**Step 1 — Do something:**`, `**How to resolve:**`). These are not Markdown headings — they are bold text at the start of a paragraph introducing a sub-block.
 
 ### Step-by-Step Procedures
 
@@ -196,7 +197,7 @@ Typical help-center flow within the content sections:
 - [ ] Roles/permissions and plan/regional differences are explicit wherever needed.
 - [ ] Troubleshooting (if present) uses Symptom/Issue → Cause → Resolution in an HTML table.
 - [ ] TOC anchors work and match headings. FAQs are NOT listed in the TOC.
-- [ ] Callouts use bold labels as plain paragraphs (no blockquote `>` syntax).
+- [ ] Callouts use blockquote syntax (`>`) with bold labels (`**Note:**`, `**Tip:**`, etc.).
 - [ ] ALL tables use Intercom-compatible HTML (`<table role="presentation">`), never Markdown pipe tables.
 - [ ] Headings use `#` (H1) for top-level sections, `##` (H2) for subsections, `###` (H3) for sub-subsections. `####` (H4) only when an H3 genuinely needs further breakdown.
 - [ ] `---` horizontal rules appear after the intro, after the TOC, and between every H1 section.

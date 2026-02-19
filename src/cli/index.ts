@@ -737,13 +737,12 @@ async function importMarkdownFlow(
 
 /**
  * Lee un .md, extrae titulo (primer # heading) y convierte el body a HTML.
- * Elimina la seccion TOC generada automaticamente antes de convertir.
+ * Preserva el TOC pero sanitiza los anchor links que Intercom no soporta.
  */
 function mdFileToHtml(filePath: string): { title: string; html: string } {
   const raw = fs.readFileSync(filePath, 'utf-8');
   const lines = raw.split('\n');
 
-  // Extraer titulo del primer # heading
   let title = path.basename(filePath, '.md');
   let bodyStart = 0;
 
@@ -756,17 +755,12 @@ function mdFileToHtml(filePath: string): { title: string; html: string } {
     }
   }
 
-  // Saltar descripcion y TOC hasta el segundo --- despues del TOC
   let body = lines.slice(bodyStart).join('\n');
 
-  // Eliminar bloque TOC: desde "# Table of Contents" hasta el siguiente "---"
-  body = body.replace(
-    /^---\s*\n+#\s+Table of Contents\s*\n[\s\S]*?\n---\s*$/m,
-    '',
-  );
+  // Sanitizar anchor links internos a texto plano (Intercom no soporta #anchors)
+  body = body.replace(/\[([^\]]+)\]\(#[^)]*\)/g, '$1');
 
-  // Limpiar separadores iniciales sobrantes y espacios
-  body = body.replace(/^\s*---\s*\n/, '').trim();
+  body = body.trim();
 
   const html = marked.parse(body) as string;
   return { title, html };

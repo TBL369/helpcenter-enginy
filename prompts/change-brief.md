@@ -114,10 +114,11 @@ Optional content sections (use when applicable): "Before You Start" (prerequisit
 
 ### Callouts
 
-- Callouts are **plain paragraphs** with a bold label. Do NOT use blockquote syntax (`>`).
+- Callouts use **blockquote syntax** (`>`) with a bold label on the first line.
 - Labels: `**Note:**`, `**Notes:**`, `**Important:**`, `**Warning:**`, `**Tip:**`, `**Tips:**`.
-- Each callout is its own paragraph, separated by blank lines above and below.
-- Bold paragraph labels can also serve as lightweight sub-headers within a section (e.g., `**Step 1 — Do something:**`). These are not Markdown headings — they are bold text at the start of a paragraph.
+- Format: `> **Note:** callout text here`. For multi-line callouts, prefix each line with `>`.
+- Each callout is separated by blank lines above and below.
+- **Bold paragraph labels** (outside of callouts) can serve as lightweight sub-headers within a section (e.g., `**Step 1 — Do something:**`). These are not Markdown headings — they are bold text at the start of a paragraph.
 
 ### Lists and Procedures
 
