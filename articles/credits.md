@@ -49,7 +49,7 @@ Conversations represent the outbound messages (emails and LinkedIn messages) you
 
 To open the Credits section, click the **View Usage** button on the left-side panel.
 
-![](images/credits-1.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440107/helpcenter/credits-1.png)
 
 This section is divided into four tabs:
 
@@ -61,7 +61,7 @@ This section is divided into four tabs:
 
 Use the **Plan** tab to review your current subscription details.
 
-![](images/credits-2.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440109/helpcenter/credits-2.png)
 
 ## Plan Details
 
@@ -73,13 +73,13 @@ The Plan tab displays a full breakdown of your current subscription status:
 
 The identities are used to engage leads through campaigns. You can click the **Identities** icon to purchase additional identities. In the purchase modal, you’ll see the total cost before confirming. Pricing may vary depending on your contracted plan and the number of identities you already have and how many you purchase.
 
-![](images/credits-3.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440109/helpcenter/credits-3.png)
 
 You can also view your **Enginy Credits** balance: available credits *(Plan Credits + Add-on Credits)* / total monthly contracted credits. Click **Add credits** to purchase a top-up — either a one-time or recurring purchase.
 
-![](images/credits-4.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440109/helpcenter/credits-4.png)
 
-![](images/credits-5.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440110/helpcenter/credits-5.png)
 
 **Note:** You can use these buttons to quickly purchase credits and identities. You can also contact your Account Manager, who can review your needs and propose a tailored solution. If you want to change your plan, reach out to your Account Manager directly to handle it.
 
@@ -89,7 +89,7 @@ You can also view your **Enginy Credits** balance: available credits *(Plan Cred
 
 The **Credits** tab lets you track exactly how your credits are being consumed. You can analyze usage by time, user, and specific action type.
 
-![](images/credits-6.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440110/helpcenter/credits-6.png)
 
 ## Actions That Consume Credits
 
@@ -118,13 +118,13 @@ You can filter credit usage data by the following time ranges:
 -   This Year
     
 
-![](images/credits-7.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440110/helpcenter/credits-7.png)
 
 **Note:** You can custom the Date Range by clicking the numbers from the calendar modal.
 
 Total credits used are shown in a chart for the selected **Date Range** as a dotted line, where each dot represents a day. The chart can be grouped by **day**, **week**, or **month**.
 
-![](images/credits-8.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440110/helpcenter/credits-8.png)
 
 ## Usage Charts
 
@@ -134,13 +134,13 @@ The Credit Usage History view includes two detailed charts for analysis:
 
 Tracks how credits are consumed across different actions (for example, AI completion versus Enrich contact email). Use this chart to understand which activities consume the most resources.
 
-![](images/credits-9.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440110/helpcenter/credits-9.png)
 
 ### Credits Usage by User
 
 Tracks how credits are consumed by different team members. Use this chart to monitor individual consumption patterns across your organization.
 
-![](images/credits-10.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440107/helpcenter/credits-10.png)
 
 ---
 
@@ -148,7 +148,7 @@ Tracks how credits are consumed by different team members. Use this chart to mon
 
 The **Conversations** tab provides visibility into conversation activity within your account. The number of conversations each identity can generate is naturally determined by its sending capacity (emails and LinkedIn messages), but there is no additional hard limit imposed on conversations. This section allows you to monitor volume and trends over time.
 
-![](images/credits-11.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440107/helpcenter/credits-11.png)
 
 ## Conversation Breakdowns
 
@@ -162,7 +162,7 @@ You can analyze conversations through three different breakdowns:
 
 The **Plan & Credits** tab provides tools to help you estimate your credit needs, compare available pricing plans, and calculate the expected return on investment from using Enginy. This tab contains three sub-sections: **Calculate your credits**, **Pricing plans**, and **Estimated ROI**.
 
-![](images/credits-12.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440108/helpcenter/credits-12.png)
 
 ## Credit Calculator
 
@@ -195,7 +195,7 @@ Based on your selections, the calculator displays a summary panel showing:
 
 The Pricing plans sub-section allows you to compare all available Enginy plans side by side. You can toggle between **Without Phones** and **With Phones** to see how plans differ depending on whether phone enrichment capabilities are included.
 
-![](images/credits-13.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440109/helpcenter/credits-13.png)
 
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Feature</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Basic</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Smart</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Business</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Enterprise</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Monthly price</b></p></td><td><p class="intercom-align-justify no-margin">599 EUR/month</p></td><td><p class="intercom-align-justify no-margin">799 EUR/month</p></td><td><p class="intercom-align-justify no-margin">1,199 EUR/month</p></td><td><p class="intercom-align-justify no-margin">Custom</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Annual price</b></p></td><td><p class="intercom-align-justify no-margin">7,188 EUR/year</p></td><td><p class="intercom-align-justify no-margin">9,588 EUR/year</p></td><td><p class="intercom-align-justify no-margin">14,388 EUR/year</p></td><td><p class="intercom-align-justify no-margin">Custom</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Credits/month</b></p></td><td><p class="intercom-align-justify no-margin">5,000</p></td><td><p class="intercom-align-justify no-margin">10,000</p></td><td><p class="intercom-align-justify no-margin">32,000</p></td><td><p class="intercom-align-justify no-margin">Custom</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Contacts/month</b></p></td><td><p class="intercom-align-justify no-margin">Up to 500</p></td><td><p class="intercom-align-justify no-margin">Up to 1,000</p></td><td><p class="intercom-align-justify no-margin">Up to 2,000</p></td><td><p class="intercom-align-justify no-margin">Custom</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Identities included</b></p></td><td><p class="intercom-align-justify no-margin">1</p></td><td><p class="intercom-align-justify no-margin">2</p></td><td><p class="intercom-align-justify no-margin">4</p></td><td><p class="intercom-align-justify no-margin">Custom</p></td></tr></tbody></table>
 
@@ -237,7 +237,7 @@ The Fully Managed Service includes:
 
 The Estimated ROI calculator helps you estimate how much additional revenue and time savings you can expect by using Enginy. It is divided into three panels.
 
-![](images/credits-14.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440109/helpcenter/credits-14.png)
 
 ### Increase in revenue
 
