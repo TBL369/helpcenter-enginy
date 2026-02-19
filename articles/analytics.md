@@ -51,7 +51,7 @@ You can customize the Analytics data you view using the following filters, in bo
 
 The Performance Tab focuses on conversion rates, percentages, and comparative performance across your campaigns.
 
-![](images/analytics-1.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440086/helpcenter/analytics-1.png)
 
 ## The Outbound Funnel
 
@@ -74,7 +74,7 @@ Each bar in the funnel represents a stage of your outbound process:
 
 On the right side of the Performance Tab, you will see a list of tags with bars indicating the volume of conversations for each category.
 
-![](images/analytics-2.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440086/helpcenter/analytics-2.png)
 
 ### Filtering options
 
@@ -94,7 +94,7 @@ On the right side of the Performance Tab, you will see a list of tags with bars 
 -   **Interactive navigation:** Clicking on any tag opens the Inbox, automatically filtered to show conversations with that specific tag. This makes it easy to review, follow up, or analyze the specific replies behind each category.
     
 
-![](images/analytics-3.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440086/helpcenter/analytics-3.png)
 
 ### Manage Tags in Analytics
 
@@ -124,15 +124,15 @@ Both tabs display the same columns:
 -   You can export any of the tables clicking the **Export** button at the right-top of the table
     
 
-![](images/analytics-4.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440089/helpcenter/analytics-4.png)
 
-![](images/analytics-5.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440089/helpcenter/analytics-5.png)
 
-![](images/analytics-6.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440089/helpcenter/analytics-6.png)
 
 **Tip:** Hover over the "Positive" cell to see a breakdown of specific positive tags (e.g., "Interested", "Meeting booked").
 
-![](images/analytics-7.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440089/helpcenter/analytics-7.png)
 
 ---
 
@@ -140,7 +140,7 @@ Both tabs display the same columns:
 
 The Summary Tab is a time-based view that helps you understand how your activity evolves over time with daily breakdowns.
 
-![](images/analytics-8.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440089/helpcenter/analytics-8.png)
 
 ## Replies Chart
 
@@ -161,7 +161,7 @@ A line chart showing replies over time, with separate lines for each channel.
 
 Four charts represent the overall campaign funnel over time.
 
-![](images/analytics-9.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440091/helpcenter/analytics-9.png)
 
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc;"><p class="intercom-align-justify no-margin">Metric</p></td><td style="background-color: #d7efdc;"><p class="intercom-align-justify no-margin">Description</p></td><td style="background-color: #d7efdc;"><p class="intercom-align-justify no-margin">Counting Rule</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Added to Campaign</b></p></td><td><p class="no-margin">How many new people entered your campaigns each day.</p></td><td><p class="no-margin">Each person is counted once on the day their campaign started.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Total Started</b></p></td><td><p class="no-margin">How many people had their first action or activity (e.g., profile visit, message sent).</p></td><td><p class="no-margin">Each person is counted once on the day of their very first activity.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Total Contacted</b></p></td><td><p class="no-margin">How many people received their first message from you.</p></td><td><p class="no-margin">Each person is counted once on the day you sent them their first message (LinkedIn or Email).</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Companies Contacted</b></p></td><td><p class="no-margin">Number of unique companies contacted through your campaigns.</p></td><td><p class="no-margin">Each company is counted once, on the day the first contact with any person in that company was made.</p></td></tr></tbody></table>
 
@@ -173,7 +173,7 @@ Four charts represent the overall campaign funnel over time.
 
 Tracks all LinkedIn outreach activity performed through your Enginy campaigns:
 
-![](images/analytics-10.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440087/helpcenter/analytics-10.png)
 
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Metric</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Description</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Counting Rule</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Messages Sent</b></p></td><td><p class="no-margin">Every LinkedIn message or InMail sent.</p></td><td><p class="no-margin">Every single message counts. If you send 3 messages to one contact, that counts as 3.</p></td></tr><tr><td><p class="no-margin"><b>Connection Requests Sent</b></p></td><td><p class="no-margin">Number of contacts who received a LinkedIn connection request via your Enginy campaigns.</p></td><td><p class="no-margin">Each person is counted once on the day you sent them a connection request.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Connections Accepted</b></p></td><td><p class="no-margin">Number of contacts who accepted the LinkedIn connection request sent through your Enginy campaigns.</p></td><td><p class="no-margin">Each person is counted once on the day they accepted. Compare to "Connection Requests Sent" to calculate your acceptance rate.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Visited Profiles</b></p></td><td><p class="no-margin">Number of LinkedIn profile visits made to contacts.</p></td><td><p class="no-margin">Every visit counts, including multiple visits to the same person.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Liked Posts</b></p></td><td><p class="no-margin">Number of posts liked on LinkedIn.</p></td><td><p class="no-margin">Every like counts. You can like multiple posts from the same person.</p></td></tr></tbody></table>
 
@@ -183,7 +183,7 @@ Tracks all LinkedIn outreach activity performed through your Enginy campaigns:
 
 Tracks your email outreach activity:
 
-![](images/analytics-11.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440086/helpcenter/analytics-11.png)
 
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Metric</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Description</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Counting Rule</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Emails Sent</b></p></td><td><p class="no-margin">Number of email messages sent.</p></td><td><p class="no-margin">Every single email counts. If you send a 5-email sequence to one contact, that counts as 5.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Emails Bounced</b></p></td><td><p class="intercom-align-justify no-margin">Number of conversations where the email failed to deliver.</p></td><td><p class="no-margin">Each bounce message received is counted.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Emails Opened</b></p></td><td><p class="no-margin">Number of email messages that were opened.</p></td><td><p class="no-margin">Each email is counted once (first open only), even if someone opens it multiple times.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Emails Clicked</b></p></td><td><p class="no-margin">Number of people who clicked on a link in your email.</p></td><td><p class="no-margin">Each email is counted once (first click only), even if they click multiple times.</p></td></tr></tbody></table>
 
