@@ -61,7 +61,7 @@ The AI will automatically build an optimized LinkedIn search with the correct jo
 
 **Tip:** You can revisit your previous searches anytime through **Search History** in the AI Finder textbox
 
-![](images/ai-finder-1.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440078/helpcenter/ai-finder-1.png)
 
 ---
 
@@ -122,7 +122,7 @@ Use these filters to refine the search of organizations (accounts) with Sales Na
 
 Alongside the AI Finder search field, Enginy offers AI Recommendations — dynamically generated suggestions that proactively surface relevant contacts and companies tailored to your Identity, existing clients, and activity on the platform.
 
-![](images/ai-finder-2.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440079/helpcenter/ai-finder-2.png)
 
 ## How AI Recommendations Work
 
