@@ -788,30 +788,36 @@ function intercomPostProcess(html: string): string {
   // 6. Headings → añadir clase de justificación
   out = out.replace(/<(h[1-6])>/g, '<$1 class="intercom-align-justify">');
 
-  const SPACER = '<p class="no-margin"></p>';
+  const SPACER = `<p class="${INTERCOM_P_CLASS}"></p>`;
 
-  // 7. Imágenes: <p><img></p> → <div class="intercom-container"> (formato nativo de Intercom)
+  // 7. Envolver tablas en intercom-interblocks-table-container (necesario para background-color)
   out = out.replace(
-    /<p[^>]*>(<img [^>]*>)<\/p>/g,
-    '<div class="intercom-container intercom-align-justify">$1</div>',
+    /<table role="presentation">/g,
+    '<div class="intercom-interblocks-table-container"><table role="presentation">',
   );
+  out = out.replace(/<\/table>/g, '</table></div>');
 
-  // 8. Minificar TODO whitespace entre tags (Intercom renderiza \n como barras visibles)
+  // 8. Minificar TODO whitespace entre tags (Intercom renderiza \n como cursor visible)
   out = out.replace(/>\s+</g, '><');
 
   // 9. Insertar empty-p spacers donde Intercom necesita spacing visible
+  // Entre párrafos (</p><p) pero NO dentro de listas (</p></li><li><p> ya compacto)
   out = out.replace(/(<\/p>)(<p class)/g, `$1${SPACER}$2`);
+  // Antes y después de <hr>
   out = out.replace(/<hr>/g, `${SPACER}<hr>${SPACER}`);
-  out = out.replace(/(<\/table>)(<)/g, `$1${SPACER}$2`);
+  // Después de table-container
+  out = out.replace(/(<\/table><\/div>)/g, `$1${SPACER}`);
+  // Después de listas outermost (</ul> o </ol> NO seguido de </li>)
   out = out.replace(/(<\/ul>)(<(?!\/li))/g, `$1${SPACER}$2`);
   out = out.replace(/(<\/ol>)(<(?!\/li))/g, `$1${SPACER}$2`);
+  // Antes y después de callouts
   out = out.replace(/>(<div class="intercom-interblocks-callout)/g, `>${SPACER}$1`);
-  out = out.replace(/(<\/div>)(<)/g, `$1${SPACER}$2`);
-  out = out.replace(/>(<div class="intercom-container)/g, `>${SPACER}${SPACER}$1`);
-  out = out.replace(/(intercom-container[^>]*>[^<]*<\/div>)(<)/g, `$1${SPACER}${SPACER}$2`);
-
-  // 10. Verde sólido en tablas (RGBA 8-digit hex no renderiza via API)
-  out = out.replace(/#d7efdc80/g, '#d7efdc');
+  out = out.replace(/(intercom-interblocks-callout[^>]*>.*?<\/div>)(<)/g, `$1${SPACER}$2`);
+  // Alrededor de imágenes (doble spacer)
+  out = out.replace(
+    /(<p[^>]*><img [^>]*><\/p>)/g,
+    `${SPACER}$1${SPACER}${SPACER}`,
+  );
 
   return out.trim();
 }
