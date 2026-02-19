@@ -736,7 +736,15 @@ async function importMarkdownFlow(
 }
 
 const INTERCOM_P_CLASS = 'intercom-align-justify no-margin';
-const INTERCOM_CALLOUT_STYLE = 'background-color: #e3e7fa80; border-color: #334bfa33;';
+
+const CALLOUT_STYLES: Record<string, string> = {
+  note:      'background-color: #e8e8e880; border-color: #73737633;',
+  notes:     'background-color: #e8e8e880; border-color: #73737633;',
+  tip:       'background-color: #e3e7fa80; border-color: #334bfa33;',
+  tips:      'background-color: #e3e7fa80; border-color: #334bfa33;',
+  important: 'background-color: #feedaf80; border-color: #fbc91633;',
+  warning:   'background-color: #fed9db80; border-color: #fd3a5733;',
+};
 
 /**
  * Post-procesa HTML de marked para hacerlo compatible con el formato nativo de Intercom.
@@ -745,10 +753,15 @@ const INTERCOM_CALLOUT_STYLE = 'background-color: #e3e7fa80; border-color: #334b
 function intercomPostProcess(html: string): string {
   let out = html;
 
-  // 1. <blockquote> → <div class="intercom-interblocks-callout">
+  // 1. <blockquote> → <div class="intercom-interblocks-callout"> con color por tipo de label
   out = out.replace(
     /<blockquote>\s*<p>([\s\S]*?)<\/p>\s*<\/blockquote>/g,
-    `<div class="intercom-interblocks-callout" style="${INTERCOM_CALLOUT_STYLE}"><p class="${INTERCOM_P_CLASS}">$1</p></div>`,
+    (_match, content: string) => {
+      const labelMatch = content.match(/^<strong>(\w+):<\/strong>/);
+      const label = labelMatch?.[1]?.toLowerCase() ?? 'note';
+      const style = CALLOUT_STYLES[label] ?? CALLOUT_STYLES.note;
+      return `<div class="intercom-interblocks-callout" style="${style}"><p class="${INTERCOM_P_CLASS}">${content}</p></div>`;
+    },
   );
 
   // 2. <p> generados por marked → añadir clases Intercom (no afecta los <p class="no-margin"> de tablas raw)
@@ -761,15 +774,12 @@ function intercomPostProcess(html: string): string {
   );
 
   // 4. <li> con texto seguido de <ul>/<ol> (parent items con sub-lista)
-  //    marked genera: <li>Text<ul>  →  necesita: <li><p class="...">Text</p><ul>
-  //    .+? no cruza newlines, así que solo captura el texto antes de la sub-lista
   out = out.replace(
     /<li>(?!<p )(.+?)(<ul>|<ol>)/g,
     `<li><p class="${INTERCOM_P_CLASS}">$1</p>$2`,
   );
 
   // 5. <li> con texto simple sin sub-lista ni <p> existente (leaf items)
-  //    marked genera: <li>Text</li>  →  necesita: <li><p class="...">Text</p></li>
   out = out.replace(
     /<li>(?!<p )(.+?)<\/li>/g,
     `<li><p class="${INTERCOM_P_CLASS}">$1</p></li>`,
@@ -777,6 +787,17 @@ function intercomPostProcess(html: string): string {
 
   // 6. Headings → añadir clase de justificación
   out = out.replace(/<(h[1-6])>/g, '<$1 class="intercom-align-justify">');
+
+  // 7. Minificar whitespace entre tags (Intercom interpreta newlines como spacing)
+  out = out.replace(/>\s+</g, '><');
+
+  // 8. Re-insertar spacing donde Intercom lo necesita
+  out = out.replace(/(<hr>)/g, '\n$1\n');
+  out = out.replace(/(<\/table>)(<)/g, '$1\n$2');
+  out = out.replace(/(<\/ul>|<\/ol>)(<)/g, '$1\n$2');
+  out = out.replace(/>(<div class="intercom-interblocks-callout)/g, '>\n$1');
+  out = out.replace(/(<\/div>)(<)/g, '$1\n$2');
+  out = out.replace(/(<p[^>]*><img [^>]*><\/p>)/g, '\n$1\n');
 
   return out;
 }
