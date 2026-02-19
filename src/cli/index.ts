@@ -735,23 +735,50 @@ async function importMarkdownFlow(
   console.log('\n══════════════════════════════════════════════════════════\n');
 }
 
-/**
- * Añade class="intercom-align-justify" a tags generados por marked.
- * No afecta tablas HTML raw (ya usan class="no-margin" sin justify).
- */
-function addJustifyAlignment(html: string): string {
-  return html
-    .replace(/<p>/g, '<p class="intercom-align-justify">')
-    .replace(/<li>/g, '<li class="intercom-align-justify">')
-    .replace(/<blockquote>/g, '<blockquote class="intercom-align-justify">');
-}
+const INTERCOM_P_CLASS = 'intercom-align-justify no-margin';
+const INTERCOM_CALLOUT_STYLE = 'background-color: #e3e7fa80; border-color: #334bfa33;';
 
 /**
- * Elimina <p> wrapper dentro de <li> que marked genera en "loose lists".
- * Intercom añade margin extra al <p> dentro de <li>, causando spacing no deseado.
+ * Post-procesa HTML de marked para hacerlo compatible con el formato nativo de Intercom.
+ * Basado en ingeniería inversa del HTML que genera el editor de Intercom.
  */
-function stripParagraphsInListItems(html: string): string {
-  return html.replace(/<li([^>]*)><p([^>]*)>/g, '<li$1$2>').replace(/<\/p>\s*<\/li>/g, '</li>');
+function intercomPostProcess(html: string): string {
+  let out = html;
+
+  // 1. <blockquote> → <div class="intercom-interblocks-callout">
+  out = out.replace(
+    /<blockquote>\s*<p>([\s\S]*?)<\/p>\s*<\/blockquote>/g,
+    `<div class="intercom-interblocks-callout" style="${INTERCOM_CALLOUT_STYLE}"><p class="${INTERCOM_P_CLASS}">$1</p></div>`,
+  );
+
+  // 2. <p> generados por marked → añadir clases Intercom (no afecta los <p class="no-margin"> de tablas raw)
+  out = out.replace(/<p>/g, `<p class="${INTERCOM_P_CLASS}">`);
+
+  // 3. <li><p> en loose lists → normalizar clase a formato Intercom
+  out = out.replace(
+    /<li><p class="[^"]*">/g,
+    `<li><p class="${INTERCOM_P_CLASS}">`,
+  );
+
+  // 4. <li> con texto seguido de <ul>/<ol> (parent items con sub-lista)
+  //    marked genera: <li>Text<ul>  →  necesita: <li><p class="...">Text</p><ul>
+  //    .+? no cruza newlines, así que solo captura el texto antes de la sub-lista
+  out = out.replace(
+    /<li>(?!<p )(.+?)(<ul>|<ol>)/g,
+    `<li><p class="${INTERCOM_P_CLASS}">$1</p>$2`,
+  );
+
+  // 5. <li> con texto simple sin sub-lista ni <p> existente (leaf items)
+  //    marked genera: <li>Text</li>  →  necesita: <li><p class="...">Text</p></li>
+  out = out.replace(
+    /<li>(?!<p )(.+?)<\/li>/g,
+    `<li><p class="${INTERCOM_P_CLASS}">$1</p></li>`,
+  );
+
+  // 6. Headings → añadir clase de justificación
+  out = out.replace(/<(h[1-6])>/g, '<$1 class="intercom-align-justify">');
+
+  return out;
 }
 
 /**
@@ -782,8 +809,7 @@ function mdFileToHtml(filePath: string): { title: string; html: string } {
   body = body.trim();
 
   let html = marked.parse(body) as string;
-  html = stripParagraphsInListItems(html);
-  html = addJustifyAlignment(html);
+  html = intercomPostProcess(html);
   return { title, html };
 }
 
