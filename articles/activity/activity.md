@@ -55,36 +55,26 @@ The **Prospecting** tab displays all activity related to finding and managing co
 
 ### Scrapings
 Scrapings represent the automatic extraction of data from external databases to build lists.
-
 -   Each scraping is equivalent to the extraction of the fields corresponding to one row (one contact or one company).
-    
 -   The scraping limit is daily and depends on your subscription plan (your pool).
     
 ### Searches
 Searches refer to the search queries performed on the platform.
-
 -   A search counts all the contacts or companies that appear on a results page.
-    
 -   Each time you advance to a new page in the preview, the results displayed are added to the searches counter.
-    
 -   This type of activity is also subject to a daily limit, depending on your plan.
     
 ### Enrichments
 Enrichments consist of obtaining additional information on specific fields — such as AI variables, professional email, phone number, or any other data sourced externally.
-
 -   This process allows you to enrich the profiles of contacts or companies with more complete and up-to-date data.
     
 ### Imports and Exports
 This category records the import and export actions of contacts and/or companies from or to your CRM, or from or to CSV files. It allows you to maintain full traceability of the manually synchronization of information between Enginy and your CRM.
 
 The specific action types you may see include:
-
 -   Import companies from CSV
-    
 -   Import contacts from CSV
-    
 -   Export companies to CRM
-    
 -   Export contacts to CRM
     
 The following action types are recorded in this tab:
@@ -114,26 +104,18 @@ This is the fastest way to answer questions like "Did yesterday's contact import
 
 ## Filter by Created by or Identity
 Use the **Created by** filter (Prospecting tab) or the **Identity** filter (Engagement tab) to:
-
 -   See actions performed by a specific team member.
-    
 -   Review what a new colleague has done during onboarding.
-    
 -   Investigate who launched a particular import or export.
-    
 -   Identify which identity executed a campaign step.
     
 This is useful for audits and team monitoring.
 
 ## Filter by Status (Prospecting)
 Each prospecting action has a status. You can filter by status to focus on:
-
 -   Only **Failed** actions — to troubleshoot what went wrong.
-    
 -   **Processing** or **Queued** actions — to see what is still running or waiting.
-    
 -   **Completed** actions — to confirm everything is finished.
-    
 -   **Pending** actions — to see which engagement actions are queued and pending.
     
 See Task Statuses Reference for full definitions.
@@ -143,11 +125,8 @@ Each engagement action is related to a lead which pertains to some company. You 
 
 ## Filter by Date Range
 Use the **Date** filter to focus on a specific time window. For example:
-
 -   **Today** or **Yesterday** — to verify fresh operations.
-    
 -   **Last week** or **Last month** — for periodic reviews.
-    
 -   **A custom range** — to analyze a specific period (e.g., for a campaign).
     
 ## Combine Multiple Filters
@@ -165,27 +144,19 @@ Every action in Activity has one of the following statuses:
 
 # Monitor Rolling 24-Hour Scrapings
 At the top-right of the Activity page you will see the **Rolling 24 Hour Scrapings** indicator. This panel shows:
-
 -   How many scraping processes have been executed in the last 24 hours.
-    
 -   How this compares to your allowed daily limit (determined by your subscription plan).
     
 **Important:** The scraping limit applies only to data extraction from LinkedIn. Importing via CSV or from the CRM is not subject to any daily cap.
 
 You can use this indicator to:
-
 -   Avoid exceeding your daily quota or understand why a Search or Scraping from LinkedIn is queued (even tho also can be queued by lack of credits).
-    
 -   Plan scraping-heavy activities (for example, spread them across multiple days).
-    
 -   Understand when high-usage peaks happen in your team.
     
 If you frequently reach your daily limit, consider:
-
 -   Reviewing which recurring jobs can be optimized or reduced.
-    
 -   Coordinating scraping schedules within the team.
-    
 -   Contacting Enginy support if you need to discuss plan limits.
     
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440077/helpcenter/activity-3.png)
@@ -216,12 +187,10 @@ Below are common ways teams use Activity effectively.
 
 ## Monitor Teamwork
 -   See which imports, exports, and scrapings are being run by each user.
-    
 -   Review the work of new team members during onboarding.
     
 ## Track Automated or Long-Running Processes
 -   Check whether scraping jobs or large imports are still **Processing**, **Queued**, or **Completed**.
-    
 -   Avoid launching conflicting processes while another large job is running.
     
 ## Detect and Fix Errors
@@ -231,19 +200,15 @@ Below are common ways teams use Activity effectively.
 4.  Re-run the task.
 ## Audit and Compliance
 -   Answer questions like "Who exported this data?" or "When was this list imported?"
-    
 -   Keep a reliable trail of data operations for internal or external audits.
     
 ## Resource Optimization
 -   Use the **Rolling 24 Hour Scrapings** indicator to keep scraping under control and avoid hitting limits unexpectedly.
-    
 -   Schedule heavy jobs for less busy periods.
     
 ## Campaign Monitoring
 -   Track which campaign steps have been executed or are pending for each lead through the Engagement tab.
-    
 -   Verify that LinkedIn invitations, messages, and emails were sent as expected.
-    
 -   Identify failed engagement actions and investigate the cause.
     
 ---

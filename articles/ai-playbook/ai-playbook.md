@@ -177,9 +177,7 @@ An AI Variable is a reusable prompt-and-settings bundle that tells Enginy how to
 AI Variables are used to generate additional information columns in your lists. You can use ready-made templates or build your own, then run them in bulk and store results as columns on your table.
 
 **Example use cases:**
-
 -   **Contact:** "Best outreach icebreaker (1 sentence) for {first\_name} based on their recent activity: {recent\_activity}."
-    
 -   **Company:** "1-line summary of {company\_name} growth signals (funding, hiring, product launch)."
     
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440079/helpcenter/ai-playbook-10.png)
@@ -228,13 +226,9 @@ You can personalize your prompts using variables and even AI variables inside of
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440079/helpcenter/ai-playbook-17.png)
 
 **Examples of effective prompts:**
-
 -   "Classify {company\_name} into one of the following categories: Enterprise, Mid-market, or SMB. Return only one of these."
-    
 -   "Based on {company\_name}'s website and industry ({industry}), summarize their core value proposition in one sentence."
-    
 -   "From {domain} and industry ({industry}), list up to 3 potential business challenges the company may face. Return as a bullet list."
-    
 -   "Review {company\_name}'s website. Identify if they primarily sell products, services, or both. Return exactly one of these options."
     
 **Avoid vague prompts like:** "Tell me everything about this company." (Too broad, no structure.)
@@ -282,31 +276,21 @@ Deep Research is optimized for **batch data enrichment** — answering the same 
 
 #### Best Use Cases for Deep Research
 -   Finding company information not available in your existing data (website, size, industry, technologies used).
-    
 -   Researching specific facts about a lead's company (recent news, funding rounds, product launches).
-    
 -   Extracting data from known websites (company website, Wikipedia, Google)
-    
 -   Enriching with publicly available information that requires visiting multiple pages
     
 #### When Deep Research May Struggle
 -   Information is behind login walls (private LinkedIn data, gated content)
-    
 -   Data changes by the minute (stock prices, live scores, breaking news)
-    
 -   Questions are very open-ended ("Tell me everything about this company")
-    
 -   Sources actively block web scrapers (some financial or news sites)
-    
 -   You need to compare hundreds of sources for a single answer
     
 #### Deep Research Cost Considerations
 Deep Research uses more credits than regular AI Variables because:
-
 -   Web searches incur additional costs per search query.
-    
 -   Page scraping uses credits to extract content from websites.
-    
 -   Multiple iterations may be needed to find the right answer.
     
 **Tip:** Use Deep Research only for fields where the information is not available elsewhere. Test with a small batch first to estimate total costs. Use more specific prompts to reduce the number of search iterations needed.
@@ -319,11 +303,8 @@ When creating or editing an AI Variable, you can choose the AI model to use (e.g
 
 ### Cost Considerations
 Each AI model has an associated cost. Beyond the model, cost can also increase based on:
-
 -   **Prompt complexity** — measured by the number of tokens consumed.
-    
 -   **Nested AI Variables** — if your prompt references other AI Variables, the cost of those implicit variables is added to the total cost.
-    
 -   **Deep Research** — enabling the Deep Research toggle adds to the cost per execution due to web searches and page scraping.
     
 ## Run AI Variables on Your Lists
@@ -343,9 +324,7 @@ Once created, AI Variables appear as columns (but you might make them visible) i
 
 ## Manage AI Variables
 All AI Variables are managed from the **AI Playbook > AI Variables** tab. The left panel displays all variables organized in folders, with two tabs: **Contacts** and **Companies**.
-
 -   **\+ Add folder** — Create custom folders to organize your variables.
-    
 -   **AI Variable cards** — In the center of the module, each AI variable is displayed as a card. Click the three dots on any card to access the following actions:
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80; width: 319px;"><p class="no-margin">Action</p></td><td style="background-color: #d7efdc80;"><p class="no-margin">Description</p></td></tr><tr><td style="width: 319px;"><p class="no-margin"><b>Edit</b></p></td><td><p class="no-margin">Edit the variable prompt and settings.</p></td></tr><tr><td style="width: 319px;"><p class="no-margin"><b>Duplicate</b></p></td><td><p class="no-margin">Duplicate the variable to reuse and modify its content efficiently.</p></td></tr><tr><td style="width: 319px;"><p class="no-margin"><b>Clone to client</b></p></td><td><p class="no-margin">Clone it to another client account. This applies only if you are an Enginy partner managing a portfolio of clients.</p></td></tr><tr><td style="width: 319px;"><p class="no-margin"><b>Delete</b></p></td><td><p class="no-margin">Permanently delete the AI Variable.</p></td></tr></tbody></table>
 
@@ -362,9 +341,7 @@ You can use AI Variables to write variations of a message template you already h
 1.  Look at your message and decide which parts should change from contact to contact.
 2.  Replace those parts with `[TAG]` placeholders (e.g., `[GREETING]`, `[PRODUCT]`, `[PERSONA]`, `[CLOSING*LINE]`). You can invent any tag you want — such as `[PAIN*POINT]`, `[BENEFIT]`, `[RANDOM_FACT]`, etc.
 **Step 3 — Define the rules for each tag:**
-
 -   For tags to **personalize**: write down the criteria. For example, "If the job title indicates top management in Sales, then `[PRODUCT]` = outreach automation and `[PERSONA]` = Sales leaders."
-    
 -   For tags to **randomize**: list 3 or more possible options. For example, randomize `[GREETING]` between "Hi", "Hey", and "Just curious".
     
 **Step 4 — Create the AI Variable:**
@@ -397,9 +374,7 @@ AI Campaigns manage the prompts used by the **AI Agent (chatbot)**. When you ena
 All AI Campaign agents are listed in the left panel. Select any campaign to edit its prompt, change the AI model, and click **Update** to save changes.
 
 Enginy includes pre-built AI Campaign templates such as:
-
 -   **AI Sales Agent** — For sales-focused messaging.
-    
 -   **AI Recruiting Agent** — For recruitment-focused messaging.
     
 You can adjust these templates or create your own from scratch.
@@ -451,9 +426,7 @@ On the **Analytics Page**, you can track a single metric per category. For examp
 
 ## Auto Tagging
 Auto tagging is controlled by the toggle switch located below the Instructions text box (and also on the tag card in the main view).
-
 -   **Enabled:** The AI uses the Instructions to analyze each conversation's last message and automatically applies the tag if the criteria match.
-    
 -   **Disabled:** The tag is available for manual use only.
     
 Auto tagging is dynamic. Each time a new message is sent in a conversation, the AI re-evaluates which tags apply.
@@ -462,20 +435,15 @@ Auto tagging is dynamic. Each time a new message is sent in a conversation, the 
 
 ## Tag Compatibility
 The AI uses a compatibility matrix that controls how tags interact:
-
 -   A conversation **can have multiple tags** at the same time (e.g., Bad Timing and Interested).
-    
 -   Tags are **automatically updated** (if Auto tagging activated) as the conversation evolves — if the context changes, relevant tags are added or removed.
     
 This ensures your analytics remain accurate while reflecting the full status of each conversation.
 
 ## Manage Tags
 In the center of the AI Conversation Tags module, all available tags are displayed as cards. Each card has:
-
 -   **Trash can icon** — Delete the tag.
-    
 -   **Overlapping squares icon** — Duplicate the tag. You can also select multiple tags to duplicate them in bulk.
-    
 -   **Toggle switch** — Enable or disable Auto tagging (only for tags with defined Instructions).
     
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440083/helpcenter/ai-playbook-29.png)
@@ -489,7 +457,6 @@ A search bar is also available to filter tags by name.
 
 ## Where AI Tags Appear
 -   **Inbox:** AI tags appear directly in your replies, so you instantly know the context. For example, if a lead replies with "Let's connect again next quarter," the AI tags it as **Bad Timing**. You can always remove a tag manually if it does not fit.
-    
 -   **Analytics Page:** Tag metrics are tracked by tag, helping you quickly understand patterns in replies across campaigns.
     
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440083/helpcenter/ai-playbook-30.png)
@@ -509,9 +476,7 @@ When you do a **Search for Contacts** or a **Search for Companies** through Link
 2.  Applies the relevant filters instantly, including: Job Titles, Locations, Company Industry, and Company Size.
 ## Benefits
 -   Save time on setup — no more retyping filter criteria.
-    
 -   Stay consistent with your targeting strategy.
-    
 -   Improve lead quality by aligning outreach with your most qualified buyers.
     
 You can still adjust any filters manually. Use the ICP filters as a starting point, then fine-tune based on campaign goals or testing variations.
@@ -546,17 +511,11 @@ Generative AI models are extremely powerful, but they only produce good results 
 
 ## What Makes a Good Prompt
 A good prompt is much more than a question. It is a structured instruction that:
-
 -   Defines a **clear objective** (what you want to achieve).
-    
 -   Provides enough **context** (what the AI does and does not know).
-    
 -   Specifies the **AI's role** (how it should behave).
-    
 -   Describes the **output format** (how you want the answer delivered).
-    
 -   Includes **constraints and quality criteria** (what it should and should not do).
-    
 -   Is easy to **reuse and adapt**.
     
 Think of the prompt as a briefing for a professional: the better the briefing, the better the work you will get.
@@ -565,9 +524,7 @@ Think of the prompt as a briefing for a professional: the better the briefing, t
 **1\. Objective first, always**
 
 Before writing your prompt, ask: What exactly do I want to achieve? What is the final output I need?
-
 -   Vague: "Tell me about customer loyalty."
-    
 -   Clear: "Generate a list of 10 concrete ideas to improve customer loyalty in a B2C contact center, focused on reducing churn by 10% within 6 months."
     
 The more concrete the objective, the more actionable the response.
@@ -575,25 +532,17 @@ The more concrete the objective, the more actionable the response.
 **2\. Provide relevant context**
 
 The AI does not know your organization, product, or business reality unless you explain it referencing variables (`{`). Include:
-
 -   Type of company / industry
-    
 -   Type of customer / end user
-    
 -   Knowledge level of the target audience
-    
 -   Channels involved (phone, email, chat, etc.)
-    
 -   Constraints (legal, regulatory, time, budget)
     
 **3\. Define the AI's role**
 
 Asking "Explain this to me" is much less powerful than asking "Act as...". Examples:
-
 -   "Act as a senior CX consultant."
-    
 -   "Act as a professional B2B copywriter."
-    
 -   "Act as a market research analyst."
     
 This sets expectations and elevates the quality of the response.
@@ -601,15 +550,10 @@ This sets expectations and elevates the quality of the response.
 **4\. Specify the output format**
 
 Explicitly indicate how you want the result:
-
 -   Numbered list
-    
 -   Table with specific columns
-    
 -   Step-by-step sequence
-    
 -   Paragraphs of approximate length
-    
 -   Checklist bullets
     
 This makes the content directly usable without reformatting.
@@ -617,23 +561,16 @@ This makes the content directly usable without reformatting.
 **5\. Include quality criteria and constraints**
 
 Do not assume the AI understands your standards. State them clearly:
-
 -   Level of detail: high, medium, very concise
-    
 -   Tone: formal, friendly, technical, explanatory
-    
 -   Language: specify the exact language or regional variant
-    
 -   Scope: what to include and what to avoid
-    
 -   What to avoid: excessive jargon, legal terms, etc.
     
 **6\. Provide examples (and counterexamples)**
 
 Examples significantly reduce iteration and rework:
-
 -   Positive example: what you want
-    
 -   Negative example: what you do NOT want
     
 **7\. Think in iterative mode**
@@ -651,21 +588,15 @@ Use this base template and adapt it for each use case:
 
 ## Prompt Examples: Weak vs. Improved
 **Writing:**
-
 -   Weak: "Write an email for a client."
-    
 -   Improved: "Act as a B2B copywriter. Write a short email (max. 150 words) for a client who has been with us for 6 months using a technical support service. Objective: thank them for their trust and propose a brief review meeting. Context: we are a ticketing software company for contact centers. The recipient is a Head of Operations of a contact center with 80 agents. Tone: professional, direct, value-oriented. Format: suggested subject line + email body."
     
 **Analysis:**
-
 -   Weak: "Summarize this text."
-    
 -   Improved: "Act as a business analyst. Summarize the following text in a maximum of 10 clear, actionable bullets focused on recommendations to improve customer experience in a contact center. Do not repeat specific examples; keep only principles and best practices. Professional tone aimed at managers."
     
 **Training:**
-
 -   Weak: "Give me training ideas for agents."
-    
 -   Improved: "Act as a customer service training specialist. Create a 4-module training program for contact center agents who handle phone and chat interactions. Objective: improve skills in active listening, objection handling, and closing conversations. Context: agents have medium experience (1 year) and serve B2C customers. Format: for each module include the title, learning objectives, estimated duration, and practical activities."
     
 ## Common Prompt Mistakes
@@ -673,25 +604,15 @@ Use this base template and adapt it for each use case:
 
 ## Prompt Best Practices Checklist
 Before sending your prompt, verify:
-
 -   \[ \] Have I clearly defined the objective?
-    
 -   \[ \] Have I provided enough context (industry, audience, situation)?
-    
 -   \[ \] Have I assigned an appropriate role to the AI?
-    
 -   \[ \] Have I precisely described the task it must perform?
-    
 -   \[ \] Have I specified the output format I need?
-    
 -   \[ \] Have I indicated the tone, language, and level of detail?
-    
 -   \[ \] Have I added relevant constraints and quality criteria?
-    
 -   \[ \] Could I improve the prompt with one or two examples?
-    
 -   \[ \] Is there anything sensitive (personal data, confidential information) I should remove or anonymize?
-    
 -   \[ \] Am I prepared to iterate and adjust the prompt after seeing the first result?
     
 If most answers are "yes," your prompt is in the best-practice zone.

@@ -29,24 +29,17 @@ The Blocklist lets you block specific contacts and companies so they are exclude
 The Blocklist is a single, unified exclusion list inside Enginy. It is segmented into two views: one for **Contacts** and one for **Companies**. Its purpose is to prevent specific people or organizations from appearing in your outreach workflows.
 
 Key terms:
-
 -   **Blocked contact** — A person identified by their email address and/or LinkedIn URL who has been added to the Blocklist.
-    
 -   **Blocked company** — An organization identified by its domain and/or LinkedIn URL that has been added to the Blocklist.
-    
 -   **Source** — The origin or feature from which an entry was added to the Blocklist (e.g., directly from the Blocklist section, from a campaign, or from a list).
-    
 -   **Reason** — The justification recorded when blocking an entry (for example, Competitor, Churn, Not interested).
     
 ---
 
 # How It Works
 When a contact or company is added to the Blocklist:
-
 -   They will **not appear** in any of your lists.
-    
 -   They will **not be exported** to your CRM.
-    
 -   Contacts will **not receive** any outreach through campaigns, neither identities if there already existed an active conversation.
     
 This is especially useful for excluding competitors, existing customers you do not want to re-engage, churned accounts, or any person or organization you prefer not to interact with.
@@ -111,9 +104,7 @@ You can block multiple contacts or companies at once directly from any list:
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440093/helpcenter/blocklist-7.png)
 
 **Notes:**
-
 -   Bulk-adding follows the same blocking rules as individual entries. All selected contacts or companies will immediately stop appearing in lists, campaigns, and CRM exports.
-    
 -   You can set a Period for the block: Indefinitely, 30, 60, 90, or 180 days, or even till a Custom Date.
     
 ---
@@ -139,9 +130,7 @@ To remove a contact or company from the Blocklist:
 
 # Use the Blocklist Indicator in Lists
 When viewing any list of Contacts or Companies, a **blocklist indicator** is displayed in the bottom bar. It appears as a number next to a small icon (a rectangle with an "x" in its center). This number shows how many entries in that particular list are currently on the Blocklist.
-
 -   Click the number or the icon to open a pop-up displaying all blocklisted rows from that list.
-    
 -   From this pop-up, you can select and remove entries from the Blocklist without navigating away from your current list.
     
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440091/helpcenter/blocklist-10.png)
@@ -161,9 +150,7 @@ When viewing any list of Contacts or Companies, a **blocklist indicator** is dis
 
 # Important Considerations
 -   If the Blocklist is empty (no contacts or companies have been blocked), a message will be displayed indicating that the list is empty.
-    
 -   The Blocklist is workspace-wide. Entries blocked by one user apply across the entire workspace.
-    
 -   There is no limit to the number of entries you can add to the Blocklist.
     
 **Warning:** Blocking a contact or company takes effect immediately. Verify your selections carefully before confirming, especially when using the bulk-add workflow.

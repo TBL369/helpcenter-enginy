@@ -77,8 +77,7 @@ Typical help-center flow within the content sections:
 - One blank line between paragraphs. NO blank line before tables. One blank line after tables.
 - One blank line before and after images.
 - One blank line before and after blockquotes (callouts).
-- Unordered lists (`-`): one blank line before and after.
-- Numbered lists (`1.`, `2.`, `3.`): no blank lines between items, no blank line before the first item, and no blank line after the last item.
+- Unordered lists (`-`) and numbered lists (`1.`, `2.`, `3.`): no blank lines between items, no blank line before the first item. One blank line after the last item.
 - Never use double blank lines.
 
 ### Tables
@@ -108,7 +107,7 @@ Typical help-center flow within the content sections:
 - Each step starts with an imperative verb ("Go to…", "Click…", "Select…", "Navigate to…", "Open…", "Enter…", "Review…").
 - Handle branches explicitly: "If you see X, do Y; otherwise do Z."
 - Use 4-space indentation for sub-items within a step.
-- No blank lines between numbered list items. No blank line before the first item or after the last item.
+- No blank lines between list items. No blank line before the first item.
 
 ### Bullet Lists
 
@@ -181,6 +180,6 @@ Typical help-center flow within the content sections:
 - [ ] `---` horizontal rules appear after the intro, after the TOC, and between every H1 section.
 - [ ] No blank line after any heading (H1–H4). Content starts immediately on the next line.
 - [ ] No blank line before tables.
-- [ ] Numbered lists have no blank lines between items, and no blank line before the first item or after the last item.
+- [ ] Lists (unordered and numbered) have no blank lines between items and no blank line before the first item.
 - [ ] List nesting does not exceed 2 levels.
 - [ ] Output is clean Markdown in English only.

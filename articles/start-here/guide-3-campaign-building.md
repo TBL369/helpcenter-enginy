@@ -50,7 +50,6 @@ This guide walks you through creating and launching your first outreach campaign
 
 # Before You Start
 Make sure the following are in place before creating a campaign:
-
 - **At least one identity connected** with LinkedIn and/or email (see the Enginy Configuration Guide).
 - **Email account connected** if your sequence includes email actions. Without it, email steps will block the progress of leads.
 - **Contact list ready** with enriched contacts (see the List Building Guide).
@@ -66,7 +65,6 @@ If you want to generate unique, personalized messages with AI for every prospect
 An AI Variable is a reusable prompt that tells Enginy how to research and return a specific piece of information for a Contact or Company. Think of it as a smart column: the AI reads the contact's attributes (name, job title, company, LinkedIn activity, etc.), optionally searches external sources, and returns the answer in a format you specify.
 
 AI Variables are used for two purposes in campaigns:
-
 - **Message generation** — Create an AI Variable for each touchpoint in your sequence. For example, a 5-step campaign (Email, Email, LinkedIn, LinkedIn, Email) would need 5 AI Variables, one per message.
 - **Data enrichment** — Generate additional data points for segmentation or qualification (covered in the List Building Guide).
 
@@ -82,7 +80,6 @@ AI Variables are used for two purposes in campaigns:
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440079/helpcenter/ai-playbook-12.png)
 
 **Recommended prompt structure for messages:**
-
 - **Persona** — Define the role the AI represents.
 - **Context** — Include sender variables (your company info) and receiver variables (contact data).
 - **Goal** — What the AI should produce.
@@ -96,7 +93,6 @@ AI Variables are used for two purposes in campaigns:
 
 ## Run AI Variables on Your List
 Once created, AI Variables appear as columns in your lists. Run them before launching a campaign so that each contact has its personalized message ready:
-
 1. Open the list and locate the AI Variable column.
 2. Click the column header and select **Run column > All rows** (or select specific rows first).
 3. Alternatively, click **Enrich > Enrich with AI** and select the variables to run.
@@ -134,7 +130,6 @@ Navigate to **Campaigns** from the left menu and click **+ Create Campaign**. Ch
 
 ## Step 1 — Sequence
 Define the basic configuration and design your outreach flow:
-
 1. Enter a **Campaign name** and select the **Campaign Identity** (the sender profile).
 2. Build the sequence by clicking **+** to add actions and conditions between **Start** and **End**.
 
@@ -156,7 +151,6 @@ By default, each action executes as soon as possible after the previous one. To 
 
 ## Step 2 — Audience
 Add contacts to the campaign using one of two methods:
-
 - **Contacts from list** — Select an existing contact list to add all its contacts at once.
 - **Contacts individually** — Browse the full contacts view with filters and add specific leads one by one.
 
@@ -166,7 +160,6 @@ Add contacts to the campaign using one of two methods:
 
 ## Step 3 — AI Agent
 Configure how the AI Agent handles conversations after a lead replies:
-
 1. In the left panel, preview sample messages for a lead from your audience to validate tone, variables, and formatting.
 2. Select an **AI Campaign prompt** by clicking **Edit Prompt**, or create one on the spot.
 3. Choose whether to enable **AI auto-replies** (the AI sends replies without your approval) or keep it in **Copilot mode** (AI suggests, you approve).
@@ -253,7 +246,6 @@ The Inbox is divided into four columns:
 
 ## Conversation Tags
 Tags categorize conversations based on lead intent. Enginy includes default AI-powered tags that are automatically applied when leads reply:
-
 - **Interested**, **Meeting Booked**, **Referred** (Positive)
 - **Bad Timing**, **Not the Target Persona**, **Out of Office** (Neutral)
 - **Not Interested** (Negative)
@@ -264,7 +256,6 @@ You can also create custom tags with specific instructions so the AI knows when 
 
 ## Replying to Messages
 From the Chat View, you can:
-
 - Reply via **Email** or **LinkedIn** by selecting the channel in the composition box.
 - Review and send **AI Draft** suggestions (in Copilot mode).
 - Schedule messages for future delivery.
@@ -277,7 +268,6 @@ Use the campaign's **Overview** tab to track performance in real time.
 
 ## Channel Metrics
 Switch between **All Channels**, **LinkedIn**, **Email**, and **Tasks** to see funnel metrics for each channel. Key metrics include:
-
 - **Started** — Contacts who completed at least one step.
 - **Contacted** — Contacts who received at least one message.
 - **Replied** — Contacts who replied through any channel.
@@ -313,14 +303,12 @@ A sequence flow preview shows the number of leads at each step, including waits,
 
 ## Email Best Practices
 **Recommended sending limits:**
-
 - **Daily:** ~30 emails per day per email address (never exceed 80).
 - **Hourly:** 5-10 emails per hour.
 
 **Using multiple email addresses:** Connect multiple addresses and use the **Shuffle** setting to rotate between them. For example, 3 inboxes at 30 emails/day each give you 90 emails/day total while keeping each within the safe zone.
 
 **Deliverability essentials:**
-
 1. Set up **SPF, DKIM, and DMARC** on your sending domain.
 2. **Warm up** new email addresses for 2 weeks before launching campaigns.
 3. Vary your messages with AI Variables — do not send identical content to everyone.
@@ -337,7 +325,6 @@ A sequence flow preview shows the number of leads at each step, including waits,
 You have launched your first campaign, configured your AI Agent, and know how to monitor performance and manage your Inbox.
 
 From here you can:
-
 - Build additional campaigns with different sequences and audiences.
 - A/B test messaging by duplicating campaigns and changing AI Variable prompts.
 - Refine your AI Playbook based on conversation insights (update ICP, products, competitors).

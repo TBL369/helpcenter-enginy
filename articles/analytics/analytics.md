@@ -42,11 +42,8 @@ The Performance Tab focuses on conversion rates, percentages, and comparative pe
 
 ## The Outbound Funnel
 The main chart displays your outbound process as a funnel visualization. You can switch between three views using the channel selector:
-
 -   All channels
-    
 -   LinkedIn
-    
 -   Email
     
 Each bar in the funnel represents a stage of your outbound process:
@@ -61,16 +58,12 @@ On the right side of the Performance Tab, you will see a list of tags with bars 
 
 ### Filtering options
 -   All Channels
-    
 -   LinkedIn
-    
 -   Email
     
 ### Key behaviors
 -   **Counting rule:** Only shows tags that were added during the selected time period.
-    
 -   **Dynamic updates:** Switching channels updates the chart dynamically.
-    
 -   **Interactive navigation:** Clicking on any tag opens the Inbox, automatically filtered to show conversations with that specific tag. This makes it easy to review, follow up, or analyze the specific replies behind each category.
     
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440086/helpcenter/analytics-3.png)
@@ -83,18 +76,14 @@ Understanding how tag removal affects your Analytics data is important for maint
 
 ## Performance Tables
 Below the funnel, you can toggle between two detailed performance tables to compare results: **Campaings** and **Identities**.
-
 -   Campaigns table shows how each campaign performs overall and by channel.
-    
 -   Identities table analyzes the effectiveness of each sender or identity.
     
 Both tabs display the same columns:
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="no-margin">Category</p></td><td style="background-color: #d7efdc80;"><p class="no-margin">Columns</p></td></tr><tr><td><p class="no-margin"><b>General</b></p></td><td><p class="no-margin">Audience (only shown in Campaigns), Contacted, Replied, Positive</p></td></tr><tr><td><p class="no-margin"><b>LinkedIn</b></p></td><td><p class="no-margin">Engaged, Sent, Accepted, Contacted, Replied, Positive</p></td></tr><tr><td><p class="no-margin"><b>Email</b></p></td><td><p class="no-margin">Contacted, Opened, Clicked, Replied, Positive</p></td></tr></tbody></table>
 
 **Notes:**
-
 -   You can sort the table by any of the fields.
-    
 -   You can export any of the tables clicking the **Export** button at the right-top of the table
     
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440089/helpcenter/analytics-4.png)
@@ -120,9 +109,7 @@ A line chart showing replies over time, with separate lines for each channel.
 
 ### Counting rules
 -   Each person is counted once per day they reply.
-    
 -   If someone replies on Monday and again on Wednesday, they are counted on both days.
-    
 -   Bounced emails (delivery failures) are NOT counted as replies.
     
 ## Total Metrics
@@ -165,7 +152,6 @@ Some metrics count **people** (e.g., "Contacted", "Replied") while others count 
 
 ### Q2: What is the difference between "Started" and "Contacted"?
 -   **Started:** The campaign performed any first action for that contact (such as visiting their profile). This may include contacts added in previous periods whose first action was triggered within the selected timeframe.
-    
 -   **Contacted:** A message was actually sent to the person (LinkedIn or Email).
     
 ### Q3: What are Positive columns in Campaigns/Identities tables?

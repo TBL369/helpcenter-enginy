@@ -146,9 +146,7 @@ Choose how Enginy determines whether a company already exists in your CRM.
 
 ### General
 Under **General**, you’ll find two toggles that control how associations are handled during export:
-
 -   **When exporting contacts, associate them with companies in HubSpot:** If enabled, Enginy will automatically link exported contacts to their corresponding companies in HubSpot.
-    
 -   **When exporting companies, associate them with contacts in HubSpot:** If enabled, Enginy will automatically link exported companies to their related contacts in HubSpot.
     
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440122/helpcenter/integrations-11.png)
@@ -171,12 +169,9 @@ In each CRM field mapping dropdown, you’ll see small status icons indicating w
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc;"><p class="no-margin">Icon</p></td><td style="background-color: #d7efdc;"><p class="no-margin">Meaning</p></td></tr><tr><td><p class="no-margin"><b>Blue check</b></p></td><td><p class="no-margin">The mapping is okay, has no potential problems.</p></td></tr><tr><td><p class="no-margin"><b>Yellow exclamation</b></p></td><td><p class="no-margin">The field types in Enginy and the CRM may be incompatible (e.g., an Enginy Text field mapped to a CRM Enumeration field).</p></td></tr><tr><td><p class="no-margin"><b>Red X</b></p></td><td><p class="no-margin">In these cases, the mapping can’t be applied because the types don’t match — or because the CRM field is read-only and can’t be updated (e.g., an Enginy Text field mapped to a CRM Number field, or a read-only CRM field).</p></td></tr></tbody></table>
 
 **Note:** Some yellow warning icons appear when the selected CRM field is an enumeration (dropdown) field. In this case, your Enginy text field can still export successfully as long as the value you send matches one of the allowed dropdown options (but internal names, not label names).
-
 -   **Workaround:** Create an **AI Variable** with output type = **One off,** and define the output tag options to exactly match the CRM dropdown values — using the **internal option names** (not the labels). This ensures the exported value is accepted and the export completes successfully. Additional considerations:  
     ​
-    
     -   If is a Fixed value field or an Engagement field just input the exact internal name in the mapped Value to export in the Field mapping integration's setting.
-        
     -   If is a Manual export field just input the exact internal name at the moment of the export.
         
 ### Mapping Options
@@ -259,7 +254,6 @@ After installation, you will see a card called **"Enginy Status"** on each **Con
 
 ## Why CRM Cards Are Useful
 If you are an SDR, CRM Cards help you:
-
 - **Save time** — No need to jump between HubSpot and Enginy.
 - **Get better data** — Instantly enrich contacts with verified emails, phone numbers, and LinkedIn info.
 - **Track your work** — See what is happening with your enrichment tasks and campaigns in real time.

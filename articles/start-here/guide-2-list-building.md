@@ -34,7 +34,6 @@ This guide walks you through the steps of finding, importing, and enriching comp
 
 # Before You Start
 Before working with Lists, make sure the following are in place:
-
 - **Identities configured** — At least one identity connected in Enginy (required for LinkedIn searches and scraping).
 - **CRM integration** (if applicable) — To import from or export to your CRM, connect it in the **Integrations** settings page (see the Enginy Configuration Guide).
 - **AI Playbook completed** — To access Contact and Company Scores and AI-powered list recommendations, complete your ICP in the **AI Playbook** page.
@@ -67,13 +66,11 @@ Go to **Lists** > **+ Create New** (from the dashboard) or click **Add Companies
 
 ## Step 2: Enrich Companies with LinkedIn Data
 This step is **mandatory** if you imported companies from a source other than LinkedIn or Sales Navigator (CSV, CRM, TheirStack, Google Maps, Crunchbase). It populates LinkedIn fields and the Company URN, which is required to search for contacts within companies.
-
 1. Select the companies in your list.
 2. Click **Enrich** and choose the appropriate option:
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="no-margin"><b>Option</b></p></td><td style="background-color: #d7efdc80;"><p class="no-margin"><b>When to Use</b></p></td><td style="background-color: #d7efdc80;"><p class="no-margin"><b>Cost</b></p></td></tr><tr><td><p class="no-margin"><b>Find data by LinkedIn URL</b></p></td><td><p class="no-margin">When your list already contains LinkedIn URLs for the companies.</p></td><td><p class="no-margin">1 credit/result</p></td></tr><tr><td><p class="no-margin"><b>Find data by name or domain</b></p></td><td><p class="no-margin">When you do not have LinkedIn URLs. The system searches LinkedIn by company name and falls back to domain.</p></td><td><p class="no-margin">1 credit/result</p></td></tr></tbody></table>
 
 When searching by name, you can apply matching filters:
-
 - **Match only if the company name is exact** — Recommended as a first attempt.
 - **Match only if the company name is similar** — Allows up to 2-character difference (useful when names include legal forms like SL, SA).
 - **Match only if the domain is exact** — Strict domain matching.
@@ -86,7 +83,6 @@ When searching by name, you can apply matching filters:
 
 ## Step 3: Check CRM Status
 If you have a CRM connected, run a **CRM Sync** to identify whether each company already exists in your CRM.
-
 1. Select the companies in your list.
 2. Click **Enrich > CRM Sync**.
 
@@ -96,11 +92,9 @@ After the sync, check the **Company exists in CRM** column (Yes or No). For comp
 
 ## Step 4: Enrich with AI
 Use AI Variables to segment, clean, or find additional information about your companies. Common use cases include:
-
 - Categorizing companies as B2B vs. B2C based on their description.
 - Scoring companies based on criteria not available in LinkedIn (e.g., specific product focus).
 - Finding information from company websites, Google, or news that LinkedIn does not provide.
-
 1. Select the companies you want to enrich.
 2. Click **Enrich > Enrich with AI**.
 3. Select one or more AI Variables and click **Run**.
@@ -109,7 +103,6 @@ Use AI Variables to segment, clean, or find additional information about your co
 
 ## Step 5: Find Contacts Within Companies
 Now that your company list is enriched, search for buyer personas within these companies.
-
 1. Select the companies in your company list.
 2. Click **Enrich > Get contacts from company**.
 3. Configure filters: Function (department), Current Job Title, Region, and more.
@@ -141,11 +134,9 @@ Go to **Lists** > **+ Create New** or click **Add Contacts** inside an existing 
 
 ## Step 2: Enrich Contacts with AI
 AI enrichment is especially valuable for contacts imported via LinkedIn search, where Sales Navigator title filtering can be imprecise. Use AI Variables to:
-
 - Validate contacts by checking if their job title and headline match your target (e.g., classify as "Good" or "Bad").
 - Categorize contacts into tiers or segments based on their profile data.
 - Generate personalized icebreakers or message hooks for campaigns.
-
 1. Select the contacts you want to enrich.
 2. Click **Enrich > Enrich with AI**.
 3. Select one or more AI Variables and click **Run**.
@@ -154,7 +145,6 @@ AI enrichment is especially valuable for contacts imported via LinkedIn search, 
 
 ## Step 3: Enrich with Email and Phone
 To reach contacts via email campaigns, you need their professional email address. To include phone call tasks in your campaigns, you need their phone number.
-
 1. Select the contacts you want to enrich (or click **Enrich all** above the first column).
 2. Click **Enrich** and choose:
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="no-margin"><b>Tool</b></p></td><td style="background-color: #d7efdc80;"><p class="no-margin"><b>Description</b></p></td><td style="background-color: #d7efdc80;"><p class="no-margin"><b>Cost</b></p></td></tr><tr><td><p class="no-margin"><b>Enrich Email Address</b></p></td><td><p class="no-margin">Searches for the contact's professional email. Choose <b>Fast</b> (quickest providers only) or <b>Deep</b> (all providers — slower but more thorough).</p></td><td><p class="no-margin">5 credits/result</p></td></tr><tr><td><p class="no-margin"><b>Enrich Phone Number</b></p></td><td><p class="no-margin">Searches for the contact's phone number. Supports Fast and Deep modes.</p></td><td><p class="no-margin">40 credits/result</p></td></tr><tr><td><p class="no-margin"><b>Verify Email Address</b></p></td><td><p class="no-margin">Validates whether a professional email is Verified, Invalid, or Unsure.</p></td><td><p class="no-margin">1 credit/result</p></td></tr><tr><td><p class="no-margin"><b>Verify Phone Number</b></p></td><td><p class="no-margin">Validates a phone number as Valid, Unsure, or Invalid.</p></td><td><p class="no-margin">1 credit/result (phone verification costs 3 credits)</p></td></tr></tbody></table>
@@ -184,7 +174,6 @@ Columns are color-coded by data source:
 
 ## Actions on Selected Rows
 Select contacts or companies using row checkboxes, and a bottom bar appears with:
-
 - **Campaign** (contacts only) — Add to an existing or new campaign.
 - **Export** — Export to CRM, CSV, or Excel.
 - **Blocklist** — Add entries to the blocklist.
@@ -200,7 +189,6 @@ Select contacts or companies using row checkboxes, and a bottom bar appears with
 
 # Contact and Company Score
 Enginy automatically scores contacts and companies based on how closely they match your Ideal Customer Profile (ICP) defined in the **AI Playbook**. Two columns are available:
-
 - **Contact Score** — Evaluates job title match, location, and associated company score.
 - **Company Score** — Evaluates company size, industry, and location against your ICP targets.
 

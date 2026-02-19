@@ -123,13 +123,9 @@ The Lists section is where you manage your prospect databases in Enginy. It is d
 
 # Before You Start
 Before working with Lists, make sure the following are in place depending on the features you plan to use:
-
 -   **CRM integration** — To import from or export to HubSpot, Salesforce, Dynamics, Pipedrive, TribeCRM, or Zoho connect your CRM in the **Integrations** settings page.
-    
 -   **AI Playbook** — To access Contact and Company Scores and AI Recommended Lists, complete your Ideal Customer Profile (ICP) in the **AI Playbook** page.
-    
 -   **Sales Navigator account** — To use identity-specific LinkedIn filters link at least one Sales Navigator identity in your account settings.
-    
 -   **CSV file** — To import from CSV, prepare a file with the required columns mapped to Enginy fields (see the CSV import sections below for required mappings).
     
 ---
@@ -147,22 +143,15 @@ Each row in the table represents a list and displays the following information:
 
 ## Search and Filters
 Above the table, you have the following tools to locate specific lists:
-
 -   **Search bar** — Search by list name.
-    
 -   **Created by** — Filter by the user who created the list.
-    
 -   **Tags** — Filter by specific tags.
-    
 -   **Folders** — Filter by folder location.
     
 ## List Actions (Three-Dot Menu)
 At the far right of every row there is a **three-dot button**. Clicking it opens a menu with the following options:
-
 -   **Share** — Opens a settings panel on the right side. Here you can edit the **Name** and **Description** of the list, and manage **Access and Permissions** (select which users have visibility).
-    
 -   **Settings** — Access additional list configuration.
-    
 -   **Delete** — Permanently remove the list.
     
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440127/helpcenter/lists-2.png)
@@ -181,11 +170,8 @@ When you select one or more lists using the checkbox at the left of each row, a 
 Clicking on a list row opens the **Detail View**. This view displays a table with many columns sourced from different origins: LinkedIn data, AI variables, CRM fields, formula fields, custom fields, and data-enrichment providers (e.g., professional emails, phones).
 
 At the top right of the detail view you will find:
-
 -   The **Contacts** and **Companies** tabs to switch between entity types.
-    
 -   A **Settings** (gear) icon to access **List Settings**.
-    
 -   The **Enrich** button, the **Add Contacts** or **Add Companies** button (depending on the active tab), and the **three-dot** (**⋯**) menu.
     
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440137/helpcenter/lists-5.png)
@@ -256,29 +242,20 @@ The table columns are color-coded by source:
 Above the table you have several filters to customize your view:
 
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440126/helpcenter/lists-15.png)
-
 -   **Search bar** — Search for specific records within the list.
-    
 -   **View Selector** — Switch between saved views. Views determine which columns are visible in the table.
     
     ![](https://res.cloudinary.com/enginy/image/upload/v1771440127/helpcenter/lists-16.png)
     
     **\+ Manage Views** button — Opens a side panel where you can:
-    
     -   Toggle columns on or off with a switch.
-        
     -   Save the current view or create a new one (choose **Public** or **Private**).
-        
     -   Pin a view to the top of the view list.
-        
     -   Click **Reset to original view layout** to revert all changes.
-        
     -   Use the search bar inside the panel to find a specific column by name.
         
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440127/helpcenter/lists-17.png)
-
 -   **Sort by** — Order rows ascending or descending by any field.
-    
 -   **Filters** — Add specific filters by column fields.
     
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440127/helpcenter/lists-18.png)
@@ -287,7 +264,6 @@ Above the table you have several filters to customize your view:
 Hover your cursor between any two column headers. A divider with a **+** button appears. Clicking it opens a menu with:
 
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440127/helpcenter/lists-19.png)
-
 -   **New AI Variable** — Create a new AI-generated field.
 1.  Choose the entity type: **Contact** or **Company**.
 2.  Fill in:
@@ -303,7 +279,6 @@ Hover your cursor between any two column headers. A divider with a **+** button 
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440129/helpcenter/lists-20.png)
 
 **Note:** Learn more in depth about AI Variables and prompting in the [AI Playbook](https://help.genesy.ai/es/articles/10735949-ai-playbook) article.
-
 -   **New CRM Field** — Add a field synced from your CRM.
 1.  Choose the entity type: **Contact** or **Company**.
 2.  Fill in:
@@ -313,7 +288,6 @@ Hover your cursor between any two column headers. A divider with a **+** button 
 3.  Click **Create**.
 
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440129/helpcenter/lists-21.png)
-
 -   **New Formula Field** — Add a computed field.
 1.  Choose the entity type: **Contact** or **Company**.
 2.  Fill in:
@@ -322,7 +296,6 @@ Hover your cursor between any two column headers. A divider with a **+** button 
 3.  Click **Create**.
 
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440129/helpcenter/lists-22.png)
-
 -   **New Custom Field** — Add a user-defined field.
 1.  Choose whether the field is for **Contact** or **Company**.
 2.  Define the **Field Name** and select the **Data Type** (text, number, date, boolean, or picklist).
@@ -365,9 +338,7 @@ Below these shortcuts you can browse or search through all existing fields. Tabs
 3.  Select it, and it will reappear in the table.
 ## All Contacts and All Companies
 In addition to individual lists, there are two aggregate views:
-
 -   **All Contacts** — Displays every contact across all lists.
-    
 -   **All Companies** — Displays every company across all lists.
     
 You can access these from the list-name dropdown at the top of the detail view.
@@ -382,9 +353,7 @@ Inside a list, the **Contacts** and **Companies** tabs at the top right let you 
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440130/helpcenter/lists-29.png)
 
 Additionally, there is another way to see the companies view of a specific list of contacts, or the contacts view from a list of companies. The behavior is as follows:
-
 -   If you select specific contacts (or all the contacts from a list) and use the **More > Switch to Companies View** action, the platform navigates to the **All Companies** view filtered to show only the companies associated with those selected contacts. There is also a **Switch to Contacts View** option when companies are selected.
-    
 -   Navigating back to the **Contacts** (or Companies) tab after such a switch takes you to **All Contacts** (or All Companies), filtered by the previously selected records), not back to the original individual list.
     
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440131/helpcenter/lists-30.png)
@@ -394,26 +363,17 @@ When you select contacts or companies using their row checkboxes, a bottom bar a
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="no-margin">Action</p></td><td style="background-color: #d7efdc80;"><p class="no-margin">Description</p></td></tr><tr><td><p class="no-margin"><b>Campaign </b>(just for Contacts)</p></td><td><p class="no-margin">Add the selected records to an existing campaign or create a new one.</p></td></tr><tr><td><p class="no-margin"><b>Export</b></p></td><td><p class="no-margin">Export to CRM, CSV, or Excel.</p></td></tr><tr><td><p class="no-margin"><b>Blocklist</b></p></td><td><p class="no-margin">Add records to a blocklist to prevent them from being contacted.</p></td></tr><tr><td><p class="no-margin"><b>Change List</b></p></td><td><p class="no-margin">Move records to another list or create a new one. The dialog shows which lists the records currently belong to (marked with a checkmark). You can also remove the selected records from the list(s) by unchecking the boxes.</p></td></tr><tr><td><p class="no-margin"><b>Delete Contacts / Companies</b></p></td><td><p class="no-margin">Permanently delete the records (requires confirmation).</p></td></tr><tr><td><p class="no-margin"><b>More</b></p></td><td><p class="no-margin">Opens additional actions (see below).</p></td></tr></tbody></table>
 
 **More** sub-actions:
-
 -   **Change contact's company** — Reassign contacts to a different company.
-    
 -   **Move values** (between columns) — Transfer data from one column to another.
-    
 -   **Clear column values** — Erase all data in a selected column for the chosen records.
-    
 -   **Merge contacts** — Consolidate duplicate records into one, selecting which contact to keep.
-    
 -   **Switch to companies View** (or to contacts View from companies) — Navigate to the All Companies view filtered to the companies associated with your selected contacts.
     
 ## Top-Right Menu (Three-Dot Button)
 In the top-right corner of the detail view, next to the **Enrich** and **Add Contacts** buttons (or **Add Companies** in company lists), you’ll find a three-dot (**⋯**) menu with the following options:
-
 -   **Export to CRM**
-    
 -   **Export to CSV**
-    
 -   **Export to Excel**
-    
 -   **Add to Campaign** (just for contacts lists)
     
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440131/helpcenter/lists-31.png)
@@ -459,9 +419,7 @@ Displays all available contact-type AI variables. Select one or more variables a
 3.  Select the AI variables you want to fill in.
 4.  Click **Run**.
 **Tips:**
-
 -   To check or edit an AI variable's prompt, click on its column header and select **Edit column**.
-    
 -   For credit optimization, filter beforehand to enrich only records where the variable is currently empty.
     
 **Important:** The cost of running an AI Variable depends on the model used, and it also includes the cost of any implicit AI Variables referenced in the prompt that need to be generated (if they haven’t been generated yet).
@@ -530,9 +488,7 @@ Displays all available company-type AI variables. Select one or more variables a
 3.  Select the AI variables you want to fill in.
 4.  Click **Run**.
 **Tips:**
-
 -   To check or edit an AI variable's prompt, click on its column header and select **Edit column**.
-    
 -   For credit optimization, filter beforehand to enrich only records where the variable is currently empty.
     
 **Important:** The cost of running an AI Variable depends on the model used, and it also includes the cost of any implicit AI Variables referenced in the prompt that need to be generated (if they haven’t been generated yet).
@@ -571,19 +527,13 @@ If you imported companies or contacts from a non-LinkedIn source (e.g., CSV, CRM
 **Important:** "Find data from LinkedIn by URL" uses the **LinkedIn URL**, not the company website URL. If the name search does not find the record, the system will attempt a search by domain (if available in the list).
 
 When searching by name for companies it is **Find data by name or domain**, and you can apply additional matching filters:
-
 -   **Match only if the company name is similar** — It will match results allowing a maximum difference of 2 characters. This is useful when the company name includes the legal form (e.g., SL, SA). However, we recommend running the default AI Variable **Simplified Company Name** first, which returns the common company name used on LinkedIn.
-    
 -   **Match only if name is exact** — Recommended in a first attempt, before trying with if name is similar.
-    
 -   **Match only if the domain is exact** — The system will search by domain if it cannot find the name. If you switch on this option the domain will be matched if is exactly the same.
     
 Additional filters (to refine even more the matching criteria):
-
 -   **Headquarters Location**
-    
 -   **Industry**
-    
 -   **Company headcount**
     
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440136/helpcenter/lists-45.png)
@@ -598,9 +548,7 @@ If the wrong company is matched, click the magnifying glass icon next to the com
 
 ## Contact and Company Score
 Enginy automatically scores contacts and companies based on how closely they match your Ideal Customer Profile (ICP) defined in the **AI Playbook**. Two columns are available in the data table:
-
 -   **Contact Score**
-    
 -   **Company Score**
     
 Each score classifies the record as **High**, **Medium**, **Low**, or **Disqualified**. Hover over any score to see the specific reasons behind the rating.
@@ -614,9 +562,7 @@ Each score classifies the record as **High**, **Medium**, **Low**, or **Disquali
 **Important:** To access scoring, you must complete your ICP in the **AI Playbook** page. You can fill it in manually or use **Fill with AI** for a quick setup.
 
 **Notes:**
-
 -   If a contact or company is missing critical fields, the status will display **NOT ENRICHED**. Run **Enrich Data from LinkedIn** to populate the required fields. Required fields for scoring: **Company** — name, industry, description, employee range, number of employees, country, city. **Contact** — job title, company, location.
-    
 -   Job title comparisons are flexible — synonyms, role equivalents, and translations are considered. If a contact's information changes (e.g., job promotion), the score updates automatically.
     
 ---
@@ -628,7 +574,6 @@ Click **Add Companies** (from within a list) or **Create new** (from the Lists d
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440137/helpcenter/lists-48.png)
 
 Provides a text box where you describe your ideal customer (e.g., “companies in Barcelona with €2M in revenue”). The AI processes your description and generates matching companies by applying Sales Navigator filters, then opens the **Search for Companies** modal with those filters pre-filled.
-
 -   **Presets** are available as pre-defined prompt folders to help you get started quickly.
     
 ## Find Companies on LinkedIn
@@ -645,7 +590,6 @@ The **Search for Companies** modal has the following structure:
     
 ### Tabs
 -   **General Search** — Use filters to search LinkedIn.
-    
 -   **Sales Navigator URL** — Paste a Sales Navigator companies search URL directly.
     
 **Important:** Sales Navigator search URL import just works if a Sales Navigator Identity is chosen.
@@ -667,9 +611,7 @@ For **Search Keywords**, **Industry**, and **Headquarters Location**, click the 
 
 ### Results Preview
 After applying filters, a preview of matching companies appears. You can:
-
 -   Manually select specific companies to import.
-    
 -   Set a number of **Companies to import** (e.g., 100) to automatically select the top results.
     
 ### Advanced Settings
@@ -677,24 +619,19 @@ After applying filters, a preview of matching companies appears. You can:
     
 ### Importing
 -   If accessed from within a list, clicking **Import** adds the companies directly to that list.
-    
 -   If accessed from the main Lists dashboard via **Create new**, clicking **Add to list** opens a dialog where you choose an existing list or create a new one. If a new one, you can choose an existing folder or even create one from this modal to create the list there.
-    
 -   Before clicking Import you can switch on a *TheirStack* enrichment (**Enrich with job data**) and/or a *Crunchbase* enrichment (**Enrich with Financial data**).
     
     ![](https://res.cloudinary.com/enginy/image/upload/v1771440137/helpcenter/lists-51.png)
     
 **Notes:**
-
 -   If fewer than 100 companies are found, you can’t reduce the import count any further. The **minimum import is 100**, but if the results contain fewer than 100, you can only import that available number. If you **need fewer**, **manually select** the companies you want to import.
-    
 -   Importing **1 company** costs **1 credit** and **1 scraping.**
     
 **Tip:** Include the filters you used in the list name (e.g., "B2B SaaS / 50+ employees / Spain"), as the filters are not visible after creation. By default the name is auto-generate this way.
 
 ## Import from LinkedIn Jobs
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440138/helpcenter/lists-52.png)
-
 1.  Toggle **Choose an identity** and select an identity with Sales Navigator (optional, just to use the Sales Navigator identity scraping pool)
 2.  Paste the **LinkedIn Job Search URL** (format: `linkedin.com/jobs/search/...`).
 3.  Click **Import** and choose a new or existing list (via Create New) or import directly to the current list (from within a list).
@@ -711,14 +648,11 @@ Opens a filter-based search modal:
 3.  Click **Fetch Preview** to see matching results.
 4.  Import the companies to a new or existing list.
 **Notes:**
-
 -   **Match with existing companies** toggle uses the CRM integration Sync configuration: Company identifier mapping.
-    
 -   This action doesn’t consume credits nor scrapings; you may need to scrape the company later using **Find data by name or domain**.
     
 ## Import Companies from \[CRM\] List
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440138/helpcenter/lists-55.png)
-
 1.  Select a list from the **CRM list** dropdown.
 2.  Optionally enable **Match with existing companies** to sync with companies already in Enginy using your CRM sync mapping.
 3.  Click **Import X companies**.
@@ -728,7 +662,6 @@ Opens a filter-based search modal:
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440138/helpcenter/lists-56.png)
 
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440139/helpcenter/lists-57.png)
-
 1.  Enter the **Category** search term (e.g., "Gym").
 2.  Select the **Area** — Choose **Radius** or **Select area in the map**.
 3.  Set a **Limit of companies** (maximum number of results).
@@ -738,9 +671,7 @@ Opens a filter-based search modal:
 5.  Select a new or existing list under **Select list**.
 6.  Review the map preview showing the companies found, then click **Import companies** to proceed.
 **Notes:**
-
 -   This action doesn't consume scrapings; you may need to scrape the company later using **Find data by name or domain.**
-    
 -   Importing **1 company** costs **1 credit**.
     
 ## Import by Technology Stack with TheirStack
@@ -758,9 +689,7 @@ Opens a **Find companies by technology stack from TheirStack** modal.
 After applying filters, a preview appears. Set the number of companies to import and click **Import**. A dialog lets you choose a new or existing list.
 
 **Notes:**
-
 -   This action doesn't consume scrapings; you may need to scrape the company later using **Find data by name or domain.**
-    
 -   Importing **1 company** costs **1 credit**.
     
 ## Import Companies by Job Posts on TheirStack
@@ -783,9 +712,7 @@ After applying filters, a preview appears. Configure the import count and click 
 **Important:** Imported count may be lower than shown, as some companies are treated as the same on importing phase.
 
 **Notes:**
-
 -   This action doesn't consume scrapings; you may need to scrape the company later using **Find data by name or domain.**
-    
 -   Importing **1 company** costs **1 credit**.
     
 ## Import companies from Crunchbase
@@ -809,16 +736,13 @@ Opens a **Find companies from Crunchbase** modal.
 After applying filters, a preview appears. Configure the import count or select the ones you want and click **Import** to add to a new or existing list.
 
 **Notes:**
-
 -   This action doesn't consume scrapings; you may need to scrape the company later using **Find data by name or domain.**
-    
 -   Importing **1 company** costs **7 credit**.
     
 ## Import Companies from CSV
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440140/helpcenter/lists-64.png)
 
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440140/helpcenter/lists-65.png)
-
 1.  Upload or browse for your CSV file.
 2.  Map your CSV columns to Enginy columns:
     -   **Name** column: Your CSV column names.
@@ -827,24 +751,18 @@ After applying filters, a preview appears. Configure the import count or select 
     -   **Override** checkbox: When checked, re-importing the same CSV will overwrite existing values for that column.
 3.  Click **Add to List** and select a new or existing list.
 **Notes:**
-
 -   The checkbox **Match with existing companies** will use the sync mapping configured in your CRM integration.
-    
 -   This action doesn't consume credits nor scrapings; you may need to scrape later using **Find data by LinkedIn URL** (preferred) **or Find data by name or domain.**
     
 **Important:**
-
 -   You must map at least one column to **Company Name**. If your CSV does not contain a company name but has another column, (e.g. a website column), map this other column to "Company Name" to force the import. After importing, use **Move Values** to transfer the data from Company Name to the other field.
-    
 -   Some columns are automatically recognized and mapped to the corresponding Enginy fields, but others are not. For the ones that are not, you need to map them manually; otherwise, they’ll be ignored and won’t be imported.
     
 ## Create a New Company Manually
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440141/helpcenter/lists-66.png)
 
 Two options:
-
 -   **Search Company on LinkedIn** — Use the search bar to find and auto-fill company data from LinkedIn (as you would search in LinkedIn).
-    
 -   **Add Manually** — Fill in the fields yourself:
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="no-margin">Field</p></td><td style="background-color: #d7efdc80;"><p class="no-margin">Required</p></td></tr><tr><td><p class="no-margin"><b>Company Name</b></p></td><td><p class="no-margin">Yes</p></td></tr><tr><td><p class="no-margin"><b>Company LinkedIn URL</b></p></td><td><p class="no-margin">No</p></td></tr><tr><td><p class="no-margin"><b>Company Website Domain</b></p></td><td><p class="no-margin">No</p></td></tr><tr><td><p class="no-margin"><b>Company URN</b></p></td><td><p class="no-margin">No</p></td></tr><tr><td><p class="no-margin"><b>Industry</b></p></td><td><p class="no-margin">No</p></td></tr><tr><td><p class="no-margin"><b>Number of Employees</b></p></td><td><p class="no-margin">No</p></td></tr><tr><td><p class="no-margin"><b>Range of Employees</b></p></td><td><p class="no-margin">No</p></td></tr><tr><td><p class="no-margin"><b>Year Founded</b></p></td><td><p class="no-margin">No</p></td></tr><tr><td><p class="no-margin"><b>Street Address</b></p></td><td><p class="no-margin">No</p></td></tr><tr><td><p class="no-margin"><b>Company Email</b></p></td><td><p class="no-margin">No</p></td></tr><tr><td><p class="no-margin"><b>Revenue Range</b></p></td><td><p class="no-margin">No</p></td></tr><tr><td><p class="no-margin"><b>Hiring on LinkedIn (Yes/No)</b></p></td><td><p class="no-margin">No</p></td></tr><tr><td><p class="no-margin"><b>Company Country</b></p></td><td><p class="no-margin">No</p></td></tr></tbody></table>
 
@@ -878,7 +796,6 @@ Opens a **Search for Contacts** modal.
     
 ### Tabs
 -   **General Search** — Use filters to search LinkedIn.
-    
 -   **Sales Navigator URL** — Paste a Sales Nav search URL directly.
     
 **Important:** Sales Navigator URL import just works if a Sales Navigator Identity is chosen.
@@ -898,14 +815,11 @@ Opens a **Search for Contacts** modal.
 **Tip:** Save your filter configuration by clicking the **Create new profile** button at the bottom of the filters panel.
 
 **Notes:**
-
 -   If fewer than 100 contacts are found, you can’t reduce the import count any further. The **minimum import is 100**, but if the results contain fewer than 100, you can only import that available number. If you **need fewer**, **manually select** the contacts you want to import.
-    
 -   Importing **1 contact** costs **1 credit** and **1 scraping.**
     
 ## Import from LinkedIn Post
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440142/helpcenter/lists-70.png)
-
 1.  Paste the LinkedIn post URL (format: `linkedin.com/posts/...`).
 2.  Click **Import**. This imports users who engaged with the post (likes, reactions, comments). You are asked to chose whether to import **People who liked** OR **People who commented** OR **People who engaged**.
 
@@ -914,14 +828,11 @@ Opens a **Search for Contacts** modal.
 **AI Suggested Posts** are available as preset cards based on your **AI Playbook** data (e.g., "Posts from Competitor", "Posts Mentioning Competitors", "Posts from Industry Mention"). The AI uses your company info, competitors, and ICP to suggest relevant posts.
 
 **Notes:**
-
 -   The post does not need to be yours — it can be anyone's post.
-    
 -   Importing **1 contact** costs **1 credit** and **1 scraping.**
     
 ## Import from LinkedIn Event
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440142/helpcenter/lists-72.png)
-
 1.  Paste the LinkedIn event URL.
 2.  Click **Import**. This imports event attendees.
 3.  **AI Suggested Events** are also available.
@@ -929,7 +840,6 @@ Opens a **Search for Contacts** modal.
 
 ## Import from LinkedIn Poll
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440142/helpcenter/lists-73.png)
-
 1.  Paste the LinkedIn poll URL.
 2.  Click **Import**. This imports polls from posts.
 **Note:** Importing **1 contact** costs **1 credit** and **1 scraping.**
@@ -947,9 +857,7 @@ Select an identity from your Enginy account and import all of their LinkedIn con
 Select an identity and import all of their LinkedIn followers.
 
 **Notes:**
-
 -   Connections and followers are distinct. A person can follow your profile without being a connection.
-    
 -   Importing **1 contact** costs **1 credit** and **1 scraping.**
     
 ## Import Contacts from Crunchbase
@@ -972,9 +880,7 @@ After applying filters, a preview appears. Configure the import count or select 
 **Tip:** Save your filter configuration by clicking the **Save Search** button at the bottom of the filters panel.
 
 **Notes:**
-
 -   This action doesn't consume scrapings; you need to scrape later using **Find data by name.**
-    
 -   Importing **1 contact** costs **7 credit**.
     
 ## Import Contacts from \[CRM\]
@@ -985,9 +891,7 @@ After applying filters, a preview appears. Configure the import count or select 
 Same filter-based approach as for companies: use **HubSpot Property**, **Operator**, and **Value** to define filters. Preview results and import.
 
 **Notes:**
-
 -   **Match with existing contacts** toggle uses the CRM integration Sync configuration: Contact identifier mapping.
-    
 -   This action doesn’t consume credits nor scrapings.
     
 ## Import Contacts from \[CRM\] List
@@ -1003,29 +907,22 @@ Tip: Switch on the **Match with existing contacts** toggle to avoid duplicating 
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440145/helpcenter/lists-81.png)
 
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440145/helpcenter/lists-82.png)
-
 1.  Upload or browse for your CSV file.
 2.  Map CSV columns to Enginy fields.
 3.  Click **Add to List** and select a new or existing list.
 **Important:**
-
 -   To import contacts, you must map columns to either:
-    
     -   **First Name** + **Last Name** + **Company Name**, or
-        
     -   **LinkedIn Profile URL**.
         
     If your CSV doesn’t include the required fields but contains other data (e.g., a Country column), you can temporarily map that column to one of the missing required fields to force the import. After the import, use **Move Values** to move the data into the correct field.
-    
 -   Some columns are automatically recognized and mapped to the corresponding Enginy fields, but others are not. For the ones that are not, you need to map them manually; otherwise, they’ll be ignored and won’t be imported.
     
 **Note:** This action doesn't consume credits nor scrapings; you might need to scrape later using **Find data by LinkedIn URL** (preferred) **or Find data by name.**
 
 ## Create a New Contact Manually
 Two options:
-
 -   **Search Contact on LinkedIn** — Use the search bar to find and auto-fill contact data.
-    
 -   **Add Manually** — Fill in the fields yourself:
     
 ### Contact fields
@@ -1053,9 +950,7 @@ Go to **Create List** and choose one of: **Find Contacts on LinkedIn**, **Find C
 
 ### Intent Signals
 When you import contacts from posts or events, Enginy automatically tags those leads with an intent signal (emoji) in the list’s **Intent data** field:
-
 -   **Reacted to a post** (like or comment)
-    
 -   **Attended an event**
     
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440146/helpcenter/lists-84.png)
@@ -1140,25 +1035,16 @@ The columns **Contact exists in CRM** and **Company exists in CRM** indicate whe
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440147/helpcenter/lists-94.png)
 
 If a contact exists in the CRM (**Is contact in CRM** \-> Yes), the following fields become available, meaning they will pull data as well:
-
 -   **Contact CRM Owner** (contact owner in the CRM)
-    
 -   **Contact CRM ID** (unique identifier)
-    
 -   **Last activity at CRM**
-    
 -   **Updated at CRM**
     
 If a company exists in the CRM (**Is company in CRM** \-> Yes), the following fields become available, meaning they will pull data as well:
-
 -   **Company CRM Owner** (company owner in the CRM)
-    
 -   **Company CRM ID** (unique identifier)
-    
 -   **Company last activity at CRM**
-    
 -   **Company updated at CRM**
-    
 -   **Company life cycle stage**
     
 **Note:** To use these indicators, your CRM must be integrated. To sync additional fields beyond the defaults, add a new CRM field.
@@ -1185,11 +1071,8 @@ Use the CSV Import Report to verify what was imported, who performed the import,
 
 ## How Many Contacts Should I Select per Company
 When enriching company lists with contacts, the ideal number depends on your use case:
-
 -   **General recommendation:** 3 to 10 contacts per company, with 5 being a common target.
-    
 -   **Role specificity:** Common roles (e.g., sales representatives) will have a larger pool. Specialized or niche roles may have fewer available contacts.
-    
 -   **Company size:** Smaller companies may need fewer contacts. Larger organizations may justify more contacts across multiple departments or regions.
     
 Align the number of contacts with your campaign goals and outreach strategy.
@@ -1211,86 +1094,53 @@ When importing contacts from LinkedIn, the following fields can be populated:
 
 ## **Contact Information**
 -   First Name
-    
 -   Last Name
-    
 -   Job Title
-    
 -   Profile Bio
-    
 -   Contact LinkedIn URL
-    
 -   LinkedIn Headline
-    
 -   LinkedIn Profile ID
-    
 -   Previous Positions
-    
 -   Languages
-    
 -   Number of Connections
-    
 -   Intent Data
     
 ## **Company Information**
 -   Company Name
-    
 -   Company Description
-    
 -   Website
-    
 -   Industry
-    
 -   Company LinkedIn URL
-    
 -   Number of Employees
-    
 -   Range of Employees
-    
 -   Company Countries
-    
 -   Company Country
-    
 -   Company URN
-    
 -   Year Founded
-    
 -   Revenue
     
 ## **Location Information**
 -   Contact Country
-    
 -   Geo Region
-    
 -   City
-    
 -   Street Address
     
 ## **Work History and Experience**
 -   Years in Company
-    
 -   Years in Role
-    
 -   Job Change
-    
 -   Job Promotion
     
 ## **Hiring and Growth**
 -   Hiring on LinkedIn
-    
 -   LinkedIn Open Job Positions
-    
 -   Six Months Headcount Growth
-    
 -   Two Years Headcount Growth
-    
 -   Yearly Headcount Growth
-    
 -   Open Job Descriptions
     
 ## **Additional Information**
 -   Mentioned in News
-    
 -   Last LinkedIn Post
     
 ---

@@ -83,19 +83,12 @@ The system tracks credit usage for the following activities:
 
 ## Filters and Time Ranges
 You can filter credit usage data by the following time ranges:
-
 -   Today
-    
 -   Yesterday
-    
 -   This Week
-    
 -   Last Week
-    
 -   This Month
-    
 -   Last Month
-    
 -   This Year
     
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440110/helpcenter/credits-7.png)
@@ -152,11 +145,8 @@ Select which actions you plan to use. Each action has a specific credit cost per
 **Step 3 — Review your estimate**
 
 Based on your selections, the calculator displays a summary panel showing:
-
 -   **Monthly credits needed** — The total estimated credits for your configuration.
-    
 -   **Contacts per month** — The number of contacts you entered.
-    
 -   **Credits per contact** — The average credit cost per contact based on the actions you selected.
     
 **Note:** The credit calculator is an estimation tool. Your actual consumption may vary depending on the specific actions performed on the platform.
@@ -168,13 +158,9 @@ The Pricing plans sub-section allows you to compare all available Enginy plans s
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="no-margin">Feature</p></td><td style="background-color: #d7efdc80;"><p class="no-margin">Basic</p></td><td style="background-color: #d7efdc80;"><p class="no-margin">Smart</p></td><td style="background-color: #d7efdc80;"><p class="no-margin">Business</p></td><td style="background-color: #d7efdc80;"><p class="no-margin">Enterprise</p></td></tr><tr><td><p class="no-margin"><b>Monthly price</b></p></td><td><p class="no-margin">599 EUR/month</p></td><td><p class="no-margin">799 EUR/month</p></td><td><p class="no-margin">1,199 EUR/month</p></td><td><p class="no-margin">Custom</p></td></tr><tr><td><p class="no-margin"><b>Annual price</b></p></td><td><p class="no-margin">7,188 EUR/year</p></td><td><p class="no-margin">9,588 EUR/year</p></td><td><p class="no-margin">14,388 EUR/year</p></td><td><p class="no-margin">Custom</p></td></tr><tr><td><p class="no-margin"><b>Credits/month</b></p></td><td><p class="no-margin">5,000</p></td><td><p class="no-margin">10,000</p></td><td><p class="no-margin">32,000</p></td><td><p class="no-margin">Custom</p></td></tr><tr><td><p class="no-margin"><b>Contacts/month</b></p></td><td><p class="no-margin">Up to 500</p></td><td><p class="no-margin">Up to 1,000</p></td><td><p class="no-margin">Up to 2,000</p></td><td><p class="no-margin">Custom</p></td></tr><tr><td><p class="no-margin"><b>Identities included</b></p></td><td><p class="no-margin">1</p></td><td><p class="no-margin">2</p></td><td><p class="no-margin">4</p></td><td><p class="no-margin">Custom</p></td></tr></tbody></table>
 
 Each plan builds on the previous tier and adds specific features:
-
 -   **Basic** — Email and Chat Support, 5 Onboarding Sessions.
-    
 -   **Smart** (includes everything in Basic) — 1 Warmup Seat Included.
-    
 -   **Business** (includes everything in Smart) — Dedicated Success Manager.
-    
 -   **Enterprise** (includes everything in Business) — Open API, Bring your own API key, Dedicated Technical Implementation Manager.
     
 **Important:** A one-time implementation fee of 2000 EUR applies to all plans.
@@ -183,19 +169,12 @@ Each plan builds on the previous tier and adds specific features:
 In addition to the self-service plans, Enginy offers a **Fully Managed Service** starting from **5,000 EUR/month**. With this option, Enginy books qualified meetings on your behalf, handling the entire outreach process and adding them directly to your calendar.
 
 The Fully Managed Service includes:
-
 -   Expert partner executing your outbound strategy
-    
 -   Dedicated Enginy manager for your account
-    
 -   Full setup: campaigns, copywriting, segmentation
-    
 -   Weekly reporting and actionable insights
-    
 -   Minimum of 8–10 qualified meetings per month
-    
 -   Continuous A/B testing and optimization
-    
 -   Inbox management and reply follow-ups
     
 ## Estimated ROI Calculator
@@ -217,9 +196,7 @@ The calculator displays both **Yearly Time Savings** and **Monthly Time Savings*
 
 ### ROI Summary
 The ROI Summary panel combines both calculations and displays the **estimated yearly return on investment**, including:
-
 -   **Total Value** — The combined yearly revenue increase and time savings.
-    
 -   **Investment** — Your plan cost (shown as the plan name or "Custom" for Enterprise).
     
 ---

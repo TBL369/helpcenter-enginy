@@ -47,7 +47,6 @@ This guide walks you through the essential first steps to set up your Enginy acc
 To follow this guide, you need an active Enginy account. If you have not received your login credentials, contact your Account Manager or the team member who set up your workspace.
 
 Have the following ready:
-
 - Your LinkedIn credentials (email and password, not a social login).
 - Access to the email account(s) you plan to use for outreach (Google, Microsoft 365, or IMAP credentials).
 - Your CRM login, if you plan to integrate one.
@@ -59,7 +58,6 @@ Identities are the sender profiles that power your outreach campaigns. Before yo
 
 ## What Is an Identity
 An identity in Enginy is a sender profile composed of a LinkedIn account, one or more email addresses, or both. Identities serve two purposes:
-
 - **Running campaigns** — Each campaign uses an identity to execute its scheduled actions (sending LinkedIn messages, connection requests, emails, etc.).
 - **CRM mapping** — Identities map to your CRM users so that campaign activity syncs correctly.
 
@@ -103,7 +101,6 @@ You can connect multiple email addresses to a single identity. When a campaign's
 
 ## Configure Working Hours
 Working hours define the time window during which the identity is active. Campaigns associated with this identity will only execute actions during the specified working hours.
-
 1. Navigate to **Identity > Configuration > Contact Details**.
 2. Set the time zone, active days, and start/end times.
 
@@ -123,7 +120,6 @@ You can also configure **automatic withdrawal** of pending connection requests f
 
 ## Warm Up Your Email
 If you are using a new email address or domain for outreach, you should warm it up before launching campaigns. Email warm-up gradually builds your sending reputation over approximately 2 weeks.
-
 1. Go to **Identity > Configuration > Email > Manage** tab.
 2. Click the **Start** button next to the warm-up feature.
 3. After two weeks, return and stop the warm-up.
@@ -156,7 +152,6 @@ Define how Enginy matches contacts and companies with your CRM records to preven
 **Step 2 — Field Mapping:**
 
 Configure which Enginy fields map to which CRM fields for export and sync. The setup is split into **Contacts** and **Companies** tabs. You can set up four field types:
-
 - **Enginy Fields** — Standard fields from your lists mapped to CRM fields.
 - **Fixed Value Fields** — Fields that always export with the same static value (e.g., Source = "Enginy").
 - **Manual Export Fields** — Fields whose value you define at the time of export.
@@ -180,7 +175,6 @@ After completing all steps, click **Update** to save.
 
 ## Other Integrations
 Beyond CRM, Enginy supports additional integrations you can configure from the **Integrations** page:
-
 - **Data Enrichment** — Apollo, Cognism, Datagma, Dropcontact, Hunter, Kaspr, Lusha, ZoomInfo (connect via API key).
 - **AI Enrichment** — Anthropic, Google AI, OpenAI, xAI (connect your own API key to use your provider tokens instead of Enginy Credits).
 - **Import Sources** — TheirStack (company data aggregation; connect your own API key or use Enginy's subscription).
@@ -200,7 +194,6 @@ If you have a CRM connected, Enginy can identify existing records during sync. H
 
 ## Add Entries to the Blocklist
 **Add individually:**
-
 1. Navigate to the **Blocklist** section and select the **Contacts** or **Companies** tab.
 2. Click **Add Email / LinkedIn URL** (for contacts) or **Add Domain / LinkedIn URL** (for companies).
 3. Enter the identifier(s) and select a reason (Not interested, Competitor, Customer, Not target, Churn, or Other).
@@ -209,7 +202,6 @@ If you have a CRM connected, Enginy can identify existing records during sync. H
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440091/helpcenter/blocklist-2.png)
 
 **Add in bulk from a list:**
-
 1. Go to any Contacts or Companies list.
 2. Select the entries you want to block using checkboxes.
 3. Click **Blocklist > Add contacts to blocklist** (or companies) in the action bar.
@@ -287,7 +279,6 @@ The Settings section is the control panel for your workspace. Access it by click
 
 ## Company Identity and Preferences
 Navigate to **Settings > General** to configure:
-
 - **Company logo and display name** — Define how your organization appears in the platform.
 - **Preferred language** — Select your language for platform communications.
 - **Beta Program** — Toggle to get early access to new features (may be unstable).
@@ -299,7 +290,6 @@ Navigate to **Settings > General** to configure:
 
 ## Security
 Navigate to **Settings > Security** to:
-
 - **Change your password** (minimum 12 characters).
 - **Enable Two-Factor Authentication (2FA)** for added security.
 
@@ -309,7 +299,6 @@ Navigate to **Settings > Security** to:
 Navigate to **Settings > Team** to manage your workspace users. This tab is visible only to users with the **Admin** role.
 
 From here you can:
-
 1. **View team capacity** — The counter at the top (e.g., Team 10/20) shows active users vs. your plan's license limit.
 2. **Invite users** — Click **Invite User**, enter their email, and submit. They will receive a temporary password.
 3. **Assign roles** — Choose between **User** (standard access) and **Admin** (full access including settings and billing).
