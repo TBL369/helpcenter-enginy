@@ -49,6 +49,14 @@ cp .env.example .env
 | `SAAS_REPO` | Si | Repo del SaaS en formato `owner/name` |
 | `LLM_PROVIDER` | No | Proveedor LLM: `openai`, `anthropic`, `ollama` (default: `openai`) |
 
+### Cloudinary (subida de imágenes)
+
+| Variable | Requerida | Descripción |
+|---|---|---|
+| `CLOUDINARY_CLOUD_NAME` | Si | Nombre del cloud en Cloudinary |
+| `CLOUDINARY_API_KEY` | Si | API key de Cloudinary |
+| `CLOUDINARY_API_SECRET` | Si | API secret de Cloudinary |
+
 ### Variables por proveedor LLM
 
 Solo se leen las variables del proveedor seleccionado en `LLM_PROVIDER`.
@@ -67,7 +75,7 @@ Solo se leen las variables del proveedor seleccionado en `LLM_PROVIDER`.
 
 ## CLI de Intercom
 
-Herramienta interactiva para trabajar con artículos de Intercom. Permite listar, exportar a Notion, exportar a Markdown y subir artículos desde Markdown.
+Herramienta interactiva para trabajar con artículos de Intercom. Permite listar, importar al repositorio o a Notion, y subir artículos desde Markdown.
 
 ### Uso
 
@@ -83,11 +91,33 @@ npm start
 ### Funciones del menú
 
 1. **Listar artículos** — Muestra todos los artículos disponibles en Intercom (públicos e internos).
-2. **Exportar a Notion** — Exporta artículos seleccionados como páginas en Notion dentro de una página contenedora.
-3. **Exportar a Markdown** — Descarga artículos de Intercom como ficheros `.md` en `articles/`, incluyendo imágenes.
-4. **Subir a Intercom** — Crea artículos en Intercom a partir de ficheros `.md` existentes en `articles/`.
+2. **Importar al repositorio** — Descarga artículos de Intercom como ficheros `.md` en `articles/`, incluyendo imágenes en `images/`.
+3. **Importar a Notion** — Exporta artículos seleccionados de Intercom como páginas en Notion dentro de una página contenedora.
+4. **Subir a Intercom** — Crea artículos en Intercom a partir de ficheros `.md` existentes en `articles/`. Soporta estados draft/published y selección de autor.
+5. **Salir** — Cierra el CLI.
 
 Soporta búsqueda por título, IDs numéricos o URLs de Intercom.
+
+---
+
+## Cloudinary — Subida de imágenes
+
+Utilidad standalone para subir las imágenes locales de `images/` a Cloudinary y reemplazar automáticamente las rutas relativas en los artículos `.md` por URLs de CDN.
+
+### Uso
+
+```bash
+npm run cloudinary
+```
+
+### Cómo funciona
+
+1. Lee todas las imágenes de `images/` (png, jpg, gif, webp, svg).
+2. Las sube a Cloudinary en lotes (concurrencia de 5) bajo la carpeta `helpcenter/`.
+3. Recorre los `.md` de `articles/` y reemplaza cada referencia `images/archivo.png` por la URL de Cloudinary correspondiente.
+4. Muestra un resumen con imágenes subidas y referencias reemplazadas.
+
+Requiere las variables `CLOUDINARY_CLOUD_NAME`, `CLOUDINARY_API_KEY` y `CLOUDINARY_API_SECRET` en `.env`.
 
 ---
 
@@ -315,7 +345,11 @@ launchctl unload ~/Library/LaunchAgents/com.helpcenter.sync.plist
 ## Estructura del proyecto
 
 ```
-articles/               Artículos .md del help center (fuente de verdad)
+articles/                       Artículos .md del help center (fuente de verdad)
+  {tema}/                       Un subdirectorio por artículo (ej: inbox/, credits/)
+    {tema}.md                   Artículo principal
+  start-here/                   Guías de onboarding (guide-1-*, guide-2-*, ...)
+images/                         Imágenes descargadas de Intercom (referenciadas por los .md)
 config/
   change-to-article-map.yaml   Mapeo área → artículos
   user-facing-paths.yaml       Heurística de rutas user-facing
@@ -323,7 +357,9 @@ infra/
   com.helpcenter.sync.plist    Cron job macOS (launchd) — ejecuta nightly.ts
   setup-cron.sh                Script de instalación del cron
 prompts/
+  article-augmented-safe.md    Prompt para integrar contenido suplementario en artículos
   article-merge.md             Prompt para merge de contenido OLD + NEW
+  change-brief.md              Prompt para generar change briefs desde diffs de PRs
   images-to-article.md         Prompt para crear artículos desde screenshots
   prompt-optimizer.md          Prompt optimizer (metodología 4-D)
 src/
@@ -332,6 +368,7 @@ src/
     intercom.ts                Cliente API de Intercom
     markdown.ts                Exportador HTML → Markdown con descarga de imágenes
     notion.ts                  Cliente Notion (HTML → bloques)
+    cloudinary-upload.ts       Subida de imágenes a Cloudinary + reemplazo de rutas
   pipeline/
     nightly.ts                 Pipeline nocturno (changelog + sync en secuencia)
     index.ts                   Notion sync (ejecutable standalone o desde nightly)
@@ -363,3 +400,4 @@ src/
 | `sync` | `npm run sync [-- archivo1 archivo2]` | Sincroniza artículos a Notion (todos o selectivo) |
 | `changelog` | `npm run changelog` | Ejecuta el pipeline de changelog (standalone) |
 | `changelog:dry` | `npm run changelog:dry` | Pipeline en modo preview (sin escritura) |
+| `cloudinary` | `npm run cloudinary` | Sube imágenes a Cloudinary y reemplaza rutas en artículos |

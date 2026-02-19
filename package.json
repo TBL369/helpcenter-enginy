@@ -10,7 +10,8 @@
     "nightly": "ts-node src/pipeline/nightly.ts",
     "sync": "ts-node src/pipeline/index.ts",
     "changelog": "ts-node src/pipeline/changelog/index.ts",
-    "changelog:dry": "ts-node src/pipeline/changelog/index.ts --dry-run"
+    "changelog:dry": "ts-node src/pipeline/changelog/index.ts --dry-run",
+    "cloudinary": "ts-node src/cli/cloudinary-upload.ts"
   },
   "keywords": [
     "intercom",

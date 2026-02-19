@@ -17,7 +17,7 @@
 
   <!-- Directorio de trabajo (raíz del repo) -->
   <key>WorkingDirectory</key>
-  <string>/Users/timbrandt/Desktop/intercom-notion</string>
+  <string>/Users/timbrandt/Desktop/helpcenter-pipeline</string>
 
   <!-- Ejecutar todos los días a las 22:00 -->
   <key>StartCalendarInterval</key>
@@ -30,9 +30,9 @@
 
   <!-- Logs de salida y error -->
   <key>StandardOutPath</key>
-  <string>/Users/timbrandt/Desktop/intercom-notion/logs/nightly.log</string>
+  <string>/Users/timbrandt/Desktop/helpcenter-pipeline/logs/nightly.log</string>
   <key>StandardErrorPath</key>
-  <string>/Users/timbrandt/Desktop/intercom-notion/logs/nightly-error.log</string>
+  <string>/Users/timbrandt/Desktop/helpcenter-pipeline/logs/nightly-error.log</string>
 
   <!-- Variables de entorno necesarias (PATH para que encuentre node, git, etc.) -->
   <key>EnvironmentVariables</key>
