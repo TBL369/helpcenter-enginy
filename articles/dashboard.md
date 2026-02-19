@@ -69,7 +69,7 @@ Provides a quick overview of your outreach performance via LinkedIn or email:
     
 -   Reply rate
     
-    ![](images/dashboard-1.png)
+    ![](https://res.cloudinary.com/enginy/image/upload/v1771440111/helpcenter/dashboard-1.png)
     
 
 ---
@@ -110,7 +110,7 @@ You can adjust the time grouping using the selector:
 -   Month
     
 
-![](images/dashboard-2.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440111/helpcenter/dashboard-2.png)
 
 ---
 
@@ -144,7 +144,7 @@ Available actions:
 -   **View all** — Navigates to the complete campaigns section.
     
 
-![](images/dashboard-3.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440111/helpcenter/dashboard-3.png)
 
 ---
 
@@ -152,7 +152,7 @@ Available actions:
 
 There is also a last chart that shows the API usage, the percentage of successful requests (in case of using it).
 
-![](images/dashboard-4.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440111/helpcenter/dashboard-4.png)
 
 ---
 
