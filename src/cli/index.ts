@@ -788,23 +788,32 @@ function intercomPostProcess(html: string): string {
   // 6. Headings → añadir clase de justificación
   out = out.replace(/<(h[1-6])>/g, '<$1 class="intercom-align-justify">');
 
-  // 7. Minificar whitespace SOLO dentro de listas (elimina gaps entre items)
-  out = out.replace(/<ul>\s*<li/g, '<ul><li');
-  out = out.replace(/<ol>\s*<li/g, '<ol><li');
-  out = out.replace(/<\/li>\s*<li/g, '</li><li');
-  out = out.replace(/<\/li>\s*<\/ul>/g, '</li></ul>');
-  out = out.replace(/<\/li>\s*<\/ol>/g, '</li></ol>');
-  out = out.replace(/<\/ul>\s*<\/li>/g, '</ul></li>');
-  out = out.replace(/<\/ol>\s*<\/li>/g, '</ol></li>');
+  const SPACER = '<p class="no-margin"></p>';
 
-  // 8. Doble salto después de imágenes
-  out = out.replace(/(<\/p>)\n(<p[^>]*><img )/g, '$1\n\n$2');
-  out = out.replace(/(<img [^>]*><\/p>)\n/g, '$1\n\n');
+  // 7. Imágenes: <p><img></p> → <div class="intercom-container"> (formato nativo de Intercom)
+  out = out.replace(
+    /<p[^>]*>(<img [^>]*>)<\/p>/g,
+    '<div class="intercom-container intercom-align-justify">$1</div>',
+  );
 
-  // 9. Convertir color de header de tablas a verde sólido (RGBA 8-digit hex no siempre renderiza via API)
+  // 8. Minificar TODO whitespace entre tags (Intercom renderiza \n como barras visibles)
+  out = out.replace(/>\s+</g, '><');
+
+  // 9. Insertar empty-p spacers donde Intercom necesita spacing visible
+  out = out.replace(/(<\/p>)(<p class)/g, `$1${SPACER}$2`);
+  out = out.replace(/<hr>/g, `${SPACER}<hr>${SPACER}`);
+  out = out.replace(/(<\/table>)(<)/g, `$1${SPACER}$2`);
+  out = out.replace(/(<\/ul>)(<(?!\/li))/g, `$1${SPACER}$2`);
+  out = out.replace(/(<\/ol>)(<(?!\/li))/g, `$1${SPACER}$2`);
+  out = out.replace(/>(<div class="intercom-interblocks-callout)/g, `>${SPACER}$1`);
+  out = out.replace(/(<\/div>)(<)/g, `$1${SPACER}$2`);
+  out = out.replace(/>(<div class="intercom-container)/g, `>${SPACER}${SPACER}$1`);
+  out = out.replace(/(intercom-container[^>]*>[^<]*<\/div>)(<)/g, `$1${SPACER}${SPACER}$2`);
+
+  // 10. Verde sólido en tablas (RGBA 8-digit hex no renderiza via API)
   out = out.replace(/#d7efdc80/g, '#d7efdc');
 
-  return out;
+  return out.trim();
 }
 
 /**
