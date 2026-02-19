@@ -788,7 +788,7 @@ function intercomPostProcess(html: string): string {
   // 6. Headings → añadir clase de justificación
   out = out.replace(/<(h[1-6])>/g, '<$1 class="intercom-align-justify">');
 
-  const SPACER = `<p class="${INTERCOM_P_CLASS}"></p>`;
+  const SPACER = `<p class="${INTERCOM_P_CLASS}">&nbsp;</p>`;
 
   // 7. Envolver tablas en intercom-interblocks-table-container (necesario para background-color)
   out = out.replace(
