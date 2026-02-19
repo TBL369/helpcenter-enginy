@@ -108,7 +108,7 @@ Typical help-center flow within the content sections:
 
 - Use **Intercom-compatible HTML tables** — never Markdown pipe tables.
 - Format: `<table role="presentation"><tbody><tr><td>...</td></tr></tbody></table>`.
-- Header row: `style="background-color: #d7efdc80;"` with bold column names using `<b>` tags.
+- Header row: `style="background-color: #d7efdc;"` with bold column names using `<b>` tags.
 - Paragraph text inside cells: `<p class="no-margin">`. Bold key values with `<b>` tags.
 - Use tables when presenting:
   - Key → value pairs
