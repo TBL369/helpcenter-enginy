@@ -51,9 +51,9 @@ Each entry displays the following information:
 
 Activity is the single source of truth for understanding what has happened in your account.
 
-![](images/activity-1.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440077/helpcenter/activity-1.png)
 
-![](images/activity-2.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440078/helpcenter/activity-2.png)
 
 ---
 
@@ -230,7 +230,7 @@ If you frequently reach your daily limit, consider:
 -   Contacting Enginy support if you need to discuss plan limits.
     
 
-![](images/activity-3.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440077/helpcenter/activity-3.png)
 
 ---
 
@@ -251,7 +251,7 @@ The CSV Import Report lets you inspect the detailed result of importing companie
 5.  Click the **row** to open the CSV Import Report, or click the **dropdown arrow** to expand and see the list of imported companies or contacts directly in Activity.
     
 
-![](images/activity-4.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440077/helpcenter/activity-4.png)
 
 This panel shows the basic following data:
 
