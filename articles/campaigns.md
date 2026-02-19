@@ -119,7 +119,7 @@ Each campaign can have its own approach, sequence logic, tonality, and target se
 
 The Campaigns Dashboard is the main hub where you can view, filter, and manage all your campaigns. Campaigns can be organized into folders and are also displayed as cards in the list view.
 
-![](images/campaigns-1.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440097/helpcenter/campaigns-1.png)
 
 ## Campaign Status
 
@@ -131,9 +131,9 @@ Campaigns are grouped into status tabs:
 
 You can filter campaigns using the following filters:
 
-![](images/campaigns-2.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440099/helpcenter/campaigns-2.png)
 
-![](images/campaigns-3.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440101/helpcenter/campaigns-3.png)
 
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Filter</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Description</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Search bar</b></p></td><td><p class="intercom-align-justify no-margin">Search campaigns by campaign name or associated identity.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Sort by [Launch date/Creation date/Priority]</b></p></td><td><p class="intercom-align-justify no-margin">Sort campaigns by Launch date, Creation date, or Priority.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Identity</b></p></td><td><p class="intercom-align-justify no-margin">Show only campaigns assigned to a specific identity.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Folders</b></p></td><td><p class="intercom-align-justify no-margin">Filter campaigns by the folder they belong to.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Date Range</b></p></td><td><p class="intercom-align-justify no-margin">Filter campaigns by creation date within a selected date range.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Campaign Tags</b></p></td><td><p class="intercom-align-justify no-margin">Filter campaigns by one or more campaign tags.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Channel</b></p></td><td><p class="intercom-align-justify no-margin">Filter campaigns by channel: Email, LinkedIn, or Task.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Priority</b></p></td><td><p class="intercom-align-justify no-margin">Filter campaigns by priority level.</p></td></tr></tbody></table>
 
@@ -143,9 +143,9 @@ By default, only the search bar and the **Identity**, **Sort by launch date**, a
 
 Each campaign appears as a summary card displaying:
 
-![](images/campaigns-4.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440104/helpcenter/campaigns-4.png)
 
-![](images/campaigns-5.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440106/helpcenter/campaigns-5.png)
 
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Item</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Description</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Priority flag</b></p></td><td><p class="intercom-align-justify no-margin">Indicates the campaign priority (<b>High / Medium / Low</b>). Useful when several campaigns compete for limited daily actions (e.g., LinkedIn connection requests, LinkedIn messages or Email messages).</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Campaign name</b></p></td><td><p class="intercom-align-justify no-margin">The campaign’s name.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Associated identity</b></p></td><td><p class="intercom-align-justify no-margin">The identity assigned to run this campaign.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Created (relative)</b></p></td><td><p class="intercom-align-justify no-margin">Shows how long ago the campaign was created (e.g., “14h ago”, “1 mo ago”).</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Status</b></p></td><td><p class="intercom-align-justify no-margin">Current campaign state: <b>Draft, Running, Paused, Scheduled, </b>or<b> Archived</b>.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Contact metrics</b></p></td><td><p class="intercom-align-justify no-margin">Performance indicators across the campaign audience: <b>Started</b> (at least one step executed), <b>Contacted</b> (a message was sent), and <b>Replied</b> (the lead replied).</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Linked channels</b></p></td><td><p class="intercom-align-justify no-margin">Icons showing which channels the campaign uses (<b>LinkedIn</b>, <b>Email</b>, and/or <b>Tasks</b>).</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Campaign tags</b></p></td><td><p class="intercom-align-justify no-margin">Labels used to categorize and filter campaigns.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>(...) button</b></p></td><td><p class="intercom-align-justify no-margin">Quick actions for the campaign: <b>Edit</b>, <b>Duplicate</b>, <b>Pause</b>, <b>Mark as archived</b>, <b>View in Inbox</b> (filters inbox by campaign), <b>View in list</b> (filters the list view by campaign), and <b>Delete</b>.</p></td></tr></tbody></table>
 
@@ -153,7 +153,7 @@ Each campaign appears as a summary card displaying:
 
 You can also create a new campaign from the **\+ Create Campaign** button at the top right of the Campaigns table, and next to it there is a button to download campaign metrics and statistics in **CSV format**.
 
-![](images/campaigns-6.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440106/helpcenter/campaigns-6.png)
 
 If you select any campaign (by checking its row) in this table, you’ll see quick actions such as:
 
@@ -164,7 +164,7 @@ If you select any campaign (by checking its row) in this table, you’ll see qui
 -   **View in List**
     
 
-![](images/campaigns-7.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440106/helpcenter/campaigns-7.png)
 
 ---
 
@@ -177,11 +177,11 @@ To create a new campaign:
 2.  Click **\+ Create Campaign** at the top right.
     
 
-![](images/campaigns-8.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440106/helpcenter/campaigns-8.png)
 
 A modal opens where you can choose how to start your campaign: **Create from scratch** or **Create from template**. Templates are pre-built workflows you can fully customize — edit the messages, add or remove steps, and adjust the sequence to match your strategy. They’re the fastest way to get started because they provide a proven structure tailored to common outreach use cases.
 
-![](images/campaigns-9.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440107/helpcenter/campaigns-9.png)
 
 The campaign creation wizard has four steps.
 
@@ -189,7 +189,7 @@ The campaign creation wizard has four steps.
 
 Define the basic configuration for your campaign:
 
-![](images/campaigns-10.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440097/helpcenter/campaigns-10.png)
 
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Field</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Description</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Campaign name</b></p></td><td><p class="intercom-align-justify no-margin">Give a descriptive name to the campaign. By default it is named [Identity name]'s Campaign.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Campaign Identity</b></p></td><td><p class="intercom-align-justify no-margin">Assign the Enginy identity to link to this campaign. Determines the LinkedIn profile and/or email used. Mandatory to continue with the setup.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Campaign Audience</b></p></td><td><p class="intercom-align-justify no-margin">Select a list or contacts individually to add them to the campaign.</p></td></tr></tbody></table>
 
@@ -199,7 +199,7 @@ Click **+** to add an **action** or a **condition** at any point in the sequence
 
 ### Available Actions
 
-![](images/campaigns-11.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440097/helpcenter/campaigns-11.png)
 
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Action</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Description</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Visit Profile</b></p></td><td><p class="intercom-align-justify no-margin">Visits the lead's LinkedIn profile.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>React to Last Post</b></p></td><td><p class="intercom-align-justify no-margin">React to the lead’s most recent LinkedIn post using one of the available reactions: <b>Like, Celebrate, Support, Love, Insightful,</b> or <b>Funny</b>. You can also select <b>Most Reacted</b> to automatically use the reaction type the post has received the most.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Send LinkedIn Connection</b></p></td><td><p class="intercom-align-justify no-margin">Sends a connection request on LinkedIn.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>LinkedIn Message</b></p></td><td><p class="intercom-align-justify no-margin">Sends a direct message to a 1st-degree connection.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>LinkedIn InMail</b></p></td><td><p class="intercom-align-justify no-margin">Sends an InMail message (requires InMail credits).</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>LinkedIn Attachment</b></p></td><td><p class="intercom-align-justify no-margin">Sends a LinkedIn message with an attachment.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>LinkedIn Voice Message</b></p></td><td><p class="intercom-align-justify no-margin">Sends a voice message on LinkedIn (record or upload).</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Email</b></p></td><td><p class="intercom-align-justify no-margin">Sends an email from the connected email account.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Task</b></p></td><td><p class="intercom-align-justify no-margin">Creates a manual task (for example, a reminder to call the lead).</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Add to another campaign</b></p></td><td><p class="intercom-align-justify no-margin">Moves the lead into a different campaign.</p></td></tr></tbody></table>
 
@@ -210,9 +210,9 @@ For the actions that include a message body (LinkedIn Message, LinkedIn InMail, 
 -   **Manual** — Write the message yourself, optionally using personalization variables (e.g., first name, company name) or even AI variables within a message template.
     
 
-![](images/campaigns-12.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440098/helpcenter/campaigns-12.png)
 
-![](images/campaigns-13.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440098/helpcenter/campaigns-13.png)
 
 **Note:** For LinkedIn messages you can make them feel more natural by bundling multiple short messages and send them like a real chat.
 
@@ -222,7 +222,7 @@ For the actions that include a message body (LinkedIn Message, LinkedIn InMail, 
 
 Conditions branch the sequence into two paths (**Yes** or **No**) depending on whether the condition is met:
 
-![](images/campaigns-14.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440098/helpcenter/campaigns-14.png)
 
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Condition</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">What it checks</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Accepted LinkedIn connection</b></p></td><td><p class="intercom-align-justify no-margin">Has the lead accepted the connection request within X days?</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Is already a connection</b></p></td><td><p class="intercom-align-justify no-margin">Is the lead already a 1st-degree LinkedIn connection?</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Has been contacted</b></p></td><td><p class="intercom-align-justify no-margin">Has the lead been contacted by some identity, within a determined time and channel?</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Has LinkedIn Profile</b></p></td><td><p class="intercom-align-justify no-margin">Does the lead have a LinkedIn profile? It actually checks if it has filled the field LinkedIn Profile ID, not LinkedIn Profile URL.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Has Professional Email</b></p></td><td><p class="intercom-align-justify no-margin">Does the lead have an email address? It checks Professional email field.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Has Mobile Phone</b></p></td><td><p class="intercom-align-justify no-margin">Does the lead have a phone number? It checks Mobile Phone field.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Custom condition</b></p></td><td><p class="intercom-align-justify no-margin">Build a condition based on any variable of your choice.</p></td></tr></tbody></table>
 
@@ -230,7 +230,7 @@ Conditions branch the sequence into two paths (**Yes** or **No**) depending on w
 
 By default each action executes immediately **as soon as possible** after the previous one. To add a delay, click the **As soon as possible** label at the top of the action box and configure the wait time in days.
 
-![](images/campaigns-15.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440098/helpcenter/campaigns-15.png)
 
 ## Step 2 — Audience
 
@@ -241,17 +241,17 @@ To add an audience there are two options:
 -   **Contacts individually** — Browse and filter the full contacts view to add specific leads one by one.
     
 
-![](images/campaigns-16.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440098/helpcenter/campaigns-16.png)
 
 If you choose Contacts from list, you can use some filters to find the list in an easier way:
 
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Filter</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Description</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Search box</b></p></td><td><p class="intercom-align-justify no-margin">Finds a list by name as you type.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Most Recent / Alphabetical</b></p></td><td><p class="intercom-align-justify no-margin">Sorts lists by most recently created so the latest ones appear first or by alphabetical order.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Created by</b></p></td><td><p class="intercom-align-justify no-margin">Filters lists by the workspace user who created them.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Date</b></p></td><td><p class="intercom-align-justify no-margin">Filters lists by a date range (when the list was created).</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Tags</b></p></td><td><p class="intercom-align-justify no-margin">Filters lists by one or more tags assigned to the list.</p></td></tr></tbody></table>
 
-![](images/campaigns-17.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440099/helpcenter/campaigns-17.png)
 
 If you select contacts individually, a modal opens with the **All Contacts** list. From there, you can filter by any of the fields currently visible in your list view, select the contacts you want, and click **Add “X” contacts to a campaign**.
 
-![](images/campaigns-18.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440099/helpcenter/campaigns-18.png)
 
 **Note:** You can also add contacts to a campaign later directly from the **Contacts** list.
 
@@ -259,13 +259,13 @@ If you select contacts individually, a modal opens with the **All Contacts** lis
 
 In this step, you configure how the AI Agent will support (or fully handle) conversations **after a lead replies**.
 
-![](images/campaigns-19.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440099/helpcenter/campaigns-19.png)
 
 ### Preview
 
 The left panel shows a **conversation preview** for a sample lead from your audience so you can validate tone, AI variables or manual messages, and formatting. You can also **simulate replies as the lead** to see how the AI would respond under your current prompt and settings.
 
-![](images/campaigns-20.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440099/helpcenter/campaigns-20.png)
 
 ### AI Conversation Continuation
 
@@ -327,7 +327,7 @@ In this final step, you define the **operational settings** of the campaign: how
 
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Setting</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Description</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Tags (optional)</b></p></td><td><p class="intercom-align-justify no-margin">Add tags to classify the campaign (for reporting, filtering, and organization). You can select existing tags or create new ones by typing.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Folder (optional)</b></p></td><td><p class="intercom-align-justify no-margin">Choose the folder where the campaign will be stored, so it stays organized in the Campaigns dashboard.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Prioritization</b></p></td><td><p class="intercom-align-justify no-margin">Sets the campaign priority (Low/Medium/High) to control which runs first within LinkedIn an email rate limits. Useful when multiple campaigns compete for limited daily sending capacity.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Contacts CRM Sync</b></p></td><td><p class="intercom-align-justify no-margin">If enabled, syncs <b>contact-level data</b> and updates to your CRM. You can choose: No / Yes / Only when a contact replies.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Conversations CRM Sync</b></p></td><td><p class="intercom-align-justify no-margin">If enabled, syncs <b>conversation activity</b> (messages/replies) and related engagement data) to your CRM Activity. You can choose: No / Yes / Only when a contact replies.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Skip contacts with prior conversations</b></p></td><td><p class="intercom-align-justify no-margin">When enabled, the platform checks your LinkedIn inbox before sending. If a conversation already exists with a contact, the campaign <b>won’t message them</b>. Helps avoid duplicate outreach.</p></td></tr></tbody></table>
 
-![](images/campaigns-21.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440100/helpcenter/campaigns-21.png)
 
 **Note:** The skip contacts with prior conversations only works for LinkedIn messages that have been sent through Enginy.
 
@@ -339,7 +339,7 @@ In addition, if the Campaign contains the email channel, there are two more sett
 
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc;"><p class="intercom-align-justify no-margin">Setting</p></td><td style="background-color: #d7efdc;"><p class="intercom-align-justify no-margin">Description</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Email Inbox</b></p></td><td><p class="intercom-align-justify no-margin">Select which email inboxes to use for the campaign. <b>Suffle</b> will rotate between all available inboxes for better deliverability.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Email tracking </b>(optional)</p></td><td><p class="intercom-align-justify no-margin">Enable <b>Track email opens</b> (tracks when your email is opened using a pixel; this can trigger spam filters) and/or <b>Track link clicks </b>(monitors if links in your emails are clicked; this may increase spam risk).</p></td></tr></tbody></table>
 
-![](images/campaigns-22.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440100/helpcenter/campaigns-22.png)
 
 Once these settings are defined, you can **Launch** the campaign (or **Save and exit** to continue later).
 
@@ -358,7 +358,7 @@ If you’re not ready yet, you can close the campaign creation wizard at any tim
 
 Enginy provides pre-built campaign templates organized by complexity. Choose the right strategy based on your prospecting goals, effort level, and personalization needs.
 
-![](images/campaigns-23.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440100/helpcenter/campaigns-23.png)
 
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80; width: 159px;"><p class="intercom-align-justify no-margin">Template</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Categories</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Overview</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Best for</p></td></tr><tr><td style="width: 159px;"><p class="intercom-align-justify no-margin"><b>LinkedIn + Add Voice Message</b></p></td><td><p class="intercom-align-justify no-margin">Popular, Single channel</p></td><td><p class="intercom-align-justify no-margin">Send a LinkedIn connection request and three follow-ups, with the second follow-up being a voice message.</p></td><td><p class="intercom-align-justify no-margin">High-value prospects where you want to stand out fast; industries/roles that respond well to personal outreach (founders, sales leaders, execs); breaking through high inbox noise with a “human” touch.</p></td></tr><tr><td style="width: 159px;"><p class="intercom-align-justify no-margin"><b>LinkedIn Only (New)</b></p></td><td><p class="intercom-align-justify no-margin">Popular, Single channel</p></td><td><p class="intercom-align-justify no-margin">Engage with your ICP on LinkedIn with a sequence designed to start conversations and a soft landing approach.</p></td><td><p class="intercom-align-justify no-margin">Early-stage prospecting when you don’t have verified emails/phones; teams focusing on LinkedIn-first outbound; testing ICP messaging with low operational complexity.</p></td></tr><tr><td style="width: 159px;"><p class="intercom-align-justify no-margin"><b>LinkedIn + Email + Call</b></p></td><td><p class="intercom-align-justify no-margin">Best results, Multichannel</p></td><td><p class="intercom-align-justify no-margin">Maximize engagement with a proven triple-touch strategy across LinkedIn, email, and phone. Best for driving results at scale.</p></td><td><p class="intercom-align-justify no-margin">High-intent outbound where speed-to-meeting matters; enterprise/mid-market accounts with multiple stakeholders; teams with verified data (email + phone) aiming to maximize reply rates.</p></td></tr><tr><td style="width: 159px;"><p class="intercom-align-justify no-margin"><b>LinkedIn + Email</b></p></td><td><p class="intercom-align-justify no-margin">Multichannel</p></td><td><p class="intercom-align-justify no-margin">Leverage LinkedIn outreach with email follow-ups to stay top of mind and drive engagement across platforms.</p></td><td><p class="intercom-align-justify no-margin">When you have email but calls aren’t part of your motion; increasing touchpoints without heavy ops; nurturing leads that need 2–3 nudges to respond.</p></td></tr><tr><td style="width: 159px;"><p class="intercom-align-justify no-margin"><b>Email + Call</b></p></td><td><p class="intercom-align-justify no-margin">Multichannel</p></td><td><p class="intercom-align-justify no-margin">Engage prospects through a sequence of personalized emails and reinforce their replies with a final follow-up call to maximize engagement.</p></td><td><p class="intercom-align-justify no-margin">Classic SDR motion for outbound lists with strong email/phone coverage; speeding up deal cycles with a “close the loop” call; following up on warm signals (opens/replies) with a call.</p></td></tr><tr><td style="width: 159px;"><p class="intercom-align-justify no-margin"><b>Email Only</b></p></td><td><p class="intercom-align-justify no-margin">Single channel</p></td><td><p class="intercom-align-justify no-margin">Send a targeted 3-email sequence to capture attention and encourage responses.</p></td><td><p class="intercom-align-justify no-margin">High-volume outreach when LinkedIn isn’t available/allowed; outbound to large lists where you want simple execution; deliverability-focused teams running controlled experiments (subject lines, CTAs).</p></td></tr><tr><td style="width: 159px;"><p class="intercom-align-justify no-margin"><b>LinkedIn Social Warming</b></p></td><td><p class="intercom-align-justify no-margin">Single channel</p></td><td><p class="intercom-align-justify no-margin">Engage with your contacts by viewing their profile and liking their last post before sending a connection request.</p></td><td><p class="intercom-align-justify no-margin">Warming up cold prospects before pitching; improving acceptance rates for connection requests; relationship-led outreach where you want to build familiarity first.</p></td></tr></tbody></table>
 
@@ -378,7 +378,7 @@ Clicking the three dots button **(…)** opens a quick actions menu with:
 
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Option</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Description</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Launch</b></p></td><td><p class="intercom-align-justify no-margin">Starts the campaign so the sequence begins running for the selected audience.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Edit campaign</b></p></td><td><p class="intercom-align-justify no-margin">Opens the campaign builder to modify the sequence, audience, AI Agent, and settings.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>View in Inbox</b></p></td><td><p class="intercom-align-justify no-margin">Opens the Inbox filtered to show only conversations related to this campaign.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>View in Table</b></p></td><td><p class="intercom-align-justify no-margin">Opens the campaign’s audience in table view so you can review contacts and campaign-related fields in a grid.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Priority</b></p></td><td><p class="intercom-align-justify no-margin">Sets the campaign priority (e.g., High/Medium/Low) to help you rank which campaigns should take precedence when daily limits apply.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Duplicate campaign</b></p></td><td><p class="intercom-align-justify no-margin">Creates a copy of the campaign (same structure/settings) so you can reuse it without starting from scratch.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Save as a template</b></p></td><td><p class="intercom-align-justify no-margin">Saves this campaign as a reusable template so it can be selected from the template gallery in future campaigns.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Delete campaign</b></p></td><td><p class="intercom-align-justify no-margin">Permanently removes the campaign (typically used to delete drafts).</p></td></tr></tbody></table>
 
-![](images/campaigns-24.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440100/helpcenter/campaigns-24.png)
 
 The campaign view is organized in three tabs:
 
@@ -412,14 +412,14 @@ This view is designed to answer quickly:
 
 #### **All Channels**
 
-![](images/campaigns-25.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440100/helpcenter/campaigns-25.png)
 
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Metric</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Description</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Total contacts</b></p></td><td><p class="intercom-align-justify no-margin">Total number of contacts included in the campaign.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Started</b></p></td><td><p class="intercom-align-justify no-margin">Contacts who completed at least one campaign step (the campaign has started for them).</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Contacted</b></p></td><td><p class="intercom-align-justify no-margin">Contacts who received at least one outbound message (LinkedIn message and/or email).</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Replied</b></p></td><td><p class="intercom-align-justify no-margin">Contacts who replied through any channel.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Positive</b></p></td><td><p class="intercom-align-justify no-margin">Contacts with replies tagged as positive (by AI or manually).</p></td></tr></tbody></table>
 
 ####   
 **LinkedIn**
 
-![](images/campaigns-26.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440101/helpcenter/campaigns-26.png)
 
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Metric</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Description</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Engaged</b></p></td><td><p class="intercom-align-justify no-margin">Contacts with at least one LinkedIn interaction (profile visit, post reaction, connection request, message, etc.).</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Invited</b></p></td><td><p class="intercom-align-justify no-margin">Contacts who received a LinkedIn connection request from the campaign.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Accepted</b></p></td><td><p class="intercom-align-justify no-margin">Contacts who accepted the connection request.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Contacted</b></p></td><td><p class="intercom-align-justify no-margin">Contacts who received at least one LinkedIn message.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Replied</b></p></td><td><p class="intercom-align-justify no-margin">Contacts who replied to a LinkedIn message.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Positive</b></p></td><td><p class="intercom-align-justify no-margin">Contacts with LinkedIn replies tagged as positive.</p></td></tr></tbody></table>
 
@@ -427,13 +427,13 @@ This view is designed to answer quickly:
 
 #### **Email**
 
-![](images/campaigns-27.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440101/helpcenter/campaigns-27.png)
 
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Metric</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Description</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Sent</b></p></td><td><p class="intercom-align-justify no-margin">Emails successfully sent as part of the sequence.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Clicked</b></p></td><td><p class="intercom-align-justify no-margin">Contacts who clicked at least one tracked link in an email.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Replied</b></p></td><td><p class="intercom-align-justify no-margin">Contacts who replied via email.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Positive</b></p></td><td><p class="intercom-align-justify no-margin">Contacts with email replies tagged as positive.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Bounced</b></p></td><td><p class="intercom-align-justify no-margin">Emails that failed delivery (couldn’t be delivered).</p></td></tr></tbody></table>
 
 #### **Tasks**
 
-![](images/campaigns-28.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440101/helpcenter/campaigns-28.png)
 
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Metric</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Description</p></td></tr><tr><td><p class="intercom-align-justify no-margin">Pending</p></td><td><p class="intercom-align-justify no-margin">Tasks created by the campaign that are still open.</p></td></tr><tr><td><p class="intercom-align-justify no-margin">Completed</p></td><td><p class="intercom-align-justify no-margin">Tasks marked as done (in Enginy or in your CRM, if sync is enabled).</p></td></tr></tbody></table>
 
@@ -450,7 +450,7 @@ Use it to:
 -   Understand what’s driving “Positive” beyond raw reply rate.
     
 
-![](images/campaigns-29.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440101/helpcenter/campaigns-29.png)
 
 **Notes:**
 
@@ -463,9 +463,9 @@ Use it to:
 
 Below the channel metrics, you’ll see a sequence flow preview showing the number of leads currently at each step (including waits, actions, and branches/conditions). This helps you quickly understand how leads are progressing through the campaign and where they might be getting stuck.
 
-![](images/campaigns-30.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440102/helpcenter/campaigns-30.png)
 
-![](images/campaigns-31.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440102/helpcenter/campaigns-31.png)
 
 **Tip:** Click **View activity** on any step to jump to the **Activity** tab already filtered to that step.
 
@@ -477,7 +477,7 @@ The **Audience** tab is where you manage *who* is in the campaign and *what stat
 
 Each status chip is clickable and filters the table to show only leads in that state.
 
-![](images/campaigns-32.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440102/helpcenter/campaigns-32.png)
 
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Status</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Description</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Total audience</b></p></td><td><p class="intercom-align-justify no-margin">Total number of leads included in the campaign.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Not started</b></p></td><td><p class="intercom-align-justify no-margin">Leads that haven’t reached the first step yet.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>In progress</b></p></td><td><p class="intercom-align-justify no-margin">Leads currently moving through the sequence (they’re still “running” for this campaign).</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Paused</b></p></td><td><p class="intercom-align-justify no-margin">Leads that are paused and won’t advance until resumed (paused at lead-level or because the campaign is paused).</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Error</b></p></td><td><p class="intercom-align-justify no-margin">Leads blocked by an issue preventing the next step from executing (e.g., message too long).</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Finished</b></p></td><td><p class="intercom-align-justify no-margin">Leads that reached the end of the sequence without replying (including cases where an email bounce ends their path).</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Replied</b></p></td><td><p class="intercom-align-justify no-margin">Leads who replied to a message. Once a lead replies, the automated sequence stops for that lead.</p></td></tr></tbody></table>
 
@@ -489,13 +489,13 @@ Clicking a status filters the list to show only contacts in that state. Once you
 
 **Engagement** filter options:
 
-![](images/campaigns-33.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440102/helpcenter/campaigns-33.png)
 
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Engagement option</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">What it means</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>LinkedIn connection sent</b></p></td><td><p class="intercom-align-justify no-margin">A connection request was sent to the lead.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>LinkedIn connection accepted</b></p></td><td><p class="intercom-align-justify no-margin">The lead accepted the connection request.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>LinkedIn connection sent but not by platform</b></p></td><td><p class="intercom-align-justify no-margin">The lead is marked as “connection sent” but it wasn’t executed by Enginy/LinkedIn automation (imported/external state).</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Sent at least one message</b></p></td><td><p class="intercom-align-justify no-margin">At least one LinkedIn message or email was sent.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Bounced message</b></p></td><td><p class="intercom-align-justify no-margin">An email bounced (delivery failed).</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Seen message </b>(optional)</p></td><td><p class="intercom-align-justify no-margin">The message was seen/opened. Requires <b>Track email opens</b> enabled.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Clicked link </b>(optional)</p></td><td><p class="intercom-align-justify no-margin">The lead clicked/opened content (e.g., email opens). Requires <b>Track link clicks </b>enabled.</p></td></tr></tbody></table>
 
 ### Table columns
 
-![](images/campaigns-34.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440102/helpcenter/campaigns-34.png)
 
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Column</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Description</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Contact</b></p></td><td><p class="intercom-align-justify no-margin">Lead identity details (name, company, job title).</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Status</b></p></td><td><p class="intercom-align-justify no-margin">Current campaign status <b>plus a specific reason</b> when relevant (hover for the detailed tooltip).</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Activity</b></p></td><td><p class="intercom-align-justify no-margin">Icons showing the latest actions executed (excluding conditions). Hover to see the action details.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Tags</b></p></td><td><p class="intercom-align-justify no-margin">Tags applied to the lead's conversation (manual or AI).</p></td></tr></tbody></table>
 
@@ -512,15 +512,15 @@ Clicking any row opens a side panel on the right showing deeper context:
 -   **View Sequence Detail** to jump into the sequence view for that lead’s path.
     
 
-![](images/campaigns-35.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440103/helpcenter/campaigns-35.png)
 
-![](images/campaigns-36.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440103/helpcenter/campaigns-36.png)
 
 ### **Bulk Actions**
 
 Select one or more leads using the checkboxes on the left to reveal a popup with these actions:
 
-![](images/campaigns-37.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440103/helpcenter/campaigns-37.png)
 
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Action</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Description</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Retry errors</b></p></td><td><p class="intercom-align-justify no-margin">Re-attempts failed actions. Only appears when the selected lead has an Error status.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>View in list</b></p></td><td><p class="intercom-align-justify no-margin">Opens the contact list showing only the selected leads.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>View in Inbox</b></p></td><td><p class="intercom-align-justify no-margin">Opens the Inbox showing only the selected leads.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Pause</b></p></td><td><p class="intercom-align-justify no-margin">Freezes the campaign for the selected leads.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Resume</b></p></td><td><p class="intercom-align-justify no-margin">Resumes the campaign for paused leads.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Remove from campaign</b></p></td><td><p class="intercom-align-justify no-margin">Removes the lead from the campaign. Once removed, a contact cannot be added back to the same campaign.</p></td></tr></tbody></table>
 
@@ -530,7 +530,7 @@ Select one or more leads using the checkboxes on the left to reveal a popup with
 
 The Activity tab lists all actions performed in the campaign (excluding conditions).
 
-![](images/campaigns-38.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440103/helpcenter/campaigns-38.png)
 
 ### Activity Filters
 
@@ -566,9 +566,9 @@ You can modify the parameters of an active campaign such as time delay between a
     
 3.  Select **Edit** or **Edit campaign**.
     
-    ![](images/campaigns-39.png)
+    ![](https://res.cloudinary.com/enginy/image/upload/v1771440103/helpcenter/campaigns-39.png)
     
-    ![](images/campaigns-40.png)
+    ![](https://res.cloudinary.com/enginy/image/upload/v1771440104/helpcenter/campaigns-40.png)
     
 
 **Warning:** Once a campaign is launched (no longer in Draft), its sequence is locked — you can’t add new steps or remove existing ones. If you need a different flow, pause or archive the campaign and create a new one (or duplicate the campaign and edit the copy before launching).
@@ -584,7 +584,7 @@ You can pause a campaign at any time. This is useful when you need to make adjus
 3.  Select **Pause**.
     
 
-![](images/campaigns-41.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440104/helpcenter/campaigns-41.png)
 
 ## Duplicating a Campaign
 
@@ -601,7 +601,7 @@ You can duplicate any campaign (active, paused, or draft) from the three-dot men
     3.  Select Status > Archived
         
 
-![](images/campaigns-42.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440104/helpcenter/campaigns-42.png)
 
 -   **Delete** *—* Permanently removes the campaign.
     
@@ -693,7 +693,7 @@ Keep messages polite, concise, and spaced out over several days.
 
 When reaching out on LinkedIn, consider breaking a single long message into smaller chunks sent over a short span of time. This mimics the natural pace of someone typing in real time.
 
-![](images/campaigns-43.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440104/helpcenter/campaigns-43.png)
 
 **Instead of one long message like:**
 
@@ -716,7 +716,7 @@ When reaching out on LinkedIn, consider breaking a single long message into smal
 
 When you add a LinkedIn connection request step to your sequence, you can set a **timeout** (e.g., 14 or 15 days). If the contact doesn’t accept within that period, Enginy marks the invitation as **Not accepted** and continues the sequence through the **“No”** branch of the condition.
 
-![](images/campaigns-44.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440105/helpcenter/campaigns-44.png)
 
 **Why this matters:**
 
@@ -749,7 +749,7 @@ You can withdraw pending connection requests in bulk from Enginy:
 3.  **Manual withdrawals** *—* Select specific pending invitations from the list and confirm.
     
 
-![](images/campaigns-45.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440105/helpcenter/campaigns-45.png)
 
 **Important:** Once you withdraw an invitation, LinkedIn prevents you from sending a new connection request to that same person for **3 weeks**. LinkedIn does not notify the contact that you withdrew the invite.
 
@@ -799,7 +799,7 @@ Enginy automatically paces your campaign and enforces the configured sending lim
 
 Enginy allows you to adjust daily and hourly send caps under your email identity settings. You might lower the volume temporarily if you notice deliverability issues, or raise it slightly after a successful warm-up period.
 
-![](images/campaigns-46.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440105/helpcenter/campaigns-46.png)
 
 **Warning:** Stick to the recommended values unless you have a specific reason to change them. Only experienced senders with properly warmed domains should consider higher limits, and even then with caution.
 
@@ -852,9 +852,9 @@ You can configure Enginy to rotate between connected email accounts when sending
 6.  Edit the **Label** text and confirm **Add file**. Enginy will upload the file and insert a shareable link into your email body.
     
 
-![](images/campaigns-47.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440105/helpcenter/campaigns-47.png)
 
-![](images/campaigns-48.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440105/helpcenter/campaigns-48.png)
 
 **Important:** By keeping your emails lightweight, personalized, and link-based instead of attachment-heavy, you protect your domain reputation and dramatically increase your chances of landing in the inbox.
 
@@ -909,7 +909,7 @@ Working hours settings define the time window during which your campaign can sen
 2.  Specify the days of the week and the time range considered as working hours for each identity.
     
 
-![](images/campaigns-49.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440106/helpcenter/campaigns-49.png)
 
 **Key points:**
 
