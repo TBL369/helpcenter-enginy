@@ -25,7 +25,7 @@ export class MarkdownExporter {
   constructor(config: MarkdownExporterConfig) {
     this.repoPath = config.repoPath;
     this.articlesDir = path.join(this.repoPath, 'articles');
-    this.imagesDir = path.join(this.articlesDir, 'images');
+    this.imagesDir = path.join(this.repoPath, 'images');
     this.turndown = this.createTurndownService();
   }
 

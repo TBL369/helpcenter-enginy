@@ -278,13 +278,11 @@ function parseArticleInputs(input: string): string[] {
 /**
  * Busca archivos .md recursivamente dentro de un directorio, excluyendo carpetas como images/
  */
-function findMdFiles(dir: string, baseDir: string, excludeDirs: string[] = ['images']): string[] {
+function findMdFiles(dir: string, baseDir: string): string[] {
   const results: string[] = [];
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
     if (entry.isDirectory()) {
-      if (!excludeDirs.includes(entry.name)) {
-        results.push(...findMdFiles(path.join(dir, entry.name), baseDir, excludeDirs));
-      }
+      results.push(...findMdFiles(path.join(dir, entry.name), baseDir));
     } else if (entry.name.endsWith('.md')) {
       results.push(path.relative(baseDir, path.join(dir, entry.name)));
     }
@@ -292,13 +290,9 @@ function findMdFiles(dir: string, baseDir: string, excludeDirs: string[] = ['ima
   return results;
 }
 
-interface FileGroup {
-  dir: string;
-  files: string[];
-}
-
 /**
  * Agrupa archivos por directorio padre y muestra un listado visual tipo árbol con numeración global.
+ * Todos los subdirectorios se muestran expandidos.
  */
 function displayFileTree(files: string[]): void {
   const byDir = new Map<string, string[]>();
@@ -310,55 +304,33 @@ function displayFileTree(files: string[]): void {
     byDir.get(key)!.push(path.basename(f));
   }
 
-  // Directorios con un solo archivo homónimo se tratan como archivos sueltos
-  const flatFiles: Array<{ relPath: string; display: string }> = [];
-  const multiGroups: Array<{ dir: string; files: string[] }> = [];
-
   const sortedKeys = [...byDir.keys()].sort((a, b) => {
     if (a === '') return -1;
     if (b === '') return 1;
     return a.localeCompare(b);
   });
 
-  for (const key of sortedKeys) {
-    const dirFiles = byDir.get(key)!.sort();
-    const isSingleHomonym = key !== '' && dirFiles.length === 1
-      && path.basename(dirFiles[0], '.md') === path.basename(key);
-
-    if (key === '' || isSingleHomonym) {
-      for (const f of dirFiles) {
-        flatFiles.push({ relPath: key ? `${key}/${f}` : f, display: f });
-      }
-    } else {
-      multiGroups.push({ dir: key, files: dirFiles });
-    }
-  }
-
+  const groups = sortedKeys.map(key => ({ dir: key, files: byDir.get(key)!.sort() }));
   const totalFiles = files.length;
   const pad = String(totalFiles).length;
   let globalIndex = 1;
-  const hasMulti = multiGroups.length > 0;
 
-  for (const entry of flatFiles) {
-    const isLast = globalIndex === flatFiles.length && !hasMulti;
-    const connector = isLast ? '└' : '├';
-    const num = String(globalIndex).padStart(pad);
-    console.log(`   ${connector}── ${num}. ${entry.display}`);
-    globalIndex++;
-  }
+  for (let g = 0; g < groups.length; g++) {
+    const group = groups[g];
+    const isLastGroup = g === groups.length - 1;
 
-  for (let g = 0; g < multiGroups.length; g++) {
-    const group = multiGroups[g];
-    const isLastGroup = g === multiGroups.length - 1;
+    if (group.dir) {
+      console.log(`   │`);
+      console.log(`   ${isLastGroup ? '└' : '├'}── ${group.dir}/`);
+    }
 
-    console.log(`   │`);
-    console.log(`   ${isLastGroup ? '└' : '├'}── ${group.dir}/`);
-
-    const prefix = isLastGroup ? '    ' : '│   ';
+    const prefix = group.dir ? (isLastGroup ? '    ' : '│   ') : '';
 
     for (let i = 0; i < group.files.length; i++) {
       const isLast = i === group.files.length - 1;
-      const connector = isLast && isLastGroup ? '└' : '├';
+      const connector = group.dir
+        ? (isLast && isLastGroup ? '└' : '├')
+        : (isLast && isLastGroup ? '└' : '├');
       const num = String(globalIndex).padStart(pad);
       console.log(`   ${prefix}${connector}── ${num}. ${group.files[i]}`);
       globalIndex++;

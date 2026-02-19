@@ -6,7 +6,7 @@ import { v2 as cloudinary } from 'cloudinary';
 dotenv.config();
 
 const ARTICLES_DIR = path.resolve(__dirname, '../../articles');
-const IMAGES_DIR = path.join(ARTICLES_DIR, 'images');
+const IMAGES_DIR = path.resolve(__dirname, '../../images');
 const CONCURRENCY = 5;
 
 interface UploadResult {
@@ -115,7 +115,7 @@ async function main(): Promise<void> {
     /\.(png|jpe?g|gif|webp|svg)$/i.test(f)
   );
 
-  console.log(`   📂 ${imageFiles.length} imágenes encontradas en articles/images/\n`);
+  console.log(`   📂 ${imageFiles.length} imágenes encontradas en images/\n`);
   console.log('   Subiendo a Cloudinary (concurrencia: ' + CONCURRENCY + ')...\n');
 
   const results = await uploadBatch(imageFiles);
