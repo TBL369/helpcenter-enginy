@@ -75,6 +75,7 @@ Campaigns in Enginy let you build automated, multichannel outreach sequences tar
   - [How to Activate Email Warm-up in Enginy](#how-to-activate-email-warm-up-in-enginy)
   - [What Happens if You Skip Warm-up](#what-happens-if-you-skip-warm-up)
 - [Working Hours Configuration](#working-hours-configuration)
+
 ---
 
 # Before You Start
@@ -90,7 +91,6 @@ Before creating a campaign, make sure the following are in place:
     
 -   **Email warm-up completed** (for new email addresses or domains). See Email Warm-up.
     
-
 ---
 
 # What Is a Campaign
@@ -110,12 +110,10 @@ The Campaigns Dashboard is the main hub where you can view, filter, and manage a
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440097/helpcenter/campaigns-1.png)
 
 ## Campaign Status
-
 Campaigns are grouped into status tabs:
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="no-margin">Tab</p></td><td style="background-color: #d7efdc80;"><p class="no-margin">Description</p></td></tr><tr><td><p class="no-margin"><b>Active</b></p></td><td><p class="no-margin">Campaign is enabled and can execute actions when its conditions/rules allow it.</p></td></tr><tr><td><p class="no-margin"><b>Draft</b></p></td><td><p class="no-margin">Campaign is not launched yet. It’s saved as a draft and won’t run until you launch it.</p></td></tr><tr><td><p class="no-margin"><b>Running</b></p></td><td><p class="no-margin">Campaign is currently executing actions (e.g., sending messages) and progressing through its steps.</p></td></tr><tr><td><p class="no-margin"><b>Paused</b></p></td><td><p class="no-margin">Campaign is temporarily stopped. No new actions will be executed until it’s resumed.</p></td></tr><tr><td><p class="no-margin"><b>Scheduled</b></p></td><td><p class="no-margin">Campaign is set to start at a specific date/time and will remain idle until then.</p></td></tr><tr><td><p class="no-margin"><b>Archived</b></p></td><td><p class="no-margin">Campaign is inactive and stored for reference. It won’t run anymore and cannot be reactivated.</p></td></tr></tbody></table>
 
 ## Filtering and Searching Campaigns
-
 You can filter campaigns using the following filters:
 
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440099/helpcenter/campaigns-2.png)
@@ -126,7 +124,6 @@ You can filter campaigns using the following filters:
 By default, only the search bar and the **Identity**, **Sort by launch date**, and **Folders** filters are visible. You can add more filters using the **Filters** button. Once applied, you can save them by clicking **\+ Save current filters** at the bottom of the **Filters** dropdown menu.
 
 ## Campaign Card Details
-
 Each campaign appears as a summary card displaying:
 
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440104/helpcenter/campaigns-4.png)
@@ -148,7 +145,6 @@ If you select any campaign (by checking its row) in this table, you’ll see qui
     
 -   **View in List**
     
-
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440106/helpcenter/campaigns-7.png)
 
 ---
@@ -157,6 +153,7 @@ If you select any campaign (by checking its row) in this table, you’ll see qui
 To create a new campaign:
 1.  Navigate to the **Campaigns** section from the left side menu.
 2.  Click **\+ Create Campaign** at the top right.
+
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440106/helpcenter/campaigns-8.png)
 
 A modal opens where you can choose how to start your campaign: **Create from scratch** or **Create from template**. Templates are pre-built workflows you can fully customize — edit the messages, add or remove steps, and adjust the sequence to match your strategy. They’re the fastest way to get started because they provide a proven structure tailored to common outreach use cases.
@@ -166,7 +163,6 @@ A modal opens where you can choose how to start your campaign: **Create from scr
 The campaign creation wizard has four steps.
 
 ## Step 1 — Sequence
-
 Define the basic configuration for your campaign:
 
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440097/helpcenter/campaigns-10.png)
@@ -177,7 +173,6 @@ After defining the basics you can proceed with the design of the logic of action
 Click **+** to add an **action** or a **condition** at any point in the sequence. The sequence moves forward step by step as long as the lead hasn’t replied and the wait time for the next step has been reached. If the lead replies to any message, the sequence stops for that lead (they won’t receive further automated steps).
 
 ### Available Actions
-
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440097/helpcenter/campaigns-11.png)
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="no-margin">Action</p></td><td style="background-color: #d7efdc80;"><p class="no-margin">Description</p></td></tr><tr><td><p class="no-margin"><b>Visit Profile</b></p></td><td><p class="no-margin">Visits the lead's LinkedIn profile.</p></td></tr><tr><td><p class="no-margin"><b>React to Last Post</b></p></td><td><p class="no-margin">React to the lead’s most recent LinkedIn post using one of the available reactions: <b>Like, Celebrate, Support, Love, Insightful,</b> or <b>Funny</b>. You can also select <b>Most Reacted</b> to automatically use the reaction type the post has received the most.</p></td></tr><tr><td><p class="no-margin"><b>Send LinkedIn Connection</b></p></td><td><p class="no-margin">Sends a connection request on LinkedIn.</p></td></tr><tr><td><p class="no-margin"><b>LinkedIn Message</b></p></td><td><p class="no-margin">Sends a direct message to a 1st-degree connection.</p></td></tr><tr><td><p class="no-margin"><b>LinkedIn InMail</b></p></td><td><p class="no-margin">Sends an InMail message (requires InMail credits).</p></td></tr><tr><td><p class="no-margin"><b>LinkedIn Attachment</b></p></td><td><p class="no-margin">Sends a LinkedIn message with an attachment.</p></td></tr><tr><td><p class="no-margin"><b>LinkedIn Voice Message</b></p></td><td><p class="no-margin">Sends a voice message on LinkedIn (record or upload).</p></td></tr><tr><td><p class="no-margin"><b>Email</b></p></td><td><p class="no-margin">Sends an email from the connected email account.</p></td></tr><tr><td><p class="no-margin"><b>Task</b></p></td><td><p class="no-margin">Creates a manual task (for example, a reminder to call the lead).</p></td></tr><tr><td><p class="no-margin"><b>Add to another campaign</b></p></td><td><p class="no-margin">Moves the lead into a different campaign.</p></td></tr></tbody></table>
 
@@ -187,7 +182,6 @@ For the actions that include a message body (LinkedIn Message, LinkedIn InMail, 
     
 -   **Manual** — Write the message yourself, optionally using personalization variables (e.g., first name, company name) or even AI variables within a message template.
     
-
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440098/helpcenter/campaigns-12.png)
 
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440098/helpcenter/campaigns-13.png)
@@ -197,27 +191,23 @@ For the actions that include a message body (LinkedIn Message, LinkedIn InMail, 
 **Important:** AI-generated messages are available at no additional credit cost. It will just consume the credits for the AI variable to be generated, but no extra cost.
 
 ### Available Conditions
-
 Conditions branch the sequence into two paths (**Yes** or **No**) depending on whether the condition is met:
 
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440098/helpcenter/campaigns-14.png)
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="no-margin">Condition</p></td><td style="background-color: #d7efdc80;"><p class="no-margin">What it checks</p></td></tr><tr><td><p class="no-margin"><b>Accepted LinkedIn connection</b></p></td><td><p class="no-margin">Has the lead accepted the connection request within X days?</p></td></tr><tr><td><p class="no-margin"><b>Is already a connection</b></p></td><td><p class="no-margin">Is the lead already a 1st-degree LinkedIn connection?</p></td></tr><tr><td><p class="no-margin"><b>Has been contacted</b></p></td><td><p class="no-margin">Has the lead been contacted by some identity, within a determined time and channel?</p></td></tr><tr><td><p class="no-margin"><b>Has LinkedIn Profile</b></p></td><td><p class="no-margin">Does the lead have a LinkedIn profile? It actually checks if it has filled the field LinkedIn Profile ID, not LinkedIn Profile URL.</p></td></tr><tr><td><p class="no-margin"><b>Has Professional Email</b></p></td><td><p class="no-margin">Does the lead have an email address? It checks Professional email field.</p></td></tr><tr><td><p class="no-margin"><b>Has Mobile Phone</b></p></td><td><p class="no-margin">Does the lead have a phone number? It checks Mobile Phone field.</p></td></tr><tr><td><p class="no-margin"><b>Custom condition</b></p></td><td><p class="no-margin">Build a condition based on any variable of your choice.</p></td></tr></tbody></table>
 
 ### Timing Between Actions
-
 By default each action executes immediately **as soon as possible** after the previous one. To add a delay, click the **As soon as possible** label at the top of the action box and configure the wait time in days.
 
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440098/helpcenter/campaigns-15.png)
 
 ## Step 2 — Audience
-
 To add an audience there are two options:
 
 -   **Contacts from list** — Select an existing contact list to add all its contacts to the campaign at once.
     
 -   **Contacts individually** — Browse and filter the full contacts view to add specific leads one by one.
     
-
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440098/helpcenter/campaigns-16.png)
 
 If you choose Contacts from list, you can use some filters to find the list in an easier way:
@@ -232,19 +222,16 @@ If you select contacts individually, a modal opens with the **All Contacts** lis
 **Note:** You can also add contacts to a campaign later directly from the **Contacts** list.
 
 ## Step 3 — AI Agent
-
 In this step, you configure how the AI Agent will support (or fully handle) conversations **after a lead replies**.
 
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440099/helpcenter/campaigns-19.png)
 
 ### Preview
-
 The left panel shows a **conversation preview** for a sample lead from your audience so you can validate tone, AI variables or manual messages, and formatting. You can also **simulate replies as the lead** to see how the AI would respond under your current prompt and settings.
 
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440099/helpcenter/campaigns-20.png)
 
 ### AI Conversation Continuation
-
 If a lead replies to a message in the sequence, the automated sequence stops for that lead. You can then handle the follow-up conversation in three ways:
 1.  **Manual handling** — You or your team respond manually.
 2.  **Copilot mode (AI Suggestions)** — Select an AI Campaign prompt by clicking the **Edit Prompt** button. The AI will suggest a reply for you to review, edit, and send. You can modify the prompt in the editor and save the changes.
@@ -252,11 +239,9 @@ If a lead replies to a message in the sequence, the automated sequence stops for
 **Important:** In all three modes the automated campaign sequence for that contact is halted once they reply. Only the conversation follow-up continues (manual or AI).
 
 ### Conditional Campaigns
-
 Conditional Campaigns let you create flexible, rules-based sequences that adapt to each contact's unique data and behavior. Instead of building separate flows for different scenarios (email only, LinkedIn only, task only), you can create one campaign that adjusts itself based on what each contact has available and how they interact with your outreach.
 
 #### Building Dynamic Sequences
-
 Here is an example of a conditional campaign sequence:
 1.  Check: Has LinkedIn Profile URL?
     -   **Yes:** Visit Profile
@@ -276,7 +261,6 @@ Here is an example of a conditional campaign sequence:
 This logic can be built entirely in the visual sequence editor with conditions and branching paths.
 
 ## Step 4 — Settings
-
 In this final step, you define the **operational settings** of the campaign: how it’s organized, prioritized, and whether it should sync data back to your CRM before you launch it.
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="no-margin">Setting</p></td><td style="background-color: #d7efdc80;"><p class="no-margin">Description</p></td></tr><tr><td><p class="no-margin"><b>Tags (optional)</b></p></td><td><p class="no-margin">Add tags to classify the campaign (for reporting, filtering, and organization). You can select existing tags or create new ones by typing.</p></td></tr><tr><td><p class="no-margin"><b>Folder (optional)</b></p></td><td><p class="no-margin">Choose the folder where the campaign will be stored, so it stays organized in the Campaigns dashboard.</p></td></tr><tr><td><p class="no-margin"><b>Prioritization</b></p></td><td><p class="no-margin">Sets the campaign priority (Low/Medium/High) to control which runs first within LinkedIn an email rate limits. Useful when multiple campaigns compete for limited daily sending capacity.</p></td></tr><tr><td><p class="no-margin"><b>Contacts CRM Sync</b></p></td><td><p class="no-margin">If enabled, syncs <b>contact-level data</b> and updates to your CRM. You can choose: No / Yes / Only when a contact replies.</p></td></tr><tr><td><p class="no-margin"><b>Conversations CRM Sync</b></p></td><td><p class="no-margin">If enabled, syncs <b>conversation activity</b> (messages/replies) and related engagement data) to your CRM Activity. You can choose: No / Yes / Only when a contact replies.</p></td></tr><tr><td><p class="no-margin"><b>Skip contacts with prior conversations</b></p></td><td><p class="no-margin">When enabled, the platform checks your LinkedIn inbox before sending. If a conversation already exists with a contact, the campaign <b>won’t message them</b>. Helps avoid duplicate outreach.</p></td></tr></tbody></table>
 
@@ -313,7 +297,6 @@ Enginy provides pre-built campaign templates organized by complexity. Choose the
 When you click any campaign card, you open the campaign and land on the **Campaign View**. From here you can monitor performance, manage the setup, and run quick actions like **Launch**, **Edit campaign**, **View in Inbox**, **View in Table**, **Duplicate campaign**, **Save as a template**, or **Delete campaign**.
 
 ## General Information
-
 At the top of the Campaign View you will find the main campaign metadata:
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80; width: 320px;"><p class="no-margin">Field</p></td><td style="background-color: #d7efdc80;"><p class="no-margin">Description</p></td></tr><tr><td style="width: 320px;"><p class="no-margin"><b>Identity</b></p></td><td><p class="no-margin">The identity used to run the campaign (the sender profile/account tied to outreach actions).</p></td></tr><tr><td style="width: 320px;"><p class="no-margin"><b>Campaign Status</b></p></td><td><p class="no-margin">Current campaign state (e.g., Draft, Active/Running, Paused, Scheduled, Archived). Determines whether actions can execute.</p></td></tr><tr><td style="width: 320px;"><p class="no-margin"><b>Priority</b></p></td><td><p class="no-margin">High, Medium, or Low. Controls execution order when there are daily limits or multiple campaigns competing for capacity.</p></td></tr><tr><td style="width: 320px;"><p class="no-margin"><b>CRM Sync</b></p></td><td><p class="no-margin">Whether campaign data is synced to your CRM (e.g., contacts and/or conversations depending on configuration).</p></td></tr><tr><td style="width: 320px;"><p class="no-margin"><b>Replies</b></p></td><td><p class="no-margin">Shows how replies are handled: manual follow-up, AI suggestions (copilot), or AI auto-replies (if enabled).</p></td></tr><tr><td style="width: 320px;"><p class="no-margin"><b>Launch Date</b></p></td><td><p class="no-margin">A timestamp of when the campaign was launched (useful to track when results started and compare performance over time).</p></td></tr></tbody></table>
 
@@ -326,18 +309,15 @@ The campaign view is organized in three tabs:
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc;"><p class="no-margin">Tab</p></td><td style="background-color: #d7efdc;"><p class="no-margin">Description</p></td></tr><tr><td><p class="no-margin"><b>Overview</b></p></td><td><p class="no-margin">Snapshot of campaign performance and progress across key steps (e.g., invited, contacted, replied), plus high-level engagement breakdowns.</p></td></tr><tr><td><p class="no-margin"><b>Audience</b></p></td><td><p class="no-margin">View and manage the contacts included in the campaign (who’s in, their status, and any audience-level actions).</p></td></tr><tr><td><p class="no-margin"><b>Activity</b></p></td><td><p class="no-margin">Full activity log for the campaign: what actions were executed, when, and for which contacts (useful for auditing and troubleshooting).</p></td></tr></tbody></table>
 
 ## Overview Tab
-
 The **Overview** tab is your campaign performance cockpit. It aggregates the key KPIs across channels (LinkedIn, Email, and Tasks) so you can understand how the campaign is progressing, where leads are getting stuck, and what’s driving replies and positives — without digging into individual conversations.
 
 ### Outbound performance snapshot
-
 At the top, you’ll see a high-level summary of outbound activity:
 
 -   **All channels** gives you the global totals for the campaign.
     
 -   You can switch to **LinkedIn**, **Email**, or **Tasks** to see channel-specific funnel metrics.
     
-
 This view is designed to answer quickly:
 
 -   *How many contacts are in the campaign?*
@@ -348,11 +328,8 @@ This view is designed to answer quickly:
     
 -   *How many replied — and how many replies are positive?*
     
-
 ### Channel breakdown
-
 #### **All Channels**
-
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440100/helpcenter/campaigns-25.png)
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="no-margin">Metric</p></td><td style="background-color: #d7efdc80;"><p class="no-margin">Description</p></td></tr><tr><td><p class="no-margin"><b>Total contacts</b></p></td><td><p class="no-margin">Total number of contacts included in the campaign.</p></td></tr><tr><td><p class="no-margin"><b>Started</b></p></td><td><p class="no-margin">Contacts who completed at least one campaign step (the campaign has started for them).</p></td></tr><tr><td><p class="no-margin"><b>Contacted</b></p></td><td><p class="no-margin">Contacts who received at least one outbound message (LinkedIn message and/or email).</p></td></tr><tr><td><p class="no-margin"><b>Replied</b></p></td><td><p class="no-margin">Contacts who replied through any channel.</p></td></tr><tr><td><p class="no-margin"><b>Positive</b></p></td><td><p class="no-margin">Contacts with replies tagged as positive (by AI or manually).</p></td></tr></tbody></table>
 
@@ -365,17 +342,14 @@ This view is designed to answer quickly:
 **Note:** If a connection request was previously withdrawn, LinkedIn blocks new invites to that contact for 3 weeks. Enginy will automatically resend the invitation once the cooldown period ends.
 
 #### **Email**
-
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440101/helpcenter/campaigns-27.png)
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="no-margin">Metric</p></td><td style="background-color: #d7efdc80;"><p class="no-margin">Description</p></td></tr><tr><td><p class="no-margin"><b>Sent</b></p></td><td><p class="no-margin">Emails successfully sent as part of the sequence.</p></td></tr><tr><td><p class="no-margin"><b>Clicked</b></p></td><td><p class="no-margin">Contacts who clicked at least one tracked link in an email.</p></td></tr><tr><td><p class="no-margin"><b>Replied</b></p></td><td><p class="no-margin">Contacts who replied via email.</p></td></tr><tr><td><p class="no-margin"><b>Positive</b></p></td><td><p class="no-margin">Contacts with email replies tagged as positive.</p></td></tr><tr><td><p class="no-margin"><b>Bounced</b></p></td><td><p class="no-margin">Emails that failed delivery (couldn’t be delivered).</p></td></tr></tbody></table>
 
 #### **Tasks**
-
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440101/helpcenter/campaigns-28.png)
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="no-margin">Metric</p></td><td style="background-color: #d7efdc80;"><p class="no-margin">Description</p></td></tr><tr><td><p class="no-margin">Pending</p></td><td><p class="no-margin">Tasks created by the campaign that are still open.</p></td></tr><tr><td><p class="no-margin">Completed</p></td><td><p class="no-margin">Tasks marked as done (in Enginy or in your CRM, if sync is enabled).</p></td></tr></tbody></table>
 
 ### Tagged Conversations
-
 The **Tagged Conversations** widget shows how replies and conversations are being categorized (e.g., *Interested*, *Not Interested*, *Bad Timing*, *Meeting Booked*, languages, countries, etc.).
 
 Use it to:
@@ -386,7 +360,6 @@ Use it to:
     
 -   Understand what’s driving “Positive” beyond raw reply rate.
     
-
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440101/helpcenter/campaigns-29.png)
 
 **Notes:**
@@ -395,9 +368,7 @@ Use it to:
     
 -   Only tags added to conversations within the selected period are shown.
     
-
 ### Progress by action
-
 Below the channel metrics, you’ll see a sequence flow preview showing the number of leads currently at each step (including waits, actions, and branches/conditions). This helps you quickly understand how leads are progressing through the campaign and where they might be getting stuck.
 
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440102/helpcenter/campaigns-30.png)
@@ -407,11 +378,9 @@ Below the channel metrics, you’ll see a sequence flow preview showing the numb
 **Tip:** Click **View activity** on any step to jump to the **Activity** tab already filtered to that step.
 
 ## Audience Tab
-
 The **Audience** tab is where you manage *who* is in the campaign and *what state* each lead is in right now. It’s the best place to monitor reach, spot blockers (errors/pauses), and take bulk actions.
 
 ### Status Summary
-
 Each status chip is clickable and filters the table to show only leads in that state.
 
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440102/helpcenter/campaigns-32.png)
@@ -428,12 +397,10 @@ Clicking a status filters the list to show only contacts in that state. Once you
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="no-margin">Engagement option</p></td><td style="background-color: #d7efdc80;"><p class="no-margin">What it means</p></td></tr><tr><td><p class="no-margin"><b>LinkedIn connection sent</b></p></td><td><p class="no-margin">A connection request was sent to the lead.</p></td></tr><tr><td><p class="no-margin"><b>LinkedIn connection accepted</b></p></td><td><p class="no-margin">The lead accepted the connection request.</p></td></tr><tr><td><p class="no-margin"><b>LinkedIn connection sent but not by platform</b></p></td><td><p class="no-margin">The lead is marked as “connection sent” but it wasn’t executed by Enginy/LinkedIn automation (imported/external state).</p></td></tr><tr><td><p class="no-margin"><b>Sent at least one message</b></p></td><td><p class="no-margin">At least one LinkedIn message or email was sent.</p></td></tr><tr><td><p class="no-margin"><b>Bounced message</b></p></td><td><p class="no-margin">An email bounced (delivery failed).</p></td></tr><tr><td><p class="no-margin"><b>Seen message </b>(optional)</p></td><td><p class="no-margin">The message was seen/opened. Requires <b>Track email opens</b> enabled.</p></td></tr><tr><td><p class="no-margin"><b>Clicked link </b>(optional)</p></td><td><p class="no-margin">The lead clicked/opened content (e.g., email opens). Requires <b>Track link clicks </b>enabled.</p></td></tr></tbody></table>
 
 ### Table columns
-
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440102/helpcenter/campaigns-34.png)
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="no-margin">Column</p></td><td style="background-color: #d7efdc80;"><p class="no-margin">Description</p></td></tr><tr><td><p class="no-margin"><b>Contact</b></p></td><td><p class="no-margin">Lead identity details (name, company, job title).</p></td></tr><tr><td><p class="no-margin"><b>Status</b></p></td><td><p class="no-margin">Current campaign status <b>plus a specific reason</b> when relevant (hover for the detailed tooltip).</p></td></tr><tr><td><p class="no-margin"><b>Activity</b></p></td><td><p class="no-margin">Icons showing the latest actions executed (excluding conditions). Hover to see the action details.</p></td></tr><tr><td><p class="no-margin"><b>Tags</b></p></td><td><p class="no-margin">Tags applied to the lead's conversation (manual or AI).</p></td></tr></tbody></table>
 
 ### Contact Side Panel
-
 Clicking any row opens a side panel on the right showing deeper context:
 
 -   **Lead profile summary** plus shortcuts to view in **LinkedIn, Inbox, CRM**, **List** table, **Add to** **Blocklist** (add lead to blocklist or add company to blocklist), **Add to another campaign**, and **Create a Task**).
@@ -444,13 +411,11 @@ Clicking any row opens a side panel on the right showing deeper context:
     
 -   **View Sequence Detail** to jump into the sequence view for that lead’s path.
     
-
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440103/helpcenter/campaigns-35.png)
 
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440103/helpcenter/campaigns-36.png)
 
 ### **Bulk Actions**
-
 Select one or more leads using the checkboxes on the left to reveal a popup with these actions:
 
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440103/helpcenter/campaigns-37.png)
@@ -459,7 +424,6 @@ Select one or more leads using the checkboxes on the left to reveal a popup with
 **Warning:** If you remove a lead from a campaign, you **can’t add that lead back to the same campaign later**. Double-check before removing to avoid losing them from that campaign permanently.
 
 ## Activity Tab
-
 The Activity tab lists all actions performed in the campaign (excluding conditions).
 
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440103/helpcenter/campaigns-38.png)
@@ -484,38 +448,38 @@ The Audience tab uses statuses and substatuses to explain precisely why a contac
 
 # Managing Campaigns
 ## Editing an Active Campaign
-
 You can modify the parameters of an active campaign such as time delay between actions, AI variables from each messaging step, and audience. However, changes will only apply to **future interactions** and will not affect actions already performed.
 1.  Go to **Campaigns > Active**.
 2.  Click the three-dot menu next to the campaign or enter in the campaign view.
 3.  Select **Edit** or **Edit campaign**.
+
     ![](https://res.cloudinary.com/enginy/image/upload/v1771440103/helpcenter/campaigns-39.png)
+
     ![](https://res.cloudinary.com/enginy/image/upload/v1771440104/helpcenter/campaigns-40.png)
+
 **Warning:** Once a campaign is launched (no longer in Draft), its sequence is locked — you can’t add new steps or remove existing ones. If you need a different flow, pause or archive the campaign and create a new one (or duplicate the campaign and edit the copy before launching).
 
 ## Pausing a Campaign
-
 You can pause a campaign at any time. This is useful when you need to make adjustments or temporarily stop interactions.
 1.  Go to **Campaigns > Active**.
 2.  Click the three-dot menu next to the campaign or enter in the campaign view.
 3.  Select **Pause**.
+
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440104/helpcenter/campaigns-41.png)
 
 ## Duplicating a Campaign
-
 You can duplicate any campaign (active, paused, or draft) from the three-dot menu. This creates a copy in Draft status that you can modify before launching.
 
 ## Archiving and Deleting
-
 -   **Mark as archived** *—* Deactivates the campaign. It remains visible under the Archived filter.
     1.  Enter in the campaign view.
     2.  Click the three-dot menu
     3.  Select Status > Archived
+
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440104/helpcenter/campaigns-42.png)
 
 -   **Delete** *—* Permanently removes the campaign.
     
-
 Both options are available from the three-dot menu on the campaign card.
 
 ---
@@ -524,36 +488,29 @@ Both options are available from the three-dot menu on the campaign card.
 Enginy runs campaign steps through **two execution queues**. This is what drives “Pending” items, pacing, and why some campaigns take longer to progress than others.
 
 ## Queue overview (Email vs LinkedIn)
-
 -   **Email queue**: only includes **Send email** actions.
     
 -   **LinkedIn queue**: includes actions that hit LinkedIn and can be **rate-limited**, which may create status **Pending** actions and slow down execution across campaigns using the same identity.
     
-
 ## LinkedIn actions that can be rate-limited
-
 These actions can enter the LinkedIn queue and wait their turn:
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="no-margin">LinkedIn action</p></td><td style="background-color: #d7efdc80;"><p class="no-margin">Rate limit</p></td><td style="background-color: #d7efdc80;"><p class="no-margin">Daily cap</p></td><td style="background-color: #d7efdc80;"><p class="no-margin">Notes</p></td></tr><tr><td><p class="no-margin">Visit profile</p></td><td><p class="no-margin">1 visit every 4 min</p></td><td><p class="no-margin">50/day (150/day with Premium)</p></td><td><p class="no-margin">Can generate Pending if the queue is busy.</p></td></tr><tr><td><p class="no-margin">Like last post</p></td><td><p class="no-margin">1 like every 5 min</p></td><td><p class="no-margin">No daily max</p></td><td><p class="no-margin">Still rate-limited by time.</p></td></tr><tr><td><p class="no-margin">Send connection request</p></td><td><p class="no-margin">Configured by the user</p></td><td><p class="no-margin">Configured by the user</p></td><td><p class="no-margin">Controlled in Identity settings.</p></td></tr><tr><td><p class="no-margin">Evaluate connection request</p></td><td><p class="no-margin">5 evaluations every 30 min</p></td><td><p class="no-margin">No daily max</p></td><td><p class="no-margin">Throttled in batches.</p></td></tr><tr><td><p class="no-margin">Send message</p></td><td><p class="no-margin">Configured by the user</p></td><td><p class="no-margin">Configured by the user</p></td><td><p class="no-margin">Controlled in Identity settings.</p></td></tr></tbody></table>
 
 ## What runs instantly (non-LinkedIn nor email actions)
-
 Everything else is **near-instant** (or completes very quickly depending on server load). These are typically “Enginy-side” operations, like:
 
 -   Evaluating conditions (e.g., *has LinkedIn URL*, *is a connection*, etc.)
     
 -   Branching logic and internal checks
     
-
 These steps may technically pass through the same pipeline, but they **clear fast** and **priority barely impacts them**.
 
 ## How delays affect pacing
-
 Campaign steps are also governed by **time delays** between actions.
 
 Important nuance: when a queued LinkedIn action finally executes, Enginy **doesn’t automatically run the next step immediately** unless the **delay before that next step has already elapsed**. If the delay is still running, the lead waits until the delay finishes — then the next eligible action can be queued/executed.
 
 ## How Enginy prioritizes queued LinkedIn actions
-
 When multiple LinkedIn actions are waiting in the queue, Enginy prioritizes them using this order:
 1.  **Lead message depth first**  
     If two queued items are both Send LinkedIn message, Enginy sends first to the lead who has already received more LinkedIn messages earlier in the sequence.
@@ -567,7 +524,6 @@ This model keeps long-running conversations moving forward while still letting y
 
 # LinkedIn Campaign Best Practices
 ## Connection Request Limits
-
 LinkedIn imposes limits on daily connection requests to protect against spam. Enginy adheres to these limits to keep your account safe.
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80; width: 213px;"><p class="no-margin">Account Type</p></td><td style="background-color: #d7efdc80;"><p class="no-margin">Recommended Daily Limit</p></td><td style="background-color: #d7efdc80;"><p class="no-margin">Notes</p></td></tr><tr><td style="width: 213px;"><p class="no-margin"><b>Standard LinkedIn</b></p></td><td><p class="no-margin">~20 invitations/day</p></td><td><p class="no-margin">LinkedIn often has a weekly cap around 100 invites. Exceeding ~20/day on a free account risks triggering defenses.</p></td></tr><tr><td style="width: 213px;"><p class="no-margin"><b>Premium / Sales Navigator</b></p></td><td><p class="no-margin">20<i>-</i>30 invitations/day</p></td><td><p class="no-margin">Higher volumes are technically possible (50--100), but consistently high sends with low acceptance rates risk restrictions.</p></td></tr><tr><td style="width: 213px;"><p class="no-margin"><b>New LinkedIn profiles</b></p></td><td><p class="no-margin">5-10 invitations/day</p></td><td><p class="no-margin">New accounts have less trust built up. Increase gradually once invitations are being accepted.</p></td></tr></tbody></table>
 
@@ -576,7 +532,6 @@ Enginy sets a default cap of **20 connection requests per day** per LinkedIn ide
 **Tip:** Focus on quality over quantity. Sending fewer, more personalized invites will yield better results and keep your account in good standing.
 
 ## Optimal Sequence Length
-
 A highly effective LinkedIn sequence typically includes **2***\-***3 touches**:
 1.  **Connection request** *—* Optionally include a custom note to introduce yourself.
 2.  **First message (after acceptance)** *—* Thank the contact for connecting and add value (e.g., a relevant resource or question).
@@ -585,7 +540,6 @@ A highly effective LinkedIn sequence typically includes **2***\-***3 touches**:
 Keep messages polite, concise, and spaced out over several days.
 
 ## Message Chunking Technique
-
 When reaching out on LinkedIn, consider breaking a single long message into smaller chunks sent over a short span of time. This mimics the natural pace of someone typing in real time.
 
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440104/helpcenter/campaigns-43.png)
@@ -602,7 +556,6 @@ When reaching out on LinkedIn, consider breaking a single long message into smal
 **Tip:** Message chunks can be created easily using AI variables. Reach out to the Enginy team if you need assistance setting this up.
 
 ## Setting Timeframes for LinkedIn Invitations
-
 When you add a LinkedIn connection request step to your sequence, you can set a **timeout** (e.g., 14 or 15 days). If the contact doesn’t accept within that period, Enginy marks the invitation as **Not accepted** and continues the sequence through the **“No”** branch of the condition.
 
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440105/helpcenter/campaigns-44.png)
@@ -613,11 +566,9 @@ When you add a LinkedIn connection request step to your sequence, you can set a 
     
 -   **Identifies interested contacts quickly.** Separates engaged prospects from unresponsive ones.
     
-
 **Note:** The contact can still accept the invitation after the timeout, but the automated sequence will continue through the "No" branch of the condition.
 
 ## Handling Unaccepted Invitations
-
 If a prospect has not accepted your connection request after the configured timeframe:
 
 -   **Wait and resend later** *—* Withdraw the old invite and attempt a new one after a few days or weeks. Do this sparingly *—* if they ignore a second invite, move on.
@@ -626,13 +577,12 @@ If a prospect has not accepted your connection request after the configured time
     
 -   **Do nothing** *—* Let it be and focus on other contacts. If Enginy's auto-withdrawal is enabled, the system will pull back the pending request automatically.
     
-
 ## Withdrawing Connection Requests
-
 You can withdraw pending connection requests in bulk from Enginy:
 1.  Navigate to **Identities > Configuration > LinkedIn > Withdrawals**.
 2.  **Automatic withdrawals** *—* Toggle "Automatically withdraw pending invitations" and set a number of days (e.g., 15 days). Unanswered invites will be withdrawn automatically.
 3.  **Manual withdrawals** *—* Select specific pending invitations from the list and confirm.
+
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440105/helpcenter/campaigns-45.png)
 
 **Important:** Once you withdraw an invitation, LinkedIn prevents you from sending a new connection request to that same person for **3 weeks**. LinkedIn does not notify the contact that you withdrew the invite.
@@ -640,7 +590,6 @@ You can withdraw pending connection requests in bulk from Enginy:
 **Note:** Regularly withdrawing stale invites is a good practice to stay within LinkedIn's invitation limits.
 
 ## Handling Not-Interested Contacts
-
 If a lead replies but indicates they are not interested:
 1.  **Thank them for their time** *—* A courteous response leaves a good impression and keeps the door open for the future.
 2.  **Stay positive and professional** *—* Never show frustration or push back. Wish them success.
@@ -662,16 +611,13 @@ Enginy automatically paces your campaign and enforces the configured sending lim
 **Tips:** To reach higher total volumes, connect multiple sender addresses or domains rather than increasing the send rate of a single inbox.
 
 ## Consequences of Exceeding Limits
-
 -   **Account suspension or rate limiting** *—* Your email provider may temporarily block outgoing messages.
     
 -   **Damage to domain reputation** *—* Unusual sending spikes get flagged by spam filters, causing more future emails to land in spam.
     
 -   **Increased spam reports and bounces** *—* High-volume sends to cold contacts yield more bounces and complaints, further hurting deliverability.
     
-
 ## Adjusting Sending Limits
-
 Enginy allows you to adjust daily and hourly send caps under your email identity settings. You might lower the volume temporarily if you notice deliverability issues, or raise it slightly after a successful warm-up period.
 
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440105/helpcenter/campaigns-46.png)
@@ -679,7 +625,6 @@ Enginy allows you to adjust daily and hourly send caps under your email identity
 **Warning:** Stick to the recommended values unless you have a specific reason to change them. Only experienced senders with properly warmed domains should consider higher limits, and even then with caution.
 
 ## Using Multiple Email Addresses
-
 Connecting multiple email addresses to Enginy is a best practice for scaling outreach safely:
 
 -   **Distributes the sending load** *—* Each inbox only sends a portion of the total emails, keeping every account within safe limits.
@@ -690,7 +635,6 @@ Connecting multiple email addresses to Enginy is a best practice for scaling out
     
 -   **Increases combined capacity** *—* For example, 3 inboxes at 30 emails/day each give you 90 emails/day total while each stays within the safe zone.
     
-
 You can configure Enginy to rotate between connected email accounts when sending campaign emails (Shuffle), or assign different campaigns to different addresses.
 
 ## Email Deliverability Best Practices
@@ -709,6 +653,7 @@ You can configure Enginy to rotate between connected email accounts when sending
 4.  (Optional) Keep **Open in new tab** enabled if you want recipients to open the file in a new tab.
 5.  Click **Add file**.
 6.  Edit the **Label** text and confirm **Add file**. Enginy will upload the file and insert a shareable link into your email body.
+
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440105/helpcenter/campaigns-47.png)
 
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440105/helpcenter/campaigns-48.png)
@@ -719,11 +664,9 @@ You can configure Enginy to rotate between connected email accounts when sending
 
 # Email Warm-up
 ## What Is Email Warm-up
-
 Email warm-up is the process of gradually building the sending reputation of a new email account or domain before sending large campaign volumes. Over a period of weeks, you send a small number of emails each day, then slowly increase. The emails go to real recipients (or warm-up networks) who open and reply, signaling positive engagement. This builds trust with email providers (Gmail, Outlook, etc.) so they treat your domain as a legitimate sender.
 
 ## How to Activate Email Warm-up in Enginy
-
 Email warm-up in Enginy has a fixed cost**/month (**ask either your account manager or the chat support) and must be activated by your assigned Account Manager. You can warm up one email address at a time by a single warm-up seat.
 1.  Go to the **Identities** section.
 2.  Select an identity, then navigate to **Configuration > Email > Manage** tab **> Start** button
@@ -732,21 +675,17 @@ Email warm-up in Enginy has a fixed cost**/month (**ask either your account mana
 
 -   Do **not** send email campaigns from the address while it is warming up.
     
-
 -   You will receive automated warming emails during this period. Do **not** mark them as spam *—* this would defeat the purpose. Simply open and archive them.
     
-
 **Important:** Even after the warm-up period, continue monitoring email performance. If you plan to further increase volume, do it in small steps. For scaling to very high volumes, add more domains or addresses and warm them up too, rather than pushing one domain to its limit.
 
 ## What Happens if You Skip Warm-up
-
 -   **Emails flagged as suspicious** *—* Email providers notice sudden high-volume sending from a new source. Emails are likely routed to spam.
     
 -   **Sending limits or blocks** *—* Providers may block or suspend your account for what looks like spam activity.
     
 -   **Poor deliverability** *—* Your first campaign will likely have a very low inbox placement rate, and recipients may mark unfamiliar emails as spam, further damaging your reputation.
     
-
 ---
 
 # Working Hours Configuration
@@ -755,6 +694,7 @@ Working hours settings define the time window during which your campaign can sen
 **Where to configure working hours:**
 1.  Navigate to **Identities > Configuration > Contact Details.**
 2.  Specify the days of the week and the time range considered as working hours for each identity.
+
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440106/helpcenter/campaigns-49.png)
 
 **Key points:**
@@ -765,28 +705,22 @@ Working hours settings define the time window during which your campaign can sen
     
 -   Working hours apply to **all** campaign action types *—* both LinkedIn actions and email sends.
     
-
 **Tip:** Adjust working hours to match your prospects' time zones to ensure messages arrive at optimal engagement times.
 
 ---
 
 # FAQs
 ## Q1: What happens if a contact responds to a message in my campaign?
-
 The automated sequence for that contact stops immediately. They will not receive any further scheduled steps. You can then handle the conversation manually, use AI Copilot mode (review and send AI-suggested replies), or use AI Automatic mode (AI replies without approval). In all cases, the campaign sequence halts and only the conversation follow-up continues.
 
 ## Q2: Does the Analytics section data include actions I perform directly on LinkedIn outside of Enginy?
-
 No. Campaign analytics only track actions performed through Enginy campaigns. Manual LinkedIn activity (connection requests, messages, post likes done outside the platform) is not reflected in reports. If you manage contacts manually outside Enginy, consider tagging or excluding them from campaigns to avoid overlap in reporting.
 
 ## Q3: Why do my reply rates appear lower than expected?
-
 Automated replies such as "Out of Office" are excluded from the reply rate calculation. This gives you a more accurate measure of meaningful responses. Conversations tagged as Out of Office are still visible in the tag breakdown but do not inflate your reply metrics.
 
 ## Q4: Can I add contacts to a campaign after it has been launched?
-
 Yes. You can add contacts at any time from the campaign's Target section or directly from the Contacts page. New contacts will start at the beginning of the sequence.
 
 ## Q5: How often is analytics data updated?
-
 Data is updated in near real-time. You may experience brief delays (a few seconds to minutes) depending on processing time and campaign activity volume.

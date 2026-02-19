@@ -19,6 +19,7 @@ The Tasks section in Enginy is your centralized action hub for every to-do gener
   - [Add a Note to a Task](#add-a-note-to-a-task)
 - [Complete a Task](#complete-a-task)
 - [Practical Use Cases](#practical-use-cases)
+
 ---
 
 # How Tasks Work
@@ -38,24 +39,20 @@ Each task also carries a type that indicates the kind of action required:
 To open the Tasks page, navigate to **Tasks** in Enginy. The page is organized into two tabs — **Pending** and **Completed** — with a toolbar for filtering and sorting above the task list.
 
 ## Pending Tab
-
 The **Pending** tab shows all tasks that still need to be done. Use this tab as your daily working queue to see what actions you need to take next.
 
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440153/helpcenter/tasks-1.png)
 
 ## Completed Tab
-
 The **Completed** tab shows all tasks that have been finished. It includes an additional **Completed** column (not present in the Pending tab) that shows when each task was marked as done. Use this tab to review your work history and confirm that tasks were handled.
 
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440153/helpcenter/tasks-2.png)
 
 ## Task List Columns Reference
-
 The task list displays the following columns. The **Completed** column only appears in the Completed tab.
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="no-margin"><b>Column</b></p></td><td style="background-color: #d7efdc80;"><p class="no-margin"><b>Description</b></p></td></tr><tr><td><p class="no-margin"><b>Task</b></p></td><td><p class="no-margin">The full task label, composed of a type prefix and a title (see Task Naming Convention below).</p></td></tr><tr><td><p class="no-margin"><b>Notes</b></p></td><td><p class="no-margin">A short note attached to the task. Displays <b>-</b> when no note has been added.</p></td></tr><tr><td><p class="no-margin"><b>Contact</b></p></td><td><p class="no-margin">The contact associated with the task, shown with a colored avatar and the contact's name.</p></td></tr><tr><td><p class="no-margin"><b>Source</b></p></td><td><p class="no-margin">The campaign that generated the task. Long names may appear truncated.</p></td></tr><tr><td><p class="no-margin"><b>Created</b></p></td><td><p class="no-margin">When the task was created, in relative time format (e.g., "4 hours ago", "3 weeks ago").</p></td></tr><tr><td><p class="no-margin"><b>Completed</b></p></td><td><p class="no-margin">When the task was completed, in relative time format. Only visible in the Completed tab.</p></td></tr><tr><td><p class="no-margin"><b>Status</b></p></td><td><p class="no-margin">The current status of the task: <b>Pending</b> (orange) or <b>Completed</b> (green).</p></td></tr></tbody></table>
 
 ## Task Naming Convention
-
 Each task label in the **Task** column follows a consistent format: **TYPE · Title**, where **TYPE** is the action prefix (TODO, CALL, or EMAIL) and **Title** is the descriptive name. For example: "CALL · Cold Call" or "TODO - Call Valentina (LinkedIn Not Accepted)".
 
 ---
@@ -75,7 +72,6 @@ The task list updates to show only tasks associated with the selected campaigns.
 The task list updates to show only tasks assigned to the selected owner.
 
 ## Sort Tasks
-
 Click the **Sort** button in the toolbar and select one of the available options:
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="no-margin"><b>Sort Option</b></p></td><td style="background-color: #d7efdc80;"><p class="no-margin"><b>Behavior</b></p></td></tr><tr><td><p class="no-margin"><b>Newest first</b></p></td><td><p class="no-margin">Displays the most recently created tasks at the top.</p></td></tr><tr><td><p class="no-margin"><b>Oldest first</b></p></td><td><p class="no-margin">Displays the earliest created tasks at the top.</p></td></tr><tr><td><p class="no-margin"><b>Recently completed</b></p></td><td><p class="no-margin">Displays the most recently completed tasks at the top. Most useful in the Completed tab.</p></td></tr><tr><td><p class="no-margin"><b>First completed</b></p></td><td><p class="no-margin">Displays the earliest completed tasks at the top. Most useful in the Completed tab.</p></td></tr></tbody></table>
 
@@ -126,25 +122,19 @@ Below are common ways teams use the Tasks section effectively.
 
 # FAQs
 ### Q1: How do I complete a task?
-
 Click the task row in the **Pending** tab to open the task details panel, then click the green **Complete** button at the bottom-right of the panel. The task moves to the **Completed** tab automatically.
 
 ### Q2: What happens when I click Complete and Pause?
-
 The task is marked as completed (it moves to the **Completed** tab) and the campaign sequence for that specific lead is paused. No further automated steps will be executed for that lead until the campaign is resumed.
 
 ### Q3: Can I filter tasks by campaign and owner at the same time?
-
 Yes. The **Campaign** and **Owner** filters in the toolbar can be combined. For example, you can select a specific campaign and then select a specific team member to see only tasks assigned to that person within that campaign.
 
 ### Q4: Where do tasks come from?
-
 Tasks are generated automatically by campaign sequences when a manual step is reached — such as a phone call, a manual email, or a general to-do. Each task is linked to the contact and campaign that triggered it.
 
 ### Q5: Can I reopen a completed task?
-
 No. Once a task is marked as completed, it moves permanently to the **Completed** tab. If you need to take further action on the same contact, you can do so directly from the Inbox or by creating a new campaign step.
 
 ### Q6: Do tasks also appear in the Inbox?
-
 Yes. Tasks are displayed in the Inbox conversations alongside your other interactions with each lead, giving you full context without switching between sections.

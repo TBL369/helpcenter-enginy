@@ -20,6 +20,7 @@ The Analytics page helps you understand your outreach performance across LinkedI
   - [LinkedIn Metrics](#linkedin-metrics)
   - [Email Metrics](#email-metrics)
 - [Export Analytics Data](#export-analytics-data)
+
 ---
 
 # Understand the Page Structure
@@ -29,7 +30,6 @@ The Analytics Dashboard is divided into two main views:
 ---
 
 ## Filter Your Analytics Data
-
 You can customize the Analytics data you view using the following filters, in both the Performance and Summary tabs:
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc;"><p class="no-margin">Filter</p></td><td style="background-color: #d7efdc;"><p class="no-margin">Description</p></td><td style="background-color: #d7efdc;"><p class="no-margin">Available Values</p></td></tr><tr><td><p class="no-margin"><b>Identities</b></p></td><td><p class="no-margin">Filter by sender identities.</p></td><td><p class="no-margin">Any identity connected to the platform.</p></td></tr><tr><td><p class="no-margin"><b>Created by</b></p></td><td><p class="no-margin">Filter by the user who created the campaign.</p></td><td><p class="no-margin">Any workspace user.</p></td></tr><tr><td><p class="no-margin"><b>Campaign tags</b></p></td><td><p class="no-margin">Filter by tags assigned to campaigns.</p></td><td><p class="no-margin">Any campaign tag available in the workspace.</p></td></tr><tr><td><p class="no-margin"><b>Country</b></p></td><td><p class="no-margin">Filter by the company's country field. Useful for comparing performance across regions with similar languages or market characteristics.</p></td><td><p class="no-margin">Any country.</p></td></tr><tr><td><p class="no-margin"><b>Campaigns</b></p></td><td><p class="no-margin">Filter by specific campaigns.</p></td><td><p class="no-margin">Any campaign in the workspace.</p></td></tr><tr><td><p class="no-margin"><b>Date Range</b></p></td><td><p class="no-margin">Filter results by the specific dates you want to analyze (e.g., Jan 16 - Feb 15).</p></td><td><p class="no-margin">Today, Yesterday, This week, Last week, This month, Last month, This year, or Custom.</p></td></tr></tbody></table>
 
@@ -41,7 +41,6 @@ The Performance Tab focuses on conversion rates, percentages, and comparative pe
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440086/helpcenter/analytics-1.png)
 
 ## The Outbound Funnel
-
 The main chart displays your outbound process as a funnel visualization. You can switch between three views using the channel selector:
 
 -   All channels
@@ -50,54 +49,45 @@ The main chart displays your outbound process as a funnel visualization. You can
     
 -   Email
     
-
 Each bar in the funnel represents a stage of your outbound process:
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="no-margin">Stage</p></td><td style="background-color: #d7efdc80;"><p class="no-margin">Description</p></td><td style="background-color: #d7efdc80;"><p class="no-margin">Calculation</p></td></tr><tr><td><p class="no-margin"><b>Total Audience</b></p></td><td><p class="no-margin">Total number of people added to a campaign during the selected period. This represents 100% of your pool.</p></td><td><p class="no-margin">Base metric (100%)</p></td></tr><tr><td><p class="no-margin"><b>Engaged</b></p></td><td><p class="no-margin">Contacts who took any action: LinkedIn profile visits, connection requests, messages, or were contacted via email.</p></td><td><p class="no-margin">(Engaged / Total Audience) x 100</p></td></tr><tr><td><p class="no-margin"><b>Contacted</b></p></td><td><p class="no-margin">Contacts who received at least one message (LinkedIn or Email).</p></td><td><p class="no-margin">(Contacted / Total Audience) x 100</p></td></tr><tr><td><p class="no-margin"><b>Replied</b></p></td><td><p class="no-margin">Contacts who responded to your outreach (LinkedIn or Email).</p></td><td><p class="no-margin">(Replied / Contacted) x 100</p></td></tr><tr><td><p class="no-margin"><b>Positive</b></p></td><td><p class="no-margin">Conversations tagged with positive category tags (e.g., "Interested", "Meeting booked").</p></td><td><p class="no-margin">(Positive / Contacted) x 100</p></td></tr></tbody></table>
 
 **Note:** Positive Replies include both AI-generated positive tags and manual tags you have created that reflect genuine interest or success (e.g., "Interested", "Meeting booked"). These help you quickly measure real buying intent and engagement quality.
 
 ## Tagged Conversations
-
 On the right side of the Performance Tab, you will see a list of tags with bars indicating the volume of conversations for each category.
 
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440086/helpcenter/analytics-2.png)
 
 ### Filtering options
-
 -   All Channels
     
 -   LinkedIn
     
 -   Email
     
-
 ### Key behaviors
-
 -   **Counting rule:** Only shows tags that were added during the selected time period.
     
 -   **Dynamic updates:** Switching channels updates the chart dynamically.
     
 -   **Interactive navigation:** Clicking on any tag opens the Inbox, automatically filtered to show conversations with that specific tag. This makes it easy to review, follow up, or analyze the specific replies behind each category.
     
-
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440086/helpcenter/analytics-3.png)
 
 ### Manage Tags in Analytics
-
 Understanding how tag removal affects your Analytics data is important for maintaining accurate metrics:
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="no-margin">Action</p></td><td style="background-color: #d7efdc80;"><p class="no-margin">Effect on Conversations</p></td><td style="background-color: #d7efdc80;"><p class="no-margin">Effect on Analytics</p></td></tr><tr><td><p class="no-margin"><b>Deleting a tag</b> (AI or manual)</p></td><td><p class="no-margin">All instances of that tag are removed from conversations.</p></td><td><p class="no-margin">The tag will no longer appear in Analytics.</p></td></tr><tr><td><p class="no-margin"><b>Deactivating an AI tag</b></p></td><td><p class="no-margin">Tags already assigned to existing conversations remain intact.</p></td><td><p class="no-margin">The metric for that tag will still appear in Analytics.</p></td></tr></tbody></table>
 
 **Important:** To remove a deactivated tag from Analytics, you must either manually remove the tags from the corresponding conversations or fully delete the tag from the AI Conversations Tags page.
 
 ## Performance Tables
-
 Below the funnel, you can toggle between two detailed performance tables to compare results: **Campaings** and **Identities**.
 
 -   Campaigns table shows how each campaign performs overall and by channel.
     
 -   Identities table analyzes the effectiveness of each sender or identity.
     
-
 Both tabs display the same columns:
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="no-margin">Category</p></td><td style="background-color: #d7efdc80;"><p class="no-margin">Columns</p></td></tr><tr><td><p class="no-margin"><b>General</b></p></td><td><p class="no-margin">Audience (only shown in Campaigns), Contacted, Replied, Positive</p></td></tr><tr><td><p class="no-margin"><b>LinkedIn</b></p></td><td><p class="no-margin">Engaged, Sent, Accepted, Contacted, Replied, Positive</p></td></tr><tr><td><p class="no-margin"><b>Email</b></p></td><td><p class="no-margin">Contacted, Opened, Clicked, Replied, Positive</p></td></tr></tbody></table>
 
@@ -107,7 +97,6 @@ Both tabs display the same columns:
     
 -   You can export any of the tables clicking the **Export** button at the right-top of the table
     
-
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440089/helpcenter/analytics-4.png)
 
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440089/helpcenter/analytics-5.png)
@@ -126,21 +115,17 @@ The Summary Tab is a time-based view that helps you understand how your activity
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440089/helpcenter/analytics-8.png)
 
 ## Replies Chart
-
 A line chart showing replies over time, with separate lines for each channel.
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="no-margin">Line</p></td><td style="background-color: #d7efdc80;"><p class="no-margin">Description</p></td></tr><tr><td><p class="no-margin"><b>Dark blue line</b></p></td><td><p class="no-margin">Replies received through LinkedIn</p></td></tr><tr><td><p class="no-margin"><b>Light turquoise line</b></p></td><td><p class="no-margin">Replies received via Email</p></td></tr></tbody></table>
 
 ### Counting rules
-
 -   Each person is counted once per day they reply.
     
 -   If someone replies on Monday and again on Wednesday, they are counted on both days.
     
 -   Bounced emails (delivery failures) are NOT counted as replies.
     
-
 ## Total Metrics
-
 Four charts represent the overall campaign funnel over time.
 
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440091/helpcenter/analytics-9.png)
@@ -151,7 +136,6 @@ Four charts represent the overall campaign funnel over time.
 **Note:** Companies Contacted is derived from the Total Contacted people metric, aggregated by company.
 
 ## LinkedIn Metrics
-
 Tracks all LinkedIn outreach activity performed through your Enginy campaigns:
 
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440087/helpcenter/analytics-10.png)
@@ -160,7 +144,6 @@ Tracks all LinkedIn outreach activity performed through your Enginy campaigns:
 **Note:** LinkedIn shows contacts when you view their profile, unless you are browsing in private mode. Profile visits and post likes are effective ways to warm up contacts before reaching out.
 
 ## Email Metrics
-
 Tracks your email outreach activity:
 
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440086/helpcenter/analytics-11.png)
@@ -178,24 +161,18 @@ All Analytics data can be exported using the **Export** button in both tabs. The
 
 # FAQs
 ### Q1: Why do I see different totals in some sections?
-
 Some metrics count **people** (e.g., "Contacted", "Replied") while others count **actions** (e.g., "Messages Sent", "Emails Sent"). Additionally, one conversation can have multiple tags (e.g., "Interested" + "Meeting Booked"), so tag totals may exceed total conversations.
 
 ### Q2: What is the difference between "Started" and "Contacted"?
-
 -   **Started:** The campaign performed any first action for that contact (such as visiting their profile). This may include contacts added in previous periods whose first action was triggered within the selected timeframe.
     
 -   **Contacted:** A message was actually sent to the person (LinkedIn or Email).
     
-
 ### Q3: What are Positive columns in Campaigns/Identities tables?
-
 These are columns counting conversations with tags that represent positive outcomes — either AI-detected or user-created — such as "Interested", "Meeting booked", or "Positive reply". These category help you measure genuine buying intent and successful engagement quality.
 
 ### Q4: How does the Company Country filter work?
-
 It uses the contact **Country** field from your company data. This allows you to segment and compare performance across regions with similar languages or market characteristics.
 
 ### Q5: Can I export my Analytics data?
-
 Yes. Use the **Export** button to select from multiple export formats, including metrics such as Daily Comprehensive, Replies Only, Tags Only, Metrics Only, Conversational level, Outbound funnel, Tagged Conversations and Campaign/Identity performance tables.

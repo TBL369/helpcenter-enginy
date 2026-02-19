@@ -66,6 +66,7 @@ The AI Playbook is the central brain of your Enginy account. It is where you con
   - [Prompt Examples: Weak vs. Improved](#prompt-examples-weak-vs-improved)
   - [Common Prompt Mistakes](#common-prompt-mistakes)
   - [Prompt Best Practices Checklist](#prompt-best-practices-checklist)
+
 ---
 
 # Overview
@@ -98,20 +99,17 @@ Once these two tabs are complete, you have taught the AI what you sell, who you 
 This tab provides the AI with all the relevant context about your company. It is used by both AI Variables and AI Campaigns to generate personalized, accurate output. It also sets default filters (saved profiles based on ICPs) for your searches.
 
 ## Company information
-
 Fill in the following core fields:
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="no-margin">Field</p></td><td style="background-color: #d7efdc80;"><p class="no-margin">Description</p></td></tr><tr><td><p class="no-margin"><b>Website</b></p></td><td><p class="no-margin">Your company website URL</p></td></tr><tr><td><p class="no-margin"><b>LinkedIn URL</b></p></td><td><p class="no-margin">Your company LinkedIn page URL</p></td></tr><tr><td><p class="no-margin"><b>Output Language</b></p></td><td><p class="no-margin">The language the AI should use for output</p></td></tr><tr><td><p class="no-margin"><b>Company Name</b></p></td><td><p class="no-margin">Your company name</p></td></tr><tr><td><p class="no-margin"><b>Industry</b></p></td><td><p class="no-margin">Your industry or sector</p></td></tr><tr><td><p class="no-margin"><b>Number of Employees</b></p></td><td><p class="no-margin">Company headcount</p></td></tr><tr><td><p class="no-margin"><b>Headquarters Location</b></p></td><td><p class="no-margin">City/country of your HQ</p></td></tr><tr><td><p class="no-margin"><b>Founding Year</b></p></td><td><p class="no-margin">Year the company was founded</p></td></tr><tr><td><p class="no-margin"><b>Company Overview</b></p></td><td><p class="no-margin">A brief overview of the mission, vision, and unique selling points</p></td></tr></tbody></table>
 
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440079/helpcenter/ai-playbook-1.png)
 
 ## Fill with AI (Company)
-
 Click the **Fill with AI** button to activate a workflow that searches your company's Website and LinkedIn for all the information needed to populate the fields above. The system fills in whatever it finds automatically. You can then review and adjust any details.
 
 **Important:** There is a checkbox to **Overwrite all existing information.** If not checked, the Fill with AI will only fill the empty boxes.
 
 ## Products and Services
-
 Below the general details, fill in the strategic modules that train the AI. The **Products & Services** section includes:
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="no-margin">Field</p></td><td style="background-color: #d7efdc80;"><p class="no-margin">Description</p></td></tr><tr><td><p class="no-margin"><b>Product Name</b></p></td><td><p class="no-margin">Name of the product or service</p></td></tr><tr><td><p class="no-margin"><b>Product Description</b></p></td><td><p class="no-margin">What the product does</p></td></tr><tr><td><p class="no-margin"><b>Value Proposition</b></p></td><td><p class="no-margin">Why a customer should choose it</p></td></tr><tr><td><p class="no-margin"><b>Price Range</b></p></td><td><p class="no-margin">Approximate pricing</p></td></tr></tbody></table>
 
@@ -120,7 +118,6 @@ Below the general details, fill in the strategic modules that train the AI. The 
 **Note:** You can insert as many products or services as needed.
 
 ## Ideal Customer Profile (ICP)
-
 Define your ICP so the AI can tailor outreach to the right audience:
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="no-margin">Field</p></td><td style="background-color: #d7efdc80;"><p class="no-margin">Description</p></td></tr><tr><td><p class="no-margin"><b>ICP Name</b></p></td><td><p class="no-margin">ICP profile name.</p></td></tr><tr><td><p class="no-margin"><b>Job Titles</b></p></td><td><p class="no-margin">Target job titles.</p></td></tr><tr><td><p class="no-margin"><b>Locations</b></p></td><td><p class="no-margin">Target geographic locations.</p></td></tr><tr><td><p class="no-margin"><b>Company Industry</b></p></td><td><p class="no-margin">Target industries.</p></td></tr><tr><td><p class="no-margin"><b>Company Size</b></p></td><td><p class="no-margin">Target company size ranges.</p></td></tr><tr><td><p class="no-margin"><b>Revenue</b></p></td><td><p class="no-margin">Target revenue ranges.</p></td></tr><tr><td><p class="no-margin"><b>Key Pain Points</b></p></td><td><p class="no-margin">Problems your ICP faces.</p></td></tr><tr><td><p class="no-margin"><b>Additional Information</b></p></td><td><p class="no-margin">Any other qualifying details.</p></td></tr><tr><td><p class="no-margin"><b>Disqualifying Factors</b></p></td><td><p class="no-margin">Criteria that disqualify a prospect. Factors that make a prospect a poor fit. This helps the AI avoid engaging leads that do not match your target.</p></td></tr></tbody></table>
 
@@ -129,7 +126,6 @@ Define your ICP so the AI can tailor outreach to the right audience:
 **Tip:** Click the **AI stars icon** to generate related keywords based on your input.
 
 ## Ideal Companies
-
 Select companies so the AI can use them as examples to find similar ideal customers.
 
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440084/helpcenter/ai-playbook-4.png)
@@ -152,7 +148,6 @@ These FAQs give the AI ready-made answers it can reference during conversations 
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440085/helpcenter/ai-playbook-7.png)
 
 ## Save Changes
-
 To save or update any changes you have made, click the **Update** button at the bottom right of the page.
 
 ---
@@ -165,12 +160,10 @@ This tab holds information related to the **Identities** connected to your accou
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440085/helpcenter/ai-playbook-9.png)
 
 ## **Identity Fields**
-
 First, select an identity from the dropdown menu. Then fill in the following identity fields:
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="no-margin">Field</p></td><td style="background-color: #d7efdc80;"><p class="no-margin">Description</p></td></tr><tr><td><p class="no-margin"><b>LinkedIn Profile</b></p></td><td><p class="no-margin">LinkedIn URL of the identity</p></td></tr><tr><td><p class="no-margin"><b>Output Language</b></p></td><td><p class="no-margin">Language preference for this identity Fill with AI</p></td></tr><tr><td><p class="no-margin"><b>First Name</b></p></td><td><p class="no-margin">Sender's first name</p></td></tr><tr><td><p class="no-margin"><b>Last Name</b></p></td><td><p class="no-margin">Sender's last name</p></td></tr><tr><td><p class="no-margin"><b>Email</b></p></td><td><p class="no-margin">Sender's email address</p></td></tr><tr><td><p class="no-margin"><b>Phone Number</b></p></td><td><p class="no-margin">Sender's phone number</p></td></tr><tr><td><p class="no-margin"><b>Gender</b></p></td><td><p class="no-margin">Sender's gender</p></td></tr><tr><td><p class="no-margin"><b>Languages</b></p></td><td><p class="no-margin">Languages spoken</p></td></tr><tr><td><p class="no-margin"><b>Profile Overview</b></p></td><td><p class="no-margin">Short bio or summary</p></td></tr><tr><td><p class="no-margin"><b>Job Title</b></p></td><td><p class="no-margin">Current job title</p></td></tr><tr><td><p class="no-margin"><b>Seniority Level</b></p></td><td><p class="no-margin">Level of seniority</p></td></tr><tr><td><p class="no-margin"><b>Key Responsibilities</b></p></td><td><p class="no-margin">Main duties and responsibilities</p></td></tr><tr><td><p class="no-margin"><b>Schedule Meeting URL</b></p></td><td><p class="no-margin">Link to the sender's booking/calendar page</p></td></tr><tr><td><p class="no-margin"><b>Educations</b></p></td><td><p class="no-margin">Educational background</p></td></tr><tr><td><p class="no-margin"><b>Previous Positions</b></p></td><td><p class="no-margin">Previous job career</p></td></tr><tr><td><p class="no-margin"><b>Interests</b></p></td><td><p class="no-margin">Personal or professional interests</p></td></tr></tbody></table>
 
 ## Fill with AI (Personal)
-
 Click the **Fill with AI** button to automatically populate these fields using data from the selected identity and their LinkedIn profile. Review and edit as necessary. Repeat this step for each identity you want to use.
 
 **Tip:** Click the **Fill with AI** button to get the suggested values and then review and edit the ones you don't like.
@@ -179,7 +172,6 @@ Click the **Fill with AI** button to automatically populate these fields using d
 
 # AI Variables
 ## Understand AI Variables
-
 An AI Variable is a reusable prompt-and-settings bundle that tells Enginy how to research and return a specific piece of information for a Contact or Company. Think of it as a **smart column**: instead of manually researching, the AI reads the attributes you provide (name, domain, job title, LinkedIn, etc.), optionally searches external sources, and returns the answer in the format you specify.
 
 AI Variables are used to generate additional information columns in your lists. You can use ready-made templates or build your own, then run them in bulk and store results as columns on your table.
@@ -190,7 +182,6 @@ AI Variables are used to generate additional information columns in your lists. 
     
 -   **Company:** "1-line summary of {company\_name} growth signals (funding, hiring, product launch)."
     
-
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440079/helpcenter/ai-playbook-10.png)
 
 ## Create an AI Variable
@@ -198,6 +189,7 @@ AI Variables are used to generate additional information columns in your lists. 
 2.  Click **Create AI Variable** (top right).
 3.  Select the entity type: **Contact** or **Company**. This determines whether the variable appears in the Contacts tab or the Companies tab in the left panel.
 4.  Fill in the form fields described in the sections below.
+
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440079/helpcenter/ai-playbook-11.png)
 
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440079/helpcenter/ai-playbook-12.png)
@@ -209,7 +201,6 @@ You can start from default **Templates** to be able to configure the **new AI va
 **Important:** Whether an **AI Variable** is **Contact-type** or **Company-type** affects its visibility. If it’s Contact-type, you can make it visible only in Contact lists; if it’s Company-type, only in Company lists.
 
 ### Output Types
-
 Select the **Output** (response type) to define how the AI returns results:
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="no-margin">Output Type</p></td><td style="background-color: #d7efdc80;"><p class="no-margin">Description</p></td></tr><tr><td><p class="no-margin"><b>Text</b></p></td><td><p class="no-margin">Open-ended string answers — summaries, descriptions, messages or hooks.</p></td></tr><tr><td><p class="no-margin"><b>Number</b></p></td><td><p class="no-margin">Numeric value (int or float) — scores, rankings, counts...</p></td></tr><tr><td><p class="no-margin"><b>Date</b></p></td><td><p class="no-margin">A valid calendar date — events, deadlines, timeline extraction...</p></td></tr><tr><td><p class="no-margin"><b>One of</b></p></td><td><p class="no-margin">Restricts results to a predefined set of tags/options (e.g., Yes/No, Hot/Warm/Cold, B2B/B2C)</p></td></tr><tr><td><p class="no-margin"><b>URL</b></p></td><td><p class="no-margin">Browser URL format</p></td></tr><tr><td><p class="no-margin"><b>Email</b></p></td><td><p class="no-margin">Email address form (text + @ + domain)</p></td></tr></tbody></table>
 
@@ -222,7 +213,6 @@ Select the **Output** (response type) to define how the AI returns results:
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440080/helpcenter/ai-playbook-15.png)
 
 ### Provide Explanation Option
-
 You can activate the **Provide explanation** option when creating or editing a variable. When enabled, the AI returns both the selected result **and** a short reasoning behind it, giving your team more context about why the AI chose that answer.
 
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440079/helpcenter/ai-playbook-16.png)
@@ -230,7 +220,6 @@ You can activate the **Provide explanation** option when creating or editing a v
 **Tip:** Like or dislike the outputs generated to help us keep improving the quality of the AI results.
 
 ### Write an Effective Prompt
-
 The **Prompt** field is the main instruction. This is where you tell the AI exactly what to return and the format. Use the following recommended structure:
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc;"><p class="no-margin">Section</p></td><td style="background-color: #d7efdc;"><p class="no-margin">What to include</p></td></tr><tr><td><p class="no-margin"><b>Persona</b></p></td><td><p class="no-margin">Which role the AI represents.</p></td></tr><tr><td><p class="no-margin"><b>Context</b></p></td><td><p class="no-margin">Some context as explanation.</p></td></tr><tr><td><ul><li><p class="no-margin"><b>Sender Variables (My Company)</b></p></li></ul></td><td><p class="no-margin">Our company variables for reference.</p></td></tr><tr><td><ul><li><p class="no-margin"><b>Receiver Variables (Contact)</b></p></li></ul></td><td><p class="no-margin">Contextual lead variables for reference.</p></td></tr><tr><td><p class="no-margin"><b>Goal</b></p></td><td><p class="no-margin">What the AI should produce.</p></td></tr><tr><td><p class="no-margin"><b>Instructions</b></p></td><td><p class="no-margin">Personalization and randomization rules (from Step 3)</p></td></tr><tr><td><p class="no-margin">Greeting (optional)</p></td><td><p class="no-margin">Instructions of the greeting format</p></td></tr><tr><td><p class="no-margin">Icebreaker (optional)</p></td><td><p class="no-margin">Options to choose which can include some examples</p></td></tr><tr><td><p class="no-margin">Value Proposition (optional)</p></td><td><p class="no-margin">Reason why you are reaching them exactly and not someone else.</p></td></tr><tr><td><p class="no-margin">Call To Action (optional)</p></td><td><p class="no-margin">CTA to encourage an immediate response or action.</p></td></tr><tr><td><p class="no-margin">Signature (recommended)</p></td><td><p class="no-margin">Recommended to specify that the sign is off, for email AI Variables. Signature is automatically added from the identity configured signature. You don't want it to be duplicate.</p></td></tr><tr><td><p class="no-margin">Template (optional)</p></td><td><p class="no-margin">The message with <code>[TAG]</code> placeholders (from Step 2)</p></td></tr><tr><td><ul><li><p class="no-margin"><b>General instructions</b></p></li></ul></td><td><p class="no-margin">Tone, style, formatting constraints.</p></td></tr><tr><td><ul><li><p class="no-margin"><b>Language instructions</b></p></li></ul></td><td><p class="no-margin">Rules to choose a language according to conditions or parameters (e.g., receiver's location).</p></td></tr><tr><td><p class="no-margin"><b>Examples </b>(recommended)</p></td><td><p class="no-margin">Some examples to reference what the desired output would be.</p></td></tr></tbody></table>
 
@@ -248,17 +237,14 @@ You can personalize your prompts using variables and even AI variables inside of
     
 -   "Review {company\_name}'s website. Identify if they primarily sell products, services, or both. Return exactly one of these options."
     
-
 **Avoid vague prompts like:** "Tell me everything about this company." (Too broad, no structure.)
 
 **Tip:** Be explicit in your prompt about what to search for when using Deep Research. The more specific you are, the more accurate the results will be.
 
 ### Enhance Button
-
 Below the prompt editor you will find the **Enhance** button. Clicking it lets the AI automatically polish and refine your prompt — improving its structure, wording, and references to Enginy attributes. This is especially useful when you have written a first draft and want to make sure it follows best practices before saving. You can review the enhanced version and accept or adjust it as needed.
 
 ### Add Attributes (Placeholders)
-
 Use the **Add attributes** option to select which row fields the variable can use as context. Inside your prompt, reference these fields with the `{field_name}` syntax. When writing in the prompt editor, you can also type `{` to see and select available fields.
 
 Common placeholders include:
@@ -274,7 +260,6 @@ Common placeholders include:
 Use these inside prompts to make the AI answer relevant to each row.
 
 ### Deep Research
-
 When creating or editing an AI Variable, you can enable the **Deep Research** toggle to let the AI Agent browse the web and find any information you need. This is a single, comprehensive search option that covers web pages, news, company websites, and other public sources in one unified search.
 
 When Deep Research is enabled, the AI goes beyond the data already available in your lists — it actively searches the internet, visits relevant web pages, and extracts the information your prompt requires.
@@ -296,7 +281,6 @@ The technology behind Deep Research uses *Firecrawl*, a specialized web-scraping
 Deep Research is optimized for **batch data enrichment** — answering the same question across many leads/companies consistently.
 
 #### Best Use Cases for Deep Research
-
 -   Finding company information not available in your existing data (website, size, industry, technologies used).
     
 -   Researching specific facts about a lead's company (recent news, funding rounds, product launches).
@@ -305,9 +289,7 @@ Deep Research is optimized for **batch data enrichment** — answering the same 
     
 -   Enriching with publicly available information that requires visiting multiple pages
     
-
 #### When Deep Research May Struggle
-
 -   Information is behind login walls (private LinkedIn data, gated content)
     
 -   Data changes by the minute (stock prices, live scores, breaking news)
@@ -318,9 +300,7 @@ Deep Research is optimized for **batch data enrichment** — answering the same 
     
 -   You need to compare hundreds of sources for a single answer
     
-
 #### Deep Research Cost Considerations
-
 Deep Research uses more credits than regular AI Variables because:
 
 -   Web searches incur additional costs per search query.
@@ -329,18 +309,15 @@ Deep Research uses more credits than regular AI Variables because:
     
 -   Multiple iterations may be needed to find the right answer.
     
-
 **Tip:** Use Deep Research only for fields where the information is not available elsewhere. Test with a small batch first to estimate total costs. Use more specific prompts to reduce the number of search iterations needed.
 
 #### Deep Research Troubleshooting
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="no-margin">Issue</p></td><td style="background-color: #d7efdc80;"><p class="no-margin">Likely Cause</p></td><td style="background-color: #d7efdc80;"><p class="no-margin">Solution</p></td></tr><tr><td><p class="no-margin"><b>Returns "No data found" frequently</b></p></td><td><p class="no-margin">Information may not be publicly available</p></td><td><p class="no-margin">Verify the information exists online manually; refine the prompt</p></td></tr><tr><td><p class="no-margin"><b>Slow enrichment times</b></p></td><td><p class="no-margin">Multiple search iterations + page loading</p></td><td><p class="no-margin">Expected behavior; Deep Research prioritizes accuracy over speed</p></td></tr><tr><td><p class="no-margin"><b>Inconsistent results</b></p></td><td><p class="no-margin">Sources may have conflicting information</p></td><td><p class="no-margin">Add more context to the prompt to narrow down sources</p></td></tr><tr><td><p class="no-margin"><b>Blocked on certain sites</b></p></td><td><p class="no-margin">Anti-bot measures</p></td><td><p class="no-margin">Some sites cannot be accessed; try alternative sources</p></td></tr></tbody></table>
 
 ### Select an AI Model
-
 When creating or editing an AI Variable, you can choose the AI model to use (e.g., Grok 4, GPT 5.2, Gemini 3 Pro). Each model has different strengths — see Available AI Models for a full comparison.
 
 ### Cost Considerations
-
 Each AI model has an associated cost. Beyond the model, cost can also increase based on:
 
 -   **Prompt complexity** — measured by the number of tokens consumed.
@@ -349,15 +326,15 @@ Each AI model has an associated cost. Beyond the model, cost can also increase b
     
 -   **Deep Research** — enabling the Deep Research toggle adds to the cost per execution due to web searches and page scraping.
     
-
 ## Run AI Variables on Your Lists
-
 Once created, AI Variables appear as columns (but you might make them visible) in your Contact or Company lists. There are several ways to run them:
 1.  **Via Enrichment modal:** Open the list, click **Enrichment > Enrich with AI** in the top-right corner. Select one or multiple templates (Enginy ready-made or custom), then click **RUN**. The result appears as a new column for each row processed.
 2.  **Run from column header:** Hover the column header and click the **play icon** to execute the variable for all rows in that view.
 3.  **Bulk runs:** Click the column header, then select **Run column > Visible rows** or **All rows**.
 4.  **Individual run:** Click the **play icon** in a specific cell to run the variable for an individual lead or company.
+
     ![](https://res.cloudinary.com/enginy/image/upload/v1771440080/helpcenter/ai-playbook-18.png)
+
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440080/helpcenter/ai-playbook-19.png)
 
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440080/helpcenter/ai-playbook-20.png)
@@ -365,7 +342,6 @@ Once created, AI Variables appear as columns (but you might make them visible) i
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440080/helpcenter/ai-playbook-21.png)
 
 ## Manage AI Variables
-
 All AI Variables are managed from the **AI Playbook > AI Variables** tab. The left panel displays all variables organized in folders, with two tabs: **Contacts** and **Companies**.
 
 -   **\+ Add folder** — Create custom folders to organize your variables.
@@ -378,7 +354,6 @@ All AI Variables are managed from the **AI Playbook > AI Variables** tab. The le
 **Warning:** The AI variable name cannot be changed once created, as renaming would cause problems in campaigns that reference it. If you need a different name, duplicate the variable, give the copy the desired name, and delete the original.
 
 ## Use Case: Personalize or Randomize a Message Template
-
 You can use AI Variables to write variations of a message template you already have. This is useful when you want parts of your message to change from contact to contact — either personalized based on data or randomized for variety.
 
 **Step 1 — Write your base message:**
@@ -392,12 +367,10 @@ You can use AI Variables to write variations of a message template you already h
     
 -   For tags to **randomize**: list 3 or more possible options. For example, randomize `[GREETING]` between "Hi", "Hey", and "Just curious".
     
-
 **Step 4 — Create the AI Variable:**
 1.  Go to **Enginy > AI Playbook > AI Variables > Create AI Variable**.
 2.  Enter your prompt using the recommended structure for an effective prompt.
 ## Troubleshoot AI Variables
-
 **"No Data Found" results:**
 
 When AI Variables return "No data found" or produce no results, this is often because the account’s **API usage credits are exhausted**. Another common reason is that the **selected model isn’t strong enough** to reliably complete the prompt’s objective (especially for complex extraction or reasoning tasks).
@@ -411,7 +384,6 @@ When AI Variables return "No data found" or produce no results, this is often be
 
 # AI Campaigns
 ## Understand AI Campaigns
-
 AI Campaigns manage the prompts used by the **AI Agent (chatbot)**. When you enable the option in a campaign's settings for the AI to continue the conversation once a lead replies, the AI uses these campaign prompts to craft automatic responses.
 
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440081/helpcenter/ai-playbook-22.png)
@@ -430,15 +402,14 @@ Enginy includes pre-built AI Campaign templates such as:
     
 -   **AI Recruiting Agent** — For recruitment-focused messaging.
     
-
 You can adjust these templates or create your own from scratch.
 
 ## Automate Conversations with AI
-
 Once your AI Campaign is configured and enabled in a campaign's settings (3rd step: AI Agent; **Edit prompt** to chose an AI Campaign template; **Enable** to activate AI auto-reply), Enginy AI takes over the conversation flow:
 1.  A **lead replies** to the first message in your sequence.
 2.  The AI automatically crafts a reply based on the campaign prompt and continues the conversation without your intervention (if enabled AI auto-reply, otherwise just make suggestions and you need to confirm to send).
 3.  You can personalize the flow by adjusting the prompt with relevant details based on your target leads' information (e.g., common pain points, interests).
+
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440081/helpcenter/ai-playbook-23.png)
 
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440081/helpcenter/ai-playbook-24.png)
@@ -453,20 +424,17 @@ All incoming and outgoing messages from AI-powered campaigns are stored in the *
 
 # AI Conversation Tags
 ## Understand AI Conversation Tags
-
 AI Conversation Tags let you label conversation replies to organize and act on your sales conversations. The system includes **Auto tagging**, which analyzes the last message sent by a lead to automatically assign the appropriate tag. AI Tags are dynamic — they are updated as the conversation evolves.
 
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440081/helpcenter/ai-playbook-26.png)
 
 ## Default Tags
-
 Enginy includes essential default tags. You can choose to enable them as AI Auto Tags, so the system automatically detects and applies the most common conversation outcomes.
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="no-margin">Tag</p></td><td style="background-color: #d7efdc80;"><p class="no-margin">Category</p></td></tr><tr><td><p class="no-margin"><b>Interested</b></p></td><td><p class="no-margin">Positive</p></td></tr><tr><td><p class="no-margin"><b>Meeting Booked</b></p></td><td><p class="no-margin">Positive</p></td></tr><tr><td><p class="no-margin"><b>Not Interested</b></p></td><td><p class="no-margin">Negative</p></td></tr><tr><td><p class="no-margin"><b>Bad Timing</b></p></td><td><p class="no-margin">Neutral</p></td></tr><tr><td><p class="no-margin"><b>Not the Target Persona</b></p></td><td><p class="no-margin">Neutral</p></td></tr><tr><td><p class="no-margin"><b>Out of Office</b></p></td><td><p class="no-margin">Neutral</p></td></tr><tr><td><p class="no-margin"><b>Referred</b></p></td><td><p class="no-margin">Positive</p></td></tr></tbody></table>
 
 **Important:** Default tags cannot be deleted or edited, which ensures consistency across your team. However, you can duplicate them and activate or deactivate them depending on your workflow.
 
 ## Tag Categories
-
 All tags are grouped into three categories:
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="no-margin">Category</p></td><td style="background-color: #d7efdc80;"><p class="no-margin">Purpose</p></td></tr><tr><td><p class="no-margin"><b>Positive</b></p></td><td><p class="no-margin">Indicates favorable outcomes</p></td></tr><tr><td><p class="no-margin"><b>Neutral</b></p></td><td><p class="no-margin">Indicates non-committal responses</p></td></tr><tr><td><p class="no-margin"><b>Negative</b></p></td><td><p class="no-margin">Indicates unfavorable outcomes</p></td></tr></tbody></table>
 
@@ -482,31 +450,26 @@ On the **Analytics Page**, you can track a single metric per category. For examp
 **Important:** Custom AI tags **must** have a prompt (Instructions) associated before they can be activated for Auto tagging. Without an instruction, the tag can only be used manually.
 
 ## Auto Tagging
-
 Auto tagging is controlled by the toggle switch located below the Instructions text box (and also on the tag card in the main view).
 
 -   **Enabled:** The AI uses the Instructions to analyze each conversation's last message and automatically applies the tag if the criteria match.
     
 -   **Disabled:** The tag is available for manual use only.
     
-
 Auto tagging is dynamic. Each time a new message is sent in a conversation, the AI re-evaluates which tags apply.
 
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440083/helpcenter/ai-playbook-28.png)
 
 ## Tag Compatibility
-
 The AI uses a compatibility matrix that controls how tags interact:
 
 -   A conversation **can have multiple tags** at the same time (e.g., Bad Timing and Interested).
     
 -   Tags are **automatically updated** (if Auto tagging activated) as the conversation evolves — if the context changes, relevant tags are added or removed.
     
-
 This ensures your analytics remain accurate while reflecting the full status of each conversation.
 
 ## Manage Tags
-
 In the center of the AI Conversation Tags module, all available tags are displayed as cards. Each card has:
 
 -   **Trash can icon** — Delete the tag.
@@ -515,7 +478,6 @@ In the center of the AI Conversation Tags module, all available tags are display
     
 -   **Toggle switch** — Enable or disable Auto tagging (only for tags with defined Instructions).
     
-
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440083/helpcenter/ai-playbook-29.png)
 
 **Note:** Click on any tag card to open and edit.
@@ -526,12 +488,10 @@ The module provides two views:
 A search bar is also available to filter tags by name.
 
 ## Where AI Tags Appear
-
 -   **Inbox:** AI tags appear directly in your replies, so you instantly know the context. For example, if a lead replies with "Let's connect again next quarter," the AI tags it as **Bad Timing**. You can always remove a tag manually if it does not fit.
     
 -   **Analytics Page:** Tag metrics are tracked by tag, helping you quickly understand patterns in replies across campaigns.
     
-
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440083/helpcenter/ai-playbook-30.png)
 
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440084/helpcenter/ai-playbook-31.png)
@@ -544,19 +504,16 @@ The ICP Quick Filter uses the Ideal Customer Profile defined in your AI Playbook
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440084/helpcenter/ai-playbook-32.png)
 
 ## How it works
-
 When you do a **Search for Contacts** or a **Search for Companies** through LinkedIn, the system:
 1.  Detects your saved ICP from the AI Playbook.
 2.  Applies the relevant filters instantly, including: Job Titles, Locations, Company Industry, and Company Size.
 ## Benefits
-
 -   Save time on setup — no more retyping filter criteria.
     
 -   Stay consistent with your targeting strategy.
     
 -   Improve lead quality by aligning outreach with your most qualified buyers.
     
-
 You can still adjust any filters manually. Use the ICP filters as a starting point, then fine-tune based on campaign goals or testing variations.
 
 **No ICP set yet?**
@@ -588,7 +545,6 @@ Enginy offers a curated selection of AI models from leading providers. Each mode
 Generative AI models are extremely powerful, but they only produce good results when they receive good instructions. The quality of the output depends directly on the quality of the prompt.
 
 ## What Makes a Good Prompt
-
 A good prompt is much more than a question. It is a structured instruction that:
 
 -   Defines a **clear objective** (what you want to achieve).
@@ -603,11 +559,9 @@ A good prompt is much more than a question. It is a structured instruction that:
     
 -   Is easy to **reuse and adapt**.
     
-
 Think of the prompt as a briefing for a professional: the better the briefing, the better the work you will get.
 
 ## Key Principles
-
 **1\. Objective first, always**
 
 Before writing your prompt, ask: What exactly do I want to achieve? What is the final output I need?
@@ -616,7 +570,6 @@ Before writing your prompt, ask: What exactly do I want to achieve? What is the 
     
 -   Clear: "Generate a list of 10 concrete ideas to improve customer loyalty in a B2C contact center, focused on reducing churn by 10% within 6 months."
     
-
 The more concrete the objective, the more actionable the response.
 
 **2\. Provide relevant context**
@@ -633,7 +586,6 @@ The AI does not know your organization, product, or business reality unless you 
     
 -   Constraints (legal, regulatory, time, budget)
     
-
 **3\. Define the AI's role**
 
 Asking "Explain this to me" is much less powerful than asking "Act as...". Examples:
@@ -644,7 +596,6 @@ Asking "Explain this to me" is much less powerful than asking "Act as...". Examp
     
 -   "Act as a market research analyst."
     
-
 This sets expectations and elevates the quality of the response.
 
 **4\. Specify the output format**
@@ -661,7 +612,6 @@ Explicitly indicate how you want the result:
     
 -   Checklist bullets
     
-
 This makes the content directly usable without reformatting.
 
 **5\. Include quality criteria and constraints**
@@ -678,7 +628,6 @@ Do not assume the AI understands your standards. State them clearly:
     
 -   What to avoid: excessive jargon, legal terms, etc.
     
-
 **6\. Provide examples (and counterexamples)**
 
 Examples significantly reduce iteration and rework:
@@ -687,7 +636,6 @@ Examples significantly reduce iteration and rework:
     
 -   Negative example: what you do NOT want
     
-
 **7\. Think in iterative mode**
 
 The first prompt will rarely be perfect. Work in cycles:
@@ -698,38 +646,32 @@ The first prompt will rarely be perfect. Work in cycles:
 The AI does not get offended if you ask it to redo, correct, or restructure.
 
 ## Recommended Prompt Template
-
 Use this base template and adapt it for each use case:
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc;"><p class="no-margin">Section</p></td><td style="background-color: #d7efdc;"><p class="no-margin">What to include</p></td></tr><tr><td><p class="no-margin"><b>Persona</b></p></td><td><p class="no-margin">Which role the AI represents.</p></td></tr><tr><td><p class="no-margin"><b>Context</b></p></td><td><p class="no-margin">Some context as explanation.</p></td></tr><tr><td><ul><li><p class="no-margin"><b>Sender Variables (My Company)</b></p></li></ul></td><td><p class="no-margin">Our company variables for reference.</p></td></tr><tr><td><ul><li><p class="no-margin"><b>Receiver Variables (Contact)</b></p></li></ul></td><td><p class="no-margin">Contextual lead variables for reference.</p></td></tr><tr><td><p class="no-margin"><b>Goal</b></p></td><td><p class="no-margin">What the AI should produce.</p></td></tr><tr><td><p class="no-margin"><b>Instructions</b></p></td><td><p class="no-margin">Personalization and randomization rules (from Step 3)</p></td></tr><tr><td><p class="no-margin">Greeting (optional)</p></td><td><p class="no-margin">Instructions of the greeting format</p></td></tr><tr><td><p class="no-margin">Icebreaker (optional)</p></td><td><p class="no-margin">Options to choose which can include some examples</p></td></tr><tr><td><p class="no-margin">Value Proposition (optional)</p></td><td><p class="no-margin">Reason why you are reaching them exactly and not someone else.</p></td></tr><tr><td><p class="no-margin">Call To Action (optional)</p></td><td><p class="no-margin">CTA to encourage an immediate response or action.</p></td></tr><tr><td><p class="no-margin">Signature (recommended)</p></td><td><p class="no-margin">Recommended to specify that the sign is off, for email AI Variables. Signature is automatically added from the identity configured signature. You don't want it to be duplicate.</p></td></tr><tr><td><p class="no-margin">Template (optional)</p></td><td><p class="no-margin">The message with <code>[TAG]</code> placeholders (from Step 2)</p></td></tr><tr><td><ul><li><p class="no-margin"><b>General instructions</b></p></li></ul></td><td><p class="no-margin">Tone, style, formatting constraints.</p></td></tr><tr><td><ul><li><p class="no-margin"><b>Language instructions</b></p></li></ul></td><td><p class="no-margin">Rules to choose a language according to conditions or parameters (e.g., receiver's location).</p></td></tr><tr><td><p class="no-margin"><b>Examples </b>(recommended)</p></td><td><p class="no-margin">Some examples to reference what the desired output would be.</p></td></tr></tbody></table>
 
 ## Prompt Examples: Weak vs. Improved
-
 **Writing:**
 
 -   Weak: "Write an email for a client."
     
 -   Improved: "Act as a B2B copywriter. Write a short email (max. 150 words) for a client who has been with us for 6 months using a technical support service. Objective: thank them for their trust and propose a brief review meeting. Context: we are a ticketing software company for contact centers. The recipient is a Head of Operations of a contact center with 80 agents. Tone: professional, direct, value-oriented. Format: suggested subject line + email body."
     
-
 **Analysis:**
 
 -   Weak: "Summarize this text."
     
 -   Improved: "Act as a business analyst. Summarize the following text in a maximum of 10 clear, actionable bullets focused on recommendations to improve customer experience in a contact center. Do not repeat specific examples; keep only principles and best practices. Professional tone aimed at managers."
     
-
 **Training:**
 
 -   Weak: "Give me training ideas for agents."
     
 -   Improved: "Act as a customer service training specialist. Create a 4-module training program for contact center agents who handle phone and chat interactions. Objective: improve skills in active listening, objection handling, and closing conversations. Context: agents have medium experience (1 year) and serve B2C customers. Format: for each module include the title, learning objectives, estimated duration, and practical activities."
     
-
 ## Common Prompt Mistakes
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="no-margin">Mistake</p></td><td style="background-color: #d7efdc80;"><p class="no-margin">Why It Hurts</p></td></tr><tr><td><p class="no-margin"><b>Being too generic</b></p></td><td><p class="no-margin">"Help me with this" gives the AI nothing to work with. Always define objective and context.</p></td></tr><tr><td><p class="no-margin"><b>Not specifying the output format</b></p></td><td><p class="no-margin">Forces you to do extensive editing afterwards.</p></td></tr><tr><td><p class="no-margin"><b>Forgetting to define the AI's role</b></p></td><td><p class="no-margin">Without a role, the model tends to give overly generic answers.</p></td></tr><tr><td><p class="no-margin"><b>Mixing several tasks in one prompt</b></p></td><td><p class="no-margin">"Analyze, rewrite, suggest improvements, and create a presentation" in a single prompt leads to shallow results. Split into steps.</p></td></tr><tr><td><p class="no-margin"><b>Asking for impossible things</b></p></td><td><p class="no-margin">"Guarantee this will reduce churn by 30%." The AI can suggest, not guarantee.</p></td></tr><tr><td><p class="no-margin"><b>Not reviewing critical outputs</b></p></td><td><p class="no-margin">Never use AI responses without human validation in areas with legal, medical, financial, or regulatory impact.</p></td></tr><tr><td><p class="no-margin"><b>Sharing sensitive data unnecessarily</b></p></td><td><p class="no-margin">Avoid including personally identifiable information (full names, IDs, phone numbers) when not essential to the task.</p></td></tr></tbody></table>
 
 ## Prompt Best Practices Checklist
-
 Before sending your prompt, verify:
 
 -   \[ \] Have I clearly defined the objective?
@@ -752,30 +694,24 @@ Before sending your prompt, verify:
     
 -   \[ \] Am I prepared to iterate and adjust the prompt after seeing the first result?
     
-
 If most answers are "yes," your prompt is in the best-practice zone.
 
 ---
 
 # FAQs
 ### **Q1. Can I edit or delete the default AI Conversation Tags?**
-
 No. Default tags cannot be edited or deleted to ensure consistency across teams. However, you can duplicate them and deactivate any you do not need.
 
 ### **Q2. Why are my AI Variables returning "No data found"?**
-
 This is often caused by exhausted API credits, not a platform bug. Check your usage dashboard or notifications to see if you have hit any limits. Once credits are replenished (by purchasing more or when your billing cycle resets), the AI Variables will resume populating normally. If you have remaining credits and still see empty data, hover the '?' symbol in the output to see the provided explanation. Contact support if you need further investigation.
 
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440084/helpcenter/ai-playbook-34.png)
 
 ### **Q3. What does the Deep Research toggle do in an AI Variable?**
-
 When enabled, Deep Research lets the AI Agent browse the web to find information relevant to your prompt. It searches public websites, reads page content, follows links, and extracts structured data. It uses more credits than a standard AI Variable, so enable it only when the information you need is not already available in your list data.
 
 ### **Q4. Can I rename an AI Variable after creating it?**
-
 No. An AI Variable's name cannot be changed once created, as renaming would cause issues in campaigns that reference it. If you need a different name, duplicate the variable, give the copy the desired name, and delete the original.
 
 ### **Q5. How does the AI decide which Conversation Tag to apply?**
-
 When Auto tagging is enabled, the AI analyzes the last message in a conversation against the Instructions defined for each active tag. If the message matches the criteria of a tag, the AI applies it automatically. Tags are re-evaluated dynamically as new messages arrive, so they are added or removed as the conversation context changes.

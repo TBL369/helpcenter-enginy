@@ -36,6 +36,7 @@ The Inbox is a centralized communication hub where you can manage all conversati
   - [Recent Activity Timeline](#recent-activity-timeline)
   - [Campaign Status](#campaign-status)
   - [Work History](#work-history)
+
 ---
 
 # Before You Start
@@ -58,31 +59,26 @@ The sidebar is your primary navigation tool, organizing your workload into Folde
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440117/helpcenter/inbox-1.png)
 
 ## Folders
-
 Folders help you focus on what matters most by categorizing conversations based on their state.
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Folder</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Description</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Use Case</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Inbox</b></p></td><td><p class="intercom-align-justify no-margin">Shows active conversations with at least one reply.</p></td><td><p class="intercom-align-justify no-margin">Centralize all ongoing interactions.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>AI Draft</b></p></td><td><p class="intercom-align-justify no-margin">Displays conversations where AI has generated a suggested reply. The AI Draft appears automatically in the composition box.</p></td><td><p class="intercom-align-justify no-margin">Review and use AI-generated responses.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Unread</b></p></td><td><p class="intercom-align-justify no-margin">Contains conversations marked as unread. Automatically updates when opened.</p></td><td><p class="intercom-align-justify no-margin">Focus on new, unseen messages.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Scheduled</b></p></td><td><p class="intercom-align-justify no-margin">Shows messages scheduled for future delivery.</p></td><td><p class="intercom-align-justify no-margin">Monitor upcoming automated sends.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Sent</b></p></td><td><p class="intercom-align-justify no-margin">Displays conversations where you have sent at least one message.</p></td><td><p class="intercom-align-justify no-margin">Review all engaged conversations.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Archived</b></p></td><td><p class="intercom-align-justify no-margin">Contains conversations marked as archived.</p></td><td><p class="intercom-align-justify no-margin">Keep the irrelevant together, leaving the inbox data-cleaned.</p></td></tr></tbody></table>
 
 **Note:** LinkedIn connection requests sent with a note (InMail) only appear in the Sent folder after the recipient accepts the request. This is a LinkedIn platform limitation.
 
 ## Tags
-
 Tags allow you to categorize and filter conversations based on context. A conversation can have multiple tags simultaneously. Clicking a tag in the sidebar filters your view to show only conversations with that tag. Each tag displays a count badge indicating how many conversations use it.
 
 Tags can be applied manually or automatically by AI.
 
 ### AI Tags (Auto-Tagged)
-
 The system automatically applies tags based on the lead's intent and conversation context. AI-generated tags display a sparkle icon and appear as "auto-tagged" events in the activity timeline.
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Tag</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Description</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Interested</b></p></td><td><p class="intercom-align-justify no-margin">Lead shows positive intent or engagement.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Not Interested</b></p></td><td><p class="intercom-align-justify no-margin">Lead explicitly declines or shows no interest.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Bad Timing</b></p></td><td><p class="intercom-align-justify no-margin">Lead declines due to current timing but indicates future openness.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Meeting Booked</b></p></td><td><p class="intercom-align-justify no-margin">A meeting has been scheduled with the lead.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Not the Target Persona</b></p></td><td><p class="intercom-align-justify no-margin">Lead does not match the intended audience.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Out of Office</b></p></td><td><p class="intercom-align-justify no-margin">Lead is unavailable or away.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Referred</b></p></td><td><p class="intercom-align-justify no-margin">Lead has referred you to another contact.</p></td></tr><tr><td><p class="intercom-align-justify no-margin">... <b>Your own</b></p></td><td><p class="intercom-align-justify no-margin">...</p></td></tr></tbody></table>
 
 **Tip:** Hover over an AI tag to see a tooltip explaining why it was applied (e.g., "Explicitly declines due to current timing and indicates future openness").
 
 ### Manual Tags
-
 Users can create custom tags with unique names and colors. Manual tags appear as "Tagged as" events in the activity timeline, showing the user who applied the tag and the timestamp. This differentiates them from AI tags, which appear as "auto-tagged."
 
 ### Custom Tags
-
 You can create your own tags directly from the Inbox. Each custom AI tag allows you to define:
 
 -   **Title**
@@ -95,32 +91,27 @@ You can create your own tags directly from the Inbox. Each custom AI tag allows 
     
 -   **Auto tagging:** switch on the toggle to make it an AI Tag, keep it off to make it a Manual Tag.
     
-
 **Important:** AI tags must have a valid prompt configured before they can be activated.
 
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440118/helpcenter/inbox-2.png)
 
 ### Tag Compatibility and Dynamic Updates
-
 -   A conversation can have multiple tags simultaneously (e.g., "Interested" and "Bad Timing").
     
 -   Tags are automatically updated as the conversation evolves — old tags may be removed and new ones added.
     
 -   The AI uses a compatibility matrix to ensure tagging accuracy and keep analytics current.
     
-
 ---
 
 # Column 2: Conversations (Message List)
 This column displays all conversations matching your selected folder or filter.
 
 ## Conversation Card Details
-
 Each conversation preview includes the following elements:
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Element</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Description</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Contact Info</b></p></td><td><p class="intercom-align-justify no-margin">Name, Job Title, and Company.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Green Dot</b></p></td><td><p class="intercom-align-justify no-margin">Indicates an unread message (Square form + count of messages) or marked as unread message (Circle form).</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Tag Badges</b></p></td><td><p class="intercom-align-justify no-margin">Colored badges displaying applied tags.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Channel Icons</b></p></td><td><p class="intercom-align-justify no-margin">Shows if the conversation is via Email or LinkedIn (Tasks are not displayed).</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Message Preview</b></p></td><td><p class="intercom-align-justify no-margin">First 90 characters of the last message with timestamp.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Last Sent Time</b></p></td><td><p class="intercom-align-justify no-margin">Indicates the time of the last message sent, from either identity or lead.</p></td></tr></tbody></table>
 
 ## Search and Filters
-
 Use the search bar or apply filters to find specific conversations. You can apply multiple filters simultaneously.
 
 ### Available filters
@@ -131,10 +122,10 @@ Use the search bar or apply filters to find specific conversations. You can appl
 2.  Select a filter type and define criteria.
 3.  Applied filters appear as chips above the conversation list.
 4.  Click the **X** on any chip to remove that filter.
+
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440118/helpcenter/inbox-3.png)
 
 ## Bulk Actions
-
 Select multiple conversations using checkboxes (or "Select All") to reveal the action toolbar.
 
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440118/helpcenter/inbox-4.png)
@@ -155,18 +146,15 @@ This view shows the full chronological history of all interactions with a lead, 
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Element</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Description</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Messages</b></p></td><td><p class="intercom-align-justify no-margin">Email and LinkedIn messages with sender avatars and status indicators (whether sent manually or auto-generated with AI variables).</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Audio Messages</b></p></td><td><p class="intercom-align-justify no-margin">LinkedIn voice notes with playback controls.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Campaign Actions</b></p></td><td><p class="intercom-align-justify no-margin">Logs campaign actions (e.g., "Visited profile," "Email opened," "Invitation accepted," "Link clicked").</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Tasks</b></p></td><td><p class="intercom-align-justify no-margin">Displays task description, due date, notes, and completion controls.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Tag Events</b></p></td><td><p class="intercom-align-justify no-margin">Logs tag changes and indicates whether applied by AI ("Auto-tagged as") or user ("Tagged as").</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Actions</b></p></td><td><p class="intercom-align-justify no-margin">Records actions like "Added to blocklist by [user]" or "Paused conversations by [user]" with timestamps.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Scheduled Messages</b></p></td><td><p class="intercom-align-justify no-margin">Queued messages displaying the scheduled send time with "Send Now" and "Cancel" action buttons.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Translation</b></p></td><td><p class="intercom-align-justify no-margin">Option to translate incoming messages to your preferred language.</p></td></tr></tbody></table>
 
 ## Sending Messages
-
 The composition box is located at the bottom of the chat view and adapts based on the conversation channel.
 
 ### Replying and Channel Selection
-
 When the conversation history includes messages from multiple senders, you can choose:
 
 -   **Whom to reply to** when there are multiple senders in the thread.
     
 -   **Which channel to use** (Email or LinkedIn) if previous messages were sent via both channels.
     
-
 This ensures continuity and allows responses to follow the same communication channel as the existing conversation.
 
 ### Email Features
@@ -180,7 +168,6 @@ This ensures continuity and allows responses to follow the same communication ch
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Feature</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Details</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Text Format</b></p></td><td><p class="intercom-align-justify no-margin">Plain text only (LinkedIn platform limitation).</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Character Limit</b></p></td><td><p class="intercom-align-justify no-margin">8,000 characters.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Image Attachments</b></p></td><td><p class="intercom-align-justify no-margin">Max size: 2.0 MB.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>File Attachments (PDF)</b></p></td><td><p class="intercom-align-justify no-margin">Max size: 2.0 MB.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Emoji Reactions</b></p></td><td><p class="intercom-align-justify no-margin">React to LinkedIn messages with emojis directly from the Inbox.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Open in LinkedIn</b></p></td><td><p class="intercom-align-justify no-margin">Option to view the full thread in a new browser tab on the LinkedIn platform.</p></td></tr></tbody></table>
 
 ## AI Drafts and Suggestions
-
 When AI detects a positive or engaging message from a lead, it automatically generates a draft reply. If an AI draft is available, you will see:
 
 -   **Suggestion Text:** Appears inside the text box.
@@ -189,13 +176,11 @@ When AI detects a positive or engaging message from a lead, it automatically gen
     
 -   **Directly Send:** Press the send button to send the AI suggestion immediately.
     
-
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440119/helpcenter/inbox-7.png)
 
 **Tip:** You can always discard the AI draft entirely and write your own response from scratch.
 
 ## Scheduling Messages
-
 You can schedule messages for future delivery:
 1.  Compose your message.
 2.  Click the expand icon next to the **Send** button.
@@ -216,12 +201,10 @@ Displays complete lead and company information with actionable shortcuts.
 **Note:** By default, this panel is hidden. Open it by clicking the lead's name at the top of the messages or by using the button in the top-right corner of the chat view.
 
 ## Header Actions
-
 The header displays the contact summary (Name, Position, Company) and provides quick action buttons:
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Action</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Description</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Pause Conversations</b></p></td><td><p class="intercom-align-justify no-margin">Pause current campaign, or all campaigns at contact or company level.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>View LinkedIn Profile</b></p></td><td><p class="intercom-align-justify no-margin">Open the lead's LinkedIn profile in a new tab.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Open in CRM</b></p></td><td><p class="intercom-align-justify no-margin">Direct link to the CRM record. If the contact has both Contact and Lead associations (e.g. Pipedrive CRM that allows both), a dropdown menu lets you choose which one to open. If there is only one association, the button opens it directly. Disabled if the contact is not synced to CRM.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>View in Table</b></p></td><td><p class="intercom-align-justify no-margin">Open the contact in the contacts table view.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Add Tags</b></p></td><td><p class="intercom-align-justify no-margin">Apply manual or AI tags to the conversation.</p></td></tr></tbody></table>
 
 ### Additional options (via the three-dot menu)
-
 -   Add to Blocklist (contact or company level)
     
 -   Add to Another Campaign
@@ -230,26 +213,22 @@ The header displays the contact summary (Name, Position, Company) and provides q
     
 -   Archive (conversation)
     
-
 **Note:** Actions like Add to Blocklist, Create Task, and Add Tags are recorded in the activity timeline, showing the user who performed the action and the timestamp.
 
 ## Contact Information
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Field</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Description</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Email</b></p></td><td><p class="intercom-align-justify no-margin">Contact email with verification status indicator.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Phone</b></p></td><td><p class="intercom-align-justify no-margin">Direct phone number if available.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Enrichment Option</b></p></td><td><p class="intercom-align-justify no-margin">Option to enrich missing contact data directly from the panel.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Score</b></p></td><td><p class="intercom-align-justify no-margin">Lead fit score with explanation of the scoring criteria.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Job Title</b></p></td><td><p class="intercom-align-justify no-margin">Current role and position.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Location</b></p></td><td><p class="intercom-align-justify no-margin">Geographic location of the contact.</p></td></tr></tbody></table>
 
 ### CRM Sync Status
-
 Shows owner and last sync time when connected.
 
 -   **Resync** button to manually refresh data.
     
 -   **Enable Sync** button if not yet connected (opens CRM export modal).
     
-
 ## Company Information
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Field</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Description</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Name</b></p></td><td><p class="intercom-align-justify no-margin">Organization name.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Employees</b></p></td><td><p class="intercom-align-justify no-margin">Number of employees with growth rate.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>In Enginy</b></p></td><td><p class="intercom-align-justify no-margin">Number of contacts from this company in your database, with "View Contacts" and "Add Contacts" actions.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Score</b></p></td><td><p class="intercom-align-justify no-margin">Overall company fit score.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Website</b></p></td><td><p class="intercom-align-justify no-margin">Company website URL.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>LinkedIn</b></p></td><td><p class="intercom-align-justify no-margin">Company LinkedIn page.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Phone</b></p></td><td><p class="intercom-align-justify no-margin">Company phone number.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Headquarters</b></p></td><td><p class="intercom-align-justify no-margin">Headquarters location.</p></td></tr></tbody></table>
 
 ## Recent Activity Timeline
-
 Chronological log of all interactions from the last 19 months:
 
 -   Messages sent and received
@@ -264,18 +243,15 @@ Chronological log of all interactions from the last 19 months:
     
 -   Link clicks
     
-
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440117/helpcenter/inbox-10.png)
 
 ## Campaign Status
-
 Displays all campaigns where the lead is enrolled:
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Field</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Description</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Campaign Name</b></p></td><td><p class="intercom-align-justify no-margin">Linked campaign name (clickable).</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Current Status</b></p></td><td><p class="intercom-align-justify no-margin">In Progress, Paused, Finished, or Replied.</p></td></tr></tbody></table>
 
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440117/helpcenter/inbox-11.png)
 
 ## Work History
-
 Lists previous roles and companies, including tenure duration. This information is helpful for understanding the contact's career trajectory and personalizing your outreach.
 
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440118/helpcenter/inbox-12.png)
@@ -284,21 +260,16 @@ Lists previous roles and companies, including tenure duration. This information 
 
 # FAQs
 ### Q1: Why can I not see all conversations in my Inbox?
-
 Your visibility is determined by your identity access permissions. If you only have access to specific identities, you will only see conversations related to those identities. Contact your Admin to request access to additional identities via **Settings** > **Edit User Permissions** > **Campaign Tab** > **Identities Access**.
 
 ### Q2: Why do my LinkedIn connection requests not appear in the Sent folder?
-
 LinkedIn connection requests sent with a note (InMail) only appear in the Sent folder after the recipient accepts the request. This is a LinkedIn platform limitation.
 
 ### Q3: How do I know if a tag was applied by AI or manually?
-
 AI-applied tags display a sparkle icon and appear as "Auto-tagged as" events in the activity timeline. Manual tags appear as "Tagged as" events, showing the user who applied the tag and the timestamp.
 
 ### Q4: Can I edit or delete an AI-generated draft before sending?
-
 Yes. When an AI draft appears in your composition box, press \[Tab\] to load it into the editor, make any changes you want, and then send the modified message. You can also discard the draft entirely and write your own response.
 
 ### Q5: Why are my file attachments sent as links instead of direct attachments?
-
 To prevent spam filters and bounce issues, all file attachments in emails are automatically converted to links. This improves deliverability and ensures your messages reach the recipient's inbox.
