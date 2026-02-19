@@ -355,9 +355,9 @@ async function showMainMenu(rl: readline.Interface): Promise<MenuOption> {
   console.log('──────────────────────────────────────────────────────────');
   console.log('   ¿Qué deseas hacer?\n');
   console.log('   1. 📋 Listar artículos disponibles en Intercom');
-  console.log('   2. 📤 Exportar artículos a Notion');
-  console.log('   3. 📝 Exportar artículos a Markdown (repo)');
-  console.log('   4. 📤 Subir .md a Intercom (crear artículos)');
+  console.log('   2. 📤 Subir .md a Intercom (crear artículos)');
+  console.log('   3. 📥 Importar artículos a Markdown (repo)');
+  console.log('   4. 📥 Importar artículos a Notion');
   console.log('   5. 🚪 Salir');
   console.log('──────────────────────────────────────────────────────────\n');
 
@@ -864,17 +864,17 @@ async function main(): Promise<void> {
           await listArticlesFlow(intercomClient, rl);
           break;
         case '2':
-          if (!notionClient) {
-            console.log('\n   ❌ Notion no configurado. Agrega NOTION_TOKEN y NOTION_PARENT_PAGE_ID a .env\n');
-          } else {
-            await exportArticlesFlow(intercomClient, notionClient, rl);
-          }
+          await uploadToIntercomFlow(intercomClient, rl);
           break;
         case '3':
           await exportMarkdownFlow(intercomClient, rl);
           break;
         case '4':
-          await uploadToIntercomFlow(intercomClient, rl);
+          if (!notionClient) {
+            console.log('\n   ❌ Notion no configurado. Agrega NOTION_TOKEN y NOTION_PARENT_PAGE_ID a .env\n');
+          } else {
+            await exportArticlesFlow(intercomClient, notionClient, rl);
+          }
           break;
         case '5':
           running = false;
