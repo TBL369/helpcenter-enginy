@@ -22,7 +22,7 @@ The Dashboard is the main screen of the Enginy platform. It provides an executiv
 
 # Summary Cards
 The top section of the Dashboard displays key metrics at a glance. The cards support time-range filtering (for example, "Last 30 days") so you can adjust the period to suit your analysis.
-<table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Card</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">What It Shows</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Credits Balance</b></p></td><td><p class="intercom-align-justify no-margin">Available credits versus total contracted credits. Includes a <b>View plan</b> link to the credits section.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Total Imported</b></p></td><td><p class="intercom-align-justify no-margin">Total number of Contacts and Companies imported into the platform.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Campaigns (Summary)</b></p></td><td><p class="intercom-align-justify no-margin">Number of conversations initiated with contacts and the reply rate.</p></td></tr></tbody></table>
+<table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="no-margin">Card</p></td><td style="background-color: #d7efdc80;"><p class="no-margin">What It Shows</p></td></tr><tr><td><p class="no-margin"><b>Credits Balance</b></p></td><td><p class="no-margin">Available credits versus total contracted credits. Includes a <b>View plan</b> link to the credits section.</p></td></tr><tr><td><p class="no-margin"><b>Total Imported</b></p></td><td><p class="no-margin">Total number of Contacts and Companies imported into the platform.</p></td></tr><tr><td><p class="no-margin"><b>Campaigns (Summary)</b></p></td><td><p class="no-margin">Number of conversations initiated with contacts and the reply rate.</p></td></tr></tbody></table>
 
 ## Credits Balance
 
@@ -69,7 +69,7 @@ The central area of the Dashboard contains visual representations of your key pe
 ## Contacts Funnel
 
 Visualizes your contact pipeline across three stages:
-<table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Stage</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Description</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Imported</b></p></td><td><p class="intercom-align-justify no-margin">Total contacts brought into the platform</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Enriched</b></p></td><td><p class="intercom-align-justify no-margin">Contacts that have been enriched with additional data</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Exported</b></p></td><td><p class="intercom-align-justify no-margin">Contacts exported to external systems or CRMs</p></td></tr></tbody></table>
+<table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="no-margin">Stage</p></td><td style="background-color: #d7efdc80;"><p class="no-margin">Description</p></td></tr><tr><td><p class="no-margin"><b>Imported</b></p></td><td><p class="no-margin">Total contacts brought into the platform</p></td></tr><tr><td><p class="no-margin"><b>Enriched</b></p></td><td><p class="no-margin">Contacts that have been enriched with additional data</p></td></tr><tr><td><p class="no-margin"><b>Exported</b></p></td><td><p class="no-margin">Contacts exported to external systems or CRMs</p></td></tr></tbody></table>
 
 The funnel chart allows you to:
 
@@ -85,7 +85,7 @@ The funnel chart allows you to:
 ## Campaigns Chart
 
 A graphical comparison of outreach volume versus responses:
-<table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Metric</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Description</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Contacted</b></p></td><td><p class="intercom-align-justify no-margin">Number of contacts reached through campaigns</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Replied</b></p></td><td><p class="intercom-align-justify no-margin">Number of contacts who responded</p></td></tr></tbody></table>
+<table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="no-margin">Metric</p></td><td style="background-color: #d7efdc80;"><p class="no-margin">Description</p></td></tr><tr><td><p class="no-margin"><b>Contacted</b></p></td><td><p class="no-margin">Number of contacts reached through campaigns</p></td></tr><tr><td><p class="no-margin"><b>Replied</b></p></td><td><p class="no-margin">Number of contacts who responded</p></td></tr></tbody></table>
 
 You can adjust the time grouping using the selector:
 
@@ -106,7 +106,7 @@ The bottom section of the Dashboard provides shortcuts to your most recent work.
 ## Recent Contacts Lists
 
 Displays your most recently created contact lists with the following details:
-<table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Column</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Description</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>List name</b></p></td><td><p class="intercom-align-justify no-margin">Title of the list</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Created by</b></p></td><td><p class="intercom-align-justify no-margin">Creator of the list</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Total</b></p></td><td><p class="intercom-align-justify no-margin">Total contacts in the list</p></td></tr></tbody></table>
+<table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="no-margin">Column</p></td><td style="background-color: #d7efdc80;"><p class="no-margin">Description</p></td></tr><tr><td><p class="no-margin"><b>List name</b></p></td><td><p class="no-margin">Title of the list</p></td></tr><tr><td><p class="no-margin"><b>Created by</b></p></td><td><p class="no-margin">Creator of the list</p></td></tr><tr><td><p class="no-margin"><b>Total</b></p></td><td><p class="no-margin">Total contacts in the list</p></td></tr></tbody></table>
 
 Available actions:
 
@@ -118,7 +118,7 @@ Available actions:
 ## Recent Campaigns
 
 Shows your most recent campaigns with the following details:
-<table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Column</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Description</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Name</b></p></td><td><p class="intercom-align-justify no-margin">Campaign identifier</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Identity</b></p></td><td><p class="intercom-align-justify no-margin">The sender identity associated with the campaign</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Created on</b></p></td><td><p class="intercom-align-justify no-margin">When the campaign was created</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Status</b></p></td><td><p class="intercom-align-justify no-margin">Current campaign state</p></td></tr></tbody></table>
+<table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="no-margin">Column</p></td><td style="background-color: #d7efdc80;"><p class="no-margin">Description</p></td></tr><tr><td><p class="no-margin"><b>Name</b></p></td><td><p class="no-margin">Campaign identifier</p></td></tr><tr><td><p class="no-margin"><b>Identity</b></p></td><td><p class="no-margin">The sender identity associated with the campaign</p></td></tr><tr><td><p class="no-margin"><b>Created on</b></p></td><td><p class="no-margin">When the campaign was created</p></td></tr><tr><td><p class="no-margin"><b>Status</b></p></td><td><p class="no-margin">Current campaign state</p></td></tr></tbody></table>
 
 Available actions:
 
@@ -140,7 +140,7 @@ There is also a last chart that shows the API usage, the percentage of successfu
 
 # Create Button
 Located in the top-right corner of the Dashboard, the **Create** button provides quick access to start new work without leaving the Dashboard.
-<table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Option</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Description</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>List</b></p></td><td><p class="intercom-align-justify no-margin">Create a new contact or company list</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Campaign</b></p></td><td><p class="intercom-align-justify no-margin">Create a new outreach campaign</p></td></tr></tbody></table>
+<table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="no-margin">Option</p></td><td style="background-color: #d7efdc80;"><p class="no-margin">Description</p></td></tr><tr><td><p class="no-margin"><b>List</b></p></td><td><p class="no-margin">Create a new contact or company list</p></td></tr><tr><td><p class="no-margin"><b>Campaign</b></p></td><td><p class="no-margin">Create a new outreach campaign</p></td></tr></tbody></table>
 
 ## Create a New List from the Dashboard
 1.  Click the **Create** button in the top-right corner of the Dashboard.

@@ -72,10 +72,12 @@ Typical help-center flow within the content sections:
 ### Horizontal Rules and Section Spacing
 
 - Place a `---` horizontal rule: (a) after the intro paragraph, (b) after the TOC, (c) between every H1-level section.
-- Always surround `---` with one blank line above and one blank line below.
-- One blank line before every heading. No blank line after `#` (H1) headings — the first paragraph starts immediately on the next line. One blank line after `##`/`###`/`####` headings before the first paragraph.
-- One blank line between paragraphs. One blank line after tables, images, and callouts, but NO blank line before tables.
-- Callouts and unordered lists (`-`): one blank line before and after.
+- One blank line before every heading. No blank line after any heading (H1–H4) — content starts immediately on the next line.
+- `---` horizontal rules: one blank line above and one blank line below.
+- One blank line between paragraphs. NO blank line before tables. One blank line after tables.
+- One blank line before and after images.
+- One blank line before and after blockquotes (callouts).
+- Unordered lists (`-`): one blank line before and after.
 - Numbered lists (`1.`, `2.`, `3.`): no blank lines between items, no blank line before the first item, and no blank line after the last item.
 - Never use double blank lines.
 
@@ -84,7 +86,7 @@ Typical help-center flow within the content sections:
 - Use **Intercom-compatible HTML tables** — never Markdown pipe tables.
 - Format: `<table role="presentation"><tbody><tr><td>...</td></tr></tbody></table>`.
 - Header row: `style="background-color: #d7efdc80;"` with bold column names using `<b>` tags.
-- Paragraph text inside cells: `<p class="intercom-align-justify no-margin">` (or `<p class="no-margin">`). Bold key values with `<b>` tags.
+- Paragraph text inside cells: `<p class="no-margin">`. Bold key values with `<b>` tags.
 - Use tables when presenting:
   - Key → value pairs
   - Comparing options
@@ -177,7 +179,7 @@ Typical help-center flow within the content sections:
 - [ ] ALL tables use Intercom-compatible HTML (`<table role="presentation">`), never Markdown pipe tables.
 - [ ] Headings use `#` (H1) for top-level sections, `##` (H2) for subsections, `###` (H3) for sub-subsections. `####` (H4) only when an H3 genuinely needs further breakdown.
 - [ ] `---` horizontal rules appear after the intro, after the TOC, and between every H1 section.
-- [ ] No blank line after H1 headings. Content starts immediately on the next line.
+- [ ] No blank line after any heading (H1–H4). Content starts immediately on the next line.
 - [ ] No blank line before tables.
 - [ ] Numbered lists have no blank lines between items, and no blank line before the first item or after the last item.
 - [ ] List nesting does not exceed 2 levels.

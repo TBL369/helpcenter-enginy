@@ -98,9 +98,13 @@ Optional content sections (use when applicable): "Before You Start" (prerequisit
 ### Spacing and Horizontal Rules
 
 - Place a `---` horizontal rule: (a) after the intro paragraph, (b) after the TOC, (c) between every H1-level section.
-- Always surround `---` with one blank line above and one blank line below.
-- One blank line before every heading. One blank line after every heading before the first paragraph.
-- One blank line between paragraphs. One blank line before and after tables, lists, images, and callouts.
+- One blank line before every heading. No blank line after any heading (H1–H4) — content starts immediately on the next line.
+- `---` horizontal rules: one blank line above and one blank line below.
+- One blank line between paragraphs. NO blank line before tables. One blank line after tables.
+- One blank line before and after images.
+- One blank line before and after blockquotes (callouts).
+- Unordered lists (`-`): one blank line before and after.
+- Numbered lists (`1.`, `2.`, `3.`): no blank lines between items, no blank line before the first item, and no blank line after the last item.
 - Never use double blank lines. No trailing whitespace.
 
 ### Tables

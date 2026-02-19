@@ -736,6 +736,17 @@ async function importMarkdownFlow(
 }
 
 /**
+ * Añade class="intercom-align-justify" a tags generados por marked.
+ * No afecta tablas HTML raw (ya usan class="no-margin" sin justify).
+ */
+function addJustifyAlignment(html: string): string {
+  return html
+    .replace(/<p>/g, '<p class="intercom-align-justify">')
+    .replace(/<li>/g, '<li class="intercom-align-justify">')
+    .replace(/<blockquote>/g, '<blockquote class="intercom-align-justify">');
+}
+
+/**
  * Lee un .md, extrae titulo (primer # heading) y convierte el body a HTML.
  * Preserva el TOC pero sanitiza los anchor links que Intercom no soporta.
  */
@@ -762,7 +773,8 @@ function mdFileToHtml(filePath: string): { title: string; html: string } {
 
   body = body.trim();
 
-  const html = marked.parse(body) as string;
+  let html = marked.parse(body) as string;
+  html = addJustifyAlignment(html);
   return { title, html };
 }
 
