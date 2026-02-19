@@ -77,11 +77,8 @@ Use these filters to refine the search of organizations (accounts) with Sales Na
 
 # Key Benefits
 -   **Saves time:** Search setup takes seconds instead of minutes. No need to manually configure multiple filters.
-    
 -   **Smarter searches:** AI Finder finds more relevant results by automatically generating variations and combinations of filters you might not have considered.
-    
 -   **No learning curve:** Anyone can create advanced LinkedIn Sales Navigator searches instantly using everyday language.
-    
 -   **Accurate results:** The AI understands intent behind your query and adjusts filters intelligently to deliver precise matches.
     
 ---
@@ -101,11 +98,8 @@ AI Recommendations are categorized based on different prospecting strategies:
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="no-margin">Type</p></td><td style="background-color: #d7efdc80; width: 213px;"><p class="no-margin">Description</p></td><td style="background-color: #d7efdc80;"><p class="no-margin">Example</p></td></tr><tr><td><p class="no-margin"><b>Recently Promoted</b></p></td><td style="width: 213px;"><p class="no-margin">Contacts who recently changed roles in your target market.</p></td><td><p class="no-margin">"Recently promoted sales leaders in Europe".</p></td></tr><tr><td><p class="no-margin"><b>People You May Know</b></p></td><td style="width: 213px;"><p class="no-margin">Suggested leads based on your network and activity (LinkedIn recommendations).</p></td><td><p class="no-margin">"Universitat de Barcelona alumni in tech sales".</p></td></tr><tr><td><p class="no-margin"><b>AI Contact Discovery</b></p></td><td style="width: 213px;"><p class="no-margin">Contacts matching your ICP in strategic locations.</p></td><td><p class="no-margin">"LinkedIn-active tech sales leaders across Europe".</p></td></tr><tr><td><p class="no-margin"><b>ICP Aligned Companies</b></p></td><td style="width: 213px;"><p class="no-margin">Organizations matching your Ideal Customer Profile with buying signals.</p></td><td><p class="no-margin">"Financial services firms actively hiring marketing teams" or "Growing B2B SaaS firms actively hiring sales teams".</p></td></tr><tr><td><p class="no-margin"><b>AI Company Discovery</b></p></td><td style="width: 213px;"><p class="no-margin">High-potential companies showing expansion indicators.</p></td><td><p class="no-margin">"Enterprise tech companies with leadership transitions".</p></td></tr></tbody></table>
 
 Recommendations evolve over time based on:
-
 -   Your defined Ideal Customer Profile (ICP)
-    
 -   User behavior and engagement patterns
-    
 -   Market trends and signals
     
 This means your suggestions stay relevant and continue to surface new opportunities as your business focus changes.
@@ -121,9 +115,7 @@ Yes. After AI Finder generates filters from your query, you can review, modify, 
 
 ### Q3: What types of searches does AI Finder support?
 AI Finder supports both:
-
 -   **Contact searches** (people) — e.g., "Marketing managers in SaaS companies"
-    
 -   **Company searches** (organizations) — e.g., "Fintech startups in London"
     
 ### Q4: What happens if my query is too broad or unclear?
@@ -137,5 +129,4 @@ Yes. Once you select a recommendation, you can adjust any filters, exclude speci
 
 ### Q7: How is AI Finder different from AI Recommendations?
 -   **AI Finder** lets you search using natural language queries that you write yourself.
-    
 -   **AI Recommendations** proactively suggests pre-built queries based on your account configuration, activity, and Ideal Customer Profile.

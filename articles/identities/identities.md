@@ -51,9 +51,7 @@ Set up and manage the sender profiles that power your outreach campaigns. An ide
 # Understand Identities
 ## What Is an Identity?
 An identity in Enginy is a sender profile composed of a LinkedIn account, one or more email addresses, or both. Identities serve two primary purposes:
-
 -   **Running campaigns** — Each campaign uses an identity to execute its scheduled actions (sending LinkedIn messages, connection requests, emails, etc.).
-    
 -   **CRM mapping** — Identities map to your CRM users so that campaign activity syncs correctly.
     
 While connecting LinkedIn and email is not strictly required to create an identity, you need at least one channel connected to use the identity in campaigns. An identity with only LinkedIn connected can run campaigns that contain LinkedIn-only actions; likewise, an identity with only email connected can run email-only campaigns.
@@ -79,7 +77,6 @@ The main Identities screen provides an overview of all your active identities an
 
 ## Search and Filters
 -   **Search Bar** — Quickly find any established identity by name.
-    
 -   **Date Filter** — Modify the timeframe for the displayed statistics. By default, the dashboard shows the current day's data.
     
 ## Performance Statistics
@@ -100,9 +97,7 @@ Connect directly to a LinkedIn profile by entering your login credentials.
 
 ### Required fields
 -   Identity Name
-    
 -   LinkedIn Email
-    
 -   LinkedIn Password
     
 **Important:** If your LinkedIn profile uses Two-Step Authentication (2FA/MFA), you will need to provide the access code during the linking process. Additionally, if you use social logins (Google, Microsoft, Apple) or an Access Key to sign in to LinkedIn, you will not be able to connect successfully. You must set a direct password in your LinkedIn settings first.
@@ -114,24 +109,17 @@ Create an identity by manually filling in the profile data. This method does not
 
 ### Available fields
 -   Profile Picture (upload)
-    
 -   First Name
-    
 -   Last Name
-    
 -   Job Title
-    
 -   Email
-    
 -   LinkedIn URL
-    
 -   Schedule Meeting URL
     
 ## Option C: Share (Generate Link)
 This option allows people who do not have an Enginy account (for example, team members, contractors, or partners) to connect their identity to your organization without needing platform access.
 
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440116/helpcenter/identities-4.png)
-
 1.  Click the **Generate Share Link** button.
 2.  Share the generated link with the person.
 3.  The person opens the link in their browser and uses either the Credentials or Manual method to create their identity.
@@ -151,19 +139,12 @@ If you connected a LinkedIn account when creating the identity, this section is 
 
 ### Editable fields
 -   Profile Picture
-    
 -   First Name
-    
 -   Last Name
-    
 -   Job Title
-    
 -   LinkedIn URL
-    
 -   Email
-    
 -   Schedule Meeting URL
-    
 -   Phone Number
     
 ### Working Hours
@@ -186,11 +167,8 @@ Define the daily activity limits for the identity on LinkedIn:
 
 ### Withdrawals
 Manage pending LinkedIn connection requests that have not been accepted:
-
 -   **Automatic withdrawal** — Enable the option "Automatically withdraw pending invitations" and set a threshold in days (e.g., 7 days). Connection requests pending longer than this period will be automatically withdrawn.
-    
 -   **Manual withdrawal** — Select and withdraw pending requests in bulk from the Withdrawals tab.
-    
 -   **History** — View the full history of withdrawn connections.
     
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440117/helpcenter/identities-9.png)
@@ -261,11 +239,8 @@ For your security review, the Enginy integration requests the following Microsof
 
 # **References**
 -   [Configure how users consent to applications](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/configure-user-consent) — Microsoft Learn
-    
 -   [Grant tenant-wide admin consent](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/grant-admin-consent) — Microsoft Learn
-    
 -   [Conditional Access: Targeting Resources](https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-cloud-apps) — Microsoft Learn
-    
 -   [Overview of permissions and consent](https://learn.microsoft.com/en-us/entra/identity-platform/permissions-consent-overview) — Microsoft Learn
     
 #### Connect an Email Account via IMAP in Enginy
@@ -273,15 +248,10 @@ Connecting an inbox via **IMAP** lets Enginy access your mailbox to **sync and r
 
 # Before you start
 Make sure you have:
-
 -   The email address you want to connect
-    
 -   The password (or an **App Password** if your provider requires it)
-    
 -   Your provider’s server details:
-    
     -   **IMAP Host** and **IMAP Port**
-        
     -   **SMTP Host** and **SMTP Port**
         
 **Tip:** For many providers (Google, Microsoft, etc.), you may need to enable IMAP/SMTP access or generate an **App Password**, especially if 2FA is enabled.
@@ -301,33 +271,23 @@ Enginy will validate the connection and, if everything is correct, the inbox wil
 
 # Common ports (quick reference)
 These are the most common secure options (they can vary by provider):
-
 -   **IMAP**
-    
     -   **993** (SSL/TLS) ✅ recommended
-        
     -   143 (non-SSL / STARTTLS depending on provider)
-        
 -   **SMTP**
-    
     -   **465** (SSL)
-        
     -   **587** (STARTTLS) ✅ very common/recommended
         
 # Best practices
 -   Use **TLS/SSL** ports whenever possible (IMAP **993**, SMTP **465/587**).
-    
 -   If your account has **2FA**, your normal password often won’t work—use an **App Password**.
-    
 -   If this inbox is used for campaigns, consider connecting a **dedicated sending inbox**.
     
 # Troubleshooting
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc;"><p class="no-margin">Symptom</p></td><td style="background-color: #d7efdc;"><p class="no-margin">Likely Cause</p></td><td style="background-color: #d7efdc;"><p class="no-margin">Resolution</p></td></tr><tr><td><p class="no-margin">Connection fails with “Authentication failed” / “Invalid credentials”</p></td><td><p class="no-margin">Wrong password, or 2FA is enabled and the provider requires an App Password</p></td><td><p class="no-margin">Double-check the email/password. If 2FA is enabled, generate an <b>App Password</b> and use it instead of your normal password.</p></td></tr><tr><td><p class="no-margin">“Cannot connect” / timeout error</p></td><td><p class="no-margin">IMAP/SMTP host or port is incorrect, or network/firewall is blocking the connection</p></td><td><p class="no-margin">Verify the <b>IMAP/SMTP host and port</b>. Try secure defaults: <b>IMAP 993 (SSL)</b> and <b>SMTP 587 (STARTTLS)</b> or <b>465 (SSL)</b>. Check firewall/VPN restrictions.</p></td></tr><tr><td><p class="no-margin">IMAP connects, but sending emails fails</p></td><td><p class="no-margin">SMTP settings are incorrect or SMTP is blocked by the provider</p></td><td><p class="no-margin">Verify <b>SMTP Host/Port</b> and whether the provider requires <b>SSL/STARTTLS</b>. Make sure SMTP is enabled for the mailbox in the provider settings.</p></td></tr><tr><td><p class="no-margin">Connection succeeds, but no emails appear / no sync</p></td><td><p class="no-margin">IMAP access is disabled on the mailbox, or the provider limits IMAP</p></td><td><p class="no-margin">Enable <b>IMAP access</b> in the provider/admin settings. If the provider restricts IMAP, use another connection method (OAuth, if available).</p></td></tr><tr><td><p class="no-margin">Connection fails after changing the mailbox password</p></td><td><p class="no-margin">Stored credentials are no longer valid</p></td><td><p class="no-margin">Reconnect the inbox with the updated password (or new App Password).</p></td></tr><tr><td><p class="no-margin">“Too many login attempts” / temporary lock</p></td><td><p class="no-margin">Provider rate limits or security policies triggered</p></td><td><p class="no-margin">Wait and try again later. Reduce repeated attempts. If available, whitelist the login location/IP or review provider security alerts.</p></td></tr><tr><td><p class="no-margin">Works for some mailboxes but not for others</p></td><td><p class="no-margin">Provider/admin policies differ per user (security rules, IMAP disabled, restricted apps)</p></td><td><p class="no-margin">Compare mailbox settings and policies. Ask your IT/admin to enable IMAP/SMTP or allow third-party access for that user.</p></td></tr><tr><td><p class="no-margin">Connection fails only on corporate domains (e.g., Microsoft/Google Workspace)</p></td><td><p class="no-margin">Admin policies require approval for third-party access or block basic auth</p></td><td><p class="no-margin">Ask the admin to allow IMAP/SMTP access (or provide an App Password). If basic auth is blocked, use the provider’s recommended secure method where possible.</p></td></tr><tr><td><p class="no-margin">Emails send, but deliverability is poor (spam/bounces)</p></td><td><p class="no-margin">Domain reputation issues, missing SPF/DKIM/DMARC, or aggressive sending volume</p></td><td><p class="no-margin">Ensure SPF/DKIM/DMARC are configured. Warm up the inbox and lower sending volume. Use multiple inboxes / “Shuffle” if applicable.</p></td></tr></tbody></table>
-
 -   **Load balancing** — When multiple email addresses are connected and the campaign’s **Email Inbox** setting is set to “Shuffle,” Enginy distributes leads across all available inboxes.
     
     ![](https://res.cloudinary.com/enginy/image/upload/v1771440113/helpcenter/identities-15.png)
-    
 -   **Lead continuity** — If a lead starts a sequence with a specific email address and you later disconnect that address, the system will not reassign the lead to another connected address. Instead, the lead will produce an error. To resolve this, you must reconnect the original email address.
     
 **Warning:** If you disconnect an email address that has active leads mid-sequence, those leads will fail. The only way to fix this is to reconnect the same address that initiated the conversation.
@@ -343,9 +303,7 @@ The Warm-Up feature trains an email address through an external provider to redu
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440113/helpcenter/identities-18.png)
 
 **Requirements during warm-up:**
-
 -   Pause all campaigns that use the identity (and therefore the email address being warmed up). Not mandatory but highly recommended warm-up properly.
-    
 -   Avoid sending any emails from that address outside of Enginy.
     
 **Tip:** Following these requirements ensures the warm-up process completes successfully and your sender reputation improves as expected.
@@ -357,13 +315,9 @@ Configure the sending limits per email address to avoid spam filters:
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440113/helpcenter/identities-19.png)
 
 **Notes:**
-
 -   **Maximum** allowed to configure is **80 emails sent per inbox per day** and **10 emails sent per inbox per hour.**
-    
 -   If you **need to** **temporarily increase** this rate for a valid reason, **contact Support** to request an increase. However, this isn’t recommended, as it can harm your email reputation and reduce deliverability. If you decide to proceed, make sure that:
-    
     -   You’ve already been sending at this volume consistently.
-        
     -   Your sending domains have a strong reputation.
         
 ### Signature

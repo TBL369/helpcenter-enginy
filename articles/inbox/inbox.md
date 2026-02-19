@@ -80,15 +80,10 @@ Users can create custom tags with unique names and colors. Manual tags appear as
 
 ### Custom Tags
 You can create your own tags directly from the Inbox. Each custom AI tag allows you to define:
-
 -   **Title**
-    
 -   **Color**
-    
 -   **Sentiment Category:** Assign Neutral, Positive, or Negative sentiment.
-    
 -   **Instructions:** Define the conditions with a custom AI prompt under which the system should apply the tag.
-    
 -   **Auto tagging:** switch on the toggle to make it an AI Tag, keep it off to make it a Manual Tag.
     
 **Important:** AI tags must have a valid prompt configured before they can be activated.
@@ -97,9 +92,7 @@ You can create your own tags directly from the Inbox. Each custom AI tag allows 
 
 ### Tag Compatibility and Dynamic Updates
 -   A conversation can have multiple tags simultaneously (e.g., "Interested" and "Bad Timing").
-    
 -   Tags are automatically updated as the conversation evolves — old tags may be removed and new ones added.
-    
 -   The AI uses a compatibility matrix to ensure tagging accuracy and keep analytics current.
     
 ---
@@ -150,9 +143,7 @@ The composition box is located at the bottom of the chat view and adapts based o
 
 ### Replying and Channel Selection
 When the conversation history includes messages from multiple senders, you can choose:
-
 -   **Whom to reply to** when there are multiple senders in the thread.
-    
 -   **Which channel to use** (Email or LinkedIn) if previous messages were sent via both channels.
     
 This ensures continuity and allows responses to follow the same communication channel as the existing conversation.
@@ -169,11 +160,8 @@ This ensures continuity and allows responses to follow the same communication ch
 
 ## AI Drafts and Suggestions
 When AI detects a positive or engaging message from a lead, it automatically generates a draft reply. If an AI draft is available, you will see:
-
 -   **Suggestion Text:** Appears inside the text box.
-    
 -   **Press \[Tab\] to Edit:** Load the suggested message into the composition box to review and personalize it before sending.
-    
 -   **Directly Send:** Press the send button to send the AI suggestion immediately.
     
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440119/helpcenter/inbox-7.png)
@@ -206,11 +194,8 @@ The header displays the contact summary (Name, Position, Company) and provides q
 
 ### Additional options (via the three-dot menu)
 -   Add to Blocklist (contact or company level)
-    
 -   Add to Another Campaign
-    
 -   Create Task
-    
 -   Archive (conversation)
     
 **Note:** Actions like Add to Blocklist, Create Task, and Add Tags are recorded in the activity timeline, showing the user who performed the action and the timestamp.
@@ -220,9 +205,7 @@ The header displays the contact summary (Name, Position, Company) and provides q
 
 ### CRM Sync Status
 Shows owner and last sync time when connected.
-
 -   **Resync** button to manually refresh data.
-    
 -   **Enable Sync** button if not yet connected (opens CRM export modal).
     
 ## Company Information
@@ -230,17 +213,11 @@ Shows owner and last sync time when connected.
 
 ## Recent Activity Timeline
 Chronological log of all interactions from the last 19 months:
-
 -   Messages sent and received
-    
 -   Campaign steps executed
-    
 -   Profile visits and connection requests
-    
 -   Email opens
-    
 -   Invitations accepted
-    
 -   Link clicks
     
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440117/helpcenter/inbox-10.png)

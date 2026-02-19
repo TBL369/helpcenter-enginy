@@ -103,8 +103,7 @@ Optional content sections (use when applicable): "Before You Start" (prerequisit
 - One blank line between paragraphs. NO blank line before tables. One blank line after tables.
 - One blank line before and after images.
 - One blank line before and after blockquotes (callouts).
-- Unordered lists (`-`): one blank line before and after.
-- Numbered lists (`1.`, `2.`, `3.`): no blank lines between items, no blank line before the first item, and no blank line after the last item.
+- Unordered lists (`-`) and numbered lists (`1.`, `2.`, `3.`): no blank lines between items, no blank line before the first item. One blank line after the last item.
 - Never use double blank lines. No trailing whitespace.
 
 ### Tables
