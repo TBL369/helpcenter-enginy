@@ -276,6 +276,80 @@ function parseArticleInputs(input: string): string[] {
 }
 
 /**
+ * Busca archivos .md recursivamente dentro de un directorio, excluyendo carpetas como images/
+ */
+function findMdFiles(dir: string, baseDir: string, excludeDirs: string[] = ['images']): string[] {
+  const results: string[] = [];
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    if (entry.isDirectory()) {
+      if (!excludeDirs.includes(entry.name)) {
+        results.push(...findMdFiles(path.join(dir, entry.name), baseDir, excludeDirs));
+      }
+    } else if (entry.name.endsWith('.md')) {
+      results.push(path.relative(baseDir, path.join(dir, entry.name)));
+    }
+  }
+  return results;
+}
+
+interface FileGroup {
+  dir: string;
+  files: string[];
+}
+
+/**
+ * Agrupa archivos por directorio padre y muestra un listado visual tipo árbol con numeración global.
+ */
+function displayFileTree(files: string[]): void {
+  const groups: FileGroup[] = [];
+  const byDir = new Map<string, string[]>();
+
+  for (const f of files) {
+    const dir = path.dirname(f);
+    const key = dir === '.' ? '' : dir;
+    if (!byDir.has(key)) byDir.set(key, []);
+    byDir.get(key)!.push(path.basename(f));
+  }
+
+  const sortedKeys = [...byDir.keys()].sort((a, b) => {
+    if (a === '') return -1;
+    if (b === '') return 1;
+    return a.localeCompare(b);
+  });
+
+  for (const key of sortedKeys) {
+    groups.push({ dir: key, files: byDir.get(key)!.sort() });
+  }
+
+  let globalIndex = 1;
+  const totalFiles = files.length;
+  const pad = String(totalFiles).length;
+
+  for (let g = 0; g < groups.length; g++) {
+    const group = groups[g];
+    const isLastGroup = g === groups.length - 1;
+
+    if (group.dir) {
+      console.log(`   │`);
+      console.log(`   ${isLastGroup ? '└' : '├'}── ${group.dir}/`);
+    }
+
+    const indent = group.dir ? (isLastGroup ? '       ' : '   │   ') : '   ';
+    const prefix = group.dir ? (isLastGroup ? '    ' : '│   ') : '';
+
+    for (let i = 0; i < group.files.length; i++) {
+      const isLast = i === group.files.length - 1;
+      const connector = group.dir
+        ? `   ${prefix}${isLast && isLastGroup ? '└' : '├'}── `
+        : '   ├── ';
+      const num = String(globalIndex).padStart(pad);
+      console.log(`${connector}${num}. ${group.files[i]}`);
+      globalIndex++;
+    }
+  }
+}
+
+/**
  * Espera un tiempo determinado (para rate limiting)
  */
 function delay(ms: number): Promise<void> {
@@ -692,10 +766,7 @@ async function uploadToIntercomFlow(
     return;
   }
 
-  // Listar archivos .md disponibles
-  const mdFiles = fs.readdirSync(articlesDir)
-    .filter(f => f.endsWith('.md'))
-    .sort();
+  const mdFiles = findMdFiles(articlesDir, articlesDir);
 
   if (mdFiles.length === 0) {
     console.error('\n   ❌ No hay archivos .md en la carpeta articles/\n');
@@ -703,9 +774,7 @@ async function uploadToIntercomFlow(
   }
 
   console.log(`\n   📄 Archivos .md disponibles (${mdFiles.length}):\n`);
-  mdFiles.forEach((f, i) => {
-    console.log(`   ${String(i + 1).padStart(3)}. ${f}`);
-  });
+  displayFileTree(mdFiles);
 
   console.log('\n   Opciones:');
   console.log('   - Números separados por coma (ej: 1,3,5)');
@@ -728,7 +797,11 @@ async function uploadToIntercomFlow(
   } else {
     const names = selection.split(/[,\s]+/).map(n => n.trim().toLowerCase());
     for (const name of names) {
-      const match = mdFiles.find(f => f.toLowerCase() === name || f.toLowerCase() === name + '.md');
+      const match = mdFiles.find(f => {
+        const basename = path.basename(f).toLowerCase();
+        return f.toLowerCase() === name || f.toLowerCase() === name + '.md'
+          || basename === name || basename === name + '.md';
+      });
       if (match) selectedFiles.push(match);
     }
   }
