@@ -50,7 +50,7 @@ Connect your existing tech stack to Enginy so you can synchronize data, enrich c
 
 The Integrations page is organized into three tabs that give you a clear view of every available connection and its current status.
 
-![](images/integrations-1.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440119/helpcenter/integrations-1.png)
 
 ## All Tab
 
@@ -90,7 +90,7 @@ Plug in your data-enrichment tools to optimize outreach, verify data, and qualif
 
 e.g.:
 
-![](images/integrations-2.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440124/helpcenter/integrations-2.png)
 
 ## AI Enrichment
 
@@ -106,7 +106,7 @@ If you have an API-enabled Enterprise account with any of these AI providers, yo
 
 TheirStack integration can be activated by simply pasting the **API key**.
 
-![](images/integrations-3.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440124/helpcenter/integrations-3.png)
 
 ## Communication
 
@@ -114,9 +114,9 @@ TheirStack integration can be activated by simply pasting the **API key**.
 
 Slack integration can be activated by connecting via Oauth.
 
-![](images/integrations-4.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440124/helpcenter/integrations-4.png)
 
-![](images/integrations-5.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440124/helpcenter/integrations-5.png)
 
 ---
 
@@ -141,7 +141,7 @@ A floating setup window opens with four sequential steps.
 
 This step defines how Enginy matches contacts and companies with your CRM records to prevent duplicates and ensure data integrity. A sync means Enginy compares its records against CRM records using the identifiers you configure here.
 
-![](images/integrations-6.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440124/helpcenter/integrations-6.png)
 
 ### Integration User
 
@@ -153,9 +153,9 @@ Choose how Enginy determines whether a contact already exists in your CRM.
 
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Option</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Matching Logic</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>First name + Last name + Company name</b></p></td><td><p class="intercom-align-justify no-margin">A contact matches when all three fields are the same in both Enginy and the CRM.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>LinkedIn profile URL OR First name + Last name + Company name</b></p></td><td><p class="intercom-align-justify no-margin">A contact matches if the LinkedIn profile URL is the same <b>or</b> all three name/company fields match.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Custom Mapping</b></p></td><td><p class="intercom-align-justify no-margin">Opens a pop-up where you define custom conditions using AND/OR logic (for example, match by <i>First Name</i> AND <i>Last Name</i>, OR by <i>Professional Email</i>).</p></td></tr></tbody></table>
 
-![](images/integrations-7.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440125/helpcenter/integrations-7.png)
 
-![](images/integrations-8.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440125/helpcenter/integrations-8.png)
 
 ### Company Identifier
 
@@ -163,9 +163,9 @@ Choose how Enginy determines whether a company already exists in your CRM.
 
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Option</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Matching Logic</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Domain</b></p></td><td><p class="intercom-align-justify no-margin">Matches on the company domain (e.g., <code>enginy.ai</code>). You can also check the box <b>Include any domain extension</b> to treat <code>.com</code>, <code>.es</code>, <code>.org</code>, etc. as equivalent.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Domain or Company Name</b></p></td><td><p class="intercom-align-justify no-margin">Matches if either the domain or the company name is the same.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Custom Mapping</b></p></td><td><p class="intercom-align-justify no-margin">Opens a pop-up where you define custom conditions (for example, match by <i>Domain</i> OR <i>Company LinkedIn URL</i>).</p></td></tr></tbody></table>
 
-![](images/integrations-9.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440125/helpcenter/integrations-9.png)
 
-![](images/integrations-10.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440122/helpcenter/integrations-10.png)
 
 ### General
 
@@ -176,7 +176,7 @@ Under **General**, you’ll find two toggles that control how associations are h
 -   **When exporting companies, associate them with contacts in HubSpot:** If enabled, Enginy will automatically link exported companies to their related contacts in HubSpot.
     
 
-![](images/integrations-11.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440122/helpcenter/integrations-11.png)
 
 ---
 
@@ -188,9 +188,9 @@ This step configures which Enginy fields map to which CRM fields when exporting 
 
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Field Type</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Description</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Enginy Fields</b></p></td><td><p class="intercom-align-justify no-margin">Standard fields from your contact or company lists (e.g., Phone Number, Job Title). Click the <b>Add field</b> button to add a new mapping: select the Enginy field first, then select the corresponding CRM field.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Fixed Value Fields</b></p></td><td><p class="intercom-align-justify no-margin">Fields that always export with the same static value. For example, create a CRM field called "Source" and set its fixed value to "Enginy" so every exported record is tagged with its origin. Click the <b>Add field</b> button to add a new mapping: select the Enginy field first, then select the corresponding CRM field.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Manual Export Fields</b></p></td><td><p class="intercom-align-justify no-margin">Fields whose value you define specifically at the time of export. Click the <b>Add field</b> button to add a new mapping: select the CRM field which will be asked to be set when exporting. As many as you want.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Engagement Fields</b></p></td><td><p class="intercom-align-justify no-margin">Fields that are populated when an Activity is created in the CRM (for example, an email-sent event, a LinkedIn message, or a Task log). Just <b>select</b> the HubSpot field and then set the Value to export. Only one can be set.</p></td></tr></tbody></table>
 
-![](images/integrations-12.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440121/helpcenter/integrations-12.png)
 
-![](images/integrations-13.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440121/helpcenter/integrations-13.png)
 
 **Warning:** Don’t map a Company field in the Contacts tab (or a Contact field in the Companies tab). This **can cause export errors**. If you must map the same field in both tabs, make sure it’s mapped the same in both places.
 
@@ -214,7 +214,7 @@ Here are the available mapping types between Enginy and your CRM fields:
 
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Option</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Behaviour</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Bi-directional sync</b></p></td><td><p class="intercom-align-justify no-margin">Changes sync both ways automatically.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>[CRM] overwrites Enginy</b></p></td><td><p class="intercom-align-justify no-margin">Changes in [CRM] automatically overwrite the corresponding fields in Enginy.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Enginy overwrites [CRM]</b></p></td><td><p class="intercom-align-justify no-margin">Changes in Enginy automatically overwrite the corresponding fields in [CRM].</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Sync if value is empty</b></p></td><td><p class="intercom-align-justify no-margin">Data only syncs automatically when the destination field is empty, either in Enginy or [CRM], preventing overwriting existing values.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Sync deactivated</b></p></td><td><p class="intercom-align-justify no-margin">No automatic sync. You’ll need to manually export or run a sync to apply changes.</p></td></tr></tbody></table>
 
-![](images/integrations-14.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440121/helpcenter/integrations-14.png)
 
 ### Association Type
 
@@ -222,7 +222,7 @@ The **Association Type** setting controls the relationship between a contact and
 
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Option</p></td><td style="background-color: #d7efdc80;"><p class="intercom-align-justify no-margin">Behavior</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Add as additional association</b></p></td><td><p class="intercom-align-justify no-margin">Adds the association without changing existing ones.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Add association as Primary</b></p></td><td><p class="intercom-align-justify no-margin">Sets the new association as the primary relationship.</p></td></tr><tr><td><p class="intercom-align-justify no-margin"><b>Associate as Primary and remove previous associations</b></p></td><td><p class="intercom-align-justify no-margin">Sets the new association as primary <b>and</b> deletes all previous associations.</p></td></tr></tbody></table>
 
-![](images/integrations-15.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440123/helpcenter/integrations-15.png)
 
 **Warning:** The "Associate as Primary and remove previous associations" option is **not recommended** unless you are certain you want to erase all prior associations for the record. Using it can result in data loss if historical relationships exist.
 
@@ -230,7 +230,7 @@ When exporting manually a contact or company, you can choose the **Association T
 
 You can also: **overwrite existing values** for any field mapping (in either the **Contacts** or **Companies** tab), overwrite CRM owner (who register the export in CRM), optionally set **Manual export field values**, and enable **Export associated companies** (or **Export associated contacts** when manually exporting a company).
 
-![](images/integrations-16.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440123/helpcenter/integrations-16.png)
 
 ---
 
@@ -274,7 +274,7 @@ An **Identity** in Enginy is the profile that runs a campaign (for example, a Li
 
 When a campaign — which is always linked to an identity — performs a sync or export (Campaign mappings export types), the CRM activity log shows the associated CRM user as the one who executed the action.
 
-![](images/integrations-17.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440123/helpcenter/integrations-17.png)
 
 ### Users Mapping
 
@@ -282,13 +282,13 @@ When a campaign — which is always linked to an identity — performs a sync or
 
 If CRM users have different permission levels, this association respects those limits. A record exported by an Enginy user is owned by the mapped CRM user and is governed by that CRM user's permissions.
 
-![](images/integrations-18.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440123/helpcenter/integrations-18.png)
 
 ### Default CRM owner
 
 This mapping sets a **default CRM owner** (contact or company owner) for exports performed by an Enginy user who isn’t mapped in User Mapping.
 
-![](images/integrations-19.png)
+![](https://res.cloudinary.com/enginy/image/upload/v1771440123/helpcenter/integrations-19.png)
 
 ---
 
