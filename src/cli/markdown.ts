@@ -59,7 +59,9 @@ export class MarkdownExporter {
     const { html: processedHtml, downloadedCount } = await this.downloadImages(htmlBody, title);
     const markdown = this.htmlToMarkdown(title, processedHtml);
     const slug = filename || this.slugify(title);
-    const filePath = path.join(this.articlesDir, `${slug}.md`);
+    const articleDir = path.join(this.articlesDir, slug);
+    fs.mkdirSync(articleDir, { recursive: true });
+    const filePath = path.join(articleDir, `${slug}.md`);
 
     fs.writeFileSync(filePath, markdown, 'utf-8');
 

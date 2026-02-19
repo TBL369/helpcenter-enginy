@@ -301,7 +301,6 @@ interface FileGroup {
  * Agrupa archivos por directorio padre y muestra un listado visual tipo árbol con numeración global.
  */
 function displayFileTree(files: string[]): void {
-  const groups: FileGroup[] = [];
   const byDir = new Map<string, string[]>();
 
   for (const f of files) {
@@ -311,6 +310,10 @@ function displayFileTree(files: string[]): void {
     byDir.get(key)!.push(path.basename(f));
   }
 
+  // Directorios con un solo archivo homónimo se tratan como archivos sueltos
+  const flatFiles: Array<{ relPath: string; display: string }> = [];
+  const multiGroups: Array<{ dir: string; files: string[] }> = [];
+
   const sortedKeys = [...byDir.keys()].sort((a, b) => {
     if (a === '') return -1;
     if (b === '') return 1;
@@ -318,32 +321,46 @@ function displayFileTree(files: string[]): void {
   });
 
   for (const key of sortedKeys) {
-    groups.push({ dir: key, files: byDir.get(key)!.sort() });
+    const dirFiles = byDir.get(key)!.sort();
+    const isSingleHomonym = key !== '' && dirFiles.length === 1
+      && path.basename(dirFiles[0], '.md') === path.basename(key);
+
+    if (key === '' || isSingleHomonym) {
+      for (const f of dirFiles) {
+        flatFiles.push({ relPath: key ? `${key}/${f}` : f, display: f });
+      }
+    } else {
+      multiGroups.push({ dir: key, files: dirFiles });
+    }
   }
 
-  let globalIndex = 1;
   const totalFiles = files.length;
   const pad = String(totalFiles).length;
+  let globalIndex = 1;
+  const hasMulti = multiGroups.length > 0;
 
-  for (let g = 0; g < groups.length; g++) {
-    const group = groups[g];
-    const isLastGroup = g === groups.length - 1;
+  for (const entry of flatFiles) {
+    const isLast = globalIndex === flatFiles.length && !hasMulti;
+    const connector = isLast ? '└' : '├';
+    const num = String(globalIndex).padStart(pad);
+    console.log(`   ${connector}── ${num}. ${entry.display}`);
+    globalIndex++;
+  }
 
-    if (group.dir) {
-      console.log(`   │`);
-      console.log(`   ${isLastGroup ? '└' : '├'}── ${group.dir}/`);
-    }
+  for (let g = 0; g < multiGroups.length; g++) {
+    const group = multiGroups[g];
+    const isLastGroup = g === multiGroups.length - 1;
 
-    const indent = group.dir ? (isLastGroup ? '       ' : '   │   ') : '   ';
-    const prefix = group.dir ? (isLastGroup ? '    ' : '│   ') : '';
+    console.log(`   │`);
+    console.log(`   ${isLastGroup ? '└' : '├'}── ${group.dir}/`);
+
+    const prefix = isLastGroup ? '    ' : '│   ';
 
     for (let i = 0; i < group.files.length; i++) {
       const isLast = i === group.files.length - 1;
-      const connector = group.dir
-        ? `   ${prefix}${isLast && isLastGroup ? '└' : '├'}── `
-        : '   ├── ';
+      const connector = isLast && isLastGroup ? '└' : '├';
       const num = String(globalIndex).padStart(pad);
-      console.log(`${connector}${num}. ${group.files[i]}`);
+      console.log(`   ${prefix}${connector}── ${num}. ${group.files[i]}`);
       globalIndex++;
     }
   }
