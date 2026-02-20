@@ -2,10 +2,16 @@ import * as dotenv from 'dotenv';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as readline from 'readline';
-import { IntercomClient, ArticleListItem, IntercomArticle } from './intercom';
+import { IntercomClient, ArticleListItem, IntercomArticle, TranslatedContentEntry } from './intercom';
 import { NotionClient } from './notion';
 import { MarkdownExporter } from './markdown';
 import { marked } from 'marked';
+import {
+  getTranslationConfig,
+  translateArticleFull,
+  TranslationConfig,
+  TranslationResult,
+} from './translation';
 
 // Cargar variables de entorno desde .env
 dotenv.config();
@@ -275,15 +281,19 @@ function parseArticleInputs(input: string): string[] {
   return [...new Set(ids)]; // Eliminar duplicados
 }
 
+/** Pattern: slug.{lang}.md — translation override files to exclude from main listing */
+const OVERRIDE_PATTERN = /\.\w{2}(-\w{2})?\.md$/;
+
 /**
- * Busca archivos .md recursivamente dentro de un directorio, excluyendo carpetas como images/
+ * Busca archivos .md recursivamente dentro de un directorio,
+ * excluyendo carpetas como images/ y archivos override de traducción (slug.es.md, slug.it.md, etc.)
  */
 function findMdFiles(dir: string, baseDir: string): string[] {
   const results: string[] = [];
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
     if (entry.isDirectory()) {
       results.push(...findMdFiles(path.join(dir, entry.name), baseDir));
-    } else if (entry.name.endsWith('.md')) {
+    } else if (entry.name.endsWith('.md') && !OVERRIDE_PATTERN.test(entry.name)) {
       results.push(path.relative(baseDir, path.join(dir, entry.name)));
     }
   }
@@ -970,6 +980,46 @@ function mdFileToHtml(filePath: string): { title: string; html: string } {
 }
 
 /**
+ * Convierte traducciones Markdown a HTML y construye el objeto translated_content
+ * que espera la API de Intercom.
+ */
+function buildTranslatedContent(
+  translations: TranslationResult[],
+  authorId: string,
+  state: 'draft' | 'published',
+): Record<string, TranslatedContentEntry> {
+  const result: Record<string, TranslatedContentEntry> = {};
+
+  for (const t of translations) {
+    const lines = t.markdown.split('\n');
+    let title = '';
+    let bodyStart = 0;
+
+    for (let i = 0; i < lines.length; i++) {
+      const match = lines[i].match(/^#\s+(.+)$/);
+      if (match) {
+        title = match[1].trim();
+        bodyStart = i + 1;
+        break;
+      }
+    }
+
+    const bodyMd = lines.slice(bodyStart).join('\n').trim();
+    let html = marked.parse(bodyMd) as string;
+    html = intercomPostProcess(html);
+
+    result[t.language] = {
+      title: title || 'Untitled',
+      body: html,
+      author_id: parseInt(authorId),
+      state,
+    };
+  }
+
+  return result;
+}
+
+/**
  * Funcion para subir archivos .md del repo a Intercom como articulos draft.
  */
 async function uploadToIntercomFlow(
@@ -1071,6 +1121,19 @@ async function uploadToIntercomFlow(
   const stateChoice = await askQuestion(rl, '\n   ¿Estado del artículo? (draft/published, Enter=draft): ');
   const state = (stateChoice.toLowerCase() === 'published' ? 'published' : 'draft') as 'draft' | 'published';
 
+  // ── Opción de traducción ──
+  const translationConfig = getTranslationConfig();
+  let withTranslations = false;
+
+  if (translationConfig) {
+    const langs = translationConfig.languages.map(l => l.toUpperCase()).join(', ');
+    console.log(`\n   🌐 Idiomas a subir:`);
+    console.log(`   1. Solo EN`);
+    console.log(`   2. EN + traducciones (${langs})`);
+    const langChoice = await askQuestion(rl, '\n   Selección (1/2, Enter=1): ');
+    withTranslations = langChoice === '2';
+  }
+
   // Mostrar links pendientes de resolver de sesiones anteriores
   let unresolvedState = readUnresolvedLinks();
   if (unresolvedState.pendingLinks.length > 0) {
@@ -1100,11 +1163,29 @@ async function uploadToIntercomFlow(
       const { title, html } = mdFileToHtml(filePath);
       const { html: resolvedHtml, unresolvedLinks } = await resolveArticleLinks(html, intercomClient, file);
 
+      let translatedContent: Record<string, TranslatedContentEntry> | undefined;
+
+      if (withTranslations && translationConfig) {
+        const enMarkdown = fs.readFileSync(filePath, 'utf-8');
+        const { translations, overridesUpdated } = await translateArticleFull(
+          filePath,
+          enMarkdown,
+          translationConfig,
+        );
+
+        if (overridesUpdated.length > 0) {
+          console.log(`      ⚠️  Overrides actualizados: ${overridesUpdated.map(l => l.toUpperCase()).join(', ')}`);
+        }
+
+        translatedContent = buildTranslatedContent(translations, authorId, state);
+      }
+
       const result = await intercomClient.createArticle({
         title,
         body: resolvedHtml,
         authorId,
         state,
+        translatedContent,
       });
 
       for (const ul of unresolvedLinks) ul.sourceIntercomId = result.id;
@@ -1114,7 +1195,8 @@ async function uploadToIntercomFlow(
         unresolvedState = removeResolvedLinks(unresolvedState, file);
       }
 
-      console.log(`      ✅ ID: ${result.id} (${state})`);
+      const langInfo = translatedContent ? ` + ${Object.keys(translatedContent).join(', ').toUpperCase()}` : '';
+      console.log(`      ✅ ID: ${result.id} (${state}${langInfo})`);
       successCount++;
 
       if (i < selectedFiles.length - 1) {

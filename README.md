@@ -57,6 +57,15 @@ cp .env.example .env
 | `CLOUDINARY_API_KEY` | Si | API key de Cloudinary |
 | `CLOUDINARY_API_SECRET` | Si | API secret de Cloudinary |
 
+### Traducciones
+
+| Variable | Requerida | Descripción |
+|---|---|---|
+| `TRANSLATION_LANGUAGES` | Si (para traducciones) | Idiomas destino: `es,it,fr,de` (comma-separated) |
+| `TRANSLATION_LLM_PROVIDER` | No | Proveedor LLM para traducciones (default: `LLM_PROVIDER`) |
+| `TRANSLATION_LLM_MODEL` | No | Modelo específico para traducciones |
+| `TRANSLATE_UI_LABELS` | No | Si `true`, traduce bold labels (default: `false`) |
+
 ### Variables por proveedor LLM
 
 Solo se leen las variables del proveedor seleccionado en `LLM_PROVIDER`.
@@ -120,6 +129,75 @@ Al subir a Intercom (opción 4), el pipeline resuelve automáticamente estos lin
 **Batch con múltiples artículos**: Si se suben como `published`, el pipeline hace una segunda pasada automática para resolver links a artículos del mismo batch.
 
 **Artículo individual**: Warning con instrucción de re-subir cuando el destino esté publicado.
+
+---
+
+## Multi-language Support
+
+El pipeline soporta traducciones automáticas de artículos a múltiples idiomas usando LLM. Las traducciones se suben a Intercom como `translated_content` dentro del mismo artículo, aprovechando el soporte nativo de Intercom para contenido multilingüe.
+
+### Configuración
+
+| Variable | Requerida | Descripción |
+|---|---|---|
+| `TRANSLATION_LANGUAGES` | Si | Idiomas destino, comma-separated (ej: `es,it,fr`) |
+| `TRANSLATION_LLM_PROVIDER` | No | Proveedor LLM para traducciones (default: usa `LLM_PROVIDER`) |
+| `TRANSLATION_LLM_MODEL` | No | Modelo específico para traducciones (default: modelo del proveedor) |
+| `TRANSLATE_UI_LABELS` | No | Si `true`, traduce también los **bold labels** (default: `false`) |
+
+```bash
+# .env — ejemplo mínimo
+TRANSLATION_LANGUAGES=es,it
+```
+
+### Cómo funciona
+
+Al subir artículos a Intercom (opción 4 del CLI), se ofrece elegir:
+
+1. **Solo EN** — Comportamiento estándar, sin traducciones.
+2. **EN + traducciones** — Para cada artículo seleccionado:
+   - Se genera el HTML de EN normalmente.
+   - Para cada idioma destino, se busca un archivo override o se traduce con LLM.
+   - Se construye el objeto `translated_content` y se sube junto al artículo EN.
+
+### Archivos override (traducciones manuales)
+
+Los artículos se escriben en EN (source of truth). Si se necesita una traducción manual específica, se puede crear un archivo override:
+
+```
+articles/credits/credits.md       ← EN (fuente de verdad)
+articles/credits/credits.es.md    ← Override manual ES
+articles/credits/credits.it.md    ← Override manual IT
+```
+
+**Comportamiento:**
+
+| Override existe | EN cambió | Resultado |
+|---|---|---|
+| No | — | Traducción automática con LLM |
+| Sí | No | Se usa el override tal cual |
+| Sí | Sí | Se re-traduce con LLM y se sobreescribe el override |
+
+Cuando el EN cambia y existen overrides, el pipeline re-traduce automáticamente y muestra un warning. Si se necesita mantener una traducción manual específica, hay que re-aplicar los cambios manuales después del sync.
+
+### Reglas de no-traducción
+
+El prompt de traducción sigue reglas estrictas para preservar la consistencia:
+
+- **Bold text** (`**texto**`) = UI labels de la plataforma. NO se traducen (a menos que `TRANSLATE_UI_LABELS=true`).
+- **Nombres propios** del producto (Enginy, Intercom, LinkedIn, etc.) no se traducen.
+- **URLs, paths, código, variables AI** (`{field_name}`) se preservan intactos.
+- **Estructura Markdown** (headings, tablas HTML, callouts, imágenes) se preserva exactamente.
+
+### Nuevos idiomas
+
+Para añadir idiomas, solo hay que actualizar la variable de entorno:
+
+```bash
+TRANSLATION_LANGUAGES=es,it,fr,de,pt
+```
+
+El sistema es extensible a cualquier idioma soportado por Intercom (ISO 639-1).
 
 ---
 
@@ -371,6 +449,7 @@ launchctl unload ~/Library/LaunchAgents/com.helpcenter.sync.plist
 articles/                       Artículos .md del help center (fuente de verdad)
   {tema}/                       Un subdirectorio por artículo (ej: inbox/, credits/)
     {tema}.md                   Artículo principal
+    {tema}.{lang}.md            Override manual de traducción (ej: credits.es.md)
   start-here/                   Guías de onboarding (guide-1-*, guide-2-*, ...)
 images/                         Imágenes descargadas de Intercom (referenciadas por los .md)
 config/
@@ -386,12 +465,14 @@ prompts/
   config-auditor.md            Prompt para auditar config/ contra la estructura del repo SaaS
   images-to-article.md         Prompt para crear artículos desde screenshots
   prompt-optimizer.md          Prompt optimizer (metodología 4-D)
+  translate-article.md         Prompt para traducción automática de artículos con LLM
 src/
   cli/
     index.ts                   CLI interactivo de Intercom (menú principal)
     intercom.ts                Cliente API de Intercom
     markdown.ts                Exportador HTML → Markdown con descarga de imágenes
     notion.ts                  Cliente Notion (HTML → bloques)
+    translation.ts             Servicio de traducción multi-idioma con LLM
     cloudinary-upload.ts       Subida de imágenes a Cloudinary + reemplazo de rutas
   pipeline/
     nightly.ts                 Pipeline nocturno (changelog + sync en secuencia)

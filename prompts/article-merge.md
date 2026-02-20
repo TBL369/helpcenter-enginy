@@ -159,6 +159,11 @@ Typical help-center flow within the content sections:
 - If the target article is not published in Intercom, the link renders as plain text. The pipeline tracks pending links in `unresolved-links.json`.
 - Preserve image references from source content.
 
+### Translation-Safe Content
+
+- All UI labels (button names, menu items, field names) MUST be in **bold**. This signals the translation pipeline to preserve them untranslated across all languages.
+- Product names (Enginy, LinkedIn, HubSpot, etc.) should NOT be bolded — they are preserved by the translation prompt automatically.
+
 ### Redundancy Control Without Losing Content
 
 - When OLD and NEW repeat: keep the clearest canonical explanation, then incorporate any unique details from both.

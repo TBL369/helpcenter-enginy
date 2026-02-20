@@ -38,6 +38,13 @@ export interface ArticlesListResponse {
   total_count?: number;
 }
 
+export interface TranslatedContentEntry {
+  title: string;
+  body: string;
+  author_id: number;
+  state: 'published' | 'draft';
+}
+
 export interface IntercomConfig {
   accessToken: string;
   baseUrl?: string;
@@ -388,6 +395,7 @@ export class IntercomClient {
     title?: string;
     body?: string;
     state?: 'published' | 'draft';
+    translated_content?: Record<string, TranslatedContentEntry>;
   }): Promise<void> {
     try {
       await this.client.put(`/articles/${articleId}`, params);
@@ -416,15 +424,22 @@ export class IntercomClient {
     authorId: string;
     description?: string;
     state?: 'published' | 'draft';
+    translatedContent?: Record<string, TranslatedContentEntry>;
   }): Promise<{ id: number; url?: string }> {
     try {
-      const response = await this.client.post('/articles', {
+      const payload: Record<string, unknown> = {
         title: params.title,
         body: params.body,
         author_id: parseInt(params.authorId),
         description: params.description || '',
         state: params.state || 'draft',
-      });
+      };
+
+      if (params.translatedContent && Object.keys(params.translatedContent).length > 0) {
+        payload.translated_content = params.translatedContent;
+      }
+
+      const response = await this.client.post('/articles', payload);
       return {
         id: response.data.id,
         url: response.data.url,
