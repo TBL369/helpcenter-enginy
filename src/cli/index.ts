@@ -825,9 +825,9 @@ function intercomPostProcess(html: string): string {
   out = out.replace(/(<hr>)/g, `$1${SPACER}`);
   // Después de table-container
   out = out.replace(/(<\/table><\/div>)/g, `$1${SPACER}`);
-  // Después de listas outermost (</ul> o </ol> NO seguido de </li>)
-  out = out.replace(/(<\/ul>)(<(?!\/li))/g, `$1${SPACER}$2`);
-  out = out.replace(/(<\/ol>)(<(?!\/li))/g, `$1${SPACER}$2`);
+  // Después de listas outermost (</ul> o </ol> NO seguido de </li>, <ul> u <ol>)
+  out = out.replace(/(<\/ul>)(<(?!\/li|ul|ol))/g, `$1${SPACER}$2`);
+  out = out.replace(/(<\/ol>)(<(?!\/li|ul|ol))/g, `$1${SPACER}$2`);
   // Después de callouts
   out = out.replace(/(intercom-interblocks-callout[^>]*>.*?<\/div>)(<)/g, `$1${SPACER}$2`);
   // Después de imágenes (doble spacer)
@@ -959,6 +959,7 @@ function mdFileToHtml(filePath: string): { title: string; html: string } {
   let body = lines.slice(bodyStart).join('\n');
 
   // Sanitizar anchor links internos a texto plano (Intercom no soporta #anchors)
+  body = body.replace(/\\\[/g, '[').replace(/\\\]/g, ']');
   body = body.replace(/\[([^\]]+)\]\(#[^)]*\)/g, '$1');
 
   body = body.trim();
