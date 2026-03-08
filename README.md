@@ -49,6 +49,23 @@ cp .env.example .env
 | `SAAS_REPO` | Si | Repo del SaaS en formato `owner/name` |
 | `LLM_PROVIDER` | No | Proveedor LLM: `openai`, `anthropic`, `ollama` (default: `openai`) |
 
+### Cloudinary (subida de imágenes)
+
+| Variable | Requerida | Descripción |
+|---|---|---|
+| `CLOUDINARY_CLOUD_NAME` | Si | Nombre del cloud en Cloudinary |
+| `CLOUDINARY_API_KEY` | Si | API key de Cloudinary |
+| `CLOUDINARY_API_SECRET` | Si | API secret de Cloudinary |
+
+### Traducciones
+
+| Variable | Requerida | Descripción |
+|---|---|---|
+| `TRANSLATION_LANGUAGES` | Si (para traducciones) | Idiomas destino: `es,it,fr,de` (comma-separated) |
+| `TRANSLATION_LLM_PROVIDER` | No | Proveedor LLM para traducciones (default: `LLM_PROVIDER`) |
+| `TRANSLATION_LLM_MODEL` | No | Modelo específico para traducciones |
+| `TRANSLATE_UI_LABELS` | No | Si `true`, traduce bold labels (default: `false`) |
+
 ### Variables por proveedor LLM
 
 Solo se leen las variables del proveedor seleccionado en `LLM_PROVIDER`.
@@ -67,7 +84,7 @@ Solo se leen las variables del proveedor seleccionado en `LLM_PROVIDER`.
 
 ## CLI de Intercom
 
-Herramienta interactiva para trabajar con artículos de Intercom. Permite listar, exportar a Notion, exportar a Markdown y subir artículos desde Markdown.
+Herramienta interactiva para trabajar con artículos de Intercom. Permite listar, importar al repositorio o a Notion, y subir artículos desde Markdown.
 
 ### Uso
 
@@ -83,11 +100,125 @@ npm start
 ### Funciones del menú
 
 1. **Listar artículos** — Muestra todos los artículos disponibles en Intercom (públicos e internos).
-2. **Exportar a Notion** — Exporta artículos seleccionados como páginas en Notion dentro de una página contenedora.
-3. **Exportar a Markdown** — Descarga artículos de Intercom como ficheros `.md` en `articles/`, incluyendo imágenes.
-4. **Subir a Intercom** — Crea artículos en Intercom a partir de ficheros `.md` existentes en `articles/`.
+2. **Importar al repositorio** — Descarga artículos de Intercom como ficheros `.md` en `articles/`, incluyendo imágenes en `images/`.
+3. **Importar a Notion** — Exporta artículos seleccionados de Intercom como páginas en Notion dentro de una página contenedora.
+4. **Subir a Intercom** — Crea artículos en Intercom a partir de ficheros `.md` existentes en `articles/`. Soporta estados draft/published y selección de autor.
+5. **Salir** — Cierra el CLI.
 
 Soporta búsqueda por título, IDs numéricos o URLs de Intercom.
+
+### Inter-article links
+
+Los artículos pueden referenciar otros artículos del repo usando paths locales:
+
+```
+[AI Playbook](/articles/ai-playbook/ai-playbook.md)
+```
+
+Al subir a Intercom (opción 4), el pipeline resuelve automáticamente estos links:
+
+| Estado del destino | Comportamiento |
+|---|---|
+| Publicado en Intercom | Link resuelto con URL pública (`article.url` de la API) |
+| Draft en Intercom | Texto plano + warning (URL no disponible hasta publicar) |
+| No existe, subido en el mismo batch como published | Segunda pasada automática resuelve el link |
+| No existe en Intercom | Texto plano + warning |
+
+**Archivo de estado**: Los links no resueltos se registran en `unresolved-links.json` en la raíz del repo. Al inicio de cada upload, el CLI muestra los pendientes. Cuando un link se resuelve (porque el destino fue publicado y se re-sube el artículo), la entrada se elimina automáticamente. Si no hay pendientes, el archivo se borra.
+
+**Batch con múltiples artículos**: Si se suben como `published`, el pipeline hace una segunda pasada automática para resolver links a artículos del mismo batch.
+
+**Artículo individual**: Warning con instrucción de re-subir cuando el destino esté publicado.
+
+---
+
+## Multi-language Support
+
+El pipeline soporta traducciones automáticas de artículos a múltiples idiomas usando LLM. Las traducciones se suben a Intercom como `translated_content` dentro del mismo artículo, aprovechando el soporte nativo de Intercom para contenido multilingüe.
+
+### Configuración
+
+| Variable | Requerida | Descripción |
+|---|---|---|
+| `TRANSLATION_LANGUAGES` | Si | Idiomas destino, comma-separated (ej: `es,it,fr`) |
+| `TRANSLATION_LLM_PROVIDER` | No | Proveedor LLM para traducciones (default: usa `LLM_PROVIDER`) |
+| `TRANSLATION_LLM_MODEL` | No | Modelo específico para traducciones (default: modelo del proveedor) |
+| `TRANSLATE_UI_LABELS` | No | Si `true`, traduce también los **bold labels** (default: `false`) |
+
+```bash
+# .env — ejemplo mínimo
+TRANSLATION_LANGUAGES=es,it
+```
+
+### Cómo funciona
+
+Al subir artículos a Intercom (opción 4 del CLI), se ofrece elegir:
+
+1. **Solo EN** — Comportamiento estándar, sin traducciones.
+2. **EN + traducciones** — Para cada artículo seleccionado:
+   - Se genera el HTML de EN normalmente.
+   - Para cada idioma destino, se busca un archivo override o se traduce con LLM.
+   - Se construye el objeto `translated_content` y se sube junto al artículo EN.
+
+### Archivos override (traducciones manuales)
+
+Los artículos se escriben en EN (source of truth). Si se necesita una traducción manual específica, se puede crear un archivo override:
+
+```
+articles/credits/credits.md       ← EN (fuente de verdad)
+articles/credits/credits.es.md    ← Override manual ES
+articles/credits/credits.it.md    ← Override manual IT
+```
+
+**Comportamiento:**
+
+| Override existe | EN cambió | Resultado |
+|---|---|---|
+| No | — | Traducción automática con LLM |
+| Sí | No | Se usa el override tal cual |
+| Sí | Sí | Se re-traduce con LLM y se sobreescribe el override |
+
+Cuando el EN cambia y existen overrides, el pipeline re-traduce automáticamente y muestra un warning. Si se necesita mantener una traducción manual específica, hay que re-aplicar los cambios manuales después del sync.
+
+### Reglas de no-traducción
+
+El prompt de traducción sigue reglas estrictas para preservar la consistencia:
+
+- **Bold text** (`**texto**`) = UI labels de la plataforma. NO se traducen (a menos que `TRANSLATE_UI_LABELS=true`).
+- **Nombres propios** del producto (Enginy, Intercom, LinkedIn, etc.) no se traducen.
+- **URLs, paths, código, variables AI** (`{field_name}`) se preservan intactos.
+- **Estructura Markdown** (headings, tablas HTML, callouts, imágenes) se preserva exactamente.
+
+### Nuevos idiomas
+
+Para añadir idiomas, solo hay que actualizar la variable de entorno:
+
+```bash
+TRANSLATION_LANGUAGES=es,it,fr,de,pt
+```
+
+El sistema es extensible a cualquier idioma soportado por Intercom (ISO 639-1).
+
+---
+
+## Cloudinary — Subida de imágenes
+
+Utilidad standalone para subir las imágenes locales de `images/` a Cloudinary y reemplazar automáticamente las rutas relativas en los artículos `.md` por URLs de CDN.
+
+### Uso
+
+```bash
+npm run cloudinary
+```
+
+### Cómo funciona
+
+1. Lee todas las imágenes de `images/` (png, jpg, gif, webp, svg).
+2. Las sube a Cloudinary en lotes (concurrencia de 5) bajo la carpeta `helpcenter/`.
+3. Recorre los `.md` de `articles/` y reemplaza cada referencia `images/archivo.png` por la URL de Cloudinary correspondiente.
+4. Muestra un resumen con imágenes subidas y referencias reemplazadas.
+
+Requiere las variables `CLOUDINARY_CLOUD_NAME`, `CLOUDINARY_API_KEY` y `CLOUDINARY_API_SECRET` en `.env`.
 
 ---
 
@@ -315,7 +446,12 @@ launchctl unload ~/Library/LaunchAgents/com.helpcenter.sync.plist
 ## Estructura del proyecto
 
 ```
-articles/               Artículos .md del help center (fuente de verdad)
+articles/                       Artículos .md del help center (fuente de verdad)
+  {tema}/                       Un subdirectorio por artículo (ej: inbox/, credits/)
+    {tema}.md                   Artículo principal
+    {tema}.{lang}.md            Override manual de traducción (ej: credits.es.md)
+  start-here/                   Guías de onboarding (guide-1-*, guide-2-*, ...)
+images/                         Imágenes descargadas de Intercom (referenciadas por los .md)
 config/
   change-to-article-map.yaml   Mapeo área → artículos
   user-facing-paths.yaml       Heurística de rutas user-facing
@@ -323,15 +459,21 @@ infra/
   com.helpcenter.sync.plist    Cron job macOS (launchd) — ejecuta nightly.ts
   setup-cron.sh                Script de instalación del cron
 prompts/
+  article-augmented.md         Prompt para integrar contenido suplementario en artículos
   article-merge.md             Prompt para merge de contenido OLD + NEW
+  change-brief.md              Prompt para generar change briefs desde diffs de PRs
+  config-auditor.md            Prompt para auditar config/ contra la estructura del repo SaaS
   images-to-article.md         Prompt para crear artículos desde screenshots
   prompt-optimizer.md          Prompt optimizer (metodología 4-D)
+  translate-article.md         Prompt para traducción automática de artículos con LLM
 src/
   cli/
     index.ts                   CLI interactivo de Intercom (menú principal)
     intercom.ts                Cliente API de Intercom
     markdown.ts                Exportador HTML → Markdown con descarga de imágenes
     notion.ts                  Cliente Notion (HTML → bloques)
+    translation.ts             Servicio de traducción multi-idioma con LLM
+    cloudinary-upload.ts       Subida de imágenes a Cloudinary + reemplazo de rutas
   pipeline/
     nightly.ts                 Pipeline nocturno (changelog + sync en secuencia)
     index.ts                   Notion sync (ejecutable standalone o desde nightly)
@@ -363,3 +505,4 @@ src/
 | `sync` | `npm run sync [-- archivo1 archivo2]` | Sincroniza artículos a Notion (todos o selectivo) |
 | `changelog` | `npm run changelog` | Ejecuta el pipeline de changelog (standalone) |
 | `changelog:dry` | `npm run changelog:dry` | Pipeline en modo preview (sin escritura) |
+| `cloudinary` | `npm run cloudinary` | Sube imágenes a Cloudinary y reemplaza rutas en artículos |

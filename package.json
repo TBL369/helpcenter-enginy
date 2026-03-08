@@ -11,9 +11,7 @@
     "sync": "ts-node src/pipeline/index.ts",
     "changelog": "ts-node src/pipeline/changelog/index.ts",
     "changelog:dry": "ts-node src/pipeline/changelog/index.ts --dry-run",
-    "images:upload": "ts-node src/cli/cloudinary-upload.ts upload",
-    "images:bootstrap": "ts-node src/cli/cloudinary-upload.ts bootstrap",
-    "images:status": "ts-node src/cli/cloudinary-upload.ts status"
+    "cloudinary": "ts-node src/cli/cloudinary-upload.ts"
   },
   "keywords": [
     "intercom",

@@ -30,6 +30,7 @@ The Activity section in Enginy provides a centralized, chronological record of e
   - [Audit and Compliance](#audit-and-compliance)
   - [Resource Optimization](#resource-optimization)
   - [Campaign Monitoring](#campaign-monitoring)
+- [FAQs](#faqs)
 
 ---
 

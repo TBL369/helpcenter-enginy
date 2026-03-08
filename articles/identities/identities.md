@@ -45,6 +45,7 @@ Set up and manage the sender profiles that power your outreach campaigns. An ide
     - [Email Rate](#email-rate)
     - [Signature](#signature)
   - [Share Identity Link](#share-identity-link)
+- [FAQs](#faqs)
 
 ---
 

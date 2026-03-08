@@ -26,6 +26,7 @@ Track your credit consumption, manage your subscription plan, and monitor conver
     - [Time savings](#time-savings)
     - [ROI Summary](#roi-summary)
 - [Renewal Policy](#renewal-policy)
+- [FAQs](#faqs)
 
 ---
 
@@ -134,16 +135,13 @@ The **Plan & Credits** tab provides tools to help you estimate your credit needs
 The credit calculator helps you estimate how many credits you will need per month based on your expected usage.
 
 **Step 1 — Set your contacts per month**
-
 Use the slider or the input field to set the number of contacts you plan to process each month.
 
 **Step 2 — Select your actions**
-
 Select which actions you plan to use. Each action has a specific credit cost per result:
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="no-margin">Action</p></td><td style="background-color: #d7efdc80;"><p class="no-margin">Credit Cost</p></td></tr><tr><td><p class="no-margin"><b>Extract company and contact data</b></p></td><td><p class="no-margin">1 credit/result</p></td></tr><tr><td><p class="no-margin"><b>Email enrichment</b></p></td><td><p class="no-margin">5 credits/result</p></td></tr><tr><td><p class="no-margin"><b>Phone enrichment</b></p></td><td><p class="no-margin">40 credits/result</p></td></tr><tr><td><p class="no-margin"><b>Google Maps Data</b></p></td><td><p class="no-margin">1 credit/result</p></td></tr><tr><td><p class="no-margin"><b>Technology Stack Data</b></p></td><td><p class="no-margin">1 credit/result</p></td></tr><tr><td><p class="no-margin"><b>Job Posting Data</b></p></td><td><p class="no-margin">1 credit/result</p></td></tr><tr><td><p class="no-margin"><b>Email Verification</b></p></td><td><p class="no-margin">1 credit/result</p></td></tr><tr><td><p class="no-margin"><b>Phone Verification</b></p></td><td><p class="no-margin">3 credits/result</p></td></tr><tr><td><p class="no-margin"><b>AI Variables</b></p></td><td><p class="no-margin">3 credits/field (quantity adjustable)</p></td></tr></tbody></table>
 
 **Step 3 — Review your estimate**
-
 Based on your selections, the calculator displays a summary panel showing:
 -   **Monthly credits needed** — The total estimated credits for your configuration.
 -   **Contacts per month** — The number of contacts you entered.

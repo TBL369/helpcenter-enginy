@@ -17,6 +17,7 @@ AI Finder lets you discover contacts and companies from LinkedIn using natural l
 - [AI Recommendations](#ai-recommendations)
   - [How AI Recommendations Work](#how-ai-recommendations-work)
   - [Recommendation Types](#recommendation-types)
+- [FAQs](#faqs)
 
 ---
 

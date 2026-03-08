@@ -75,6 +75,7 @@ Campaigns in Enginy let you build automated, multichannel outreach sequences tar
   - [How to Activate Email Warm-up in Enginy](#how-to-activate-email-warm-up-in-enginy)
   - [What Happens if You Skip Warm-up](#what-happens-if-you-skip-warm-up)
 - [Working Hours Configuration](#working-hours-configuration)
+- [FAQs](#faqs)
 
 ---
 
@@ -514,7 +515,6 @@ When reaching out on LinkedIn, consider breaking a single long message into smal
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440104/helpcenter/campaigns-43.png)
 
 **Instead of one long message like:**
-
 "Hi {first name}, sorry for the direct approach *—* just wondering, do you happen to spend a lot of time each week updating Excel sheets? I'm asking because at Acme, we help HR professionals digitize administrative tasks. Mind if I ask you a couple of quick questions to see if we could help you reclaim up to 8 hours a week?"
 
 **Split it into 3-4 short messages, which will be sent immediately one after the other:**

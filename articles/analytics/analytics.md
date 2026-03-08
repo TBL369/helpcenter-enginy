@@ -20,6 +20,7 @@ The Analytics page helps you understand your outreach performance across LinkedI
   - [LinkedIn Metrics](#linkedin-metrics)
   - [Email Metrics](#email-metrics)
 - [Export Analytics Data](#export-analytics-data)
+- [FAQs](#faqs)
 
 ---
 

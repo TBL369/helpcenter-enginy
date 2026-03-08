@@ -118,6 +118,7 @@ The Lists section is where you manage your prospect databases in Enginy. It is d
   - [Work History and Experience](#work-history-and-experience)
   - [Hiring and Growth](#hiring-and-growth)
   - [Additional Information](#additional-information)
+- [FAQs](#faqs)
 
 ---
 
@@ -278,7 +279,7 @@ Hover your cursor between any two column headers. A divider with a **+** button 
 
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440129/helpcenter/lists-20.png)
 
-> **Note:** Learn more in depth about AI Variables and prompting in the [AI Playbook](https://help.genesy.ai/es/articles/10735949-ai-playbook) article.
+> **Note:** Learn more in depth about AI Variables and prompting in the [AI Playbook](/articles/ai-playbook/ai-playbook.md) article.
 -   **New CRM Field** — Add a field synced from your CRM.
 1.  Choose the entity type: **Contact** or **Company**.
 2.  Fill in:

@@ -19,6 +19,7 @@ The Tasks section in Enginy is your centralized action hub for every to-do gener
   - [Add a Note to a Task](#add-a-note-to-a-task)
 - [Complete a Task](#complete-a-task)
 - [Practical Use Cases](#practical-use-cases)
+- [FAQs](#faqs)
 
 ---
 

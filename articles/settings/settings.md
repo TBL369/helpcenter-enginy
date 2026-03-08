@@ -26,6 +26,7 @@ The Settings section is the control panel for your Enginy account. It allows you
     - [Lists Permissions](#lists-permissions)
     - [Campaigns Permissions](#campaigns-permissions)
     - [General Settings Permissions](#general-settings-permissions)
+- [FAQs](#faqs)
 
 ---
 

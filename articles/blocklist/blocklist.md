@@ -22,6 +22,7 @@ The Blocklist lets you block specific contacts and companies so they are exclude
   - [Source Values](#source-values)
   - [Reason Values](#reason-values)
 - [Important Considerations](#important-considerations)
+- [FAQs](#faqs)
 
 ---
 

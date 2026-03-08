@@ -64,7 +64,7 @@ Otherwise, output the final article.
 1. **# Title (H1)** — Short noun or noun phrase. Must match the section name.
 2. **Intro paragraph** — 1–2 sentences explaining the section's purpose. No heading for the intro.
 3. **`---` horizontal rule**
-4. **# Table of Contents (H1)** — Internal links to every H1 section and meaningful H2/H3/H4 subsections. Use standard Markdown anchors: `[Heading Text](#heading-text)`. Indent sub-items with 2 spaces per level (H2 = 2 spaces, H3 = 4 spaces, H4 = 6 spaces). Do NOT include the FAQs section or its individual questions in the TOC.
+4. **# Table of Contents (H1)** — Internal links to every H1 section and meaningful H2/H3/H4 subsections. Use standard Markdown anchors: `[Heading Text](#heading-text)`. Indent sub-items with 2 spaces per level (H2 = 2 spaces, H3 = 4 spaces, H4 = 6 spaces). Include FAQs as the last top-level item in the TOC (no sub-items for individual questions).
 5. **`---` horizontal rule**
 6. **Content sections** — Organized with clear headings following the hierarchy and flow described below. Place a `---` horizontal rule between every H1 section.
 7. **# FAQs (H1)** — Last section. 4–7 genuinely relevant questions using the format `### Q1: Question text?`.
@@ -108,7 +108,7 @@ Typical help-center flow within the content sections:
 
 - Use **Intercom-compatible HTML tables** — never Markdown pipe tables.
 - Format: `<table role="presentation"><tbody><tr><td>...</td></tr></tbody></table>`.
-- Header row: `style="background-color: #d7efdc;"` with bold column names using `<b>` tags.
+- Header row: `style="background-color: #d7efdc80;"` with bold column names using `<b>` tags.
 - Paragraph text inside cells: `<p class="no-margin">`. Bold key values with `<b>` tags.
 - Use tables when presenting:
   - Key → value pairs
@@ -161,7 +161,7 @@ Typical help-center flow within the content sections:
 - TOC links must point to headings using standard Markdown anchors: `[Heading Text](#heading-text)`.
 - Anchor slugs: lowercase, hyphens replace spaces, remove special punctuation.
 - Indent sub-items with 2 spaces per level.
-- Do NOT include the FAQs section or its individual questions in the TOC.
+- Include FAQs as the last top-level item in the TOC (no sub-items for individual questions).
 
 ### FAQs
 
@@ -176,6 +176,17 @@ Typical help-center flow within the content sections:
 - Use placeholder format: `![](images/<article-slug>-<N>.png)`.
 - No alt text. Place images inline where contextually relevant.
 - Preserve image references from source content.
+
+### Inter-Article Links
+
+- To reference another help center article, use a local path: `[Article Title](/articles/section/slug.md)`.
+- Do NOT use hardcoded Intercom URLs. The export pipeline resolves local paths to Intercom URLs automatically.
+- If the target article is not published in Intercom, the link renders as plain text. The pipeline tracks pending links in `unresolved-links.json`.
+
+### Translation-Safe Content
+
+- All UI labels (button names, menu items, field names) MUST be in **bold**. This signals the translation pipeline to preserve them untranslated across all languages.
+- Product names (Enginy, LinkedIn, HubSpot, etc.) should NOT be bolded — they are preserved by the translation prompt automatically.
 
 ### Redundancy Control Without Losing Content
 
@@ -197,7 +208,7 @@ Typical help-center flow within the content sections:
 - [ ] Steps are complete and runnable by a non-technical user.
 - [ ] Roles/permissions and plan/regional differences are explicit wherever needed.
 - [ ] Troubleshooting (if present) uses Symptom/Issue → Cause → Resolution in an HTML table.
-- [ ] TOC anchors work and match headings. FAQs are NOT listed in the TOC.
+- [ ] TOC anchors work and match headings. FAQs is the last top-level TOC item (no sub-items).
 - [ ] Callouts use blockquote syntax (`>`) with bold labels (`**Note:**`, `**Tip:**`, etc.).
 - [ ] ALL tables use Intercom-compatible HTML (`<table role="presentation">`), never Markdown pipe tables.
 - [ ] Headings use `#` (H1) for top-level sections, `##` (H2) for subsections, `###` (H3) for sub-subsections. `####` (H4) only when an H3 genuinely needs further breakdown.

@@ -36,6 +36,7 @@ The Inbox is a centralized communication hub where you can manage all conversati
   - [Recent Activity Timeline](#recent-activity-timeline)
   - [Campaign Status](#campaign-status)
   - [Work History](#work-history)
+- [FAQs](#faqs)
 
 ---
 

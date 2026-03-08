@@ -66,6 +66,7 @@ The AI Playbook is the central brain of your Enginy account. It is where you con
   - [Prompt Examples: Weak vs. Improved](#prompt-examples-weak-vs-improved)
   - [Common Prompt Mistakes](#common-prompt-mistakes)
   - [Prompt Best Practices Checklist](#prompt-best-practices-checklist)
+- [FAQs](#faqs)
 
 ---
 
@@ -244,11 +245,9 @@ Use the **Add attributes** option to select which row fields the variable can us
 Common placeholders include:
 
 **Contact attributes:**
-
 `{firstname}, {lastname}, {job_title}, {geo_region},{last_linkedin_post}, {job_change}, {previous_positions}, {mentioned_in_news}, {latest_news}, ...`
 
 **Company attributes:**
-
 `{company_name}, {description}, {industry}, {iq_company_news}, {yearly_headcount_growth}, {website} ...`
 
 Use these inside prompts to make the AI answer relevant to each row.
@@ -349,7 +348,6 @@ You can use AI Variables to write variations of a message template you already h
 2.  Enter your prompt using the recommended structure for an effective prompt.
 ## Troubleshoot AI Variables
 **"No Data Found" results:**
-
 When AI Variables return "No data found" or produce no results, this is often because the account’s **API usage credits are exhausted**. Another common reason is that the **selected model isn’t strong enough** to reliably complete the prompt’s objective (especially for complex extraction or reasoning tasks).
 <table role="presentation"><tbody><tr><td style="background-color: #d7efdc80;"><p class="no-margin">Symptom</p></td><td style="background-color: #d7efdc80;"><p class="no-margin">Cause</p></td><td style="background-color: #d7efdc80;"><p class="no-margin">Resolution</p></td></tr><tr><td><p class="no-margin">AI Variables return "No data found" for all leads</p></td><td><p class="no-margin">API usage credits are exhausted</p></td><td><p class="no-margin">Check your usage dashboard with your AI provider or notifications icon in Enginy next to Settings button. Replenish credits or wait for the billing cycle to reset.</p></td></tr><tr><td><p class="no-margin">Credits remain but data is still empty</p></td><td><p class="no-margin">The selected AI model may be too lightweight/low-quality for the prompt’s objective.</p></td><td><p class="no-margin">Switch to a more capable model and run the AI Variable again. If possible, simplify the prompt or add more context to improve reliability.</p></td></tr></tbody></table>
 
@@ -390,7 +388,6 @@ Once your AI Campaign is configured and enabled in a campaign's settings (3rd st
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440081/helpcenter/ai-playbook-24.png)
 
 **Monitoring conversations:**
-
 All incoming and outgoing messages from AI-powered campaigns are stored in the **Inbox** tab. AI replies appear automatically when a lead responds, allowing you to monitor and intervene if necessary.
 
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440081/helpcenter/ai-playbook-25.png)
@@ -522,7 +519,6 @@ Think of the prompt as a briefing for a professional: the better the briefing, t
 
 ## Key Principles
 **1\. Objective first, always**
-
 Before writing your prompt, ask: What exactly do I want to achieve? What is the final output I need?
 -   Vague: "Tell me about customer loyalty."
 -   Clear: "Generate a list of 10 concrete ideas to improve customer loyalty in a B2C contact center, focused on reducing churn by 10% within 6 months."
@@ -530,7 +526,6 @@ Before writing your prompt, ask: What exactly do I want to achieve? What is the 
 The more concrete the objective, the more actionable the response.
 
 **2\. Provide relevant context**
-
 The AI does not know your organization, product, or business reality unless you explain it referencing variables (`{`). Include:
 -   Type of company / industry
 -   Type of customer / end user
@@ -539,7 +534,6 @@ The AI does not know your organization, product, or business reality unless you 
 -   Constraints (legal, regulatory, time, budget)
     
 **3\. Define the AI's role**
-
 Asking "Explain this to me" is much less powerful than asking "Act as...". Examples:
 -   "Act as a senior CX consultant."
 -   "Act as a professional B2B copywriter."
@@ -548,7 +542,6 @@ Asking "Explain this to me" is much less powerful than asking "Act as...". Examp
 This sets expectations and elevates the quality of the response.
 
 **4\. Specify the output format**
-
 Explicitly indicate how you want the result:
 -   Numbered list
 -   Table with specific columns
@@ -559,7 +552,6 @@ Explicitly indicate how you want the result:
 This makes the content directly usable without reformatting.
 
 **5\. Include quality criteria and constraints**
-
 Do not assume the AI understands your standards. State them clearly:
 -   Level of detail: high, medium, very concise
 -   Tone: formal, friendly, technical, explanatory
@@ -568,13 +560,11 @@ Do not assume the AI understands your standards. State them clearly:
 -   What to avoid: excessive jargon, legal terms, etc.
     
 **6\. Provide examples (and counterexamples)**
-
 Examples significantly reduce iteration and rework:
 -   Positive example: what you want
 -   Negative example: what you do NOT want
     
 **7\. Think in iterative mode**
-
 The first prompt will rarely be perfect. Work in cycles:
 1.  Write a well-structured initial prompt.
 2.  Evaluate the result.

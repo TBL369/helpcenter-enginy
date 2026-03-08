@@ -46,6 +46,7 @@ Connect your existing tech stack to Enginy so you can synchronize data, enrich c
     - [Add to Lists](#add-to-lists)
     - [Common SDR Workflows](#common-sdr-workflows)
 - [Troubleshooting](#troubleshooting)
+- [FAQs](#faqs)
 
 ---
 

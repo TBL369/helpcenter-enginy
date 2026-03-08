@@ -18,6 +18,7 @@ The Dashboard is the main screen of the Enginy platform. It provides an executiv
 - [Create Button](#create-button)
   - [Create a New List from the Dashboard](#create-a-new-list-from-the-dashboard)
   - [Create a New Campaign from the Dashboard](#create-a-new-campaign-from-the-dashboard)
+- [FAQs](#faqs)
 
 ---
 

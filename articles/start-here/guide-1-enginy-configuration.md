@@ -144,13 +144,11 @@ Connecting your CRM allows you to synchronize and export contacts and companies 
 3. Click **Configure** to open the four-step setup wizard.
 
 **Step 1 — Sync Configuration:**
-
 Define how Enginy matches contacts and companies with your CRM records to prevent duplicates. Configure the **Contact Identifier** (e.g., First name + Last name + Company name, or LinkedIn profile URL) and the **Company Identifier** (e.g., Domain, or Domain + Company Name). You can also set up custom mapping with AND/OR logic.
 
 ![](https://res.cloudinary.com/enginy/image/upload/v1771440124/helpcenter/integrations-6.png)
 
 **Step 2 — Field Mapping:**
-
 Configure which Enginy fields map to which CRM fields for export and sync. The setup is split into **Contacts** and **Companies** tabs. You can set up four field types:
 - **Enginy Fields** — Standard fields from your lists mapped to CRM fields.
 - **Fixed Value Fields** — Fields that always export with the same static value (e.g., Source = "Enginy").
@@ -162,11 +160,9 @@ For each mapping, choose a sync direction: Bi-directional, CRM overwrites Enginy
 > **Warning:** Do not map a Company field in the Contacts tab (or vice versa). This can cause export errors.
 
 **Step 3 — Campaign Mapping (Optional):**
-
 Sync campaign-specific properties (sequence details, engagement status, email opens/clicks, conversation tags) to your CRM.
 
 **Step 4 — User Mapping:**
-
 Link Enginy identities and users to CRM users so that exports and activity logs are attributed correctly. Set a **Default CRM owner** for exports by unmapped users.
 
 After completing all steps, click **Update** to save.
